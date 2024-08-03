@@ -1,0 +1,29 @@
+.container {
+    flex: 1 1 300px;
+    height: 500px;
+    background-color: aqua;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.container:hover {
+    box-shadow: 0 4px 8px var(--color-gray-300)
+}
+
+.innerTextContainer {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 100%;
+}
+
+.text {
+    color: white;
+    font-size: 2rem;
+    z-index: 1;
+    padding: 1rem;
+}
