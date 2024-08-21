@@ -1,5 +1,5 @@
 .container {
-    background-color: var(--color-gray-300);
+    background-color: var(--color-beige-300);
     border-radius: 4px;
     position: relative;
     overflow: hidden;
@@ -19,7 +19,6 @@
     z-index: 1;
     padding: 0.5rem;
     width: 100%;
-    background-color: var(--color-gray-500);
     margin: 0 auto;
     display: flex;
     justify-content: center;

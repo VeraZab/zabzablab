@@ -8,19 +8,20 @@
 }
 
 :root {
-    --color-gray-100: hsl(0, 7%, 95%, 1);
-    --color-gray-200: hsl(0, 5%, 80%, 1);
-    --color-gray-300: hsl(0, 5%, 70%, 1);
-    --color-gray-400: hsl(0, 5%, 60%, 1);
+    --color-beige-100: hsl(30, 50%, 96%, 1);
+    --color-beige-200: hsl(30, 50%, 93%, 1);
+    --color-beige-300: hsl(30, 50%, 83%, 1);
+    --color-beige-400: hsl(30, 50%, 73%, 1);
+
     --color-gray-500: hsl(0, 5%, 50%, 1);
-    --color-yellow-100: hsl(47, 78%, 67%, 1);
-    --color-yellow-200: hsl(47, 92%, 53%, 1);
-    --color-yellow-300: hsl(47, 78%, 35%, 1);
+    --color-navy-300: hsl(238, 49%, 15%, 1);
+    --color-lime-300: hsl(67, 65%, 50%, 1);
 }
 
 html,
 body {
     font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-navy-300);
     margin: 0;
     height: 100%;
     width: 100%;
@@ -29,7 +30,7 @@ body {
 
 .content-container {
     height: 100%;
-    background-color: var(--color-gray-100);
+    background-color: var(--color-beige-100);
 }
 
 main {

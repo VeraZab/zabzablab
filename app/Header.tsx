@@ -76,7 +76,7 @@ const NavigationLinks = ({ isMobile }: { isMobile?: boolean }) => {
     return (
         <div className={styles.left}>
             <h1 className={styles.title}>
-                <Link href="/">ZabZabLab</Link>
+                <Link href="/">ZABZABLAB</Link>
             </h1>
         </div>
     )
@@ -86,15 +86,7 @@ export default function Header() {
     const pathname = usePathname()
     const isDarkBG = ['/about'].includes(pathname)
     return (
-        <div
-            className={styles.header}
-            style={{
-                color: isDarkBG ? 'white' : 'black',
-                background: isDarkBG
-                    ? 'rgb(0, 0, 0, 0.1)'
-                    : 'rgb(255, 255, 255, 0.4)',
-            }}
-        >
+        <div className={styles.header}>
             <div className={styles.desktop}>
                 <NavigationLinks />
             </div>
