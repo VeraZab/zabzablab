@@ -1,0 +1,33 @@
+.container {
+    height: 100%;
+    padding-top: 100px;
+    overflow-y: auto;
+}
+
+.caption {
+    color: black;
+    max-width: 650px;
+    padding: 2rem;
+    margin-left: 30%;
+}
+
+@media (max-width: 1370px) {
+    .caption {
+        margin-left: 30%;
+    }
+}
+
+@media (max-width: 960px) {
+    .container {
+        background-color: #00000057;
+        padding-top: 50px;
+        padding-bottom: 130%;
+    }
+
+    .caption {
+        max-width: unset;
+        margin-left: 0%;
+        padding: 2rem;
+        color: white;
+    }
+}
