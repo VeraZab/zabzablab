@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 import '/styles/reset.css'
 import '/styles/global.css'
-import Header from './Header'
+import Header from './components/header/Header'
 
 export const metadata = {
     title: 'ZabZabLab',
@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     content="width=device-width, initial-scale=1.0"
                 />
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-                <title>ZABZABLAB</title>
+                <title>ZabZabLab</title>
                 <link rel="icon" href="./favicon.ico" type="image/x-icon" />
             </head>
 

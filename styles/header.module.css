@@ -9,6 +9,8 @@
     padding: 0 1rem;
     z-index: 3;
     height: 4rem;
+    /* background-color: #9fb0a5;
+    color: var(--color-beige-100); */
 }
 
 .left {
@@ -58,7 +60,7 @@
 .right a.active {
     text-decoration: underline;
     text-underline-offset: 0.5rem;
-    text-decoration-color: var(--color-lime-300);
+    /* text-decoration-color: var(--color-beige-100); */
     text-decoration-thickness: 0.25rem;
 }
 
