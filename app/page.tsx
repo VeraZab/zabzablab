@@ -8,26 +8,32 @@ interface PortfolioItem {
 }
 
 const portfolio = [
-    { src: '/images/sweet-peas.png', alt: 'Sweet Peas Chinoiserie' },
-    { src: '/images/casino-treillis.png', alt: 'Casino Treillis' },
-    { src: '/images/crows.png', alt: 'Whimsygoth garden' },
-    { src: '/images/tea.png', alt: 'Garden Tea Party' },
-    { src: '/images/horizontal-stripe.png', alt: 'Green Watercolor Stripes' },
+    { src: '/portfolio/geese.png', alt: 'Goose Spring Trellis' },
     {
-        src: '/images/bright-thistle-close.png',
-        alt: 'Bright Thistle in Peach Fuzz',
+        src: '/portfolio/carnations.png',
+        alt: 'Preppy Butter Yellow Carnations',
+    },
+    { src: '/portfolio/sweet_peas.png', alt: 'Sweet Peas Garden Chinoiserie' },
+    { src: '/portfolio/snowdrop.png', alt: 'Spring Snowdrop Meadow' },
+    {
+        src: '/portfolio/preppy_bow.png',
+        alt: 'Preppy Coquette Cream Bows on Lilac',
     },
     {
-        src: '/images/mockup-moody-flowers.png',
-        alt: 'Moody Floral Wallpaper Livingroom Mockup',
+        src: '/portfolio/moody_thistle.png',
+        alt: 'Moody Midnight Wild Thistle Chinoiserie',
     },
     {
-        src: '/images/apple-blossom.png',
-        alt: 'Apple Blossom Chinoiserie',
+        src: '/portfolio/tea.png',
+        alt: 'Bookish Preppy Garden Tea Party',
     },
     {
-        src: '/images/boats.png',
-        alt: 'Traffic on the Hudson',
+        src: '/portfolio/crows.png',
+        alt: 'Cottagecore Romantic Dark Coquette Crows',
+    },
+    {
+        src: '/portfolio/apple_blossom_blue.png',
+        alt: 'Spring Apple Blossom in Soft Dusty Blue',
     },
     {
         src: '/images/boats-jumbo.png',

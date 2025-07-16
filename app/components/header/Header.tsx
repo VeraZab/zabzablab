@@ -12,8 +12,15 @@ const navigationLinks = [
     { title: 'Work', href: '/' },
     { title: 'About', href: '/about' },
     {
-        title: 'Shop',
+        icon: '/assets/spoonflower.png',
+        alt: 'Spoonflower',
         href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile',
+        target: '_blank',
+    },
+    {
+        icon: '/assets/instagram.png',
+        alt: 'Instagram:zabzablab',
+        href: 'https://www.instagram.com/zabzablab',
         target: '_blank',
     },
 ]
@@ -21,6 +28,7 @@ const navigationLinks = [
 export default function Header() {
     const pathname = usePathname()
     const isDarkBG = ['/about'].includes(pathname)
+
     return (
         <div className={styles.header}>
             <div className={styles.desktop}>

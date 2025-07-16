@@ -7,8 +7,10 @@ import styles from '/styles/header.module.css'
 
 interface LinkFormat {
     href: string
-    title: string
+    icon?: string
+    title?: string
     target?: string
+    alt?: string
 }
 
 const LinkWrapper = ({
@@ -40,6 +42,13 @@ export const NavigationLink = ({
                 target={link.target || ''}
             >
                 {link.title}
+                {link.icon && (
+                    <img
+                        style={{ width: '100px' }}
+                        src={link.icon}
+                        alt={link.alt}
+                    />
+                )}
             </Link>
         </LinkWrapper>
     )

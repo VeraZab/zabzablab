@@ -20,7 +20,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 />
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
                 <title>ZabZabLab</title>
-                <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+                <link
+                    rel="icon"
+                    href="/assets/favicon.ico"
+                    type="image/x-icon"
+                />
             </head>
 
             <body>
