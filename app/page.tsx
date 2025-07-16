@@ -35,17 +35,34 @@ const portfolio = [
         src: '/portfolio/apple_blossom_blue.png',
         alt: 'Spring Apple Blossom in Soft Dusty Blue',
     },
+
     {
-        src: '/images/boats-jumbo.png',
-        alt: 'Boats Jumbo',
+        src: '/portfolio/mughal_vine.png',
+        alt: 'Soft Chinoiserie Butterfly Mughal Flower Vine',
     },
     {
-        src: '/images/bird-bows.png',
-        alt: 'Bird Bows',
+        src: '/portfolio/dainty_violet.png',
+        alt: 'Dainty Violet Pansy Scatter Meadow',
     },
     {
-        src: '/images/geese.png',
-        alt: 'Happy Canada Geese',
+        src: '/portfolio/placeholder.png',
+        alt: 'Placeholder',
+    },
+    {
+        src: '/portfolio/placeholder.png',
+        alt: 'Placeholder',
+    },
+    {
+        src: '/portfolio/painterly_vine_gold.png',
+        alt: 'William Morris Inspired Painterly Japandi Chinoiserie Vine',
+    },
+    {
+        src: '/portfolio/poppy_block_print.png',
+        alt: 'Rich Dramatic Poppy Block Print',
+    },
+    {
+        src: '/portfolio/hudson_river.png',
+        alt: 'Hudson River Nautical Boat Toile',
     },
 ]
 
