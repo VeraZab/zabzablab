@@ -31,10 +31,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <body>
                 <Header />
                 <div className="main-content">
-                    <div className="page-content">
-                        {children}
-                        <Footer />
-                    </div>
+                    <main>{children}</main>
+                    <Footer />
                 </div>
             </body>
         </html>

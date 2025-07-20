@@ -30,13 +30,15 @@ body {
 }
 
 .main-content {
-    height: 100%;
-    overflow: auto;
+    min-height: 100vh;
     padding: 1rem;
+    padding-top: 6.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.page-content {
-    margin-top: 5.5rem;
+main {
+    flex: 1;
 }
 
 a {
