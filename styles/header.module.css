@@ -1,4 +1,5 @@
 .header {
+    padding: 1rem;
     font-weight: bold;
     width: 100%;
     position: fixed;
@@ -6,23 +7,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1rem;
-    padding-left: 0;
     padding-top: 5px;
     z-index: 3;
 }
 
-.left {
-    display: flex;
-    align-items: center;
-    margin-right: auto;
+.logo {
+    margin-left: -20px;
 }
 
 .right {
     display: flex;
     align-items: center;
     justify-content: end;
-    margin-left: auto;
 }
 
 .right img {
@@ -35,16 +31,15 @@
     padding-right: 2.5rem;
 }
 
-.right a:last-child {
-    padding-right: 0;
-}
-
 .right a:hover,
 .right a.active {
     text-decoration: underline;
     text-underline-offset: 0.5rem;
-    /* text-decoration-color: var(--color-beige-100); */
     text-decoration-thickness: 0.25rem;
+}
+
+.right a:last-child {
+    padding-right: 0;
 }
 
 .mobile {
@@ -56,26 +51,28 @@
         display: none;
     }
 
-    .title {
-        width: unset;
-        position: unset;
-        left: unset;
-        transform: unset;
+    .mobile {
+        display: flex;
     }
 
-    .mobile {
-        display: block;
+    button.mobileAction {
+        background: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    .closeButton {
+        position: fixed;
+        top: 2.5rem;
+        right: 1rem;
+        align-self: flex-end;
+        color: white;
+        z-index: 4;
     }
 
     .mobileIconContainer svg {
         width: 25px !important;
         height: 25px !important;
-    }
-
-    button.mobileAction {
-        margin-right: -0.5rem;
-        background: transparent;
-        border: none;
     }
 
     .mobilePortal {
@@ -95,57 +92,19 @@
         color: white;
     }
 
-    .closeButton {
-        position: fixed;
-        top: 1.25rem;
-        right: 1rem;
-        align-self: flex-end;
-        color: white;
-        z-index: 4;
-    }
-
     .mobileLinks {
         color: white;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        text-align: center;
+        justify-content: center;
         height: 100%;
         font-size: 2rem;
     }
 
-    .left {
-        height: 60%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    .left a {
-        padding-right: 0;
-    }
-
-    .right {
-        display: flex;
-        align-items: center;
-    }
-
     .mobileLinks a {
-        color: inherit;
-    }
-
-    .socialMobileLinksContainer {
         display: flex;
-        flex-direction: row;
         justify-content: center;
-    }
-
-    .right img {
-        width: 35px !important;
-    }
-
-    .right svg {
-        width: 35px !important;
-        height: 35px !important;
+        margin-bottom: 2rem;
     }
 }

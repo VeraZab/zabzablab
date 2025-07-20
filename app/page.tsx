@@ -2,13 +2,15 @@ import PortfolioGrid from './components/portfolio/PortfolioGrid'
 import PortfolioItem from './components/portfolio/PortfolioItem'
 import PortfolioPageLayout from './components/portfolio/PortfolioPageLayout'
 
+import styles from '/styles/portfoliopagelayout.module.css'
+
 interface PortfolioItem {
     src: string
     alt: string
 }
 
 const portfolio = [
-    { src: '/portfolio/geese.png', alt: 'Goose Spring Trellis' },
+    { src: '/portfolio/goose.png', alt: 'Goose Spring Trellis' },
     {
         src: '/portfolio/carnations.png',
         alt: 'Preppy Butter Yellow Carnations',
@@ -45,24 +47,59 @@ const portfolio = [
         alt: 'Dainty Violet Pansy Scatter Meadow',
     },
     {
-        src: '/portfolio/placeholder.png',
-        alt: 'Placeholder',
-    },
-    {
-        src: '/portfolio/placeholder.png',
-        alt: 'Placeholder',
+        src: '/portfolio/bird_bows.png',
+        alt: 'Coquette Birds and Bows',
     },
     {
         src: '/portfolio/painterly_vine_gold.png',
         alt: 'William Morris Inspired Painterly Japandi Chinoiserie Vine',
     },
     {
-        src: '/portfolio/poppy_block_print.png',
-        alt: 'Rich Dramatic Poppy Block Print',
+        src: '/portfolio/coastal_damask.png',
+        alt: 'Coastal Rococo Ink Damask',
     },
     {
         src: '/portfolio/hudson_river.png',
         alt: 'Hudson River Nautical Boat Toile',
+    },
+    {
+        src: '/portfolio/vine_stripe_gold.png',
+        alt: 'Sophisticated Casino Card Deck Trellis',
+    },
+
+    {
+        src: '/portfolio/poppy_block_print.png',
+        alt: 'Rich Dramatic Poppy Block Print',
+    },
+
+    {
+        src: '/portfolio/glam_jungle.png',
+        alt: 'Glam Art Deco Jungle',
+    },
+    {
+        src: '/portfolio/coquette_country_cowgirl.png',
+        alt: 'Coquette Country Cowgirl',
+    },
+    {
+        src: '/portfolio/lucky_cowgirl.png',
+        alt: 'Irish Luck St Patricks Cowgirl',
+    },
+    {
+        src: '/portfolio/wild_west_cacti.png',
+        alt: 'Wild West Cacti',
+    },
+    {
+        src: '/portfolio/pink_candy_cane_2.png',
+        alt: 'Pink Coquette Christmas Bow Candy Canes',
+    },
+
+    {
+        src: '/portfolio/trailing_pine.png',
+        alt: 'Trailing Cabincore Pine Forest Branches',
+    },
+    {
+        src: '/portfolio/cherry_heart.png',
+        alt: 'Neutral Black and Cream Nordic Minimal Christmas',
     },
 ]
 
@@ -74,6 +111,18 @@ export default function Work() {
                     <PortfolioItem key={index} src={item.src} alt={item.alt} />
                 ))}
             </PortfolioGrid>
+            <div className={styles.cta}>
+                Let's work together!
+                <br />
+                Need whimsical, trendy, romantic art to put on your products?
+                Let's chat!{' '}
+                <a
+                    href="mailto:zabzablab@gmail.com"
+                    className={styles.ctaEmail}
+                >
+                    zabzablab@gmail.com
+                </a>
+            </div>
         </PortfolioPageLayout>
     )
 }

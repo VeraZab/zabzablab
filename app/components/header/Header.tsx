@@ -7,6 +7,7 @@ import * as Dialog from '@radix-ui/react-dialog'
 import styles from '/styles/header.module.css'
 import { Logo } from './Logo'
 import { NavigationLink } from './NavigationLink'
+import MailIcon from '../icons/Mail'
 
 const navigationLinks = [
     { title: 'Work', href: '/' },
@@ -23,15 +24,17 @@ const navigationLinks = [
         href: 'https://www.instagram.com/zabzablab',
         target: '_blank',
     },
+    {
+        icon: MailIcon,
+        alt: 'email',
+        href: 'mailto:zabzablab@gmail.com',
+    },
 ]
 
 export default function Header() {
-    const pathname = usePathname()
-    const isDarkBG = ['/about'].includes(pathname)
-
     return (
         <div className={styles.header}>
-            <div className={styles.desktop}>
+            <div className={styles.logo}>
                 <Logo />
             </div>
 
@@ -43,11 +46,10 @@ export default function Header() {
                 </div>
             </div>
 
-            <Dialog.Root>
-                <div className={styles.mobile}>
+            <div className={styles.mobile}>
+                <Dialog.Root>
                     <Dialog.Trigger
                         className={`${styles.mobileIconContainer} ${styles.mobileAction}`}
-                        style={{ color: isDarkBG ? 'white' : 'black' }}
                     >
                         <RowsIcon />
                     </Dialog.Trigger>
@@ -61,17 +63,15 @@ export default function Header() {
                                     <Cross2Icon />
                                 </Dialog.Close>
                                 <div className={styles.mobileLinks}>
-                                    <div className={styles.right}>
-                                        {navigationLinks.map((l, i) => (
-                                            <NavigationLink key={i} link={l} />
-                                        ))}
-                                    </div>
+                                    {navigationLinks.map((l, i) => (
+                                        <NavigationLink key={i} link={l} />
+                                    ))}
                                 </div>
                             </Dialog.Content>
                         </div>
                     </Dialog.Portal>
-                </div>
-            </Dialog.Root>
+                </Dialog.Root>
+            </div>
         </div>
     )
 }

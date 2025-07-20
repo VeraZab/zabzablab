@@ -15,6 +15,7 @@
     --color-gray-500: hsl(0, 5%, 50%, 1);
     --color-navy-300: hsl(238, 49%, 15%, 1);
     --color-lime-300: hsl(67, 65%, 50%, 1);
+    --color-sage-100: #677b82;
 }
 
 html,
@@ -25,15 +26,17 @@ body {
     height: 100%;
     width: 100%;
     font-size: 1.1rem;
-}
-
-.content-container {
-    height: 100%;
     background-color: var(--color-beige-100);
 }
 
-main {
+.main-content {
+    height: 100%;
     overflow: auto;
+    padding: 1rem;
+}
+
+.page-content {
+    margin-top: 5.5rem;
 }
 
 a {

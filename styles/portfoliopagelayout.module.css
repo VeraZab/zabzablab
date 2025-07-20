@@ -1,4 +1,22 @@
 .container {
-    padding: 110px 1rem;
     overflow: auto;
+}
+
+.cta {
+    background-color: #acbbb4;
+    padding: 2rem;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--color-beige-100);
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.ctaEmail {
+    display: inline-block;
+    border-bottom: 3px solid var(--color-beige-100);
+    padding-bottom: 3px;
 }

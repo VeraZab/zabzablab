@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 import '/styles/reset.css'
 import '/styles/global.css'
 import Header from './components/header/Header'
+import Footer from './components/footer'
 
 export const metadata = {
     title: 'ZabZabLab',
@@ -28,9 +29,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </head>
 
             <body>
-                <div className="content-container">
-                    <Header />
-                    <main>{children}</main>
+                <Header />
+                <div className="main-content">
+                    <div className="page-content">
+                        {children}
+                        <Footer />
+                    </div>
                 </div>
             </body>
         </html>
