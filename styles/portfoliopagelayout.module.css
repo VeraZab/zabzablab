@@ -4,7 +4,7 @@
 .cta {
     background-color: #acbbb4;
     padding: 2rem;
-    margin: 1rem 0;
+    margin: 2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,6 +16,11 @@
 
 .ctaEmail {
     display: inline-block;
-    border-bottom: 3px solid var(--color-beige-100);
-    padding-bottom: 3px;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-underline-offset: 0.5rem;
+}
+
+.ctaText {
+    font-weight: normal;
 }

@@ -64,7 +64,11 @@ export default function Header() {
                                 </Dialog.Close>
                                 <div className={styles.mobileLinks}>
                                     {navigationLinks.map((l, i) => (
-                                        <NavigationLink key={i} link={l} />
+                                        <NavigationLink
+                                            key={i}
+                                            link={l}
+                                            isMobile
+                                        />
                                     ))}
                                 </div>
                             </Dialog.Content>

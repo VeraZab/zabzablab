@@ -112,16 +112,18 @@ export default function Work() {
                 ))}
             </PortfolioGrid>
             <div className={styles.cta}>
-                Let's work together!
+                Let's collaborate!
                 <br />
-                Need whimsical, trendy, romantic art to put on your products?
-                Let's chat!{' '}
-                <a
-                    href="mailto:zabzablab@gmail.com"
-                    className={styles.ctaEmail}
-                >
-                    zabzablab@gmail.com
-                </a>
+                <span className={styles.ctaText}>
+                    Need whimsical, trendy, romantic art for your project? Let's
+                    chat!{' '}
+                    <a
+                        href="mailto:zabzablab@gmail.com"
+                        className={styles.ctaEmail}
+                    >
+                        zabzablab@gmail.com
+                    </a>
+                </span>
             </div>
         </PortfolioPageLayout>
     )
