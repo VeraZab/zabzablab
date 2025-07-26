@@ -10,7 +10,7 @@ interface PortfolioItem {
 }
 
 const portfolio = [
-    { src: '/portfolio/goose.png', alt: 'Goose Spring Trellis' },
+    { src: '/portfolio/geese.jpg', alt: 'Goose Spring Trellis' },
     {
         src: '/portfolio/carnations.png',
         alt: 'Preppy Butter Yellow Carnations',
@@ -115,8 +115,8 @@ export default function Work() {
                 Let's collaborate!
                 <br />
                 <span className={styles.ctaText}>
-                    Need whimsical, trendy, romantic art for your project? Let's
-                    chat!{' '}
+                    Need whimsical, romantic, trendy yet timeless art for your
+                    project? Let's chat!{' '}
                     <a
                         href="mailto:zabzablab@gmail.com"
                         className={styles.ctaEmail}

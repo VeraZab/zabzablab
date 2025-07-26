@@ -8,18 +8,20 @@ import styles from '/styles/header.module.css'
 import { Logo } from './Logo'
 import { NavigationLink } from './NavigationLink'
 import MailIcon from '../icons/Mail'
+import SpoonflowerIcon from '../icons/Spoonflower'
+import InstagramIcon from '../icons/InstagramIcon'
 
 const navigationLinks = [
     { title: 'Work', href: '/' },
     { title: 'About', href: '/about' },
     {
-        icon: '/assets/spoonflower.png',
+        icon: SpoonflowerIcon,
         alt: 'Spoonflower',
         href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile',
         target: '_blank',
     },
     {
-        icon: '/assets/instagram.png',
+        icon: InstagramIcon,
         alt: 'Instagram:zabzablab',
         href: 'https://www.instagram.com/zabzablab',
         target: '_blank',

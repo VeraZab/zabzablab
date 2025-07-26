@@ -3,8 +3,8 @@
 
 .cta {
     background-color: #acbbb4;
-    padding: 2rem;
-    margin: 2rem 0;
+    padding: 3rem;
+    margin: 2rem -1rem;
     display: flex;
     flex-direction: column;
     align-items: center;

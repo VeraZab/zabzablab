@@ -6,15 +6,27 @@ export default function AboutPage() {
             <div className={styles.content}>
                 <div className={styles.img}></div>
                 <div className={styles.caption}>
-                    Hi! My name is Vera Zabeida. <br /> <br />
-                    I'm the owner of ZabZabLab. This is a creative
-                    experimentation space, where whimsy.
-                    <br /> and I started playing around with my iPad a few years
-                    ago when I became a mom, and just never stopped. I love
-                    creating patterns for interiors, it's a true passion of
-                    mine. Lately, the grandmillennial style is calling to me so
-                    here you'll find some of the latest that I've been working
-                    on.
+                    Hi, welcome to my little corner of the internet! <br />
+                    <br />
+                    I’m Vera — the surface pattern designer behind ZabZabLab,
+                    based in NJ, USA. I create artwork for textiles and home
+                    goods rooted in playfulness, a touch of nostalgia, and a
+                    love for the quiet joys of everyday life. <br />
+                    <br />
+                    All my patterns are hand-drawn on the iPad, which gives me
+                    the freedom to turn a cozy coffee shop or a view of the
+                    Hudson into my studio. I love adding an analog feel to my
+                    work — blending timeless motifs and soft palettes with the
+                    occasional twist, whether it’s a whimsical subject or a
+                    detail that invites a second glance. <br />
+                    <br />
+                    If you're looking to bring charm and character into your
+                    project — art that feels familiar yet unexpected, polished
+                    without being stiff — you're in the right place. Feel free
+                    to reach out via the email link above to learn more about
+                    licensing my designs or collaborating. <br />
+                    <br />
+                    Let’s make some magic together!
                 </div>
             </div>
         </div>
