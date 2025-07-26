@@ -10,7 +10,7 @@ interface PortfolioItem {
 }
 
 const portfolio = [
-    { src: '/portfolio/geese.jpg', alt: 'Goose Spring Trellis' },
+    { src: '/portfolio/geese.jpeg', alt: 'Goose Spring Trellis' },
     {
         src: '/portfolio/carnations.png',
         alt: 'Preppy Butter Yellow Carnations',
@@ -51,7 +51,7 @@ const portfolio = [
         alt: 'Coquette Birds and Bows',
     },
     {
-        src: '/portfolio/painterly_vine_gold.png',
+        src: '/portfolio/painterly_vine_gold.jpg',
         alt: 'William Morris Inspired Painterly Japandi Chinoiserie Vine',
     },
     {
@@ -81,7 +81,7 @@ const portfolio = [
         alt: 'Coquette Country Cowgirl',
     },
     {
-        src: '/portfolio/lucky_cowgirl.png',
+        src: '/portfolio/lucky_cowgirl.jpg',
         alt: 'Irish Luck St Patricks Cowgirl',
     },
     {
@@ -89,12 +89,12 @@ const portfolio = [
         alt: 'Wild West Cacti',
     },
     {
-        src: '/portfolio/pink_candy_cane_2.png',
+        src: '/portfolio/pink_candy_cane_2.jpg',
         alt: 'Pink Coquette Christmas Bow Candy Canes',
     },
 
     {
-        src: '/portfolio/trailing_pine.png',
+        src: '/portfolio/trailing_pine.jpg',
         alt: 'Trailing Cabincore Pine Forest Branches',
     },
     {
