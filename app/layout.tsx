@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 import '/styles/reset.css'
 import '/styles/global.css'
 import Header from './components/header/Header'
-import Footer from './components/footer'
+import Footer from './components/Footer'
 
 export const metadata = {
     title: 'ZabZabLab',

@@ -1,7 +1,6 @@
 'use client'
 
 import { Cross2Icon, RowsIcon } from '@radix-ui/react-icons'
-import { usePathname } from 'next/navigation'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import styles from '/styles/header.module.css'
