@@ -9,11 +9,11 @@
 
 .content {
     height: 100%;
-    margin-top: 5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     max-width: 1200px;
+    margin-top: 4rem;
 }
 
 .img {
@@ -34,7 +34,7 @@
     .content {
         display: flex;
         flex-direction: column;
-        margin-top: 1rem;
+        margin-top: 0;
         gap: 0;
     }
 
@@ -45,5 +45,6 @@
 
     .caption {
         margin-top: 2rem;
+        margin-bottom: 2rem;
     }
 }
