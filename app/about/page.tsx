@@ -4,7 +4,9 @@ export default function AboutPage() {
     return (
         <div className={styles.container}>
             <div className={styles.content}>
-                <div className={styles.img}></div>
+                <div className={styles.img}>
+                    <img src="/assets/about.jpg" />
+                </div>
                 <div className={styles.caption}>
                     Hi, welcome to my little corner of the internet! <br />
                     <br />
