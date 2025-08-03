@@ -50,6 +50,10 @@
 }
 
 @media (max-width: 1330px) {
+    .container {
+        padding: 0;
+    }
+
     .content {
         display: flex;
         flex-direction: column;
