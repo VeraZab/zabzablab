@@ -7,6 +7,9 @@
     padding: 2rem 1rem;
     box-sizing: border-box;
     background-color: var(--color-beige-100);
+    /* Override parent padding for full-width layout */
+    margin: -1rem;
+    width: calc(100% + 2rem);
 }
 
 .content {
@@ -51,11 +54,9 @@
 
 @media (max-width: 1330px) {
     .container {
-
         padding: 0;
-        
-        margin: -1rem; /* Counteract main-content padding */
-        width: calc(100% + 2rem); /* Account for removed margin */
+        margin: -1rem; /* Override parent padding on mobile too */
+        width: calc(100% + 2rem);
     }
 
     .content {
@@ -84,5 +85,17 @@
         margin-top: 0;
         padding: 2rem 1rem;
         text-align: left;
+    }
+}
+
+/* Very small screens optimization */
+@media (max-width: 320px) {
+    .container {
+        margin: -0.5rem; /* Match reduced global padding */
+        width: calc(100% + 1rem);
+    }
+    
+    .caption {
+        padding: 1rem 0.5rem; /* Reduce padding on tiny screens */
     }
 }

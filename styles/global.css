@@ -8,6 +8,7 @@
 }
 
 :root {
+    /* Colors */
     --color-beige-100: hsl(30, 50%, 96%, 1);
     --color-beige-200: hsl(30, 50%, 93%, 1);
     --color-beige-300: hsl(30, 50%, 83%, 1);
@@ -16,6 +17,12 @@
     --color-navy-300: hsl(238, 49%, 15%, 1);
     --color-lime-300: hsl(67, 65%, 50%, 1);
     --color-sage-100: #677b82;
+    
+    /* Layout spacing */
+    --header-height: 6.5rem;
+    --container-padding: 1rem;
+    --container-max-width: 1200px;
+    --mobile-breakpoint: 1330px;
 }
 
 html {
@@ -39,12 +46,27 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Base layout - minimal padding for most pages */
 .main-content {
     min-height: 100vh;
     padding: 1rem;
     padding-top: 6.5rem;
     display: flex;
     flex-direction: column;
+}
+
+/* Reduce padding on very small screens */
+@media (max-width: 320px) {
+    .main-content {
+        padding: 0.5rem;
+        padding-top: 6.5rem;
+    }
+}
+
+/* Utility classes for future use */
+.container-max-width {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
 }
 
 main {

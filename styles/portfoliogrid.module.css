@@ -15,3 +15,10 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Optimize for very small screens */
+@media (max-width: 320px) {
+    .container {
+        gap: 0.5rem; /* Reduce gap on tiny screens */
+    }
+}
