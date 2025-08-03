@@ -1,88 +1,84 @@
-/* Font import moved to layout.tsx for better loading performance */
-
-.moderustic-semibold {
-    font-family: var(--font-moderustic), 'Moderustic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-}
-
 :root {
     /* Colors */
-    --color-beige-100: hsl(30, 50%, 96%, 1);
-    --color-beige-200: hsl(30, 50%, 93%, 1);
-    --color-beige-300: hsl(30, 50%, 83%, 1);
-    --color-beige-400: hsl(30, 50%, 73%, 1);
-    --color-gray-500: hsl(0, 5%, 50%, 1);
-    --color-navy-300: hsl(238, 49%, 15%, 1);
-    --color-lime-300: hsl(67, 65%, 50%, 1);
+    --color-beige-100: hsl(30, 50%, 96%);
+    --color-beige-200: hsl(30, 50%, 93%);
+    --color-beige-300: hsl(30, 50%, 83%);
+    --color-beige-400: hsl(30, 50%, 73%);
+    --color-gray-500: hsl(0, 5%, 50%);
+    --color-navy-300: hsl(238, 49%, 15%);
+    --color-lime-300: hsl(67, 65%, 50%);
     --color-sage-100: #677b82;
     
-    /* Layout spacing */
+    /* Layout */
     --header-height: 6.5rem;
     --container-padding: 1rem;
+    --container-padding-sm: 0.5rem;
     --container-max-width: 1200px;
-    --mobile-breakpoint: 1330px;
+    --gap-base: 1rem;
+    --gap-sm: 0.5rem;
+    --gap-lg: 3rem;
+    
+    /* Breakpoints */
+    --bp-mobile: 1330px;
+    --bp-tablet: 900px;
+    --bp-small: 320px;
+    
+    /* Typography - fallback stack without CSS variable */
+    --font-stack: 'Moderustic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-html {
-    font-size: 18px;
-    /* Ensure consistent rem calculations */
-}
+html { font-size: 18px; }
 
 body {
-    font-family: var(--font-moderustic), 'Moderustic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font: 1rem/1.5 var(--font-moderustic, var(--font-stack));
     font-optical-sizing: auto;
-    font-style: normal;
     color: var(--color-navy-300);
+    background: var(--color-beige-100);
     margin: 0;
-    height: 100%;
-    width: 100%;
-    font-size: 1rem; /* Use rem instead of px for better consistency */
-    background-color: var(--color-beige-100);
-    /* Improve font rendering consistency */
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Base layout - minimal padding for most pages */
 .main-content {
     min-height: 100vh;
-    padding: 1rem;
-    padding-top: 6.5rem;
+    padding: var(--container-padding);
+    padding-top: var(--header-height);
     display: flex;
     flex-direction: column;
 }
 
-/* Reduce padding on very small screens */
-@media (max-width: 320px) {
-    .main-content {
-        padding: 0.5rem;
-        padding-top: 6.5rem;
-    }
+main { flex: 1; }
+a { color: inherit; text-decoration: none; }
+p { margin: var(--container-padding); }
+h1 { font-size: 1.5em; padding: 0.5em; }
+
+/* Typography utilities */
+.moderustic-semibold {
+    font: 600 1rem/1 var(--font-moderustic, var(--font-stack));
+    font-optical-sizing: auto;
 }
 
-/* Utility classes for future use */
+/* Layout utilities */
 .container-max-width {
     max-width: var(--container-max-width);
     margin: 0 auto;
 }
 
-main {
-    flex: 1;
+.full-width {
+    margin: calc(-1 * var(--container-padding));
+    width: calc(100% + 2 * var(--container-padding));
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-p {
-    margin: 18px;
-}
-
-h1 {
-    font-size: 1.5em;
-    padding: 0.5em;
+/* Responsive adjustments */
+@media (max-width: 320px) {
+    .main-content {
+        padding: var(--container-padding-sm);
+        padding-top: var(--header-height);
+    }
+    
+    .full-width {
+        margin: calc(-1 * var(--container-padding-sm));
+        width: calc(100% + 2 * var(--container-padding-sm));
+    }
 }

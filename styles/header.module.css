@@ -1,35 +1,30 @@
 .header {
-    padding: 1rem;
-    font-weight: bold;
-    width: 100%;
+    padding: var(--container-padding);
+    padding-top: 5px;
     position: fixed;
-    top: 0px;
+    top: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 5px;
+    font: bold 1.3rem/1 var(--font-moderustic, var(--font-stack));
     z-index: 3;
-    font-size: 1.3rem;
 }
 
-.logo {
-    margin-left: -20px;
-}
+.logo { margin-left: -20px; }
+.mobile { display: none; }
 
 .right {
     display: flex;
     align-items: center;
-    justify-content: end;
+    gap: 2.5rem;
 }
 
-.right img {
-    width: 30px !important;
-}
+.right img { width: 30px; }
 
 .right a {
     display: flex;
     align-items: center;
-    padding-right: 2.5rem;
 }
 
 .right a:hover,
@@ -39,55 +34,34 @@
     text-decoration-thickness: 0.25rem;
 }
 
-.right a:last-child {
-    padding-right: 0;
-}
-
-.mobile {
-    display: none;
-}
-
 @media (max-width: 1330px) {
-    .desktop {
-        display: none;
-    }
+    .desktop { display: none; }
+    .mobile { display: flex; }
 
-    .mobile {
-        display: flex;
-    }
-
-    button.mobileAction {
+    .mobileAction {
         background: transparent;
         border: none;
         padding: 0;
     }
 
     .mobileIconContainer svg {
-        width: 25px !important;
-        height: 25px !important;
-        color: var(--color-navy-300) !important;
+        width: 25px;
+        height: 25px;
+        color: var(--color-navy-300);
     }
 
     .closeButton {
-        color: white !important;
-        stroke: white !important;
+        color: white;
         position: fixed;
         top: 2.5rem;
-        right: 1rem;
-        align-self: flex-end;
+        right: var(--container-padding);
         z-index: 4;
     }
 
-    .mobilePortal {
-        color: white !important;
-    }
-
     .dialogContent {
-        background-color: black;
+        background: black;
         position: fixed;
-        top: 0;
-        width: 100%;
-        height: 100%;
+        inset: 0;
         z-index: 4;
         display: flex;
         align-items: center;
@@ -96,18 +70,10 @@
     }
 
     .mobileLinks {
-        color: white;
         display: flex;
         flex-direction: column;
         text-align: center;
-        justify-content: center;
-        height: 100%;
         font-size: 2rem;
-    }
-
-    .mobileLinks a {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2rem;
+        gap: 2rem;
     }
 }

@@ -1,26 +1,18 @@
-.container {
-}
-
 .cta {
-    background-color: #acbbb4;
-    padding: 3rem;
-    margin: 2rem -1rem;
+    background: var(--color-sage-100);
+    padding: var(--gap-lg);
+    margin: 2rem calc(-1 * var(--container-padding));
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     color: var(--color-beige-100);
-    font-size: x-large;
-    font-weight: bold;
+    font: bold x-large/1.2 var(--font-moderustic, var(--font-stack));
 }
 
 .ctaEmail {
-    display: inline-block;
-    text-decoration: underline;
-    text-decoration-style: wavy;
+    text-decoration: underline wavy;
     text-underline-offset: 0.5rem;
 }
 
-.ctaText {
-    font-weight: normal;
-}
+.ctaText { font-weight: normal; }

@@ -1,5 +1,3 @@
-'use client'
-
 import styles from '/styles/about.module.css'
 
 export default function AboutPage() {
@@ -9,7 +7,7 @@ export default function AboutPage() {
                 <div className={styles.imageContainer}>
                     <img
                         src="/assets/about.jpg"
-                        alt="Vera working or showcasing patterns"
+                        alt="Vera Zabeida"
                     />
                 </div>
                 <div className={styles.caption}>

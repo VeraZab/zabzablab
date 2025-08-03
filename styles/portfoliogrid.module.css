@@ -1,24 +1,9 @@
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    gap: var(--gap-base);
 }
 
-@media (max-width: 1330px) {
-    .container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 900px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Optimize for very small screens */
-@media (max-width: 320px) {
-    .container {
-        gap: 0.5rem; /* Reduce gap on tiny screens */
-    }
-}
+@media (max-width: 1330px) { .container { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 900px) { .container { grid-template-columns: 1fr; } }
+@media (max-width: 320px) { .container { gap: var(--gap-sm); } }

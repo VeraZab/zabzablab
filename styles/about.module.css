@@ -1,38 +1,32 @@
 .container {
-    width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
-    background-color: var(--color-beige-100);
-    /* Override parent padding for full-width layout */
-    margin: -1rem;
-    width: calc(100% + 2rem);
+    padding: 2rem var(--container-padding);
+    background: var(--color-beige-100);
+    margin: calc(-1 * var(--container-padding));
+    width: calc(100% + 2 * var(--container-padding));
 }
 
 .content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    max-width: 1200px;
+    gap: var(--gap-lg);
+    max-width: var(--container-max-width);
     width: 100%;
 }
 
 .imageContainer {
-    background-color: var(--color-beige-300);
-    width: 100%;
-    height: 100%;
-    display: flex;
+    background: var(--color-beige-300);
     min-height: 600px;
+    overflow: hidden;
 }
 
-/* ⬇️ FIXED: this targets the actual image inside .imageContainer */
 .imageContainer img {
     width: 100%;
     height: 100%;
-    max-width: none; /* Override reset.css max-width: 100% */
+    max-width: none;
     object-fit: cover;
     object-position: center;
     filter: sepia(50%) brightness(0.9) contrast(0.9);
@@ -42,60 +36,37 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* keeps block centered */
-    height: 100%;
+    align-items: center;
     color: var(--color-navy-300);
-    font-size: 1rem;
     line-height: 1.7;
-    text-align: left; /* left-aligns paragraph text */
+    text-align: left;
     max-width: 600px;
-    width: 100%;
 }
 
 @media (max-width: 1330px) {
-    .container {
-        padding: 0;
-        margin: -1rem; /* Override parent padding on mobile too */
-        width: calc(100% + 2rem);
-    }
-
+    .container { padding: 0; }
+    
     .content {
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 0;
-        width: 100%;
+        margin-top: var(--container-padding);
     }
 
     .imageContainer {
-        width: 100%;
-        min-height: 60vh; /* Responsive height */
-        height: auto;
+        min-height: 60vh;
         margin: 0;
     }
 
-    .imageContainer img {
-        width: 100%;
-        height: 60vh; /* Match container height */
-        object-fit: cover;
-        object-position: center top; /* Show more of the top of the image */
-    }
+    .imageContainer img { object-position: center top; }
 
-    .caption {
-        margin-top: 0;
-        padding: 2rem 1rem;
-        text-align: left;
-    }
+    .caption { padding: 2rem var(--container-padding); }
 }
 
-/* Very small screens optimization */
 @media (max-width: 320px) {
     .container {
-        margin: -0.5rem; /* Match reduced global padding */
-        width: calc(100% + 1rem);
+        margin: calc(-1 * var(--container-padding-sm));
+        width: calc(100% + 2 * var(--container-padding-sm));
     }
     
-    .caption {
-        padding: 1rem 0.5rem; /* Reduce padding on tiny screens */
-    }
+    .caption { padding: var(--container-padding) var(--container-padding-sm); }
 }

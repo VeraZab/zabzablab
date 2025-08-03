@@ -21,13 +21,13 @@ const navigationLinks = [
     },
     {
         icon: InstagramIcon,
-        alt: 'Instagram:zabzablab',
+        alt: 'Instagram',
         href: 'https://www.instagram.com/zabzablab',
         target: '_blank',
     },
     {
         icon: MailIcon,
-        alt: 'email',
+        alt: 'Email',
         href: 'mailto:zabzablab@gmail.com',
     },
 ]
@@ -41,39 +41,31 @@ export default function Header() {
 
             <div className={styles.desktop}>
                 <div className={styles.right}>
-                    {navigationLinks.map((l, i) => (
-                        <NavigationLink key={i} link={l} />
+                    {navigationLinks.map((link) => (
+                        <NavigationLink key={link.href} link={link} />
                     ))}
                 </div>
             </div>
 
             <div className={styles.mobile}>
                 <Dialog.Root>
-                    <Dialog.Trigger
-                        className={`${styles.mobileIconContainer} ${styles.mobileAction}`}
-                    >
+                    <Dialog.Trigger className={`${styles.mobileIconContainer} ${styles.mobileAction}`}>
                         <RowsIcon />
                     </Dialog.Trigger>
                     <Dialog.Portal>
-                        <div className={styles.mobilePortal}>
-                            <Dialog.Content className={styles.dialogContent}>
-                                <Dialog.Close
-                                    className={`${styles.mobileIconContainer} ${styles.mobileAction} ${styles.closeButton}`}
-                                    aria-label="Close"
-                                >
-                                    <Cross2Icon style={{ color: 'white' }} />
-                                </Dialog.Close>
-                                <div className={styles.mobileLinks}>
-                                    {navigationLinks.map((l, i) => (
-                                        <NavigationLink
-                                            key={i}
-                                            link={l}
-                                            isMobile
-                                        />
-                                    ))}
-                                </div>
-                            </Dialog.Content>
-                        </div>
+                        <Dialog.Content className={styles.dialogContent}>
+                            <Dialog.Close
+                                className={`${styles.mobileIconContainer} ${styles.mobileAction} ${styles.closeButton}`}
+                                aria-label="Close"
+                            >
+                                <Cross2Icon />
+                            </Dialog.Close>
+                            <div className={styles.mobileLinks}>
+                                {navigationLinks.map((link, index) => (
+                                    <NavigationLink key={link.href} link={link} isMobile />
+                                ))}
+                            </div>
+                        </Dialog.Content>
                     </Dialog.Portal>
                 </Dialog.Root>
             </div>
