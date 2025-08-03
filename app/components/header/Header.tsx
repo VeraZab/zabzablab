@@ -58,10 +58,10 @@ export default function Header() {
                                 className={`${styles.mobileIconContainer} ${styles.mobileAction} ${styles.closeButton}`}
                                 aria-label="Close"
                             >
-                                <Cross2Icon />
+                                <Cross2Icon style={{ color: 'white' }} />
                             </Dialog.Close>
                             <div className={styles.mobileLinks}>
-                                {navigationLinks.map((link, index) => (
+                                {navigationLinks.map((link) => (
                                     <NavigationLink key={link.href} link={link} isMobile />
                                 ))}
                             </div>

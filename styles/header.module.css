@@ -42,12 +42,14 @@
         background: transparent;
         border: none;
         padding: 0;
+        outline: none;
     }
 
     .mobileIconContainer svg {
         width: 25px;
         height: 25px;
         color: var(--color-navy-300);
+        outline: none;
     }
 
     .closeButton {
@@ -56,6 +58,7 @@
         top: 2.5rem;
         right: var(--container-padding);
         z-index: 4;
+        outline: none;
     }
 
     .dialogContent {
@@ -72,8 +75,25 @@
     .mobileLinks {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         font-size: 2rem;
         gap: 2rem;
+        width: 100%;
+    }
+
+    .mobileLinks a {
+        outline: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        color: white;
+    }
+
+    .mobileLinks svg {
+        outline: none;
+        color: currentColor;
     }
 }
