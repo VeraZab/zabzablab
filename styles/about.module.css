@@ -51,24 +51,38 @@
 
 @media (max-width: 1330px) {
     .container {
+
         padding: 0;
+        
+        margin: -1rem; /* Counteract main-content padding */
+        width: calc(100% + 2rem); /* Account for removed margin */
     }
 
     .content {
+        margin-top: 1rem;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
-        margin-top: 0;
+        gap: 0;
+        width: 100%;
     }
 
     .imageContainer {
-        min-height: 600px;
-        height: 100%;
+        width: 100%;
+        min-height: 60vh; /* Responsive height */
+        height: auto;
+        margin: 0;
+    }
+
+    .imageContainer img {
+        width: 100%;
+        height: 60vh; /* Match container height */
+        object-fit: cover;
+        object-position: center top; /* Show more of the top of the image */
     }
 
     .caption {
         margin-top: 0;
-        padding: 0;
+        padding: 2rem 1rem;
         text-align: left;
     }
 }
