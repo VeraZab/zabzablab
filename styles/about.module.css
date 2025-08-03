@@ -1,24 +1,32 @@
 .container {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    /* min-height: calc(100vh - 12rem); */
     justify-content: center;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    background-color: var(--color-beige-100);
 }
 
 .content {
-    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
     max-width: 1200px;
-    margin-top: 1rem;
+    width: 100%;
 }
 
-.img {
+.imageContainer {
     background-color: var(--color-beige-300);
+    width: 100%;
+    height: 100%;
+    display: flex;
     min-height: 600px;
+}
+
+/* ⬇️ FIXED: this targets the actual image inside .imageContainer */
+.imageContainer img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -27,29 +35,35 @@
 }
 
 .caption {
-    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center; /* keeps block centered */
     height: 100%;
+    color: var(--color-navy-300);
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left; /* left-aligns paragraph text */
+    max-width: 600px;
+    width: 100%;
 }
 
 @media (max-width: 1330px) {
     .content {
         display: flex;
         flex-direction: column;
+        gap: 2rem;
         margin-top: 0;
-        gap: 0;
     }
 
-    .img {
-        width: 100%;
-        height: 500px;
+    .imageContainer {
+        min-height: 600px;
+        height: 100%;
     }
 
     .caption {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin-top: 0;
+        padding: 0 1rem;
+        text-align: left;
     }
 }
