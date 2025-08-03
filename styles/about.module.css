@@ -29,6 +29,7 @@
 .imageContainer img {
     width: 100%;
     height: 100%;
+    max-width: none; /* Override reset.css max-width: 100% */
     object-fit: cover;
     object-position: center;
     filter: sepia(50%) brightness(0.9) contrast(0.9);
@@ -63,7 +64,7 @@
 
     .caption {
         margin-top: 0;
-        padding: 0 1rem;
+        padding: 0;
         text-align: left;
     }
 }
