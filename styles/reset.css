@@ -31,7 +31,7 @@ main {
   */
 body {
     line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+    /* Font smoothing moved to global.css for better organization */
 }
 
 /*

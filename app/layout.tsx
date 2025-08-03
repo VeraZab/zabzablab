@@ -1,9 +1,18 @@
 import { ReactNode } from 'react'
+import { Moderustic } from 'next/font/google'
 
 import '/styles/reset.css'
 import '/styles/global.css'
+
 import Header from './components/header/Header'
 import Footer from './components/Footer'
+
+const moderustic = Moderustic({
+    subsets: ['latin'],
+    weight: ['300', '400', '500', '600', '700', '800'],
+    display: 'swap',
+    variable: '--font-moderustic'
+})
 
 export const metadata = {
     title: 'ZabZabLab',
@@ -28,7 +37,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 />
             </head>
 
-            <body>
+            <body className={moderustic.variable}>
                 <Header />
                 <div className="main-content">
                     <main>{children}</main>

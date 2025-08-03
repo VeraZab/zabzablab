@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&display=swap');
+/* Font import moved to layout.tsx for better loading performance */
 
 .moderustic-semibold {
-    font-family: 'Moderustic', sans-serif;
+    font-family: var(--font-moderustic), 'Moderustic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
@@ -18,17 +18,25 @@
     --color-sage-100: #677b82;
 }
 
-html,
+html {
+    font-size: 18px;
+    /* Ensure consistent rem calculations */
+}
+
 body {
-    font-family: 'Moderustic', sans-serif;
+    font-family: var(--font-moderustic), 'Moderustic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
     color: var(--color-navy-300);
     margin: 0;
     height: 100%;
     width: 100%;
-    font-size: 18px;
+    font-size: 1rem; /* Use rem instead of px for better consistency */
     background-color: var(--color-beige-100);
+    /* Improve font rendering consistency */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .main-content {
