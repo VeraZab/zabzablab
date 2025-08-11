@@ -35,6 +35,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     href="/assets/favicon.ico"
                     type="image/x-icon"
                 />
+                
+                {/* Google Analytics */}
+                <script 
+                    async 
+                    src="https://www.googletagmanager.com/gtag/js?id=G-G58801206T"
+                />
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', 'G-G58801206T');
+                        `,
+                    }}
+                />
             </head>
 
             <body className={moderustic.variable}>
