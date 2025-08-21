@@ -1,0 +1,13 @@
+.iframe {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    height: 2000px; /* default large height to avoid inner scroll */
+    overflow: hidden; /* hide iframe scrollbars in some browsers */
+}
+
+@media (max-width: 1024px) {
+    .iframe {
+        height: 2500px;
+    }
+}
