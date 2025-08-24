@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import type { Metadata } from 'next'
 import { Moderustic } from 'next/font/google'
 
 import '/styles/reset.css'
@@ -14,9 +15,12 @@ const moderustic = Moderustic({
     variable: '--font-moderustic'
 })
 
-export const metadata = {
-    title: 'ZabZabLab',
-    description: 'ZabZabLab: Surface Pattern Design Studio',
+export const metadata: Metadata = {
+    title: {
+        default: 'ZabZabLab Surface Pattern Design Studio',
+        template: '%s | ZabZabLab Surface Pattern Design Studio',
+    },
+    description: 'ZabZabLab: Surface Pattern Design Studio for interiors.',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -29,7 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     content="width=device-width, initial-scale=1.0"
                 />
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-                <title>ZabZabLab</title>
+                {/* Title comes from Next.js Metadata API per page */}
                 <link
                     rel="icon"
                     href="/assets/favicon.ico"

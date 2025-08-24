@@ -13,6 +13,7 @@ import InstagramIcon from '../icons/InstagramIcon'
 const navigationLinks = [
     { title: 'Work', href: '/' },
     { title: 'About', href: '/about' },
+    { title: 'Blog', href: '/blog' },
     {
         icon: SpoonflowerIcon,
         alt: 'Spoonflower',
