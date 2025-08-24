@@ -17,7 +17,7 @@ export default function BlogPostGreenKitchen() {
             <BlogHeader
              title="Why Dark Green Kitchens Attract Buyers" 
              date="2025-08-24" 
-             imageSrc="/blog/dark_green_kitchen.png" 
+             imageSrc="/blog/dark_green_kitchen.jpg" 
              imageAlt="Olive green kitchen cabinetry with patterned tile backsplash" 
             />
             <p>
