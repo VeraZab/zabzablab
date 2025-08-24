@@ -41,6 +41,7 @@
 .post p { margin: 0 0 1rem; }
 .post ul { margin: 0 0 1rem 1rem; padding: 0; }
 .post li { list-style: disc; }
+.post a { text-decoration: underline; text-underline-offset: 0.15rem; }
 
 .postNav {
     display: flex;
