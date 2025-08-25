@@ -50,16 +50,16 @@ export default function BlogPostGreenKitchen() {
                 <a href="https://www.spoonflower.com/collections/1388283-jewel-tone-mediterranean-tile-by-zabzablab" target="_blank" rel="noopener noreferrer"> Jewel Tone Faux Mediterranean Tile </a>
                 collection plays nicely with wood tones, stone, and warm metals—no heavy remodel required.
             </p>
-            <div className={styles.heroAuto}>
+            {/* <div className={styles.heroAuto}>
                 <Image
                     src="/blog/dark_green_kitchen_3.jpg"
                     alt="..."
-                    width={1800}  // real image dimensions
-                    height={1200}
-                    style={{ width: '100%', height: 'auto', marginBottom: '1rem' }}
+                    width={1024}  
+                    height={1536}
+                    style={{ marginBottom: '1rem' }}
                     priority={false}
                 />
-            </div>
+            </div> */}
             <p>
                 And yes, wallpaper in a kitchen is absolutely a thing. Use it on a breakfast‑nook wall, the island back
                 panel, above a wainscot, inside glass‑front cabinets, or even on the ceiling for a quiet wow‑moment. Kept
