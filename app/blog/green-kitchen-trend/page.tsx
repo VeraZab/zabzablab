@@ -24,7 +24,7 @@ export default function BlogPostGreenKitchen() {
             <p>
                 If you are drawn to deep greens, you are in good company. This blog post was is inspired by
                 <a href="https://www.instagram.com/p/DNGZPC2xXUI/"> a recent post from Zillow and Sherwin-Williams</a> showing how moody color palettes can
-                actually help buyers connect with a space. In kitchens especially, olive tones feel grounded and
+                actually help buyers connect with a space. In kitchens especially, dark green tones feel grounded and
                 timeless.
             </p>
             <p>
