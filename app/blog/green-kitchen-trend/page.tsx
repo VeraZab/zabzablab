@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import styles from '/styles/blog.module.css'
 import BlogHeader from '../Header'
 import PostNav from '../PostNav'
@@ -21,8 +22,8 @@ export default function BlogPostGreenKitchen() {
              imageAlt="Olive green kitchen cabinetry with patterned tile backsplash" 
             />
             <p>
-                If you are drawn to deep greens, you are in good company. This vignette was sparked by
-                <a href="https://www.instagram.com/p/DNGZPC2xXUI/"> a recent post</a> showing how moody color palettes can
+                If you are drawn to deep greens, you are in good company. This blog post was is inspired by
+                <a href="https://www.instagram.com/p/DNGZPC2xXUI/"> a recent post from Zillow and Sherwin-Williams</a> showing how moody color palettes can
                 actually help buyers connect with a space. In kitchens especially, olive tones feel grounded and
                 timeless.
             </p>
@@ -33,12 +34,32 @@ export default function BlogPostGreenKitchen() {
                 navy in the bedroom, and charcoal in the living room—so your love of deep green can be both personal and
                 practical.
             </p>
+            <div className={styles.hero}>
+                <Image
+                    src="/blog/dark_green_kitchen_2.jpg"
+                    alt="Jewel Tone Faux Mediterranean Tile in Warm Oak Modern Farmhouse Kitchen"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    sizes="(max-width: 860px) 100vw, 860px"
+                />
+            </div>
             <p>
-                If you want a simple, budget‑friendly way to bring that color in, try pattern. My
-                <a href="https://www.spoonflower.com/collections/1388283-jewel-tone-mediterranean-tile-by-zabzablab" target="_blank" rel="noopener noreferrer"> Jewel Tone Mediterranean Tile </a>
-                collection layers deep, dark greens in a way that plays nicely with wood tones, stone, and warm metals—no
-                heavy remodel required.
+                If you want a simple, budget‑friendly way to bring that color in, try pattern. You can go literal with a
+                deep‑green motif—or pair your paint with a complementary print (like the tile‑inspired pattern in the
+                first photo) to make the green feel even richer. My
+                <a href="https://www.spoonflower.com/collections/1388283-jewel-tone-mediterranean-tile-by-zabzablab" target="_blank" rel="noopener noreferrer"> Jewel Tone Faux Mediterranean Tile </a>
+                collection plays nicely with wood tones, stone, and warm metals—no heavy remodel required.
             </p>
+            <div className={styles.heroAuto}>
+                <Image
+                    src="/blog/dark_green_kitchen_3.jpg"
+                    alt="..."
+                    width={1800}  // real image dimensions
+                    height={1200}
+                    style={{ width: '100%', height: 'auto', marginBottom: '1rem' }}
+                    priority={false}
+                />
+            </div>
             <p>
                 And yes, wallpaper in a kitchen is absolutely a thing. Use it on a breakfast‑nook wall, the island back
                 panel, above a wainscot, inside glass‑front cabinets, or even on the ceiling for a quiet wow‑moment. Kept
@@ -55,6 +76,13 @@ export default function BlogPostGreenKitchen() {
             <p>
                 My favorite way to start is with samples. Tape a few swatches around the room and live with them through
                 the day—morning light, evening light, task lighting—to confirm both color and scale before you commit.
+            </p>
+            <h2>Need a custom print or a perfect paint‑color match?</h2>
+            <p>
+                I take commissions for custom prints and can match any paint manufacturer’s color (Sherwin‑Williams,
+                Benjamin Moore, Farrow & Ball, and more) to any pattern in my shop. If you have a swatch or a specific
+                paint code, I can dial it in so your wallpaper or textile coordinates beautifully with your palette.
+                Start here: <a href="/resize-recolor-request">request a resize/recolor or color match</a>.
             </p>
             <PostNav nextHref={undefined} />
         </main>
