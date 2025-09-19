@@ -17,27 +17,28 @@ const portfolio = [
     },
     { src: '/portfolio/sweet_peas.png', alt: 'Sweet Peas Garden Chinoiserie' },
     { src: '/portfolio/snowdrop.png', alt: 'Spring Snowdrop Meadow' },
-    {
-        src: '/portfolio/preppy_bow.png',
-        alt: 'Preppy Coquette Cream Bows on Lilac',
+
+     {
+        src: '/portfolio/tea.png',
+        alt: 'Bookish Preppy Garden Tea Party',
     },
     {
         src: '/portfolio/moody_thistle.png',
         alt: 'Moody Midnight Wild Thistle Chinoiserie',
     },
+   
     {
-        src: '/portfolio/tea.png',
-        alt: 'Bookish Preppy Garden Tea Party',
-    },
-    {
-        src: '/portfolio/crows.png',
-        alt: 'Cottagecore Romantic Dark Coquette Crows',
+        src: '/portfolio/dino-color.jpg',
+        alt: 'Dinosaur Toile',
     },
     {
         src: '/portfolio/apple_blossom_blue.png',
         alt: 'Spring Apple Blossom in Soft Dusty Blue',
     },
-
+    {
+        src: '/portfolio/crows.png',
+        alt: 'Cottagecore Romantic Dark Coquette Crows',
+    },
     {
         src: '/portfolio/mughal_vine.png',
         alt: 'Soft Chinoiserie Butterfly Mughal Flower Vine',
@@ -47,34 +48,32 @@ const portfolio = [
         alt: 'Dainty Violet Pansy Scatter Meadow',
     },
     {
-        src: '/portfolio/bird_bows.png',
-        alt: 'Coquette Birds and Bows',
+        src: '/portfolio/hudson-green.jpg',
+        alt: 'Hudson River Nautical Boat Toile',
+    },
+    {
+        src: '/portfolio/poppy_block_print.png',
+        alt: 'Rich Dramatic Poppy Block Print',
+    },
+    {
+        src: '/portfolio/vine_stripe_gold.png',
+        alt: 'Sophisticated Casino Card Deck Trellis',
+    },
+    {
+        src: '/portfolio/block-hydrangea-blue.jpg',
+        alt: 'Preppy Pink Hydrangea Block Print',
+    },
+    {
+        src: '/portfolio/unicorn-brown.jpg',
+        alt: 'Unicorn Mystical Garden Tapestry',
     },
     {
         src: '/portfolio/painterly_vine_gold.jpg',
         alt: 'William Morris Inspired Painterly Japandi Chinoiserie Vine',
     },
     {
-        src: '/portfolio/coastal_damask.png',
-        alt: 'Coastal Rococo Ink Damask',
-    },
-    {
-        src: '/portfolio/hudson_river.png',
-        alt: 'Hudson River Nautical Boat Toile',
-    },
-    {
-        src: '/portfolio/vine_stripe_gold.png',
-        alt: 'Sophisticated Casino Card Deck Trellis',
-    },
-
-    {
-        src: '/portfolio/poppy_block_print.png',
-        alt: 'Rich Dramatic Poppy Block Print',
-    },
-
-    {
-        src: '/portfolio/glam_jungle.png',
-        alt: 'Glam Art Deco Jungle',
+        src: '/portfolio/bird_bows.png',
+        alt: 'Coquette Birds and Bows',
     },
     {
         src: '/portfolio/coquette_country_cowgirl.png',
@@ -92,14 +91,13 @@ const portfolio = [
         src: '/portfolio/pink_candy_cane_2.jpg',
         alt: 'Pink Coquette Christmas Bow Candy Canes',
     },
-
     {
         src: '/portfolio/trailing_pine.jpg',
         alt: 'Trailing Cabincore Pine Forest Branches',
     },
     {
-        src: '/portfolio/cherry_heart.png',
-        alt: 'Neutral Black and Cream Nordic Minimal Christmas',
+        src: '/portfolio/bows-green-blue-2.jpg',
+        alt: 'Preppy Coquette Blue Bows on Green',
     },
 ]
 
