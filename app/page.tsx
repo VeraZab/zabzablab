@@ -17,8 +17,7 @@ const portfolio = [
     },
     { src: '/portfolio/sweet_peas.png', alt: 'Sweet Peas Garden Chinoiserie' },
     { src: '/portfolio/snowdrop.png', alt: 'Spring Snowdrop Meadow' },
-
-     {
+    {
         src: '/portfolio/tea.png',
         alt: 'Bookish Preppy Garden Tea Party',
     },
@@ -26,7 +25,6 @@ const portfolio = [
         src: '/portfolio/moody_thistle.png',
         alt: 'Moody Midnight Wild Thistle Chinoiserie',
     },
-   
     {
         src: '/portfolio/dino-color.jpg',
         alt: 'Dinosaur Toile',
