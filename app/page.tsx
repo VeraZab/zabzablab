@@ -94,8 +94,8 @@ const portfolio = [
         alt: 'Trailing Cabincore Pine Forest Branches',
     },
     {
-        src: '/portfolio/bows-green-blue-2.jpg',
-        alt: 'Preppy Coquette Blue Bows on Green',
+        src: '/portfolio/coquette-bow.jpg',
+        alt: 'Preppy Coquette Pink Red Bows',
     },
 ]
 
