@@ -7,19 +7,21 @@ import styles from '/styles/header.module.css'
 import { Logo } from './Logo'
 import { NavigationLink } from './NavigationLink'
 import MailIcon from '../icons/Mail'
-import SpoonflowerIcon from '../icons/Spoonflower'
+// import SpoonflowerIcon from '../icons/Spoonflower'
 import InstagramIcon from '../icons/InstagramIcon'
 
 const navigationLinks = [
     { title: 'Work', href: '/' },
     { title: 'About', href: '/about' },
+    { title: 'Shop', href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile', target: '_blank' },
     { title: 'Blog', href: '/blog' },
-    {
-        icon: SpoonflowerIcon,
-        alt: 'Spoonflower',
-        href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile',
-        target: '_blank',
-    },
+    
+    // {
+    //     icon: SpoonflowerIcon,
+    //     alt: 'Spoonflower',
+    //     href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile',
+    //     target: '_blank',
+    // },
     {
         icon: InstagramIcon,
         alt: 'Instagram',

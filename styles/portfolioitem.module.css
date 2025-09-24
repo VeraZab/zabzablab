@@ -5,3 +5,23 @@
     overflow: hidden;
     aspect-ratio: 1/1;
 }
+
+.baseImage {
+    opacity: 1;
+    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.hoverImage {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.container:hover .baseImage {
+    opacity: 0;
+    transform: scale(1.02);
+}
+
+.container:hover .hoverImage {
+    opacity: 1;
+    transform: scale(1.02);
+}

@@ -4,25 +4,48 @@ import styles from '/styles/portfolioitem.module.css'
 export default function PortfolioItem({
     src,
     alt,
-    externalUrl,
+    hoverSrc,
+    href,
+    newWindow,
     text,
 }: {
     src: string
     alt: string
-    externalUrl?: string
+    hoverSrc?: string
+    href?: string
+    newWindow?: boolean
     text?: string
 }) {
     const content = (
         <>
-            <Image src={src} fill alt={alt} style={{ objectFit: 'cover' }} />
+            <Image
+                src={src}
+                fill
+                alt={alt}
+                style={{ objectFit: 'cover' }}
+                className={hoverSrc ? styles.baseImage : undefined}
+                sizes="(max-width: 900px) 100vw, 33vw"
+                priority={false}
+            />
+            {hoverSrc && (
+                <Image
+                    src={hoverSrc}
+                    fill
+                    alt={alt}
+                    style={{ objectFit: 'cover' }}
+                    className={styles.hoverImage}
+                    sizes="(max-width: 900px) 100vw, 33vw"
+                    priority={false}
+                />
+            )}
             {text && <div>{text}</div>}
         </>
     )
 
     return (
         <div className={styles.container}>
-            {externalUrl ? (
-                <a href={externalUrl} target="_blank" rel="noopener noreferrer">
+            {href ? (
+                <a href={href} target={newWindow ? '_blank' : undefined} rel={newWindow ? 'noopener noreferrer' : undefined}>
                     {content}
                 </a>
             ) : (
