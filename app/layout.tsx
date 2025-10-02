@@ -33,6 +33,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     content="width=device-width, initial-scale=1.0"
                 />
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+                <meta name="p:domain_verify" content="713bb29cacff3398e376fff8d6561c4d" />
                 {/* Title comes from Next.js Metadata API per page */}
                 <link
                     rel="icon"
