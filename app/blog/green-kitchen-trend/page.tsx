@@ -4,10 +4,29 @@ import styles from '/styles/blog.module.css'
 import BlogHeader from '../Header'
 import PostNav from '../PostNav'
 
+const postSlug = 'green-kitchen-trend'
+const postUrl = `/blog/${postSlug}`
+
 export const metadata: Metadata = {
     title: 'Why Dark Green Kitchens Attract Buyers',
     description:
         'Notes inspired by research from Zillow and Sherwin-Williams on color and home value.',
+    alternates: { canonical: postUrl },
+    openGraph: {
+        type: 'article',
+        url: postUrl,
+        title: 'Why Dark Green Kitchens Attract Buyers',
+        description:
+            'Notes inspired by research from Zillow and Sherwin-Williams on color and home value.',
+        images: [
+            {
+                url: '/blog/dark_green_kitchen.jpg',
+                width: 1200,
+                height: 800,
+                alt: 'Olive green kitchen cabinetry with patterned tile backsplash',
+            },
+        ],
+    },
 }
 
 
@@ -15,6 +34,39 @@ export const metadata: Metadata = {
 export default function BlogPostGreenKitchen() {
     return (
         <main className={styles.post}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'Article',
+                        headline: 'Why Dark Green Kitchens Attract Buyers',
+                        description:
+                            'Notes inspired by research from Zillow and Sherwin-Williams on color and home value.',
+                        image: [
+                            new URL('/blog/dark_green_kitchen.jpg', process.env.NEXT_PUBLIC_SITE_URL || 'https://zabzablab.com').toString(),
+                        ],
+                        datePublished: '2025-08-24',
+                        dateModified: '2025-08-24',
+                        author: {
+                            '@type': 'Person',
+                            name: 'Vera Zabeida',
+                        },
+                        publisher: {
+                            '@type': 'Organization',
+                            name: 'ZabZabLab',
+                            logo: {
+                                '@type': 'ImageObject',
+                                url: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://zabzablab.com').toString(),
+                            },
+                        },
+                        mainEntityOfPage: {
+                            '@type': 'WebPage',
+                            '@id': new URL(postUrl, process.env.NEXT_PUBLIC_SITE_URL || 'https://zabzablab.com').toString(),
+                        },
+                    }),
+                }}
+            />
             <BlogHeader
              title="Why Dark Green Kitchens Attract Buyers" 
              date="2025-08-24" 

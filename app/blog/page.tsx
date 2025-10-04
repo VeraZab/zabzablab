@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from '/styles/blog.module.css'
+import type { Metadata } from 'next'
 import PortfolioGrid from '../components/portfolio/PortfolioGrid'
 import itemStyles from '/styles/portfolioitem.module.css'
 
@@ -25,9 +26,16 @@ const posts: BlogPost[] = [
     },
 ]
 
-export const metadata = {
+export const metadata: Metadata = {
     title: 'Thoughts on color, pattern, and design',
     description: 'ZabZabLab Surface Pattern Design Studio: Thoughts on color, pattern, and design.',
+    alternates: { canonical: '/blog' },
+    openGraph: {
+        type: 'website',
+        url: '/blog',
+        title: 'ZabZabLab Blog',
+        description: 'Thoughts on color, pattern, and design from ZabZabLab.',
+    },
 }
 
 export default function BlogIndexPage() {

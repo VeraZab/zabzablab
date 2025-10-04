@@ -4,6 +4,7 @@ import styles from "../../styles/resize-recolor-request.module.css";
 export const metadata: Metadata = {
     title: "Resize/Recolor Request",
     description: "Submit a request to resize or recolor a design.",
+    alternates: { canonical: '/resize-recolor-request' },
 };
 
 export default function ResizeRecolorRequestPage() {

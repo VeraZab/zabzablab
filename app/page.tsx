@@ -1,4 +1,5 @@
 import PortfolioGrid from './components/portfolio/PortfolioGrid'
+import type { Metadata } from 'next'
 import PortfolioItem from './components/portfolio/PortfolioItem'
 import PortfolioPageLayout from './components/portfolio/PortfolioPageLayout'
 
@@ -155,4 +156,28 @@ export default function Work() {
             </div>
         </PortfolioPageLayout>
     )
+}
+
+export const metadata: Metadata = {
+    title: 'Surface Pattern Design Portfolio',
+    description:
+        'Explore whimsical, romantic, and timeless surface pattern designs by ZabZabLab for wallpaper, textiles, and interiors.',
+    alternates: {
+        canonical: '/',
+    },
+    openGraph: {
+        type: 'website',
+        url: '/',
+        title: 'Surface Pattern Design Portfolio | ZabZabLab',
+        description:
+            'Explore whimsical, romantic, and timeless surface pattern designs by ZabZabLab for wallpaper, textiles, and interiors.',
+        images: [
+            {
+                url: '/assets/zabzablab.png',
+                width: 1200,
+                height: 630,
+                alt: 'ZabZabLab Surface Pattern Design Studio',
+            },
+        ],
+    },
 }

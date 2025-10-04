@@ -16,11 +16,57 @@ const moderustic = Moderustic({
 })
 
 export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://zabzablab.com'),
     title: {
         default: 'ZabZabLab Surface Pattern Design Studio',
         template: '%s | ZabZabLab Surface Pattern Design Studio',
     },
-    description: 'ZabZabLab: Surface Pattern Design Studio for interiors.',
+    description: 'Whimsical, romantic, and timeless surface pattern design for textiles, wallpaper, and interiors.',
+    applicationName: 'ZabZabLab',
+    keywords: ['surface pattern design', 'textile design', 'wallpaper', 'interior design', 'ZabZabLab'],
+    creator: 'ZabZabLab',
+    publisher: 'ZabZabLab',
+    alternates: {
+        canonical: '/',
+    },
+    openGraph: {
+        type: 'website',
+        url: '/',
+        title: 'ZabZabLab Surface Pattern Design Studio',
+        description:
+            'Whimsical, romantic, and timeless surface pattern design for textiles, wallpaper, and interiors.',
+        siteName: 'ZabZabLab',
+        images: [
+            {
+                url: '/assets/zabzablab.png',
+                width: 1200,
+                height: 630,
+                alt: 'ZabZabLab Surface Pattern Design Studio',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'ZabZabLab Surface Pattern Design Studio',
+        description:
+            'Whimsical, romantic, and timeless surface pattern design for textiles, wallpaper, and interiors.',
+        images: ['/assets/zabzablab.png'],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+    icons: {
+        icon: '/assets/favicon.ico',
+    },
+    themeColor: '#ffffff',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -39,6 +85,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     rel="icon"
                     href="/assets/favicon.ico"
                     type="image/x-icon"
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'Organization',
+                            name: 'ZabZabLab',
+                            url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://zabzablab.com'),
+                            logo: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://zabzablab.com').toString(),
+                            sameAs: [
+                                'https://www.instagram.com/zabzablab',
+                                'https://www.spoonflower.com/profiles/zabzablab',
+                            ],
+                        }),
+                    }}
                 />
                 
                 {/* Google Analytics */}

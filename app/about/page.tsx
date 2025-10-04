@@ -1,4 +1,5 @@
 import styles from '/styles/about.module.css'
+import type { Metadata } from 'next'
 
 export default function AboutPage() {
     return (
@@ -40,4 +41,11 @@ export default function AboutPage() {
             </div>
         </div>
     )
+}
+
+export const metadata: Metadata = {
+    title: 'About ZabZabLab',
+    description:
+        'Meet Vera, the surface pattern designer behind ZabZabLab. Playful, nostalgic, and timeless patterns for interiors and textiles.',
+    alternates: { canonical: '/about' },
 }
