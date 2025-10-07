@@ -44,7 +44,7 @@ export default function BlogPostGreenKitchen() {
                         description:
                             'Notes inspired by research from Zillow and Sherwin-Williams on color and home value.',
                         image: [
-                            new URL('/blog/dark_green_kitchen.jpg', process.env.NEXT_PUBLIC_SITE_URL || 'https://zabzablab.com').toString(),
+                            new URL('/blog/dark_green_kitchen.jpg', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
                         ],
                         datePublished: '2025-08-24',
                         dateModified: '2025-08-24',
@@ -57,12 +57,12 @@ export default function BlogPostGreenKitchen() {
                             name: 'ZabZabLab',
                             logo: {
                                 '@type': 'ImageObject',
-                                url: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://zabzablab.com').toString(),
+                                url: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
                             },
                         },
                         mainEntityOfPage: {
                             '@type': 'WebPage',
-                            '@id': new URL(postUrl, process.env.NEXT_PUBLIC_SITE_URL || 'https://zabzablab.com').toString(),
+                            '@id': new URL(postUrl, process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
                         },
                     }),
                 }}

@@ -16,7 +16,7 @@ const moderustic = Moderustic({
 })
 
 export const metadata: Metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://zabzablab.com'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
     title: {
         default: 'ZabZabLab Surface Pattern Design Studio',
         template: '%s | ZabZabLab Surface Pattern Design Studio',
@@ -93,8 +93,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             '@context': 'https://schema.org',
                             '@type': 'Organization',
                             name: 'ZabZabLab',
-                            url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://zabzablab.com'),
-                            logo: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://zabzablab.com').toString(),
+                            url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
+                            logo: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
                             sameAs: [
                                 'https://www.instagram.com/zabzablab',
                                 'https://www.spoonflower.com/profiles/zabzablab',
