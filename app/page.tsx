@@ -128,6 +128,22 @@ const portfolio: PortfolioListItem[] = [
 export default function Work() {
     return (
         <PortfolioPageLayout>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'ItemList',
+                        itemListElement: portfolio.map((item, index) => ({
+                            '@type': 'ListItem',
+                            position: index + 1,
+                            name: item.alt,
+                            url: item.href || new URL('/', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                            image: new URL(item.src, process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                        })),
+                    }),
+                }}
+            />
             <PortfolioGrid>
                 {portfolio.map((item, index) => (
                     <PortfolioItem

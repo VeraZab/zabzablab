@@ -4,6 +4,28 @@ import type { Metadata } from 'next'
 export default function AboutPage() {
     return (
         <div className={styles.container}>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'Person',
+                        name: 'ZabZabLab Surface Pattern Design Studio by Vera Zabeida',
+                        url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com') + '/about',
+                        image: new URL('/assets/about.jpg', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                        sameAs: [
+                            'https://www.instagram.com/zabzablab',
+                            'https://www.spoonflower.com/profiles/zabzablab',
+                        ],
+                        worksFor: {
+                            '@type': 'Organization',
+                            name: 'ZabZabLab',
+                            url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com',
+                        },
+                        jobTitle: 'Surface Pattern Designer, owner of ZabZabLab Studio',
+                    }),
+                }}
+            />
             <div className={styles.content}>
                 <div className={styles.imageContainer}>
                     <img

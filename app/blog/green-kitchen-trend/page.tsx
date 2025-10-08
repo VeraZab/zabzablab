@@ -39,6 +39,35 @@ export default function BlogPostGreenKitchen() {
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
+                        '@type': 'BreadcrumbList',
+                        itemListElement: [
+                            {
+                                '@type': 'ListItem',
+                                position: 1,
+                                name: 'Home',
+                                item: new URL('/', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                            },
+                            {
+                                '@type': 'ListItem',
+                                position: 2,
+                                name: 'Blog',
+                                item: new URL('/blog', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                            },
+                            {
+                                '@type': 'ListItem',
+                                position: 3,
+                                name: 'Why Dark Green Kitchens Attract Buyers',
+                                item: new URL(postUrl, process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                            },
+                        ],
+                    }),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
                         '@type': 'Article',
                         headline: 'Why Dark Green Kitchens Attract Buyers',
                         description:
@@ -102,16 +131,6 @@ export default function BlogPostGreenKitchen() {
                 <a href="https://www.spoonflower.com/collections/1388283-jewel-tone-mediterranean-tile-by-zabzablab" target="_blank" rel="noopener noreferrer"> Jewel Tone Faux Mediterranean Tile </a>
                 collection plays nicely with wood tones, stone, and warm metals—no heavy remodel required.
             </p>
-            {/* <div className={styles.heroAuto}>
-                <Image
-                    src="/blog/dark_green_kitchen_3.jpg"
-                    alt="..."
-                    width={1024}  
-                    height={1536}
-                    style={{ marginBottom: '1rem' }}
-                    priority={false}
-                />
-            </div> */}
             <p>
                 And yes, wallpaper in a kitchen is absolutely a thing. Use it on a breakfast‑nook wall, the island back
                 panel, above a wainscot, inside glass‑front cabinets, or even on the ceiling for a quiet wow‑moment. Kept

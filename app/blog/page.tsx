@@ -41,6 +41,22 @@ export const metadata: Metadata = {
 export default function BlogIndexPage() {
     return (
         <main >
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'Blog',
+                        name: 'ZabZabLab Blog',
+                        url: new URL('/blog', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                        description: 'Thoughts on color, pattern, and design from ZabZabLab.',
+                        publisher: {
+                            '@type': 'Organization',
+                            name: 'ZabZabLab',
+                        },
+                    }),
+                }}
+            />
             <PortfolioGrid>
                 {posts.map((post) => (
                     <article key={post.slug}>
