@@ -8,10 +8,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/about',
         '/blog',
         '/resize-recolor-request',
-        '/designs',
         '/designs/floral',
-        '/designs/whimsical',
-        '/designs/classic',
+        '/designs/animal',
+        '/designs/texture',
+        '/designs/toile',
         '/designs/abstract',
     ]
     const now = new Date().toISOString()
