@@ -21,6 +21,8 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 .right {
@@ -113,9 +115,14 @@
 
 .submenu[data-open="true"] { display: flex; }
 
+/* Default logo sizing for desktop */
+.logo img { width: 180px; display: block; margin-left: 13px; }
+
 @media (max-width: 1330px) {
     .desktop { display: none; }
     .mobile { display: flex; }
+    /* Mobile logo sizing */
+    .logo img { width: 75px; margin-left: 0; }
 
     .mobileAction {
         background: transparent;
@@ -208,7 +215,7 @@
 }
 
 .categoriesRow a {
-    font: normal 0.9rem/1 Helvetica, Arial, sans-serif;
+    font: bold 0.9rem/1 Helvetica, Arial, sans-serif;
     position: relative;
     display: inline-block;
     transform: skewX(-4deg);
@@ -224,7 +231,8 @@
     right: -0.35rem;
     top: -0.25rem;
     bottom: -0.25rem;
-    background: var(--color-highlight-100);
+    background: var(--color-highlight-200);
+    
     mix-blend-mode: multiply;
     box-shadow: 0 0.5px 0 rgba(0,0,0,0.05);
     transition: opacity 120ms ease-in-out;
@@ -239,12 +247,18 @@
     right: -0.35rem;
     top: -0.25rem;
     bottom: -0.25rem;
-    background: var(--color-highlight-100);
+    background: var(--color-highlight-200);
+    
     mix-blend-mode: multiply;
     box-shadow: 0 0.5px 0 rgba(0,0,0,0.05);
     transition: opacity 120ms ease-in-out;
     pointer-events: none;
     z-index: -1;
+}
+
+.categoriesRow a:hover,
+.categoriesRow a.active {
+    color: white;
 }
 
 @media (max-width: 1330px) {
