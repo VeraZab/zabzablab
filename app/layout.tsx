@@ -27,11 +27,11 @@ export const metadata: Metadata = {
     creator: 'ZabZabLab',
     publisher: 'ZabZabLab',
     alternates: {
-        canonical: '/',
+        canonical: '/designs/floral',
     },
     openGraph: {
         type: 'website',
-        url: '/',
+        url: '/designs/floral',
         title: 'ZabZabLab Surface Pattern Design Studio',
         description:
             'Whimsical, romantic, and timeless surface pattern design for textiles, wallpaper, and interiors.',

@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prettify": "prettier . --write"
+    "prettify": "prettier . --write",
+    "gen:logo": "node scripts/generate-horizontal-logo.mjs"
   },
   "author": "",
   "license": "ISC",

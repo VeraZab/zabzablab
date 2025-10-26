@@ -8,9 +8,13 @@
     --color-navy-300: hsl(238, 49%, 15%);
     --color-lime-300: hsl(67, 65%, 50%);
     --color-sage-100: #677b82;
+    --color-highlight-100: #d3e0ff;
+    --color-highlight-200: #a0abb6;
+    --color-highlight-ink: rgba(196, 205, 227, 0.85);
+    --color-highlight-ink-soft: rgba(196, 205, 227, 0.75);
     
     /* Layout */
-    --header-height: 6.5rem;
+    --header-height: 5.5rem;
     --container-padding: 1rem;
     --container-padding-sm: 0.5rem;
     --container-max-width: 1200px;
