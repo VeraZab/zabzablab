@@ -1,6 +1,7 @@
 .header {
     padding: var(--container-padding);
     padding-top: 5px;
+    padding-bottom: 2px;
     position: fixed;
     top: 0;
     width: 100%;
@@ -21,8 +22,8 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 15px;
-    margin-top: 10px;
+    /* margin-bottom: 20px;
+    margin-top: 10px; */
 }
 
 .right {
@@ -101,7 +102,8 @@
     color: inherit;
     display: none;
     flex-direction: column;
-    width: max-content;
+    width: fit-content;
+    max-width: 22rem;
     padding: 0.75rem 0.5rem;
     border: none;
     box-shadow: none;
@@ -110,13 +112,15 @@
 
 .submenu a {
     padding: 0.5rem 0.75rem;
-    white-space: nowrap;
+    white-space: normal;
+    font-size: 1rem;
+    line-height: 1.3;
 }
 
 .submenu[data-open="true"] { display: flex; }
 
 /* Default logo sizing for desktop */
-.logo img { width: 180px; display: block; margin-left: 13px; }
+.logo img { width: 90px; display: block; margin-left: 13px; }
 
 @media (max-width: 1330px) {
     .desktop { display: none; }
