@@ -4,11 +4,12 @@ import { Cross2Icon, RowsIcon } from '@radix-ui/react-icons'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import styles from '/styles/header.module.css'
+import { usePathname } from 'next/navigation'
 import { Logo } from './Logo'
 import { NavigationLink } from './NavigationLink'
-import MailIcon from '../icons/Mail'
+// import MailIcon from '../icons/Mail'
 // import SpoonflowerIcon from '../icons/Spoonflower'
-import InstagramIcon from '../icons/InstagramIcon'
+// import InstagramIcon from '../icons/InstagramIcon'
 
 const navigationLinks = [
     {
@@ -21,29 +22,22 @@ const navigationLinks = [
             { title: 'Abstract', href: '/designs/abstract' },
         ],
     },
-    { title: 'About', href: '/about' },
-    { title: 'Blog', href: '/blog' },
-    
-    // {
-    //     icon: SpoonflowerIcon,
-    //     alt: 'Spoonflower',
-    //     href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile',
-    //     target: '_blank',
-    // },
-    {
-        icon: InstagramIcon,
-        alt: 'Instagram',
-        href: 'https://www.instagram.com/zabzablab',
-        target: '_blank',
-    },
-    {
-        icon: MailIcon,
-        alt: 'Email',
-        href: 'mailto:zabzablab@gmail.com',
-    },
+    { title: "Let's Work Together", href: '/work-together', children: [
+        { title: 'Custom Interior Design Projects', href: '/custom-interior-design-project' },
+        { title: 'Licensing For Brands', href: '/licensing-for-brands' },
+        {title: 'Resize or Recolor Requests', href: '/resize-recolor-request' }
+    ] },
+    { title: 'Stay in Touch', href: '/stay-in-touch', children: [
+        { title: 'Newsletter', href: '/newsletter' },
+        { title: 'Blog', href: '/blog' },
+        { title: 'Instagram', href: 'https://www.instagram.com/zabzablab', target: '_blank' },
+        { title: 'Email', href: 'mailto:zabzablab@gmail.com' },
+    ] },
+
 ]
 
 export default function Header() {
+    usePathname() // keep hook for potential future conditional styles
     return (
         <div className={styles.header}>
             <div className={styles.topBar}>
@@ -53,7 +47,6 @@ export default function Header() {
                 <div className={styles.desktop}>
                     <div className={styles.right}>
                         {navigationLinks
-                            .filter((l) => l.title !== 'Designs')
                             .map((link) => (
                                 <NavigationLink key={link.href} link={link} />
                             ))}
@@ -83,7 +76,7 @@ export default function Header() {
                 </div>
             </div>
 
-            {(() => {
+            {/* {showCategories && (() => {
                 const designs = navigationLinks.find((l) => l.title === 'Designs')
                 return (
                     <div className={styles.categoriesRow}>
@@ -92,7 +85,7 @@ export default function Header() {
                         ))}
                     </div>
                 )
-            })()}
+            })()} */}
         </div>
     )
 }
