@@ -1,5 +1,5 @@
 .cta {
-    background: var(--color-sage-100);
+    background: var(--color-highlight-200);
     padding: var(--gap-lg);
     margin: 2rem calc(-1 * var(--container-padding));
     display: flex;
