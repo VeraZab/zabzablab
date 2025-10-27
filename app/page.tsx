@@ -18,35 +18,35 @@ const portfolio: PortfolioListItem[] = [
         src: '/portfolio/geese-beige.jpg', 
         alt: 'Goose Spring Trellis', 
         hoverSrc: '/portfolio/geese-mockup.jpg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/19768363', 
+        href: 'https://www.spoonflower.com/collections/1416625', 
         newWindow: true 
     },
     {
         src: '/portfolio/carnations-blue.jpg',
         alt: 'Preppy Powder Blue Cornflower Carnations',
         hoverSrc: '/portfolio/carnations-mockup.jpeg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/19297862', 
+        href: 'https://www.spoonflower.com/collections/1346885', 
         newWindow: true 
     },
     { 
         src: '/portfolio/sweet_peas.png', 
         alt: 'Sweet Peas Garden Chinoiserie',
         hoverSrc: '/portfolio/peas-mockup.jpg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/19518582', 
+        href: 'https://www.spoonflower.com/collections/1356968', 
         newWindow: true 
     },
     { 
         src: '/portfolio/snowdrop.png', 
         alt: 'Spring Snowdrop Meadow',
         hoverSrc: '/portfolio/snowdrop-mockup.jpg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/19365219', 
+        href: 'https://www.spoonflower.com/collections/1349944', 
         newWindow: true 
      },
      {
         src: '/portfolio/block-hydrangea-blue.jpg',
         alt: 'Preppy Blue Hydrangea Block Print',
         hoverSrc: '/portfolio/hydrangea-mockup.jpeg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/20233017', 
+        href: 'https://www.spoonflower.com/en/collections/1395396', 
         newWindow: true 
     },
     // {
@@ -57,70 +57,70 @@ const portfolio: PortfolioListItem[] = [
         src: '/portfolio/moody_thistle.png',
         alt: 'Moody Midnight Wild Thistle Chinoiserie',
         hoverSrc: '/portfolio/thistle-mockup.jpg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/16965612', 
+        href: 'https://www.spoonflower.com/collections/885429', 
         newWindow: true 
     },
     {
         src: '/portfolio/mughal_vine.png',
         alt: 'Soft Chinoiserie Butterfly Mughal Flower Vine',
         hoverSrc: '/portfolio/mughal-mockup.jpg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/19208092', 
+        href: 'https://www.spoonflower.com/collections/1416627', 
         newWindow: true 
     },
     {
         src: '/portfolio/dino-color.jpg',
         alt: 'Dinosaur Toile',
         hoverSrc: '/portfolio/dino-mockup.jpg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/20254703', 
+        href: 'https://www.spoonflower.com/collections/1396328', 
         newWindow: true 
     },
     {
         src: '/portfolio/dainty_violet.png',
         alt: 'Dainty Violet Pansy Scatter Meadow',
         hoverSrc: '/portfolio/violet-mockup.jpg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/20146999', 
+        href: 'https://www.spoonflower.com/collections/1359867', 
         newWindow: true 
     },
     {
         src: '/portfolio/apple_blossom_blue.png',
         alt: 'Spring Apple Blossom in Soft Dusty Blue',
         hoverSrc: '/portfolio/apple-mockup.jpg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/17359129', 
+        href: 'https://www.spoonflower.com/collections/912633', 
         newWindow: true 
     },
     {
         src: '/portfolio/hudson-green.jpg',
         alt: 'Hudson River Nautical Boat Toile',
         hoverSrc: '/portfolio/boats-mockup.jpg',
-        href: 'https://www.spoonflower.com/en/wallpaper/17606263',
+        href: 'https://www.spoonflower.com/collections/885850',
         newWindow: true,
     },
     {
         src: '/portfolio/trailing_pine.jpg',
         alt: 'Trailing Cabincore Pine Forest Branches',
         hoverSrc: '/portfolio/pine-mockup.jpg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/18115083', 
+        href: 'https://www.spoonflower.com/collections/891338', 
         newWindow: true 
     },
     {
         src: '/portfolio/poppy_block_print.png',
         alt: 'Rich Dramatic Poppy Block Print',
         hoverSrc: '/portfolio/poppy-mockup.jpg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/19026373', 
+        href: 'https://www.spoonflower.com/collections/1416630', 
         newWindow: true 
     },   
     {
         src: '/portfolio/unicorn-teal.jpg',
         alt: 'Unicorn Mystical Garden Tapestry',
         hoverSrc: '/portfolio/unicorn-teal-mockup.jpg', 
-        href: 'https://www.spoonflower.com/en/wallpaper/20302508', 
+        href: 'https://www.spoonflower.com/collections/1398656', 
         newWindow: true 
     },
     {
         src: '/portfolio/painterly_vine_gold.jpg',
         alt: 'William Morris Inspired Painterly Japandi Chinoiserie Vine',
         hoverSrc: '/portfolio/painterly-vine-mockup.jpg',
-        href: 'https://www.spoonflower.com/en/wallpaper/18947642',
+        href: 'https://www.spoonflower.com/collections/1350642',
         newWindow: true,
     }
 ]
