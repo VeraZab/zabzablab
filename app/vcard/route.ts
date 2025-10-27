@@ -25,6 +25,7 @@ export async function GET() {
     headers: {
       'Content-Type': 'text/vcard; charset=utf-8',
       'Content-Disposition': `attachment; filename="${filename}"`,
+      'X-Robots-Tag': 'noindex, nofollow, noarchive',
       'Cache-Control': 'public, max-age=31536000, immutable',
     },
   });

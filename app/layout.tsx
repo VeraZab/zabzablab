@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Moderustic } from 'next/font/google'
 
 import '/styles/reset.css'
@@ -66,6 +66,9 @@ export const metadata: Metadata = {
     icons: {
         icon: '/assets/favicon.ico',
     },
+}
+
+export const viewport: Viewport = {
     themeColor: '#ffffff',
 }
 
