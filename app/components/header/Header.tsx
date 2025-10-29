@@ -6,32 +6,30 @@ import * as Dialog from '@radix-ui/react-dialog'
 import styles from '/styles/header.module.css'
 import { Logo } from './Logo'
 import { NavigationLink } from './NavigationLink'
-import MailIcon from '../icons/Mail'
+// import MailIcon from '../icons/Mail'
 // import SpoonflowerIcon from '../icons/Spoonflower'
-import InstagramIcon from '../icons/InstagramIcon'
+// import InstagramIcon from '../icons/InstagramIcon'
 
 const navigationLinks = [
-    { title: 'Work', href: '/' },
+    { title: 'Designs', href: '/' },
     { title: 'About', href: '/about' },
-    { title: 'Shop', href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile', target: '_blank' },
-    { title: 'Blog', href: '/blog' },
-    
-    // {
-    //     icon: SpoonflowerIcon,
-    //     alt: 'Spoonflower',
-    //     href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile',
-    //     target: '_blank',
-    // },
+    // { title: 'Shop', href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile', target: '_blank' },
     {
-        icon: InstagramIcon,
-        alt: 'Instagram',
-        href: 'https://www.instagram.com/zabzablab',
-        target: '_blank',
+        title: 'Work Together',
+        children: [
+            { title: 'For Designers', href: '/for-designers' },
+            { title: 'Resize / Recolor Request', href: '/resize-recolor-request' },
+            { title: 'Spoonflower Catalogue', href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile', target: '_blank' },
+        ],
     },
     {
-        icon: MailIcon,
-        alt: 'Email',
-        href: 'mailto:zabzablab@gmail.com',
+        title: 'Stay Connected',
+        children: [
+            { title: 'Blog', href: '/blog' },
+            { title: 'Instagram', href: 'https://www.instagram.com/zabzablab', target: '_blank' },
+            { title: 'Email', href: 'mailto:zabzablab@gmail.com' },
+            { title: 'Save Contact', href: '/qr' },
+        ],
     },
 ]
 
@@ -45,7 +43,7 @@ export default function Header() {
             <div className={styles.desktop}>
                 <div className={styles.right}>
                     {navigationLinks.map((link) => (
-                        <NavigationLink key={link.href} link={link} />
+                        <NavigationLink key={link.href || link.title} link={link} />
                     ))}
                 </div>
             </div>
@@ -65,7 +63,7 @@ export default function Header() {
                             </Dialog.Close>
                             <div className={styles.mobileLinks}>
                                 {navigationLinks.map((link) => (
-                                    <NavigationLink key={link.href} link={link} isMobile />
+                                    <NavigationLink key={link.href || link.title} link={link} isMobile />
                                 ))}
                             </div>
                         </Dialog.Content>
