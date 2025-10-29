@@ -192,7 +192,7 @@ export const metadata: Metadata = {
                 url: '/assets/zabzablab.png',
                 width: 1200,
                 height: 630,
-                alt: 'ZabZabLab Surface Pattern Design Studio',
+                alt: 'ZabZabLab Wallpaper and Fabric Design Studio',
             },
         ],
     },

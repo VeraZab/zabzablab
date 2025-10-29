@@ -18,8 +18,8 @@ const moderustic = Moderustic({
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
     title: {
-        default: 'ZabZabLab Surface Pattern Design Studio',
-        template: '%s | ZabZabLab Surface Pattern Design Studio',
+        default: 'ZabZabLab Wallpaper and Fabric Design Studio',
+        template: '%s | ZabZabLab Wallpaper and Fabric Design Studio',
     },
     description: 'Whimsical, romantic, and timeless surface pattern design for textiles, wallpaper, and interiors.',
     applicationName: 'ZabZabLab',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         url: '/',
-        title: 'ZabZabLab Surface Pattern Design Studio',
+        title: 'ZabZabLab Wallpaper and Fabric Design Studio',
         description:
             'Whimsical, romantic, and timeless surface pattern design for textiles, wallpaper, and interiors.',
         siteName: 'ZabZabLab',
@@ -41,15 +41,15 @@ export const metadata: Metadata = {
                 url: '/assets/zabzablab.png',
                 width: 1200,
                 height: 630,
-                alt: 'ZabZabLab Surface Pattern Design Studio',
+                alt: 'ZabZabLab Wallpaper and Fabric Design Studio',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'ZabZabLab Surface Pattern Design Studio',
+        title: 'ZabZabLab Wallpaper and Fabric Design Studio',
         description:
-            'Whimsical, romantic, and timeless surface pattern design for textiles, wallpaper, and interiors.',
+            'Whimsical, romantic, and timeless designs for textiles, wallpaper, and interiors.',
         images: ['/assets/zabzablab.png'],
     },
     robots: {
@@ -102,6 +102,23 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                                 'https://www.instagram.com/zabzablab',
                                 'https://www.spoonflower.com/profiles/zabzablab',
                             ],
+                        }),
+                    }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            '@context': 'https://schema.org',
+                            '@type': 'WebSite',
+                            name: 'ZabZabLab Wallpaper and Fabric Design Studio',
+                            url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
+                            inLanguage: 'en',
+                            publisher: {
+                                '@type': 'Organization',
+                                name: 'ZabZabLab',
+                                logo: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                            },
                         }),
                     }}
                 />

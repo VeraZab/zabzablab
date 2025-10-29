@@ -3,13 +3,113 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
     title: 'For Interior Designers',
     description:
-        'Trade-friendly surface pattern services: precise color matching, Spoonflower Trade benefits, and custom wallpaper commissions.',
+        'Trade-friendly wallpaper and fabric design services: color matching and rescaling, Spoonflower Trade benefits, and custom wallpaper commissions.',
     alternates: { canonical: '/for-interior-designers' },
+    openGraph: {
+        type: 'website',
+        url: '/for-interior-designers',
+        title: 'For Interior Designers | ZabZabLab',
+        description:
+            'Trade-friendly wallpaper and fabric design services: color matching and rescaling, Spoonflower Trade benefits, and custom wallpaper commissions.',
+        images: [
+            {
+                url: '/assets/zabzablab.png',
+                width: 1200,
+                height: 630,
+                alt: 'ZabZabLab Wallpaper and Fabric Design Studio',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'For Interior Designers | ZabZabLab',
+        description:
+            'Trade-friendly wallpaper and fabric design services: color matching and rescaling, Spoonflower Trade benefits, and custom wallpaper commissions.',
+        images: ['/assets/zabzablab.png'],
+    },
 }
 
 export default function ForInteriorDesignersPage() {
     return (
         <main>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'BreadcrumbList',
+                        itemListElement: [
+                            {
+                                '@type': 'ListItem',
+                                position: 1,
+                                name: 'Home',
+                                item: new URL('/', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                            },
+                            {
+                                '@type': 'ListItem',
+                                position: 2,
+                                name: 'For Interior Designers',
+                                item: new URL('/for-interior-designers', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                            },
+                        ],
+                    }),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'Service',
+                        name: 'Custom Wallpaper and Fabric Design Services for Interior Designers',
+                        serviceType: 'Custom wallpaper and fabric design, wallpaper customization, color matching',
+                        description:
+                            'Trade-friendly wallpaper and fabric design services for interior designers, including exact color matching, scale adjustments, Spoonflower Trade benefits, and custom wallpaper commissions.',
+                        provider: {
+                            '@type': 'Organization',
+                            name: 'ZabZabLab',
+                            url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com',
+                            logo: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                        },
+                        areaServed: {
+                            '@type': 'Country',
+                            name: 'United States',
+                        },
+                        availableChannel: {
+                            '@type': 'ServiceChannel',
+                            serviceUrl: 'mailto:zabzablab@gmail.com',
+                        },
+                        hasOfferCatalog: {
+                            '@type': 'OfferCatalog',
+                            name: 'Wallpaper and Fabric Design Services for Interior Designers',
+                            itemListElement: [
+                                {
+                                    '@type': 'Offer',
+                                    itemOffered: {
+                                        '@type': 'Service',
+                                        name: 'Color match and recolor',
+                                    },
+                                },
+                                {
+                                    '@type': 'Offer',
+                                    itemOffered: {
+                                        '@type': 'Service',
+                                        name: 'Scale and repeat adjustments',
+                                    },
+                                },
+                                {
+                                    '@type': 'Offer',
+                                    itemOffered: {
+                                        '@type': 'Service',
+                                        name: 'Custom wallpaper commissions',
+                                    },
+                                },
+                            ],
+                        },
+                        url: new URL('/for-interior-designers', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                    }),
+                }}
+            />
             <h1 style={{ maxWidth: 960, margin: '32px auto', padding: '0 16px', textAlign: 'center' }}>
                 Interior Designer friends, <span className="mobile-newline">I've got you!</span>
             </h1>   

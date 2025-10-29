@@ -10,7 +10,7 @@ export default function AboutPage() {
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'Person',
-                        name: 'ZabZabLab Surface Pattern Design Studio by Vera Zabeida',
+                        name: 'ZabZabLab Wallpaper and Fabric Design Studio by Vera Zabeida',
                         url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com') + '/about',
                         image: new URL('/assets/about.jpg', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
                         sameAs: [

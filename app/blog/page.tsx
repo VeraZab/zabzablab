@@ -28,7 +28,7 @@ const posts: BlogPost[] = [
 
 export const metadata: Metadata = {
     title: 'Thoughts on color, pattern, and design',
-    description: 'ZabZabLab Surface Pattern Design Studio: Thoughts on color, pattern, and design.',
+    description: 'ZabZabLab Wallpaper and Fabric Design Studio: Thoughts on color, pattern, and design.',
     alternates: { canonical: '/blog' },
     openGraph: {
         type: 'website',
