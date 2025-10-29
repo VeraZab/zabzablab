@@ -71,6 +71,39 @@ h1 { font-size: 1.5em; padding: 0.5em; }
     width: calc(100% + 2 * var(--container-padding));
 }
 
+/* Simple responsive two-column grid used on for-interior-designers */
+.two-col-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.two-col-grid.swap {
+    grid-template-columns: 2fr 1fr;
+}
+
+.two-col-grid .col-title { text-align: center; }
+
+/* Mobile-only line break helper */
+.mobile-newline { display: inline; }
+
+@media (max-width: 900px) {
+    .two-col-grid,
+    .two-col-grid.swap {
+        grid-template-columns: 1fr;
+        gap: 8px; /* tighter spacing between title and body on mobile */
+    }
+
+    .two-col-grid .col-title,
+    .two-col-grid.swap .col-title {
+        order: -1; /* Ensure title comes first on mobile */
+        margin-bottom: 0.25rem;
+    }
+
+    .mobile-newline { display: block; }
+}
+
 /* Responsive adjustments */
 @media (max-width: 320px) {
     .main-content {
