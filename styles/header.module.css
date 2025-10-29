@@ -149,6 +149,8 @@
         outline: none;
         color: currentColor;
     }
+
+   
 }
 
 /* Submenu (mobile) */
@@ -171,4 +173,5 @@
     flex-direction: column;
     gap: 1rem;
     margin-top: 1rem;
+    font-size: 1.25rem;
 }
