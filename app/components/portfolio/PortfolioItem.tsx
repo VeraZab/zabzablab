@@ -2,39 +2,50 @@ import Image from 'next/image'
 import styles from '/styles/portfolioitem.module.css'
 
 export default function PortfolioItem({
-    src,
+    designSrc,
     alt,
-    hoverSrc,
+    mockupSrc,
     href,
     newWindow,
     text,
 }: {
-    src: string
+    designSrc: string
     alt: string
-    hoverSrc?: string
+    mockupSrc?: string
     href?: string
     newWindow?: boolean
     text?: string
 }) {
     const content = (
         <>
-            <Image
-                src={src}
-                fill
-                alt={alt}
-                style={{ objectFit: 'cover' }}
-                className={hoverSrc ? styles.baseImage : undefined}
-                sizes="(max-width: 900px) 100vw, 33vw"
-                priority={false}
-            />
-            {hoverSrc && (
+            {mockupSrc ? (
+                <>
+                    <Image
+                        src={mockupSrc}
+                        fill
+                        alt={alt}
+                        style={{ objectFit: 'cover' }}
+                        className={styles.baseImage}
+                        sizes="(max-width: 900px) 100vw, 50vw"
+                        priority={false}
+                    />
+                    <Image
+                        src={designSrc}
+                        fill
+                        alt={alt}
+                        style={{ objectFit: 'cover' }}
+                        className={styles.hoverImage}
+                        sizes="(max-width: 900px) 100vw, 50vw"
+                        priority={false}
+                    />
+                </>
+            ) : (
                 <Image
-                    src={hoverSrc}
+                    src={designSrc}
                     fill
                     alt={alt}
                     style={{ objectFit: 'cover' }}
-                    className={styles.hoverImage}
-                    sizes="(max-width: 900px) 100vw, 33vw"
+                    sizes="(max-width: 900px) 100vw, 50vw"
                     priority={false}
                 />
             )}

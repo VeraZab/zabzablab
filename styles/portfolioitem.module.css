@@ -13,15 +13,17 @@
 
 .hoverImage {
     opacity: 0;
-    transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+    transition: opacity 1200ms cubic-bezier(0.33, 0, 0.2, 1), transform 1200ms cubic-bezier(0.33, 0, 0.2, 1);
 }
 
 .container:hover .baseImage {
     opacity: 0;
     transform: scale(1.02);
+    transition-delay: 500ms;
 }
 
 .container:hover .hoverImage {
     opacity: 1;
     transform: scale(1.02);
+    transition-delay: 500ms;
 }

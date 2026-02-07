@@ -9,7 +9,6 @@ function buildVCard(): string {
     'N:Zabeida;Vera;;;',
     'FN:ZabZabLab (Vera Zabeida)',
     'ORG:ZabZabLab',
-    'TEL;TYPE=CELL,VOICE:+12012416229',
     'EMAIL;TYPE=INTERNET;TYPE=WORK:zabzablab@gmail.com',
     'URL;TYPE=WORK:https://www.zabzablab.com',
     'X-SOCIALPROFILE;type=instagram:https://instagram.com/zabzablab',
