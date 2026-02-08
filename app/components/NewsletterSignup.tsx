@@ -19,11 +19,10 @@ export default function NewsletterSignup() {
         setStatus('loading')
         setMessage('')
         try {
-            const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || 'xvzbodao'
-            const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+            const res = await fetch('/api/newsletter', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-                body: JSON.stringify({ email: email.trim(), _subject: 'Newsletter signup from zabzablab.com' }),
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email.trim() }),
             })
             const data = await res.json().catch(() => ({}))
             if (res.ok) {
