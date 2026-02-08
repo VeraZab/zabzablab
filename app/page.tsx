@@ -2,6 +2,7 @@ import PortfolioGrid from './components/portfolio/PortfolioGrid'
 import type { Metadata } from 'next'
 import PortfolioItem from './components/portfolio/PortfolioItem'
 import PortfolioPageLayout from './components/portfolio/PortfolioPageLayout'
+import NewsletterSignup from './components/NewsletterSignup'
 
 import styles from '/styles/portfoliopagelayout.module.css'
 
@@ -15,114 +16,40 @@ interface PortfolioListItem {
 
 const portfolio: PortfolioListItem[] = [
     { 
-        designSrc: '/portfolio/geese-beige.jpg', 
-        alt: 'Goose Spring Trellis', 
-        mockupSrc: '/portfolio/geese-mockup.jpg', 
-        href: 'https://www.spoonflower.com/collections/1416625', 
+        designSrc: '/portfolio/cyanotype-block.png', 
+        alt: 'Large Scale Cyanotype Botanical Herbarium', 
+        mockupSrc: '/portfolio/cyanotype-mockup2.jpeg', 
+        href: 'https://www.spoonflower.com/en/collections/1454717', 
         newWindow: true 
     },
     {
-        designSrc: '/portfolio/carnations-blue.jpg',
-        alt: 'Preppy Powder Blue Cornflower Carnations',
-        mockupSrc: '/portfolio/carnations-mockup.jpeg', 
-        href: 'https://www.spoonflower.com/collections/1346885', 
-        newWindow: true 
-    },
-    { 
-        designSrc: '/portfolio/sweet_peas.png', 
-        alt: 'Sweet Peas Garden Chinoiserie',
-        mockupSrc: '/portfolio/peas-mockup.jpg', 
-        href: 'https://www.spoonflower.com/collections/1356968', 
-        newWindow: true 
-    },
-    { 
-        designSrc: '/portfolio/snowdrop.png', 
-        alt: 'Spring Snowdrop Meadow',
-        mockupSrc: '/portfolio/snowdrop-mockup.jpg', 
-        href: 'https://www.spoonflower.com/collections/1349944', 
-        newWindow: true 
-     },
-     {
-        designSrc: '/portfolio/block-hydrangea-blue.jpg',
-        alt: 'Preppy Blue Hydrangea Block Print',
-        mockupSrc: '/portfolio/hydrangea-mockup.jpeg', 
-        href: 'https://www.spoonflower.com/en/collections/1395396', 
-        newWindow: true 
-    },
-    // {
-    //     designSrc: '/portfolio/tea.png',
-    //     alt: 'Bookish Preppy Garden Tea Party',
-    // },
-    {
-        designSrc: '/portfolio/moody_thistle.png',
-        alt: 'Moody Midnight Wild Thistle Chinoiserie',
-        mockupSrc: '/portfolio/thistle-mockup.jpg', 
-        href: 'https://www.spoonflower.com/collections/885429', 
-        newWindow: true 
-    },
-    {
-        designSrc: '/portfolio/mughal_vine.png',
-        alt: 'Soft Chinoiserie Butterfly Mughal Flower Vine',
-        mockupSrc: '/portfolio/mughal-mockup.jpg', 
-        href: 'https://www.spoonflower.com/collections/1416627', 
-        newWindow: true 
-    },
-    {
-        designSrc: '/portfolio/dino-color.jpg',
-        alt: 'Dinosaur Toile',
-        mockupSrc: '/portfolio/dino-mockup.jpg', 
-        href: 'https://www.spoonflower.com/collections/1396328', 
-        newWindow: true 
-    },
-    {
-        designSrc: '/portfolio/dainty_violet.png',
-        alt: 'Dainty Violet Pansy Scatter Meadow',
-        mockupSrc: '/portfolio/violet-mockup.jpg', 
-        href: 'https://www.spoonflower.com/collections/1359867', 
-        newWindow: true 
-    },
-    {
-        designSrc: '/portfolio/apple_blossom_blue.png',
-        alt: 'Spring Apple Blossom in Soft Dusty Blue',
-        mockupSrc: '/portfolio/apple-mockup.jpg', 
-        href: 'https://www.spoonflower.com/collections/912633', 
-        newWindow: true 
-    },
-    {
-        designSrc: '/portfolio/hudson-green.jpg',
-        alt: 'Hudson River Nautical Boat Toile',
-        mockupSrc: '/portfolio/boats-mockup.jpg',
-        href: 'https://www.spoonflower.com/collections/885850',
+        designSrc: '/portfolio/horse-block.png',
+        alt: 'Mori Indian EthnicHorse Block Print',
+        mockupSrc: '/portfolio/horse-mockup.jpg',
+        href: 'https://www.spoonflower.com/en/collections/1432238',
         newWindow: true,
     },
-    {
-        designSrc: '/portfolio/trailing_pine.jpg',
-        alt: 'Trailing Cabincore Pine Forest Branches',
-        mockupSrc: '/portfolio/pine-mockup.jpg', 
-        href: 'https://www.spoonflower.com/collections/891338', 
+    { 
+        designSrc: '/portfolio/peony-block.png', 
+        alt: 'Moody Peony Garden',
+        mockupSrc: '/portfolio/peony-mockup.png', 
+        href: 'https://www.spoonflower.com/collections/1425136', 
         newWindow: true 
-    },
-    {
-        designSrc: '/portfolio/poppy_block_print.png',
-        alt: 'Rich Dramatic Poppy Block Print',
-        mockupSrc: '/portfolio/poppy-mockup.jpg', 
-        href: 'https://www.spoonflower.com/collections/1416630', 
-        newWindow: true 
-    },   
-    {
-        designSrc: '/portfolio/unicorn-teal.jpg',
-        alt: 'Unicorn Mystical Garden Tapestry',
-        mockupSrc: '/portfolio/unicorn-teal-mockup.jpg', 
-        href: 'https://www.spoonflower.com/collections/1398656', 
-        newWindow: true 
-    },
+     },
     {
         designSrc: '/portfolio/painterly_vine_gold.jpg',
         alt: 'William Morris Inspired Painterly Japandi Chinoiserie Vine',
         mockupSrc: '/portfolio/painterly-vine-mockup.jpg',
         href: 'https://www.spoonflower.com/collections/1350642',
         newWindow: true,
-    }
+    },
+    // {
+    //     designSrc: '/portfolio/hudson-green.jpg',
+    //     alt: 'Hudson River Nautical Boat Toile',
+    //     mockupSrc: '/portfolio/boats-mockup.jpg',
+    //     href: 'https://www.spoonflower.com/collections/885850',
+    //     newWindow: true,
+    // },    
 ]
 
 export default function Work() {
@@ -157,18 +84,13 @@ export default function Work() {
                 ))}
             </PortfolioGrid>
             <div className={styles.cta}>
-                Let's collaborate!
+                <span className={styles.ctaTitle}>Newsletter</span>
                 <br />
                 <span className={styles.ctaText}>
-                    Need whimsical, romantic, trendy yet timeless art for your
-                    project? Let's chat!{' '}
-                    <a
-                        href="mailto:zabzablab@gmail.com"
-                        className={styles.ctaEmail}
-                    >
-                        zabzablab@gmail.com
-                    </a>
+                    Be the first to know when new designs drop!
+                    No spam, just pretty things.
                 </span>
+                <NewsletterSignup />
             </div>
         </PortfolioPageLayout>
     )

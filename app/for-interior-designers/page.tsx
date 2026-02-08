@@ -121,7 +121,7 @@ export default function ForInteriorDesignersPage() {
 
             <section
                 style={{
-                    backgroundColor: '#eff3f6',
+                    backgroundColor: '#dbd1ce',
                     padding: '32px 0',
                     width: '100vw',
                     position: 'relative',
@@ -157,7 +157,7 @@ export default function ForInteriorDesignersPage() {
 
             <section
                 style={{
-                    backgroundColor: '#fcf7da',
+                    backgroundColor: 'transparent',
                     padding: '32px 0',
                     width: '100vw',
                     position: 'relative',
@@ -213,8 +213,7 @@ export default function ForInteriorDesignersPage() {
 
             <section
                 style={{
-                    // backgroundColor: '#eeebef',
-                    backgroundColor: '#fbe9e9',
+                    backgroundColor: '#dbd1ce',
                     padding: '32px 0',
                     width: '100vw',
                     position: 'relative',

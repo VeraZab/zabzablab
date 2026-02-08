@@ -18,8 +18,8 @@ const navigationLinks = [
         title: 'Work Together',
         children: [
             { title: 'For Interior Designers', href: '/for-interior-designers' },
-            { title: 'Resize / Recolor Request', href: '/resize-recolor-request' },
             { title: 'Spoonflower Catalogue', href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile', target: '_blank' },
+            { title: 'Resize / Recolor Request', href: '/resize-recolor-request' },
         ],
     },
     {
@@ -38,6 +38,10 @@ export default function Header() {
         <div className={styles.header}>
             <div className={styles.logo}>
                 <Logo />
+                <div className={styles.tagline}>
+                    <span>textiles & wallpaper</span>
+                    <span>for the storied, cultured home</span>
+                </div>
             </div>
 
             <div className={styles.desktop}>
