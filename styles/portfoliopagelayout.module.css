@@ -1,8 +1,32 @@
+/* Main page: fill viewport so brown section extends to bottom */
+.mainPageRoot {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+/* Wrapper so the whole block can be clipped to a wavy top; negative margins break out of .main-content padding so full width + to bottom */
+.ctaWrapper {
+    flex: 1;
+    margin: 2rem calc(-1 * var(--container-padding)) calc(-1 * var(--container-padding));
+    clip-path: url(#ctaWavyTop);
+    background: #383128;
+    display: flex;
+    flex-direction: column;
+}
+
+.ctaClipSvg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
 .cta {
-    background: #47443f;
+    position: relative;
+    background: #383128;
     color: var(--color-beige-100);
-    padding: var(--gap-lg);
-    margin: 2rem calc(-1 * var(--container-padding));
+    padding: 4rem 1rem 2rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,10 +34,13 @@
     font: bold x-large/1.2 var(--font-moderustic, var(--font-stack));
 }
 
-.ctaTitle {
-    text-decoration: underline wavy;
-    text-underline-offset: 0.5rem;
+/* Footer when inside the dark CTA (main page only) */
+.ctaFooter {
+    color: var(--color-beige-100);
+    padding: var(--gap-base);
+    margin-top: auto;
 }
+
 
 .ctaEmail {
     text-decoration: underline wavy;

@@ -2,8 +2,10 @@ import { ReactNode } from 'react'
 
 export default function PortfolioPageLayout({
     children,
+    className,
 }: {
     children: ReactNode
+    className?: string
 }) {
-    return <div>{children}</div>
+    return <div className={className}>{children}</div>
 }

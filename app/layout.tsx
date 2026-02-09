@@ -6,7 +6,7 @@ import '/styles/reset.css'
 import '/styles/global.css'
 
 import Header from './components/header/Header'
-import Footer from './components/Footer'
+import ConditionalFooter from './components/ConditionalFooter'
 
 const moderustic = Moderustic({
     subsets: ['latin'],
@@ -144,7 +144,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <Header />
                 <div className="main-content">
                     <main>{children}</main>
-                    <Footer />
+                    <ConditionalFooter />
                 </div>
             </body>
         </html>

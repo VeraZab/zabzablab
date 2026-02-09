@@ -40,7 +40,7 @@ export default function Header() {
                 <Logo />
                 <div className={styles.tagline}>
                     <span>textiles & wallpaper</span>
-                    <span>for the storied, cultured home</span>
+                    <span>for homes with history & personality</span>
                 </div>
             </div>
 
