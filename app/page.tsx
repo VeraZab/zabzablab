@@ -18,7 +18,7 @@ const portfolio: PortfolioListItem[] = [
     { 
         designSrc: '/portfolio/cyanotype-block.png', 
         alt: 'Large Scale Cyanotype Botanical Herbarium', 
-        mockupSrc: '/portfolio/cyanotype-mockup2.jpeg', 
+        mockupSrc: '/portfolio/cyanotype-mockup3.jpg', 
         href: 'https://www.spoonflower.com/en/collections/1454717', 
         newWindow: true 
     },
