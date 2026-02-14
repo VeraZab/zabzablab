@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import styles from "../../styles/resize-recolor-request.module.css";
 
 export const metadata: Metadata = {
-    title: "Resize/Recolor Request",
-    description: "Submit a request to resize or recolor a design.",
+    title: "Resize / Recolor Request",
+    description: "Request a custom resize or recolor of any ZabZabLab design. Match your palette and scale for wallpaper, fabric, or home decor.",
     alternates: { canonical: '/resize-recolor-request' },
     openGraph: {
         type: 'website',
         url: '/resize-recolor-request',
-        title: 'Resize/Recolor Request | ZabZabLab',
-        description: 'Submit a request to resize or recolor a design.',
+        title: 'Resize / Recolor Request | ZabZabLab',
+        description: 'Request a custom resize or recolor of any ZabZabLab design. Match your palette and scale.',
         images: [
             {
                 url: '/assets/zabzablab.png',
@@ -21,15 +21,15 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Resize/Recolor Request | ZabZabLab',
-        description: 'Submit a request to resize or recolor a design.',
+        title: 'Resize / Recolor Request | ZabZabLab',
+        description: 'Request a custom resize or recolor of any ZabZabLab design. Match your palette and scale.',
         images: ['/assets/zabzablab.png'],
     },
 };
 
 export default function ResizeRecolorRequestPage() {
     return (
-        <main style={{ maxWidth: 960, margin: "0 auto" }}>
+        <main className="page-container">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{

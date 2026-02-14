@@ -8,11 +8,17 @@
 /* Wrapper so the whole block can be clipped to a wavy top; negative margins break out of .main-content padding so full width + to bottom */
 .ctaWrapper {
     flex: 1;
-    margin: 2rem calc(-1 * var(--container-padding)) calc(-1 * var(--container-padding));
+    margin: var(--space-8) calc(-1 * var(--container-padding)) calc(-1 * var(--container-padding));
     clip-path: url(#ctaWavyTop);
-    background: #383128;
+    background: var(--color-ink);
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width: 480px) {
+    .ctaWrapper {
+        margin: var(--space-8) calc(-1 * var(--container-padding-sm)) calc(-1 * var(--container-padding-sm));
+    }
 }
 
 .ctaClipSvg {
@@ -24,20 +30,21 @@
 
 .cta {
     position: relative;
-    background: #383128;
+    background: var(--color-ink);
     color: var(--color-beige-100);
-    padding: 4rem 1rem 2rem 1rem;
+    padding: var(--space-16) var(--space-4) var(--space-8) var(--space-4);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font: bold x-large/1.2 var(--font-moderustic, var(--font-stack));
+    font: 500 1.25rem/1.35 var(--font-moderustic, var(--font-stack));
+    letter-spacing: 0.02em;
 }
 
 /* Footer when inside the dark CTA (main page only) */
 .ctaFooter {
     color: var(--color-beige-100);
-    padding: var(--gap-base);
+    padding: var(--space-4);
     margin-top: auto;
 }
 
@@ -48,12 +55,13 @@
 }
 
 .ctaText {
-    font-weight: normal;
-    font-size: 1.2rem;
+    font-weight: 400;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
 }
 
 .newsletterForm {
-    padding-left: 3rem;
+    padding-left: var(--space-12);
     max-width: 360px;
     width: 100%;
 }
@@ -62,13 +70,13 @@
     display: block;
     font-weight: normal;
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
 }
 
 .newsletterRow {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: var(--space-2);
     flex-wrap: wrap;
 }
 
@@ -79,7 +87,7 @@
 .newsletterInput {
     width: 11.5rem;
     min-width: 0;
-    padding: 0.6rem 0 0.5rem 0.75rem;
+    padding: var(--space-2) 0 var(--space-2) var(--space-3);
     border: none;
     border-bottom: 0.25rem solid currentColor;
     background: transparent;
@@ -104,7 +112,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.6rem 0.5rem 0.6rem 0;
+    padding: var(--space-2) var(--space-2) var(--space-2) 0;
     min-width: 2.5rem;
     border: none;
     border-radius: 0;
@@ -112,6 +120,7 @@
     background: transparent;
     cursor: pointer;
     transition: opacity 0.2s ease;
+    font-weight: 500;
 }
 
 .newsletterButton .newsletterArrow {
@@ -121,7 +130,7 @@
 
 .newsletterButton .newsletterButtonText {
     font: inherit;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .newsletterButton:hover:not(:disabled) {
@@ -135,7 +144,7 @@
 
 .newsletterSuccess,
 .newsletterError {
-    margin: 0.5rem 0 0;
+    margin: var(--space-2) 0 0;
     font-weight: normal;
     font-size: 0.95rem;
 }

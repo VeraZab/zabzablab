@@ -68,6 +68,6 @@ export default function AboutPage() {
 export const metadata: Metadata = {
     title: 'About ZabZabLab',
     description:
-        'Meet Vera, the surface pattern designer behind ZabZabLab. Playful, nostalgic, and timeless patterns for interiors and textiles.',
+        'Meet Vera—surface pattern designer behind ZabZabLab. Hand-drawn patterns for wallpaper and textiles: playful, nostalgic, and made to customize.',
     alternates: { canonical: '/about' },
 }

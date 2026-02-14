@@ -1,16 +1,17 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
     title: 'For Interior Designers',
     description:
-        'Trade-friendly wallpaper and fabric design services: color matching and rescaling, Spoonflower Trade benefits, and custom wallpaper commissions.',
+        'Trade-friendly wallpaper and fabric: color match, resize, and custom commissions. Spoonflower Trade benefits.',
     alternates: { canonical: '/for-interior-designers' },
     openGraph: {
         type: 'website',
         url: '/for-interior-designers',
         title: 'For Interior Designers | ZabZabLab',
         description:
-            'Trade-friendly wallpaper and fabric design services: color matching and rescaling, Spoonflower Trade benefits, and custom wallpaper commissions.',
+            'Trade-friendly wallpaper and fabric: color match, resize, and custom commissions. Spoonflower Trade benefits.',
         images: [
             {
                 url: '/assets/zabzablab.png',
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'For Interior Designers | ZabZabLab',
         description:
-            'Trade-friendly wallpaper and fabric design services: color matching and rescaling, Spoonflower Trade benefits, and custom wallpaper commissions.',
+            'Trade-friendly wallpaper and fabric: color match, resize, custom commissions. Spoonflower Trade benefits.',
         images: ['/assets/zabzablab.png'],
     },
 }
@@ -110,77 +111,68 @@ export default function ForInteriorDesignersPage() {
                     }),
                 }}
             />
-            <h1 style={{ maxWidth: 960, margin: '32px auto', padding: '0 16px', textAlign: 'center' }}>
-                Interior Designer friends, <span className="mobile-newline">I've got you!</span>
-            </h1>   
-            <p style={{ maxWidth: 960, margin: '32px auto', padding: '0 16px', textAlign: 'center' }}>
-                I partner with interior designers to bring projects to life with flexible, trade-friendly
-                services. Whether you need a perfect color match, a quick resize for a client presentation,
-                or a bespoke wallpaper, I can help!
-            </p>
+            <div className="page-container">
+                <h1 style={{ textAlign: 'center', marginTop: 0 }}>
+                    Interior Designer friends, <span className="mobile-newline">I&apos;ve got you!</span>
+                </h1>
+                <p style={{ textAlign: 'center' }}>
+                    I partner with interior designers to bring projects to life with flexible, trade-friendly
+                    services. Whether you need a perfect color match, a quick resize for a client presentation,
+                    or a bespoke wallpaper, I can help!
+                </p>
+            </div>
 
-            <section
-                style={{
-                    backgroundColor: '#dbd1ce',
-                    padding: '32px 0',
-                    width: '100vw',
-                    position: 'relative',
-                    left: '50%',
-                    right: '50%',
-                    marginLeft: '-50vw',
-                    marginRight: '-50vw'
-                }}
-            >
-                <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+            <section className="page-section-strip page-section-strip-alt">
+                <div className="page-section-strip-inner" style={{ textAlign: 'center' }}>
+                    <p style={{ marginBottom: 'var(--space-3)' }}>
+                        <strong>Need a versatile base for any project?</strong> Faux fabric textures that work as wallpaper or fabric—customizable to your palette and scale.
+                    </p>
+                    <p style={{ margin: 0 }}>
+                        <Link href="/designs/texture-foundations" style={{ textDecoration: 'underline', fontWeight: 600 }}>
+                            See Texture Foundations →
+                        </Link>
+                    </p>
+                </div>
+            </section>
+
+            <section className="page-section-strip">
+                <div className="page-section-strip-inner">
                     <div className="two-col-grid">
                         <div className="col-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
                             <h2 style={{ margin: 0 }}>Color match and recolor for your exact needs</h2>
                         </div>
                         <div className="col-body">
-                            <p style={{ marginBottom: 12 }}>
+                            <p>
                                 I can match your project palette precisely and adapt any of my designs to your specs:
                             </p>
-                            <ul style={{ paddingLeft: 20, marginBottom: 16 }}>
+                            <ul>
                                 <li>Exact palette matching (HEX/RGB and Pantone guidance if available)</li>
                                 <li>Recoloring and value adjustments for contrast, mood, or light conditions</li>
                                 <li>Scale tweaks for wallpaper, upholstery, pillows, bedding, and more</li>
                             </ul>
                             <p>
                                 <a href="/resize-recolor-request" style={{ textDecoration: 'underline' }}>Submit a quick request form</a>{' '}
-                                or {' '}
-                                <a href="mailto:zabzablab@gmail.com" style={{ textDecoration: 'underline' }}> email me!</a>.
+                                or <a href="mailto:zabzablab@gmail.com" style={{ textDecoration: 'underline' }}>email me!</a>
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section
-                style={{
-                    backgroundColor: 'transparent',
-                    padding: '32px 0',
-                    width: '100vw',
-                    position: 'relative',
-                    left: '50%',
-                    right: '50%',
-                    marginLeft: '-50vw',
-                    marginRight: '-50vw'
-                }}
-            >
-                <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+            <section className="page-section-strip page-section-strip-alt">
+                <div className="page-section-strip-inner">
                     <div className="two-col-grid swap">
                         <div className="col-body">
                             <p>
                                 My wallpaper, fabric, and home decor are available through Spoonflower. A Spoonflower Trade account gives you:
                             </p>
-                            <ul style={{ paddingLeft: 20, marginBottom: 16 }}>
+                            <ul>
                                 <li>Exclusive trade discounts on wallpaper and select fabrics</li>
                                 <li>Quick manufacturing times</li>
                                 <li>Free wallpaper and fabric swatches for your clients</li>
                                 <li>No minimum order requirements</li>
                             </ul>
-                            <p style={{ marginBottom: 12 }}>
-                                
+                            <p>
                                 <a
                                     href="https://www.spoonflower.com/en/trade"
                                     target="_blank"
@@ -211,25 +203,14 @@ export default function ForInteriorDesignersPage() {
                 </div>
             </section>
 
-            <section
-                style={{
-                    backgroundColor: '#dbd1ce',
-                    padding: '32px 0',
-                    width: '100vw',
-                    position: 'relative',
-                    left: '50%',
-                    right: '50%',
-                    marginLeft: '-50vw',
-                    marginRight: '-50vw'
-                }}
-            >
-                <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+            <section className="page-section-strip">
+                <div className="page-section-strip-inner">
                     <div className="two-col-grid">
                         <div className="col-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
                             <h2 style={{ margin: 0 }}>Custom wallpaper commissions</h2>
                         </div>
                         <div className="col-body">
-                            <p style={{ marginBottom: 12 }}>
+                            <p>
                                 Have a specific brief, motif, or space in mind? I accept custom commissions—from full
                                 repeat development to tailored recolors and coordinates. We can discuss scope, timeline,
                                 sampling, and production together.

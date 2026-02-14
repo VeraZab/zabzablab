@@ -110,7 +110,7 @@ export default function Work() {
 export const metadata: Metadata = {
     title: 'Surface Pattern Design Portfolio',
     description:
-        'Explore whimsical, romantic, and timeless surface pattern designs by ZabZabLab for wallpaper, textiles, and interiors.',
+        'Wallpaper and fabric designs for homes with history and personality. Artisan patterns—customizable for your project.',
     alternates: {
         canonical: '/',
     },
@@ -119,7 +119,7 @@ export const metadata: Metadata = {
         url: '/',
         title: 'Surface Pattern Design Portfolio | ZabZabLab',
         description:
-            'Explore whimsical, romantic, and timeless surface pattern designs by ZabZabLab for wallpaper, textiles, and interiors.',
+            'Wallpaper and fabric designs for homes with history and personality. Artisan patterns—customizable for your project.',
         images: [
             {
                 url: '/assets/zabzablab.png',

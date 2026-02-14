@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'
 
-    const routes = ['', '/about', '/blog', '/resize-recolor-request', '/for-interior-designers']
+    const routes = ['', '/about', '/blog', '/resize-recolor-request', '/for-interior-designers', '/designs/texture-foundations']
     const now = new Date().toISOString()
 
     return routes.map((route) => ({

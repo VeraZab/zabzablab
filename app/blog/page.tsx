@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 
 export default function BlogIndexPage() {
     return (
-        <main >
+        <main>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{

@@ -1,0 +1,126 @@
+/* Texture Foundations page – uses global .page-container and .page-section-strip* */
+
+/* Breadcrumb */
+.breadcrumb {
+    font-size: 0.9rem;
+    margin: var(--space-4) 0;
+}
+
+/* Intro: centered title and lead, readable line length */
+.intro {
+    padding-bottom: var(--space-6);
+}
+
+.intro h1 {
+    text-align: center;
+    margin-bottom: var(--space-4);
+}
+
+.introLead {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 42rem;
+}
+
+.introLead p {
+    margin: 0 0 var(--space-2) 0;
+}
+
+.introLead p:last-child {
+    margin-bottom: 0;
+}
+
+/* Two-col blocks: title and body share same inner width */
+.twoColTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.twoColTitle h2 {
+    margin: 0;
+}
+
+.twoColBody h2 {
+    margin-top: 0;
+    margin-bottom: var(--space-3);
+}
+
+.twoColBody p {
+    margin: 0 0 var(--space-3) 0;
+}
+
+.twoColBody p:last-child {
+    margin-bottom: 0;
+}
+
+.twoColBody ul {
+    padding-left: var(--space-5);
+    margin: 0 0 var(--space-4) 0;
+}
+
+.twoColBody li {
+    margin-bottom: var(--space-1);
+}
+
+.twoColBody li:last-child {
+    margin-bottom: 0;
+}
+
+/* Section headings above texture grids */
+.sectionHead {
+    text-align: center;
+    margin-bottom: var(--space-6);
+}
+
+.sectionHead h2 {
+    margin: 0;
+}
+
+/* Texture grid: larger snippets that fill available horizontal space (4 per row when room) */
+.textureGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--grid-gutter);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.textureFigure {
+    margin: 0;
+}
+
+.textureImageWrap {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-beige-200);
+}
+
+.textureCaption {
+    margin-top: var(--space-2);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* CTA section tagline in col-title */
+.ctaTagline {
+    font-size: 1.1rem;
+}
+
+/* Bottom back link */
+.backBlock {
+    padding: var(--space-6) 0;
+    text-align: center;
+}
+
+.backBlock p {
+    margin: 0 0 var(--space-2) 0;
+}
+
+.backBlock p:last-child {
+    margin-bottom: 0;
+}

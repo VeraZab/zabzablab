@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import type { Metadata, Viewport } from 'next'
-import { Moderustic } from 'next/font/google'
+import { Moderustic, Lora } from 'next/font/google'
 
 import '/styles/reset.css'
 import '/styles/global.css'
@@ -12,7 +12,14 @@ const moderustic = Moderustic({
     subsets: ['latin'],
     weight: ['300', '400', '500', '600', '700', '800'],
     display: 'swap',
-    variable: '--font-moderustic'
+    variable: '--font-moderustic',
+})
+
+const lora = Lora({
+    subsets: ['latin'],
+    weight: ['400', '500', '600', '700'],
+    display: 'swap',
+    variable: '--font-lora',
 })
 
 export const metadata: Metadata = {
@@ -21,9 +28,9 @@ export const metadata: Metadata = {
         default: 'ZabZabLab Wallpaper and Fabric Design Studio',
         template: '%s | ZabZabLab Wallpaper and Fabric Design Studio',
     },
-    description: 'Whimsical, romantic, and timeless surface pattern design for textiles, wallpaper, and interiors.',
+    description: 'Textiles and wallpaper—for homes with history and personality. Customizable patterns, trade-friendly options.',
     applicationName: 'ZabZabLab',
-    keywords: ['surface pattern design', 'textile design', 'wallpaper', 'interior design', 'ZabZabLab'],
+    keywords: ['surface pattern design', 'textile design', 'wallpaper', 'interior design', 'custom wallpaper', 'ZabZabLab'],
     creator: 'ZabZabLab',
     publisher: 'ZabZabLab',
     alternates: {
@@ -34,7 +41,7 @@ export const metadata: Metadata = {
         url: '/',
         title: 'ZabZabLab Wallpaper and Fabric Design Studio',
         description:
-            'Whimsical, romantic, and timeless surface pattern design for textiles, wallpaper, and interiors.',
+            'Textiles and wallpaper—for homes with history and personality. Customizable, trade-friendly.',
         siteName: 'ZabZabLab',
         images: [
             {
@@ -49,7 +56,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'ZabZabLab Wallpaper and Fabric Design Studio',
         description:
-            'Whimsical, romantic, and timeless designs for textiles, wallpaper, and interiors.',
+            'Textiles and wallpaper—homes with history and personality. Customizable, trade-friendly.',
         images: ['/assets/zabzablab.png'],
     },
     robots: {
@@ -140,7 +147,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 />
             </head>
 
-            <body className={moderustic.variable}>
+            <body className={`${moderustic.variable} ${lora.variable}`}>
                 <Header />
                 <div className="main-content">
                     <main>{children}</main>
