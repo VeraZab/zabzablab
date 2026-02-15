@@ -51,8 +51,11 @@
     --space-20: 5rem;
     --space-24: 6rem;
 
-    /* Layout – derived from spacing scale; must match or exceed actual fixed header height */
-    --header-height: 7.25rem;
+    /* Layout – must match actual fixed header height so content starts right after */
+    --header-height: 5.75rem;
+    --header-height-mobile: 4.5rem;
+    /* Same gap: page top → logo top, and header bottom → first content (use for both) */
+    --header-content-gap: var(--space-3);
     --container-max-width: 1200px;
     --container-padding: var(--space-4);
     --container-padding-sm: var(--space-2);
@@ -106,6 +109,13 @@ body::before {
 }
 
 main { flex: 1; }
+
+/* Tablet/mobile layout (matches header's mobile breakpoint where logo shrinks) */
+@media (max-width: 1330px) {
+    .main-content {
+        padding-top: var(--header-height-mobile);
+    }
+}
 
 a {
     color: inherit;
@@ -246,12 +256,12 @@ h2 { font-size: 1.35rem; padding: var(--space-2) 0; }
     .mobile-newline { display: block; }
 }
 
-/* Mobile: same spacing grid (container-padding-sm, reduced section padding) */
+/* Mobile: same spacing grid; less top padding so content starts closer to header */
 @media (max-width: 480px) {
     .main-content {
         padding-left: var(--container-padding-sm);
         padding-right: var(--container-padding-sm);
-        padding-top: var(--header-height);
+        padding-top: var(--header-height-mobile);
     }
 
     .page-container,
@@ -279,7 +289,7 @@ h2 { font-size: 1.35rem; padding: var(--space-2) 0; }
 @media (max-width: 320px) {
     .main-content {
         padding: var(--container-padding-sm);
-        padding-top: var(--header-height);
+        padding-top: var(--header-height-mobile);
     }
 
     .full-width {
