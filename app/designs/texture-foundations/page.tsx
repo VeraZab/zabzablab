@@ -186,11 +186,11 @@ export default function TextureFoundationsPage() {
                         <h2>Don&apos;t see what you&apos;re looking for?</h2>
                         <p>
                             What&apos;s shown here is just a sample—I have a larger library of textures, weaves, and finishes that aren&apos;t listed yet. {" "}
-                            <a href="mailto:zabzablab@gmail.com" className={styles.ctaLink}>Tell me what you need</a> and I&apos;ll send you options!
+                            <a href="mailto:zabzablab@gmail.com" className={styles.ctaLink}>Tell me what you need</a> and I&apos;ll send you some options!
                         </p>
                         <p>
-                            Additionally, every texture can be color customized to match your palette, adjusted to scale, rotated, or you canrequest something entirely new.
-                            Just <Link href="/resize-recolor-request" className={styles.ctaLink}>send a request</Link>.
+                            Every texture can be color customized to match your palette, adjusted to scale, or rotated.
+                            Just <Link href="/resize-recolor-request" className={styles.ctaLink}>send a customization request here</Link>.
                         </p>
                     </div>
                 </div>

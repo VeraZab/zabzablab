@@ -76,7 +76,7 @@
     --font-stack: var(--font-jost), 'Jost', 'Gill Sans', system-ui, sans-serif;
 }
 
-html { font-size: 18px; }
+html { font-size: 18px; scroll-behavior: smooth; }
 
 body {
     font: 400 0.95rem/1.7 var(--font-jost, var(--font-stack));

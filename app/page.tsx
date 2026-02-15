@@ -92,7 +92,7 @@ export default function Work() {
                         </clipPath>
                     </defs>
                 </svg>
-                <div className={styles.cta}>
+                <div id="newsletter" className={styles.cta}>
                     <span className={styles.ctaTitle}>Newsletter</span>
                     <span className={styles.ctaText}>
                     Be the first to know when new designs drop!
