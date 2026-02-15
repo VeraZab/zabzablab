@@ -83,7 +83,6 @@ export default function TextureFoundationsPage() {
 
             <section className="page-section-strip">
                 <div className="page-section-strip-inner">
-                    <h2 className={styles.sectionHead}>Faux fabric</h2>
                     <div className={styles.textureGrid}>
                         {fauxFabricTextures.map((item, index) => (
                             <figure key={`fabric-${index}`} className={styles.textureFigure}>
@@ -93,7 +92,7 @@ export default function TextureFoundationsPage() {
                                         alt={item.alt}
                                         fill
                                         style={{ objectFit: 'cover' }}
-                                        sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 280px"
+                                        sizes="(max-width: 600px) 100vw, 50vw"
                                     />
                                 </div>
                                 <figcaption className={styles.textureCaption}>{item.alt}</figcaption>
@@ -120,12 +119,11 @@ export default function TextureFoundationsPage() {
 
             <section className="page-section-strip">
                 <div className="page-section-strip-inner">
-                    <h2 className={styles.sectionHead}>Faux stone textures</h2>
                     <div className={styles.textureGrid}>
                         {fauxStoneTextures.map((item, index) => (
                             <figure key={`stone-${index}`} className={styles.textureFigure}>
                                 <div className={styles.textureImageWrap}>
-                                    <Image src={item.designSrc} alt={item.alt} fill style={{ objectFit: 'cover' }} sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 280px" />
+                                    <Image src={item.designSrc} alt={item.alt} fill style={{ objectFit: 'cover' }} sizes="(max-width: 600px) 100vw, 50vw" />
                                 </div>
                                 <figcaption className={styles.textureCaption}>{item.alt}</figcaption>
                             </figure>
@@ -151,12 +149,11 @@ export default function TextureFoundationsPage() {
 
             <section className="page-section-strip">
                 <div className="page-section-strip-inner">
-                    <h2 className={styles.sectionHead}>Faux limewash textures</h2>
                     <div className={styles.textureGrid}>
                         {fauxLimewashTextures.map((item, index) => (
                             <figure key={`limewash-${index}`} className={styles.textureFigure}>
                                 <div className={styles.textureImageWrap}>
-                                    <Image src={item.designSrc} alt={item.alt} fill style={{ objectFit: 'cover' }} sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 280px" />
+                                    <Image src={item.designSrc} alt={item.alt} fill style={{ objectFit: 'cover' }} sizes="(max-width: 600px) 100vw, 50vw" />
                                 </div>
                                 <figcaption className={styles.textureCaption}>{item.alt}</figcaption>
                             </figure>

@@ -67,25 +67,21 @@
     margin-bottom: 0;
 }
 
-/* Section headings above texture grids: same vertical rhythm as two-col h2 */
-.sectionHead {
-    text-align: center;
-    margin: 0 0 var(--space-6);
-}
-
-.sectionHead h2 {
-    margin: 0;
-}
-
-/* Texture grid: fill horizontal space, items top-aligned */
+/* Texture grid: 2×2 showcase layout with large images */
 .textureGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--grid-gutter);
     align-items: start;
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+@media (max-width: 600px) {
+    .textureGrid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .textureFigure {
