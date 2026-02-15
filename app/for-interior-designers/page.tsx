@@ -210,7 +210,7 @@ export default function ForInteriorDesignersPage() {
                         <div className="col-body">
                             <p>
                                 Have a specific brief, motif, or space in mind? I accept custom commissions—from full
-                                repeat development to tailored recolors and coordinates. We can discuss scope, timeline,
+                                repeat development to tailored recolors and coordinates. Let&apos;s discuss scope, timeline,
                                 sampling, and production together.
                             </p>
                             <p>
