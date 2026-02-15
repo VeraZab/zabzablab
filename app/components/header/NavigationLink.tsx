@@ -15,6 +15,12 @@ interface LinkFormat {
     children?: LinkFormat[]
 }
 
+function isChildActive(children: LinkFormat[], pathname: string): boolean {
+    return children.some(
+        (child) => child.href && !child.target && pathname === child.href
+    )
+}
+
 export const NavigationLink = ({
     link,
     isMobile,
@@ -24,6 +30,10 @@ export const NavigationLink = ({
 }) => {
     const pathname = usePathname()
     const isActive = link.href ? pathname === link.href : false
+    const isParentActive =
+        link.children && link.children.length > 0
+            ? isChildActive(link.children, pathname)
+            : false
     const IconComponent = link.icon
 
     if (link.children && link.children.length > 0) {
@@ -32,7 +42,7 @@ export const NavigationLink = ({
             return (
                 <div className={styles.submenuGroupMobile}>
                     <button
-                        className={styles.dropdownTriggerMobile}
+                        className={`${styles.dropdownTriggerMobile} ${isParentActive ? styles.active : ''}`}
                         onClick={() => setOpen((v) => !v)}
                         aria-expanded={open}
                         aria-haspopup="true"
@@ -57,7 +67,11 @@ export const NavigationLink = ({
 
         return (
             <div className={styles.dropdown}>
-                <span className={styles.dropdownTrigger}>{link.title}</span>
+                <span
+                    className={`${styles.dropdownTrigger} ${isParentActive ? styles.active : ''}`}
+                >
+                    {link.title}
+                </span>
                 <div className={styles.submenu}>
                     {link.children.map((child) => (
                         <NavigationLink key={child.href || child.title} link={child} />

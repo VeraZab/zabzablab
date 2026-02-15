@@ -10,7 +10,7 @@
     flex: 1;
     margin: var(--space-8) calc(-1 * var(--container-padding)) calc(-1 * var(--container-padding));
     clip-path: url(#ctaWavyTop);
-    background: var(--color-ink);
+    background: var(--soft-ecru);
     display: flex;
     flex-direction: column;
 }
@@ -30,39 +30,47 @@
 
 .cta {
     position: relative;
-    background: var(--color-ink);
-    color: var(--color-beige-100);
-    padding: var(--space-16) var(--space-4) var(--space-8) var(--space-4);
+    background: var(--soft-ecru);
+    color: var(--charcoal-ink);
+    padding: var(--space-12) var(--space-6) var(--space-8);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font: 500 1.25rem/1.35 var(--font-moderustic, var(--font-stack));
+    font: 400 1.25rem/1.35 var(--font-jost, var(--font-stack));
     letter-spacing: 0.02em;
 }
 
-/* Footer when inside the dark CTA (main page only) */
-.ctaFooter {
-    color: var(--color-beige-100);
-    padding: var(--space-4);
-    margin-top: auto;
+.ctaTitle {
+    margin: 0 0 var(--space-3);
+    display: block;
 }
 
+.ctaText {
+    margin: 0 0 var(--space-6);
+    max-width: 28em;
+    font-weight: 400;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+}
+
+/* Footer when inside the CTA (main page only) — same background as newsletter section */
+.ctaWrapper .ctaFooter {
+    background: var(--soft-ecru);
+    color: var(--muted-umber);
+    padding: var(--space-4) var(--space-6);
+    margin-top: auto;
+}
 
 .ctaEmail {
     text-decoration: underline wavy;
     text-underline-offset: 0.5rem;
 }
 
-.ctaText {
-    font-weight: 400;
-    font-size: 1.05rem;
-    letter-spacing: 0.01em;
-}
-
 .newsletterForm {
-    padding-left: var(--space-12);
-    max-width: 360px;
+    margin: 0;
+    max-width: 22rem;
     width: 100%;
 }
 
@@ -76,56 +84,66 @@
 .newsletterRow {
     display: flex;
     justify-content: center;
-    gap: var(--space-2);
-    flex-wrap: wrap;
 }
 
 .newsletterInputWrapper {
-    display: inline-block;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    max-width: 20rem;
+    border: 1px solid var(--border-subtle);
+    background: var(--color-linen);
+    border-radius: 9999px;
+    transition: border-color 0.2s ease;
+}
+.newsletterInputWrapper:hover {
+    border-color: rgba(166, 147, 108, 0.4);
+}
+.newsletterInputWrapper:focus-within {
+    border-color: var(--color-accent);
 }
 
 .newsletterInput {
-    width: 11.5rem;
+    width: 100%;
     min-width: 0;
-    padding: var(--space-2) 0 var(--space-2) var(--space-3);
+    padding: var(--space-3) 3rem var(--space-3) var(--space-4);
     border: none;
-    border-bottom: 0.25rem solid currentColor;
     background: transparent;
-    border-radius: 0;
-    font: 1.2rem/1.5 var(--font-moderustic, var(--font-stack));
+    border-radius: 9999px;
+    font: 1rem/1.5 var(--font-jost, var(--font-stack));
     font-weight: normal;
-    color: var(--color-beige-100);
-    transition: background 0.2s ease, opacity 0.2s ease;
-}
-
-.newsletterInput::placeholder {
-    color: var(--color-beige-100);
-    opacity: 0.7;
-}
-
-.newsletterInput:focus {
+    color: var(--charcoal-ink);
     outline: none;
-    background: rgba(255, 255, 255, 0.08);
+}
+.newsletterInput::placeholder {
+    color: var(--muted-umber);
+    opacity: 0.8;
 }
 
 .newsletterButton {
+    position: absolute;
+    right: var(--space-2);
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-2) var(--space-2) var(--space-2) 0;
-    min-width: 2.5rem;
+    padding: var(--space-2);
+    min-width: 2.25rem;
+    min-height: 2.25rem;
     border: none;
-    border-radius: 0;
-    color: var(--color-beige-100);
+    border-radius: 50%;
+    color: var(--color-accent);
     background: transparent;
     cursor: pointer;
-    transition: opacity 0.2s ease;
-    font-weight: 500;
+    transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .newsletterButton .newsletterArrow {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: inherit;
 }
 
 .newsletterButton .newsletterButtonText {

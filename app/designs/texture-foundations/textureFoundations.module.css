@@ -1,19 +1,13 @@
 /* Texture Foundations page – uses global .page-container and .page-section-strip* */
 
-/* Breadcrumb */
-.breadcrumb {
-    font-size: 0.9rem;
-    margin: var(--space-4) 0;
-}
-
-/* Intro: centered title and lead, readable line length */
+/* Intro: single vertical axis, centered title + lead */
 .intro {
-    padding-bottom: var(--space-6);
+    padding-bottom: var(--space-8);
 }
 
 .intro h1 {
     text-align: center;
-    margin-bottom: var(--space-4);
+    margin: 0 0 var(--space-5);
 }
 
 .introLead {
@@ -23,14 +17,14 @@
 }
 
 .introLead p {
-    margin: 0 0 var(--space-2) 0;
+    margin: 0 0 var(--space-3);
 }
 
 .introLead p:last-child {
     margin-bottom: 0;
 }
 
-/* Two-col blocks: title and body share same inner width */
+/* Two-col blocks: title and body on same grid; body has readable line length */
 .twoColTitle {
     display: flex;
     align-items: center;
@@ -40,11 +34,16 @@
 
 .twoColTitle h2 {
     margin: 0;
+    max-width: 20em;
+}
+
+.twoColBody {
+    max-width: 38em;
 }
 
 .twoColBody h2 {
     margin-top: 0;
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-4);
 }
 
 .twoColBody p {
@@ -68,21 +67,22 @@
     margin-bottom: 0;
 }
 
-/* Section headings above texture grids */
+/* Section headings above texture grids: same vertical rhythm as two-col h2 */
 .sectionHead {
     text-align: center;
-    margin-bottom: var(--space-6);
+    margin: 0 0 var(--space-6);
 }
 
 .sectionHead h2 {
     margin: 0;
 }
 
-/* Texture grid: larger snippets that fill available horizontal space (4 per row when room) */
+/* Texture grid: fill horizontal space, items top-aligned */
 .textureGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: var(--grid-gutter);
+    align-items: start;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -90,10 +90,14 @@
 
 .textureFigure {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .textureImageWrap {
     position: relative;
+    width: 100%;
     aspect-ratio: 1;
     border-radius: 8px;
     overflow: hidden;
@@ -104,6 +108,7 @@
     margin-top: var(--space-2);
     font-size: 0.9rem;
     text-align: center;
+    width: 100%;
 }
 
 /* CTA section tagline in col-title */
@@ -111,9 +116,14 @@
     font-size: 1.1rem;
 }
 
-/* Bottom back link */
+/* CTA links: use global gold underline only (no double underline) */
+.ctaLink {
+    font-weight: 400;
+}
+
+/* Bottom back link: same content column, clear separation */
 .backBlock {
-    padding: var(--space-6) 0;
+    padding: var(--space-8) 0;
     text-align: center;
 }
 

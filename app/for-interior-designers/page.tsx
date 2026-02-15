@@ -128,7 +128,7 @@ export default function ForInteriorDesignersPage() {
                         <strong>Need a versatile base for any project?</strong> Faux fabric textures that work as wallpaper or fabric—customizable to your palette and scale.
                     </p>
                     <p style={{ margin: 0 }}>
-                        <Link href="/designs/texture-foundations" style={{ textDecoration: 'underline', fontWeight: 600 }}>
+                        <Link href="/designs/texture-foundations">
                             See Texture Foundations →
                         </Link>
                     </p>
@@ -151,8 +151,8 @@ export default function ForInteriorDesignersPage() {
                                 <li>Scale tweaks for wallpaper, upholstery, pillows, bedding, and more</li>
                             </ul>
                             <p>
-                                <a href="/resize-recolor-request" style={{ textDecoration: 'underline' }}>Submit a quick request form</a>{' '}
-                                or <a href="mailto:zabzablab@gmail.com" style={{ textDecoration: 'underline' }}>email me!</a>
+                                <a href="/resize-recolor-request">Submit a quick request form</a>{' '}
+                                or <a href="mailto:zabzablab@gmail.com">email me!</a>
                             </p>
                         </div>
                     </div>
@@ -177,7 +177,6 @@ export default function ForInteriorDesignersPage() {
                                     href="https://www.spoonflower.com/en/trade"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    style={{ textDecoration: 'underline' }}
                                 >
                                      Learn more about Spoonflower’s Trade Program
                                 </a>
@@ -189,7 +188,6 @@ export default function ForInteriorDesignersPage() {
                                     href="https://spoonflower.pro.typeform.com/to/dGZ1RA?typeform-source=www.spoonflower.com"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    style={{ textDecoration: 'underline' }}
                                 >
                                     Apply here
                                 </a>
@@ -216,7 +214,7 @@ export default function ForInteriorDesignersPage() {
                                 sampling, and production together.
                             </p>
                             <p>
-                                <a href="mailto:zabzablab@gmail.com" style={{ textDecoration: 'underline' }}>
+                                <a href="mailto:zabzablab@gmail.com">
                                     Get in touch to discuss your project!
                                 </a>
                             </p>

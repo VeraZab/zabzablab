@@ -94,8 +94,7 @@ export default function Work() {
                 </svg>
                 <div className={styles.cta}>
                     <span className={styles.ctaTitle}>Newsletter</span>
-                <br />
-                <span className={styles.ctaText}>
+                    <span className={styles.ctaText}>
                     Be the first to know when new designs drop!
                     No spam, just pretty things.
                 </span>

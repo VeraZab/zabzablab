@@ -1,9 +1,9 @@
 .container {
-    min-height: 100vh;
+    min-height: calc(100vh - var(--header-height));
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-8) var(--container-padding);
+    padding: var(--space-16) var(--container-padding);
     background: var(--color-linen);
     margin: calc(-1 * var(--container-padding));
     width: calc(100% + 2 * var(--container-padding));
@@ -11,59 +11,74 @@
 
 .content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--grid-gutter);
+    grid-template-columns: auto 1fr;
+    gap: var(--space-12);
+    align-items: center;
     max-width: var(--container-max-width);
     width: 100%;
 }
 
 .imageContainer {
-    background: var(--color-beige-300);
-    min-height: 600px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
     overflow: hidden;
+    background: var(--color-beige-300);
+    flex-shrink: 0;
+    box-shadow: var(--shadow-soft), 0 8px 32px rgba(43, 41, 38, 0.08);
 }
 
 .imageContainer img {
     width: 100%;
     height: 100%;
-    max-width: none;
     object-fit: cover;
-    object-position: center;
+    object-position: center 22%;
     filter: sepia(50%) brightness(0.9) contrast(0.9);
 }
 
 .caption {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     color: var(--color-charcoal);
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.75;
     text-align: left;
-    max-width: 600px;
+    max-width: 36rem;
 }
 
 @media (max-width: 1330px) {
-    .container { padding: 0; }
+    .container { padding: var(--space-12) var(--container-padding); }
 
     .content {
         grid-template-columns: 1fr;
-        gap: 0;
-        margin-top: var(--space-4);
+        gap: var(--space-10);
+        margin-top: 0;
     }
 
     .imageContainer {
-        min-height: 60vh;
-        margin: 0;
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
     }
 
-    .imageContainer img { object-position: center top; }
+    .imageContainer img { object-position: center 22%; }
 
-    .caption { padding: var(--space-8) var(--container-padding); }
+    .caption {
+        padding: 0 var(--container-padding) var(--space-12);
+        padding-top: 0;
+    }
 }
 
 @media (max-width: 480px) {
-    .caption { padding: var(--space-8) var(--container-padding-sm); }
+    .container { padding: var(--space-10) var(--container-padding-sm); }
+
+    .imageContainer {
+        width: 260px;
+        height: 260px;
+    }
+
+    .caption { padding: 0 var(--container-padding-sm) var(--space-10); }
 }
 
 @media (max-width: 320px) {

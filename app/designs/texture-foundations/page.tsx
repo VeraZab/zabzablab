@@ -46,28 +46,6 @@ export const metadata: Metadata = {
 export default function TextureFoundationsPage() {
     return (
         <main>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        '@context': 'https://schema.org',
-                        '@type': 'BreadcrumbList',
-                        itemListElement: [
-                            { '@type': 'ListItem', position: 1, name: 'Home', item: new URL('/', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString() },
-                            { '@type': 'ListItem', position: 2, name: 'Designs', item: new URL('/', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString() },
-                            { '@type': 'ListItem', position: 3, name: 'Texture Foundations', item: new URL('/designs/texture-foundations', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString() },
-                        ],
-                    }),
-                }}
-            />
-            <nav aria-label="Breadcrumb" className={`page-container ${styles.breadcrumb}`}>
-                <Link href="/">Home</Link>
-                {' / '}
-                <Link href="/">Designs</Link>
-                {' / '}
-                <span aria-current="page">Texture Foundations</span>
-            </nav>
-
             <div className={`page-container ${styles.intro}`}>
                 <h1>A base that works for every project</h1>
                 <div className={styles.introLead}>
@@ -127,14 +105,15 @@ export default function TextureFoundationsPage() {
 
             <section className="page-section-strip page-section-strip-alt">
                 <div className="page-section-strip-inner">
-                    <div className="two-col-grid swap">
-                        <div className={`col-body ${styles.twoColBody}`}>
+                    <div className="two-col-grid">
+                        <div className={`col-title ${styles.twoColTitle}`}>
                             <h2>Faux stone</h2>
+                        </div>
+                        <div className={`col-body ${styles.twoColBody}`}>
                             <p>
                                 Organic, tactile stone textures for feature walls, accents, or full rooms. They read as natural material without the cost or weight of real stone—and they&apos;re easy to customize to your palette and scale.
                             </p>
                         </div>
-                        <div className={`col-title ${styles.twoColTitle}`} />
                     </div>
                 </div>
             </section>
@@ -196,7 +175,7 @@ export default function TextureFoundationsPage() {
                                 application (wallpaper, fabric, etc.), and any reference. I&apos;ll get back to you with options and next steps.
                             </p>
                             <p>
-                                <Link href="/resize-recolor-request" style={{ textDecoration: 'underline', fontWeight: 600 }}>
+                                <Link href="/resize-recolor-request" className={styles.ctaLink}>
                                     Request a resize or recolor →
                                 </Link>
                             </p>
@@ -210,7 +189,7 @@ export default function TextureFoundationsPage() {
 
             <div className={`page-container ${styles.backBlock}`}>
                 <p>
-                    <Link href="/" style={{ textDecoration: 'underline' }}>
+                    <Link href="/" className={styles.ctaLink}>
                         ← Back to Featured
                     </Link>
                 </p>

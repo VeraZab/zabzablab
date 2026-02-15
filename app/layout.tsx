@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import type { Metadata, Viewport } from 'next'
-import { Moderustic, Lora } from 'next/font/google'
+import { Jost, Lora } from 'next/font/google'
 
 import '/styles/reset.css'
 import '/styles/global.css'
@@ -8,11 +8,11 @@ import '/styles/global.css'
 import Header from './components/header/Header'
 import ConditionalFooter from './components/ConditionalFooter'
 
-const moderustic = Moderustic({
+const jost = Jost({
     subsets: ['latin'],
-    weight: ['300', '400', '500', '600', '700', '800'],
+    weight: ['300', '400', '500', '600'],
     display: 'swap',
-    variable: '--font-moderustic',
+    variable: '--font-jost',
 })
 
 const lora = Lora({
@@ -147,7 +147,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 />
             </head>
 
-            <body className={`${moderustic.variable} ${lora.variable}`}>
+            <body className={`${jost.variable} ${lora.variable}`}>
                 <Header />
                 <div className="main-content">
                     <main>{children}</main>
