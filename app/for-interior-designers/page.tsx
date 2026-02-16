@@ -128,7 +128,7 @@ export default function ForInteriorDesignersPage() {
                         <strong>Need a versatile base for any project?</strong> Faux fabric textures that work as wallpaper or fabric—customizable to your palette and scale.
                     </p>
                     <p style={{ margin: 0 }}>
-                        <Link href="/designs/texture-foundations">
+                        <Link href="/designs/faux-fabric">
                             See Texture Foundations →
                         </Link>
                     </p>
