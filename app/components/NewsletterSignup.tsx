@@ -46,28 +46,28 @@ export default function NewsletterSignup() {
                     <input
                         id="newsletter-email"
                         type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="your@email.com"
-                    disabled={status === 'loading' || status === 'success'}
-                    className={styles.newsletterInput}
-                    autoComplete="email"
-                />
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="your@email.com"
+                        disabled={status === 'loading' || status === 'success'}
+                        className={styles.newsletterInput}
+                        autoComplete="email"
+                    />
+                    <button
+                        type="submit"
+                        disabled={status === 'loading' || status === 'success'}
+                        className={styles.newsletterButton}
+                        aria-label={status === 'success' ? 'Submitted' : 'Sign up'}
+                    >
+                        {status === 'loading' ? (
+                            <span className={styles.newsletterButtonText}>…</span>
+                        ) : status === 'success' ? (
+                            <span className={styles.newsletterButtonText}>🎉</span>
+                        ) : (
+                            <ArrowRightIcon className={styles.newsletterArrow} aria-hidden />
+                        )}
+                    </button>
                 </span>
-                <button
-                    type="submit"
-                    disabled={status === 'loading' || status === 'success'}
-                    className={styles.newsletterButton}
-                    aria-label={status === 'success' ? 'Submitted' : 'Sign up'}
-                >
-                    {status === 'loading' ? (
-                        <span className={styles.newsletterButtonText}>…</span>
-                    ) : status === 'success' ? (
-                        <span className={styles.newsletterButtonText}>🎉</span>
-                    ) : (
-                        <ArrowRightIcon className={styles.newsletterArrow} aria-hidden />
-                    )}
-                </button>
             </div>
             {message && (
                 <p className={status === 'error' ? styles.newsletterError : styles.newsletterSuccess}>

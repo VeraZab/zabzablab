@@ -1,43 +1,102 @@
 :root {
-    /* Colors */
-    --color-beige-100: hsl(30, 50%, 96%);
-    --color-beige-200: hsl(30, 50%, 93%);
-    --color-beige-300: hsl(30, 50%, 83%);
-    --color-beige-400: hsl(30, 50%, 73%);
-    --color-gray-500: hsl(0, 5%, 50%);
-    --color-navy-300: hsl(238, 49%, 15%);
-    --color-lime-300: hsl(67, 65%, 50%);
-    --color-sage-100: #677b82;
+    /* ZabZabLab branding palette — from zabzablab-branding-palette.html */
+    --gallery-white: #FAF8F5;
+    --warm-linen: #F3EEE8;
+    --soft-ecru: #E8E2D9;
+    --aged-paper: #DCD4C8;
+    --charcoal-ink: #2B2926;
+    --warm-graphite: #4A4641;
+    --muted-umber: #6B635A;
+    --stone-grey: #9A928A;
+    --antiqued-gold: #A6936C;
+    --gold-highlight: #C4B18A;
+    --deep-prussian: #1D3A4D;
+    --border-subtle: rgba(43, 41, 38, 0.08);
+    --shadow-soft-color: rgba(43, 41, 38, 0.06);
+
+    /* Semantic mapping for existing components */
+    --color-linen: var(--gallery-white);
+    --color-beige-100: var(--warm-linen);
+    --color-beige-200: var(--soft-ecru);
+    --color-beige-300: var(--aged-paper);
+    --color-beige-400: var(--stone-grey);
+    --color-section-alt: var(--soft-ecru);
+    --color-gray-500: var(--muted-umber);
+    --color-navy-100: var(--warm-linen);
+    --color-charcoal: var(--charcoal-ink);
+    --color-navy-300: var(--charcoal-ink);
+    --color-ink: var(--charcoal-ink);
+    --color-sage-100: var(--deep-prussian);
+    --color-accent: var(--antiqued-gold);
+    --color-accent-strong: var(--gold-highlight);
+    --color-text-secondary: var(--muted-umber);
+    --shadow-soft: 0 2px 24px var(--shadow-soft-color);
+    --shadow-card: 0 6px 40px rgba(43, 41, 38, 0.08);
+    --focus-ring: 0 0 0 2px var(--gallery-white), 0 0 0 4px var(--antiqued-gold);
+    --focus-ring-on-dark: 0 0 0 2px var(--charcoal-ink), 0 0 0 4px var(--gold-highlight);
     
-    /* Layout */
-    --header-height: 6.5rem;
-    --container-padding: 1rem;
-    --container-padding-sm: 0.5rem;
+    /* Spacing scale (base 0.25rem / 4px) – use site-wide */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-7: 1.75rem;
+    --space-8: 2rem;
+    --space-9: 2.25rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+
+    /* Layout – must match actual fixed header height so content starts right after */
+    --header-height: 5.75rem;
+    --header-height-mobile: 4.5rem;
+    /* Same gap: page top → logo top, and header bottom → first content (use for both) */
+    --header-content-gap: var(--space-3);
     --container-max-width: 1200px;
-    --gap-base: 1rem;
-    --gap-sm: 0.5rem;
-    --gap-lg: 3rem;
+    --container-padding: var(--space-4);
+    --container-padding-sm: var(--space-2);
+    --gap-sm: var(--space-2);
+    --gap-base: var(--space-4);
+    --gap-lg: var(--space-12);
+
+    /* 12-column grid system */
+    --grid-columns: 12;
+    --grid-gutter: var(--space-6);
     
     /* Breakpoints */
     --bp-mobile: 1330px;
     --bp-tablet: 900px;
     --bp-small: 320px;
     
-    /* Typography - fallback stack without CSS variable */
-    --font-stack: 'Moderustic', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    /* Typography - fallback stack */
+    --font-stack: var(--font-jost), 'Jost', 'Gill Sans', system-ui, sans-serif;
 }
 
-html { font-size: 18px; }
+html { font-size: 18px; scroll-behavior: smooth; }
 
 body {
-    font: 1rem/1.5 var(--font-moderustic, var(--font-stack));
+    font: 400 0.95rem/1.7 var(--font-jost, var(--font-stack));
     font-optical-sizing: auto;
-    color: var(--color-navy-300);
-    background: var(--color-beige-100);
+    color: var(--color-charcoal);
+    background: var(--color-linen);
     margin: 0;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Very subtle gradient — gallery white to warm linen */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, var(--gallery-white) 0%, var(--color-linen) 35%, var(--warm-linen) 100%);
+    pointer-events: none;
+    z-index: -1;
 }
 
 .main-content {
@@ -46,17 +105,43 @@ body {
     padding-top: var(--header-height);
     display: flex;
     flex-direction: column;
+    background: var(--color-linen);
 }
 
 main { flex: 1; }
-a { color: inherit; text-decoration: none; outline: none; }
+
+/* Tablet/mobile layout (matches header's mobile breakpoint where logo shrinks) */
+@media (max-width: 1330px) {
+    .main-content {
+        padding-top: var(--header-height-mobile);
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    outline: none;
+    border-bottom: 1px solid var(--color-accent);
+}
+a:hover { border-bottom-color: var(--color-charcoal); color: var(--color-charcoal); }
+a:focus-visible { outline: 2px solid var(--antiqued-gold); outline-offset: 2px; border-bottom-color: transparent; }
+
 button { outline: none; }
-p { margin: var(--container-padding); }
-h1 { font-size: 1.5em; padding: 0.5em; }
+button:focus-visible { outline: 2px solid var(--antiqued-gold); outline-offset: 2px; }
+p { margin: var(--space-4); }
+
+h1, h2 {
+    font-family: var(--font-lora, Georgia, serif);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-charcoal);
+}
+h1 { font-size: 1.75rem; padding: var(--space-2) 0; letter-spacing: 0.03em; }
+h2 { font-size: 1.35rem; padding: var(--space-2) 0; }
 
 /* Typography utilities */
 .moderustic-semibold {
-    font: 600 1rem/1 var(--font-moderustic, var(--font-stack));
+    font: 600 1rem/1 var(--font-jost, var(--font-stack));
     font-optical-sizing: auto;
 }
 
@@ -66,16 +151,75 @@ h1 { font-size: 1.5em; padding: 0.5em; }
     margin: 0 auto;
 }
 
+/* Site-wide content grid: same max-width + horizontal padding on every page */
+.page-container {
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+/* Full-bleed section strip (breaks out of .main-content padding) */
+.page-section-strip {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: var(--space-12) 0;
+}
+
+.page-section-strip-alt {
+    background-color: var(--color-section-alt);
+}
+
+.page-section-strip-inner {
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
 .full-width {
     margin: calc(-1 * var(--container-padding));
     width: calc(100% + 2 * var(--container-padding));
 }
 
-/* Simple responsive two-column grid used on for-interior-designers */
+/* 12-column grid – use with .grid-12 and .span-* */
+.grid-12 {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-columns), 1fr);
+    gap: var(--grid-gutter);
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+.span-12 { grid-column: 1 / -1; }
+.span-8 { grid-column: span 8; }
+.span-6 { grid-column: span 6; }
+.span-4 { grid-column: span 4; }
+.span-3 { grid-column: span 3; }
+
+@media (max-width: 900px) {
+    .span-8, .span-6 { grid-column: 1 / -1; }
+    .span-4, .span-3 { grid-column: span 6; }
+}
+
+@media (max-width: 600px) {
+    .span-4, .span-3 { grid-column: 1 / -1; }
+}
+
+/* Simple responsive two-column grid (for-interior-designers, etc.) */
 .two-col-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 24px;
+    gap: var(--grid-gutter);
     align-items: center;
 }
 
@@ -85,6 +229,14 @@ h1 { font-size: 1.5em; padding: 0.5em; }
 
 .two-col-grid .col-title { text-align: center; }
 
+/* Consistent body text in two-col sections (lists, paragraphs) */
+.two-col-grid .col-body h2 { margin-top: 0; margin-bottom: var(--space-3); }
+.two-col-grid .col-body p { margin: 0 0 var(--space-3); }
+.two-col-grid .col-body p:last-child { margin-bottom: 0; }
+.two-col-grid .col-body ul { padding-left: var(--space-5); margin: 0 0 var(--space-4); }
+.two-col-grid .col-body li { margin-bottom: var(--space-1); }
+.two-col-grid .col-body li:last-child { margin-bottom: 0; }
+
 /* Mobile-only line break helper */
 .mobile-newline { display: inline; }
 
@@ -92,25 +244,54 @@ h1 { font-size: 1.5em; padding: 0.5em; }
     .two-col-grid,
     .two-col-grid.swap {
         grid-template-columns: 1fr;
-        gap: 8px; /* tighter spacing between title and body on mobile */
+        gap: var(--space-2);
     }
 
     .two-col-grid .col-title,
     .two-col-grid.swap .col-title {
-        order: -1; /* Ensure title comes first on mobile */
-        margin-bottom: 0.25rem;
+        order: -1;
+        margin-bottom: var(--space-1);
     }
 
     .mobile-newline { display: block; }
 }
 
-/* Responsive adjustments */
+/* Mobile: same spacing grid; less top padding so content starts closer to header */
+@media (max-width: 480px) {
+    .main-content {
+        padding-left: var(--container-padding-sm);
+        padding-right: var(--container-padding-sm);
+        padding-top: var(--header-height-mobile);
+    }
+
+    .page-container,
+    .page-section-strip-inner {
+        padding-left: var(--container-padding-sm);
+        padding-right: var(--container-padding-sm);
+    }
+
+    .page-section-strip {
+        padding: var(--space-8) 0;
+    }
+
+    .full-width {
+        margin: calc(-1 * var(--container-padding-sm));
+        width: calc(100% + 2 * var(--container-padding-sm));
+    }
+
+    .grid-12 {
+        padding-left: var(--container-padding-sm);
+        padding-right: var(--container-padding-sm);
+    }
+}
+
+/* Very small screens: keep same grid */
 @media (max-width: 320px) {
     .main-content {
         padding: var(--container-padding-sm);
-        padding-top: var(--header-height);
+        padding-top: var(--header-height-mobile);
     }
-    
+
     .full-width {
         margin: calc(-1 * var(--container-padding-sm));
         width: calc(100% + 2 * var(--container-padding-sm));

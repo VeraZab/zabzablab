@@ -8,11 +8,17 @@
 /* Wrapper so the whole block can be clipped to a wavy top; negative margins break out of .main-content padding so full width + to bottom */
 .ctaWrapper {
     flex: 1;
-    margin: 2rem calc(-1 * var(--container-padding)) calc(-1 * var(--container-padding));
+    margin: var(--space-8) calc(-1 * var(--container-padding)) calc(-1 * var(--container-padding));
     clip-path: url(#ctaWavyTop);
-    background: #383128;
+    background: var(--soft-ecru);
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width: 480px) {
+    .ctaWrapper {
+        margin: var(--space-8) calc(-1 * var(--container-padding-sm)) calc(-1 * var(--container-padding-sm));
+    }
 }
 
 .ctaClipSvg {
@@ -24,37 +30,47 @@
 
 .cta {
     position: relative;
-    background: #383128;
-    color: var(--color-beige-100);
-    padding: 4rem 1rem 2rem 1rem;
+    background: var(--soft-ecru);
+    color: var(--charcoal-ink);
+    padding: var(--space-12) var(--space-6) var(--space-8);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font: bold x-large/1.2 var(--font-moderustic, var(--font-stack));
+    font: 400 1.25rem/1.35 var(--font-jost, var(--font-stack));
+    letter-spacing: 0.02em;
 }
 
-/* Footer when inside the dark CTA (main page only) */
-.ctaFooter {
-    color: var(--color-beige-100);
-    padding: var(--gap-base);
+.ctaTitle {
+    margin: 0 0 var(--space-3);
+    display: block;
+}
+
+.ctaText {
+    margin: 0 0 var(--space-6);
+    max-width: 28em;
+    font-weight: 400;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+}
+
+/* Footer when inside the CTA (main page only) — same background as newsletter section */
+.ctaWrapper .ctaFooter {
+    background: var(--soft-ecru);
+    color: var(--muted-umber);
+    padding: var(--space-4) var(--space-6);
     margin-top: auto;
 }
-
 
 .ctaEmail {
     text-decoration: underline wavy;
     text-underline-offset: 0.5rem;
 }
 
-.ctaText {
-    font-weight: normal;
-    font-size: 1.2rem;
-}
-
 .newsletterForm {
-    padding-left: 3rem;
-    max-width: 360px;
+    margin: 0;
+    max-width: 22rem;
     width: 100%;
 }
 
@@ -62,66 +78,77 @@
     display: block;
     font-weight: normal;
     font-size: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
 }
 
 .newsletterRow {
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
 }
 
 .newsletterInputWrapper {
-    display: inline-block;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    max-width: 20rem;
+    border: 1px solid var(--border-subtle);
+    background: var(--color-linen);
+    border-radius: 9999px;
+    transition: border-color 0.2s ease;
+}
+.newsletterInputWrapper:hover {
+    border-color: rgba(166, 147, 108, 0.4);
+}
+.newsletterInputWrapper:focus-within {
+    border-color: var(--color-accent);
 }
 
 .newsletterInput {
-    width: 11.5rem;
+    width: 100%;
     min-width: 0;
-    padding: 0.6rem 0 0.5rem 0.75rem;
+    padding: var(--space-3) 3rem var(--space-3) var(--space-4);
     border: none;
-    border-bottom: 0.25rem solid currentColor;
     background: transparent;
-    border-radius: 0;
-    font: 1.2rem/1.5 var(--font-moderustic, var(--font-stack));
+    border-radius: 9999px;
+    font: 1rem/1.5 var(--font-jost, var(--font-stack));
     font-weight: normal;
-    color: var(--color-beige-100);
-    transition: background 0.2s ease, opacity 0.2s ease;
-}
-
-.newsletterInput::placeholder {
-    color: var(--color-beige-100);
-    opacity: 0.7;
-}
-
-.newsletterInput:focus {
+    color: var(--charcoal-ink);
     outline: none;
-    background: rgba(255, 255, 255, 0.08);
+}
+.newsletterInput::placeholder {
+    color: var(--muted-umber);
+    opacity: 0.8;
 }
 
 .newsletterButton {
+    position: absolute;
+    right: var(--space-2);
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.6rem 0.5rem 0.6rem 0;
-    min-width: 2.5rem;
+    padding: var(--space-2);
+    min-width: 2.25rem;
+    min-height: 2.25rem;
     border: none;
-    border-radius: 0;
-    color: var(--color-beige-100);
+    border-radius: 50%;
+    color: var(--color-accent);
     background: transparent;
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease, opacity 0.2s ease;
 }
 
 .newsletterButton .newsletterArrow {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: inherit;
 }
 
 .newsletterButton .newsletterButtonText {
     font: inherit;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .newsletterButton:hover:not(:disabled) {
@@ -135,7 +162,7 @@
 
 .newsletterSuccess,
 .newsletterError {
-    margin: 0.5rem 0 0;
+    margin: var(--space-2) 0 0;
     font-weight: normal;
     font-size: 0.95rem;
 }

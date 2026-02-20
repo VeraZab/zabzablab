@@ -11,23 +11,29 @@ import { NavigationLink } from './NavigationLink'
 // import InstagramIcon from '../icons/InstagramIcon'
 
 const navigationLinks = [
-    { title: 'Designs', href: '/' },
+    {
+        title: 'Designs',
+        children: [
+            { title: 'Featured', href: '/' },
+            { title: 'Faux Fabric Textures', href: '/designs/faux-fabric' },
+            { title: 'Full Catalogue', href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile', target: '_blank' },
+        ],
+    },
     { title: 'About', href: '/about' },
-    // { title: 'Shop', href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile', target: '_blank' },
     {
         title: 'Work Together',
         children: [
             { title: 'For Interior Designers', href: '/for-interior-designers' },
-            { title: 'Spoonflower Catalogue', href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile', target: '_blank' },
             { title: 'Resize / Recolor Request', href: '/resize-recolor-request' },
         ],
     },
     {
         title: 'Stay Connected',
         children: [
-            { title: 'Blog', href: '/blog' },
+            { title: 'Email', href: 'mailto:hello@zabzablab.com' },
             { title: 'Instagram', href: 'https://www.instagram.com/zabzablab', target: '_blank' },
-            { title: 'Email', href: 'mailto:zabzablab@gmail.com' },
+            { title: 'Newsletter', href: '/#newsletter' },
+            { title: 'Blog', href: '/blog' },
             { title: 'Save Contact', href: '/qr' },
         ],
     },
@@ -36,23 +42,24 @@ const navigationLinks = [
 export default function Header() {
     return (
         <div className={styles.header}>
-            <div className={styles.logo}>
-                <Logo />
-                <div className={styles.tagline}>
-                    <span>textiles & wallpaper</span>
-                    <span>for homes with history & personality</span>
+            <div className={styles.headerInner}>
+                <div className={styles.logo}>
+                    <Logo />
+                    <div className={styles.tagline}>
+                        <span>handcrafted textiles & wallpaper</span>
+                        <span>for homes with history & personality</span>
+                    </div>
                 </div>
-            </div>
 
-            <div className={styles.desktop}>
-                <div className={styles.right}>
+                <div className={styles.desktop}>
+                    <nav className={styles.right} aria-label="Main navigation">
                     {navigationLinks.map((link) => (
                         <NavigationLink key={link.href || link.title} link={link} />
                     ))}
+                    </nav>
                 </div>
-            </div>
 
-            <div className={styles.mobile}>
+                <div className={styles.mobile}>
                 <Dialog.Root>
                     <Dialog.Trigger className={`${styles.mobileIconContainer} ${styles.mobileAction}`}>
                         <RowsIcon />
@@ -73,6 +80,7 @@ export default function Header() {
                         </Dialog.Content>
                     </Dialog.Portal>
                 </Dialog.Root>
+                </div>
             </div>
         </div>
     )

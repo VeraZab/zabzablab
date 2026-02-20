@@ -8,16 +8,16 @@ const postSlug = 'green-kitchen-trend'
 const postUrl = `/blog/${postSlug}`
 
 export const metadata: Metadata = {
-    title: 'Why Dark Green Kitchens Attract Buyers',
+    title: 'Why Dark Green Kitchens Attract Buyers — Color Trend',
     description:
-        'Notes inspired by research from Zillow and Sherwin-Williams on color and home value.',
+        'How dark olive green kitchens boost home value and buyer appeal. Insights from Zillow and Sherwin-Williams research on kitchen color trends, plus wallpaper ideas to bring the look home.',
     alternates: { canonical: postUrl },
     openGraph: {
         type: 'article',
         url: postUrl,
-        title: 'Why Dark Green Kitchens Attract Buyers',
+        title: 'Why Dark Green Kitchens Attract Buyers | ZabZabLab',
         description:
-            'Notes inspired by research from Zillow and Sherwin-Williams on color and home value.',
+            'How dark olive green kitchens boost home value and buyer appeal. Color trend insights plus wallpaper ideas.',
         images: [
             {
                 url: '/blog/dark_green_kitchen.jpg',
@@ -26,6 +26,13 @@ export const metadata: Metadata = {
                 alt: 'Olive green kitchen cabinetry with patterned tile backsplash',
             },
         ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Why Dark Green Kitchens Attract Buyers | ZabZabLab',
+        description:
+            'How dark olive green kitchens boost home value and buyer appeal. Color trend insights plus wallpaper ideas.',
+        images: ['/blog/dark_green_kitchen.jpg'],
     },
 }
 
@@ -79,7 +86,7 @@ export default function BlogPostGreenKitchen() {
                         dateModified: '2025-08-24',
                         author: {
                             '@type': 'Person',
-                            name: 'Vera Zabeida',
+                            name: 'Vera',
                         },
                         publisher: {
                             '@type': 'Organization',

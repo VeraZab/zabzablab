@@ -1,0 +1,175 @@
+/* Texture Foundations page – uses global .page-container and .page-section-strip* */
+
+/* Intro: single vertical axis, centered title + lead */
+.intro {
+    padding-bottom: var(--space-8);
+}
+
+.intro h1 {
+    text-align: center;
+    margin: 0 0 var(--space-5);
+}
+
+.introLead {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 42rem;
+}
+
+.introLead p {
+    margin: 0 0 var(--space-3);
+}
+
+.introLead p:last-child {
+    margin-bottom: 0;
+}
+
+/* Two-col blocks: title and body on same grid; body has readable line length */
+.twoColTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.twoColTitle h2 {
+    margin: 0;
+    max-width: 20em;
+}
+
+.twoColBody {
+    max-width: 38em;
+}
+
+.twoColBody h2 {
+    margin-top: 0;
+    margin-bottom: var(--space-4);
+}
+
+.twoColBody p {
+    margin: 0 0 var(--space-3) 0;
+}
+
+.twoColBody p:last-child {
+    margin-bottom: 0;
+}
+
+.twoColBody ul {
+    padding-left: var(--space-5);
+    margin: 0 0 var(--space-4) 0;
+}
+
+.twoColBody li {
+    margin-bottom: var(--space-1);
+}
+
+.twoColBody li:last-child {
+    margin-bottom: 0;
+}
+
+/* Texture grid: 2×2 showcase layout with large images */
+.textureGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--grid-gutter);
+    align-items: start;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .textureGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.textureFigure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textureImageWrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--color-beige-200);
+}
+
+.textureImageWrap img {
+    transition: transform 0.6s ease;
+}
+
+.textureFigure:hover .textureImageWrap img {
+    transform: scale(1.15);
+}
+
+.textureCta {
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--color-accent);
+    white-space: nowrap;
+}
+
+.textureCta:hover {
+    border-bottom-color: var(--color-charcoal);
+    color: var(--color-charcoal);
+}
+
+.textureMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    margin-top: var(--space-2);
+}
+
+.textureCaption {
+    font-size: 0.9rem;
+}
+
+/* CTA section tagline in col-title */
+.ctaTagline {
+    font-size: 1.1rem;
+}
+
+/* CTA links: use global gold underline only (no double underline) */
+.ctaLink {
+    font-weight: 400;
+}
+
+/* "Don't see what you're looking for?" block */
+.notFinding {
+    text-align: center;
+    max-width: 38rem;
+    margin: 0 auto;
+}
+
+.notFinding h2 {
+    margin: 0 0 var(--space-4);
+}
+
+.notFinding p {
+    margin: 0 0 var(--space-3);
+}
+
+.notFinding p:last-child {
+    margin-bottom: 0;
+}
+
+/* Bottom back link: same content column, clear separation */
+.backBlock {
+    padding: var(--space-8) 0;
+    text-align: center;
+}
+
+.backBlock p {
+    margin: 0 0 var(--space-2) 0;
+}
+
+.backBlock p:last-child {
+    margin-bottom: 0;
+}

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import type { Metadata, Viewport } from 'next'
-import { Moderustic } from 'next/font/google'
+import { Jost, Lora } from 'next/font/google'
 
 import '/styles/reset.css'
 import '/styles/global.css'
@@ -8,48 +8,73 @@ import '/styles/global.css'
 import Header from './components/header/Header'
 import ConditionalFooter from './components/ConditionalFooter'
 
-const moderustic = Moderustic({
+const jost = Jost({
     subsets: ['latin'],
-    weight: ['300', '400', '500', '600', '700', '800'],
+    weight: ['300', '400', '500', '600'],
     display: 'swap',
-    variable: '--font-moderustic'
+    variable: '--font-jost',
+})
+
+const lora = Lora({
+    subsets: ['latin'],
+    weight: ['400', '500', '600', '700'],
+    display: 'swap',
+    variable: '--font-lora',
 })
 
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
     title: {
-        default: 'ZabZabLab Wallpaper and Fabric Design Studio',
-        template: '%s | ZabZabLab Wallpaper and Fabric Design Studio',
+        default: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
+        template: '%s | ZabZabLab',
     },
-    description: 'Whimsical, romantic, and timeless surface pattern design for textiles, wallpaper, and interiors.',
+    description: 'Hand-drawn wallpaper and fabric designs for interiors with personality. Custom colorways, faux textures, and trade-friendly options for interior designers. Shop on Spoonflower.',
     applicationName: 'ZabZabLab',
-    keywords: ['surface pattern design', 'textile design', 'wallpaper', 'interior design', 'ZabZabLab'],
+    keywords: [
+        'custom wallpaper',
+        'custom fabric design',
+        'surface pattern design',
+        'wallpaper for interior designers',
+        'trade wallpaper',
+        'faux grasscloth wallpaper',
+        'faux linen wallpaper',
+        'faux limewash wallpaper',
+        'faux stone wallpaper',
+        'textile design',
+        'hand-drawn wallpaper',
+        'Spoonflower designer',
+        'wallpaper color matching',
+        'custom wallpaper commission',
+        'ZabZabLab',
+    ],
     creator: 'ZabZabLab',
     publisher: 'ZabZabLab',
+    category: 'Interior Design',
     alternates: {
         canonical: '/',
     },
     openGraph: {
         type: 'website',
+        locale: 'en_US',
         url: '/',
-        title: 'ZabZabLab Wallpaper and Fabric Design Studio',
+        title: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
         description:
-            'Whimsical, romantic, and timeless surface pattern design for textiles, wallpaper, and interiors.',
+            'Hand-drawn wallpaper and fabric for interiors with personality. Custom colorways, faux textures, and trade-friendly options.',
         siteName: 'ZabZabLab',
         images: [
             {
                 url: '/assets/zabzablab.png',
                 width: 1200,
                 height: 630,
-                alt: 'ZabZabLab Wallpaper and Fabric Design Studio',
+                alt: 'ZabZabLab — Custom Wallpaper and Fabric Design Studio',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'ZabZabLab Wallpaper and Fabric Design Studio',
+        title: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
         description:
-            'Whimsical, romantic, and timeless designs for textiles, wallpaper, and interiors.',
+            'Hand-drawn wallpaper and fabric for interiors with personality. Custom colorways and trade-friendly options.',
         images: ['/assets/zabzablab.png'],
     },
     robots: {
@@ -83,6 +108,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 />
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
                 <meta name="p:domain_verify" content="713bb29cacff3398e376fff8d6561c4d" />
+                <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
                 {/* Title comes from Next.js Metadata API per page */}
                 <link
                     rel="icon"
@@ -96,8 +122,35 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             '@context': 'https://schema.org',
                             '@type': 'Organization',
                             name: 'ZabZabLab',
+                            alternateName: 'ZabZabLab Wallpaper and Fabric Design Studio',
                             url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
                             logo: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                            description: 'Hand-drawn wallpaper and fabric design studio specializing in custom colorways, faux texture wallpapers, and trade-friendly services for interior designers. Designs sold through Spoonflower.',
+                            founder: {
+                                '@type': 'Person',
+                                name: 'Vera',
+                                jobTitle: 'Surface Pattern Designer',
+                            },
+                            address: {
+                                '@type': 'PostalAddress',
+                                addressRegion: 'NJ',
+                                addressCountry: 'US',
+                            },
+                            contactPoint: {
+                                '@type': 'ContactPoint',
+                                email: 'zabzablab@gmail.com',
+                                contactType: 'customer service',
+                            },
+                            knowsAbout: [
+                                'surface pattern design',
+                                'wallpaper design',
+                                'textile design',
+                                'faux texture wallpaper',
+                                'faux grasscloth wallpaper',
+                                'faux linen wallpaper',
+                                'custom wallpaper color matching',
+                                'interior design wallpaper',
+                            ],
                             sameAs: [
                                 'https://www.instagram.com/zabzablab',
                                 'https://www.spoonflower.com/profiles/zabzablab',
@@ -111,7 +164,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                         __html: JSON.stringify({
                             '@context': 'https://schema.org',
                             '@type': 'WebSite',
-                            name: 'ZabZabLab Wallpaper and Fabric Design Studio',
+                            name: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
                             url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
                             inLanguage: 'en',
                             publisher: {
@@ -140,7 +193,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 />
             </head>
 
-            <body className={moderustic.variable}>
+            <body className={`${jost.variable} ${lora.variable}`}>
                 <Header />
                 <div className="main-content">
                     <main>{children}</main>

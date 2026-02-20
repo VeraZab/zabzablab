@@ -33,14 +33,14 @@ export default function QRPage() {
   }, [vcardUrl]);
 
   return (
-    <div style={{
+    <div className="page-container" style={{
       minHeight: "70vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      gap: "1rem",
-      padding: "2rem",
+      gap: "var(--space-4)",
+      padding: "var(--space-8) 0",
       textAlign: "center",
     }}>
       <h1>Scan to save contact</h1>

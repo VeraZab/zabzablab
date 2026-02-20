@@ -19,7 +19,7 @@ const portfolio: PortfolioListItem[] = [
     { 
         designSrc: '/portfolio/cyanotype-block.png', 
         alt: 'Large Scale Cyanotype Botanical Herbarium', 
-        mockupSrc: '/portfolio/cyanotype-mockup3.jpg', 
+        mockupSrc: '/portfolio/cyanotype-mockup4.jpg', 
         href: 'https://www.spoonflower.com/en/collections/1454717', 
         newWindow: true 
     },
@@ -92,10 +92,9 @@ export default function Work() {
                         </clipPath>
                     </defs>
                 </svg>
-                <div className={styles.cta}>
+                <div id="newsletter" className={styles.cta}>
                     <span className={styles.ctaTitle}>Newsletter</span>
-                <br />
-                <span className={styles.ctaText}>
+                    <span className={styles.ctaText}>
                     Be the first to know when new designs drop!
                     No spam, just pretty things.
                 </span>
@@ -108,25 +107,32 @@ export default function Work() {
 }
 
 export const metadata: Metadata = {
-    title: 'Surface Pattern Design Portfolio',
+    title: 'Hand-Drawn Wallpaper & Fabric Designs — Portfolio',
     description:
-        'Explore whimsical, romantic, and timeless surface pattern designs by ZabZabLab for wallpaper, textiles, and interiors.',
+        'Browse hand-drawn wallpaper and fabric collections by ZabZabLab. Botanical, chinoiserie, ethnic, and texture-based patterns—customizable colors and scale for your project.',
     alternates: {
         canonical: '/',
     },
     openGraph: {
         type: 'website',
         url: '/',
-        title: 'Surface Pattern Design Portfolio | ZabZabLab',
+        title: 'Hand-Drawn Wallpaper & Fabric Designs — ZabZabLab Portfolio',
         description:
-            'Explore whimsical, romantic, and timeless surface pattern designs by ZabZabLab for wallpaper, textiles, and interiors.',
+            'Botanical, chinoiserie, ethnic, and texture-based wallpaper and fabric patterns. Customizable colors and scale.',
         images: [
             {
                 url: '/assets/zabzablab.png',
                 width: 1200,
                 height: 630,
-                alt: 'ZabZabLab Wallpaper and Fabric Design Studio',
+                alt: 'ZabZabLab — Custom Wallpaper and Fabric Design Portfolio',
             },
         ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Hand-Drawn Wallpaper & Fabric Designs — ZabZabLab',
+        description:
+            'Botanical, chinoiserie, ethnic, and texture-based wallpaper and fabric patterns. Customizable colors and scale.',
+        images: ['/assets/zabzablab.png'],
     },
 }
