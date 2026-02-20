@@ -117,25 +117,16 @@ export default function ForInteriorDesignersPage() {
                 </h1>
                 <p style={{ textAlign: 'center' }}>
                     I partner with interior designers to bring projects to life with flexible, trade-friendly
-                    services. Whether you need a perfect color match, a quick resize for a client presentation,
+                    services.
+                    <br />
+                    Whether you need a color match, a quick resize for a client presentation,
                     or a bespoke wallpaper, I can help!
                 </p>
             </div>
 
-            <section className="page-section-strip page-section-strip-alt">
-                <div className="page-section-strip-inner" style={{ textAlign: 'center' }}>
-                    <p style={{ marginBottom: 'var(--space-3)' }}>
-                        <strong>Need a versatile base for any project?</strong> Faux fabric textures that work as wallpaper or fabric—customizable to your palette and scale.
-                    </p>
-                    <p style={{ margin: 0 }}>
-                        <Link href="/designs/faux-fabric">
-                            See Texture Foundations →
-                        </Link>
-                    </p>
-                </div>
-            </section>
+           
 
-            <section className="page-section-strip">
+            <section className="page-section-strip page-section-strip-alt">
                 <div className="page-section-strip-inner">
                     <div className="two-col-grid">
                         <div className="col-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
@@ -143,10 +134,10 @@ export default function ForInteriorDesignersPage() {
                         </div>
                         <div className="col-body">
                             <p>
-                                I can match your project palette precisely and adapt any of my designs to your specs:
+                                I can match your project palette and adapt my designs to your specs:
                             </p>
                             <ul>
-                                <li>Exact palette matching (HEX/RGB and Pantone guidance if available)</li>
+                                <li>Palette matching (HEX/RGB and Pantone guidance if available)</li>
                                 <li>Recoloring and value adjustments for contrast, mood, or light conditions</li>
                                 <li>Scale tweaks for wallpaper, upholstery, pillows, bedding, and more</li>
                             </ul>
@@ -159,12 +150,12 @@ export default function ForInteriorDesignersPage() {
                 </div>
             </section>
 
-            <section className="page-section-strip page-section-strip-alt">
+            <section className="page-section-strip ">
                 <div className="page-section-strip-inner">
                     <div className="two-col-grid swap">
                         <div className="col-body">
                             <p>
-                                My wallpaper, fabric, and home decor are available through Spoonflower. A Spoonflower Trade account gives you:
+                                My wallpaper, fabric, and home decor are available through Spoonflower. <br/>A Spoonflower Trade account gives you:
                             </p>
                             <ul>
                                 <li>Exclusive trade discounts on wallpaper and select fabrics</li>
@@ -201,11 +192,11 @@ export default function ForInteriorDesignersPage() {
                 </div>
             </section>
 
-            <section className="page-section-strip">
+            <section className="page-section-strip page-section-strip-alt">
                 <div className="page-section-strip-inner">
                     <div className="two-col-grid">
                         <div className="col-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-                            <h2 style={{ margin: 0 }}>Custom wallpaper commissions</h2>
+                            <h2 style={{ margin: 0 }}>Custom <br/>Wallpaper Commissions</h2>
                         </div>
                         <div className="col-body">
                             <p>
@@ -220,6 +211,18 @@ export default function ForInteriorDesignersPage() {
                             </p>
                         </div>
                     </div>
+                </div>
+            </section>
+            <section className="page-section-strip ">
+                <div className="page-section-strip-inner" style={{ textAlign: 'center' }}>
+                    <p style={{ marginBottom: 'var(--space-3)' }}>
+                        <strong>NEW! Need a versatile base for any project?</strong> Faux fabric textures that work as wallpaper or fabric.
+                    </p>
+                    <p style={{ margin: 0 }}>
+                        <Link href="/designs/faux-fabric">
+                            See Faux Fabric Textures →
+                        </Link>
+                    </p>
                 </div>
             </section>
         </main>

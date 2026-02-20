@@ -47,9 +47,9 @@ export default function AboutPage() {
                         somewhere you&apos;d love to be.
                     </p>
                     <p>
-                        My designs are available on wallpaper and fabric through <a href="https://www.spoonflower.com/profiles/zabzablab" target="_blank" rel="noopener noreferrer">Spoonflower</a>,
+                        My designs are available on wallpaper and fabric through <a href="https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile" target="_blank" rel="noopener noreferrer">Spoonflower</a>,
                         and I offer licensing for commercial projects. I&apos;m based in New Jersey, USA.
-                        Have something in mind? <a href="mailto:zabzablab@gmail.com">Let&apos;s make something great together</a>.
+                        Have something in mind? <a href="mailto:zabzablab@gmail.com">Let&apos;s talk</a>!
                     </p>
                 </div>
             </div>
