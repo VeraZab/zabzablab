@@ -42,6 +42,41 @@ export const metadata: Metadata = {
 export default function FauxFabricPage() {
     return (
         <main>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'FAQPage',
+                        mainEntity: [
+                            {
+                                '@type': 'Question',
+                                name: 'What is faux fabric texture wallpaper?',
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: 'Faux fabric texture wallpaper is printed wallpaper that realistically mimics the look and feel of woven textiles like linen, grasscloth, or basketweave. It starts from a high-resolution photograph of actual fabric, so the weave and grain look authentic — but at a fraction of the cost of real textile wallcovering, and much easier to clean and maintain.',
+                                },
+                            },
+                            {
+                                '@type': 'Question',
+                                name: 'Is faux grasscloth wallpaper cheaper than real grasscloth?',
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: 'Yes. Faux grasscloth wallpaper costs a fraction of real grasscloth wallcovering. It is also easier to clean, maintain, and install, with quicker turnaround times. ZabZabLab\'s faux grasscloth textures can be color customized and are available on wallpaper and fabric through Spoonflower.',
+                                },
+                            },
+                            {
+                                '@type': 'Question',
+                                name: 'Can faux fabric wallpaper be color customized?',
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: 'Yes. Every ZabZabLab faux fabric texture can be color customized to match your palette, adjusted to scale, or rotated. Submit a customization request at zabzablab.com/resize-recolor-request.',
+                                },
+                            },
+                        ],
+                    }),
+                }}
+            />
             <div className={`page-container ${styles.intro}`}>
                 <h1>Faux fabric textures</h1>
                 <div className={styles.introLead}>

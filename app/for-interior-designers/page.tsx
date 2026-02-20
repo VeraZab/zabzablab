@@ -111,6 +111,49 @@ export default function ForInteriorDesignersPage() {
                     }),
                 }}
             />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'FAQPage',
+                        mainEntity: [
+                            {
+                                '@type': 'Question',
+                                name: 'Can ZabZabLab color match wallpaper to my paint color?',
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: 'Yes. ZabZabLab can match any paint manufacturer\'s color — Sherwin-Williams, Benjamin Moore, Farrow & Ball, Pantone, HEX, or RGB — to any pattern in the shop. Submit a request at zabzablab.com/resize-recolor-request or email zabzablab@gmail.com.',
+                                },
+                            },
+                            {
+                                '@type': 'Question',
+                                name: 'Does ZabZabLab offer trade discounts for interior designers?',
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: 'ZabZabLab designs are available through Spoonflower, which offers a Trade Program with exclusive discounts on wallpaper and select fabrics, free swatches, quick manufacturing, and no minimum orders. Apply at spoonflower.com/en/trade.',
+                                },
+                            },
+                            {
+                                '@type': 'Question',
+                                name: 'Can I commission a custom wallpaper design?',
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: 'Yes. ZabZabLab accepts custom wallpaper commissions — from full repeat development to tailored recolors and coordinates. Email zabzablab@gmail.com to discuss scope, timeline, sampling, and production.',
+                                },
+                            },
+                            {
+                                '@type': 'Question',
+                                name: 'Can ZabZabLab resize a wallpaper pattern for my project?',
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: 'Yes. Any ZabZabLab design can be resized for wallpaper, upholstery, pillows, bedding, or other applications. Submit a resize request at zabzablab.com/resize-recolor-request.',
+                                },
+                            },
+                        ],
+                    }),
+                }}
+            />
             <div className="page-container">
                 <h1 style={{ textAlign: 'center', marginTop: 0 }}>
                     Interior Designer friends, <span className="mobile-newline">I&apos;ve got you!</span>

@@ -108,6 +108,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 />
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
                 <meta name="p:domain_verify" content="713bb29cacff3398e376fff8d6561c4d" />
+                <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
                 {/* Title comes from Next.js Metadata API per page */}
                 <link
                     rel="icon"
@@ -121,8 +122,35 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             '@context': 'https://schema.org',
                             '@type': 'Organization',
                             name: 'ZabZabLab',
+                            alternateName: 'ZabZabLab Wallpaper and Fabric Design Studio',
                             url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
                             logo: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                            description: 'Hand-drawn wallpaper and fabric design studio specializing in custom colorways, faux texture wallpapers, and trade-friendly services for interior designers. Designs sold through Spoonflower.',
+                            founder: {
+                                '@type': 'Person',
+                                name: 'Vera',
+                                jobTitle: 'Surface Pattern Designer',
+                            },
+                            address: {
+                                '@type': 'PostalAddress',
+                                addressRegion: 'NJ',
+                                addressCountry: 'US',
+                            },
+                            contactPoint: {
+                                '@type': 'ContactPoint',
+                                email: 'zabzablab@gmail.com',
+                                contactType: 'customer service',
+                            },
+                            knowsAbout: [
+                                'surface pattern design',
+                                'wallpaper design',
+                                'textile design',
+                                'faux texture wallpaper',
+                                'faux grasscloth wallpaper',
+                                'faux linen wallpaper',
+                                'custom wallpaper color matching',
+                                'interior design wallpaper',
+                            ],
                             sameAs: [
                                 'https://www.instagram.com/zabzablab',
                                 'https://www.spoonflower.com/profiles/zabzablab',

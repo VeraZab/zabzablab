@@ -9,6 +9,41 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
                 disallow: ['/r', '/qr'],
             },
+            {
+                userAgent: 'GPTBot',
+                allow: '/',
+                disallow: ['/r', '/qr'],
+            },
+            {
+                userAgent: 'ChatGPT-User',
+                allow: '/',
+                disallow: ['/r', '/qr'],
+            },
+            {
+                userAgent: 'Google-Extended',
+                allow: '/',
+                disallow: ['/r', '/qr'],
+            },
+            {
+                userAgent: 'PerplexityBot',
+                allow: '/',
+                disallow: ['/r', '/qr'],
+            },
+            {
+                userAgent: 'Amazonbot',
+                allow: '/',
+                disallow: ['/r', '/qr'],
+            },
+            {
+                userAgent: 'anthropic-ai',
+                allow: '/',
+                disallow: ['/r', '/qr'],
+            },
+            {
+                userAgent: 'ClaudeBot',
+                allow: '/',
+                disallow: ['/r', '/qr'],
+            },
         ],
         sitemap: `${baseUrl}/sitemap.xml`,
         host: baseUrl,
