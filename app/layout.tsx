@@ -25,38 +25,56 @@ const lora = Lora({
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
     title: {
-        default: 'ZabZabLab Wallpaper and Fabric Design Studio',
-        template: '%s | ZabZabLab Wallpaper and Fabric Design Studio',
+        default: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
+        template: '%s | ZabZabLab',
     },
-    description: 'Textiles and wallpaper—for homes with history and personality. Customizable patterns, trade-friendly options.',
+    description: 'Hand-drawn wallpaper and fabric designs for interiors with personality. Custom colorways, faux textures, and trade-friendly options for interior designers. Shop on Spoonflower.',
     applicationName: 'ZabZabLab',
-    keywords: ['surface pattern design', 'textile design', 'wallpaper', 'interior design', 'custom wallpaper', 'ZabZabLab'],
+    keywords: [
+        'custom wallpaper',
+        'custom fabric design',
+        'surface pattern design',
+        'wallpaper for interior designers',
+        'trade wallpaper',
+        'faux grasscloth wallpaper',
+        'faux linen wallpaper',
+        'faux limewash wallpaper',
+        'faux stone wallpaper',
+        'textile design',
+        'hand-drawn wallpaper',
+        'Spoonflower designer',
+        'wallpaper color matching',
+        'custom wallpaper commission',
+        'ZabZabLab',
+    ],
     creator: 'ZabZabLab',
     publisher: 'ZabZabLab',
+    category: 'Interior Design',
     alternates: {
         canonical: '/',
     },
     openGraph: {
         type: 'website',
+        locale: 'en_US',
         url: '/',
-        title: 'ZabZabLab Wallpaper and Fabric Design Studio',
+        title: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
         description:
-            'Textiles and wallpaper—for homes with history and personality. Customizable, trade-friendly.',
+            'Hand-drawn wallpaper and fabric for interiors with personality. Custom colorways, faux textures, and trade-friendly options.',
         siteName: 'ZabZabLab',
         images: [
             {
                 url: '/assets/zabzablab.png',
                 width: 1200,
                 height: 630,
-                alt: 'ZabZabLab Wallpaper and Fabric Design Studio',
+                alt: 'ZabZabLab — Custom Wallpaper and Fabric Design Studio',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'ZabZabLab Wallpaper and Fabric Design Studio',
+        title: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
         description:
-            'Textiles and wallpaper—homes with history and personality. Customizable, trade-friendly.',
+            'Hand-drawn wallpaper and fabric for interiors with personality. Custom colorways and trade-friendly options.',
         images: ['/assets/zabzablab.png'],
     },
     robots: {
@@ -118,7 +136,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                         __html: JSON.stringify({
                             '@context': 'https://schema.org',
                             '@type': 'WebSite',
-                            name: 'ZabZabLab Wallpaper and Fabric Design Studio',
+                            name: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
                             url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
                             inLanguage: 'en',
                             publisher: {

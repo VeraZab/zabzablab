@@ -10,7 +10,7 @@ export default function AboutPage() {
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'Person',
-                        name: 'ZabZabLab Wallpaper and Fabric Design Studio by Vera Zabeida',
+                        name: 'ZabZabLab Wallpaper and Fabric Design Studio by Vera',
                         url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com') + '/about',
                         image: new URL('/assets/about.jpg', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
                         sameAs: [
@@ -30,7 +30,7 @@ export default function AboutPage() {
                 <div className={styles.imageContainer}>
                     <img
                         src="/assets/about.jpg"
-                        alt="Vera Zabeida"
+                        alt="Vera"
                     />
                 </div>
                 <div className={styles.caption}>
@@ -58,8 +58,30 @@ export default function AboutPage() {
 }
 
 export const metadata: Metadata = {
-    title: 'About ZabZabLab',
+    title: 'About ZabZabLab — Surface Pattern Designer',
     description:
-        'Meet Vera—surface pattern designer behind ZabZabLab. Hand-drawn patterns for wallpaper and textiles: playful, nostalgic, and made to customize.',
+        'Meet Vera, the surface pattern designer behind ZabZabLab. Hand-drawn wallpaper and fabric designs mixing traditional motifs with modern style. Based in New Jersey, available for licensing and commissions.',
     alternates: { canonical: '/about' },
+    openGraph: {
+        type: 'profile',
+        url: '/about',
+        title: 'About Vera — Surface Pattern Designer | ZabZabLab',
+        description:
+            'Hand-drawn wallpaper and fabric designs mixing traditional motifs with modern style. Available for licensing and commissions.',
+        images: [
+            {
+                url: '/assets/about.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Vera — Surface Pattern Designer at ZabZabLab',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'About Vera — Surface Pattern Designer | ZabZabLab',
+        description:
+            'Hand-drawn wallpaper and fabric designs mixing traditional motifs with modern style. Available for licensing and commissions.',
+        images: ['/assets/about.jpg'],
+    },
 }

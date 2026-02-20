@@ -2,30 +2,30 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-    title: 'For Interior Designers',
+    title: 'For Interior Designers — Trade-Friendly Wallpaper & Fabric',
     description:
-        'Trade-friendly wallpaper and fabric: color match, resize, and custom commissions. Spoonflower Trade benefits.',
+        'Custom wallpaper and fabric services for interior designers: exact color matching, scale adjustments, bespoke commissions, and Spoonflower Trade discounts. No minimums, fast turnaround.',
     alternates: { canonical: '/for-interior-designers' },
     openGraph: {
         type: 'website',
         url: '/for-interior-designers',
-        title: 'For Interior Designers | ZabZabLab',
+        title: 'For Interior Designers — Trade-Friendly Wallpaper & Fabric | ZabZabLab',
         description:
-            'Trade-friendly wallpaper and fabric: color match, resize, and custom commissions. Spoonflower Trade benefits.',
+            'Custom color matching, scale adjustments, bespoke commissions, and Spoonflower Trade discounts for interior designers.',
         images: [
             {
                 url: '/assets/zabzablab.png',
                 width: 1200,
                 height: 630,
-                alt: 'ZabZabLab Wallpaper and Fabric Design Studio',
+                alt: 'ZabZabLab — Wallpaper and Fabric Services for Interior Designers',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'For Interior Designers | ZabZabLab',
+        title: 'For Interior Designers — Trade-Friendly Wallpaper & Fabric | ZabZabLab',
         description:
-            'Trade-friendly wallpaper and fabric: color match, resize, custom commissions. Spoonflower Trade benefits.',
+            'Custom color matching, scale adjustments, bespoke commissions, and Spoonflower Trade discounts for interior designers.',
         images: ['/assets/zabzablab.png'],
     },
 }

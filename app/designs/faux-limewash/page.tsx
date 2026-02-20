@@ -14,17 +14,24 @@ const fauxLimewashTextures: TextureItem[] = [
 ]
 
 export const metadata: Metadata = {
-    title: 'Faux Limewash Textures',
+    title: 'Faux Limewash Texture Wallpaper — Plaster & Mineral Paint Look',
     description:
-        'Soft, plaster-like faux limewash textures for calm, European-inspired walls. Customize color and scale—trade-friendly.',
+        'Faux limewash and plaster texture wallpaper for calm, European-inspired interiors. Soft mineral-paint depth without the mess. Customizable color and scale, trade-friendly.',
     alternates: { canonical: '/designs/faux-limewash' },
     openGraph: {
         type: 'website',
         url: '/designs/faux-limewash',
-        title: 'Faux Limewash Textures | ZabZabLab',
+        title: 'Faux Limewash Texture Wallpaper | ZabZabLab',
         description:
-            'Faux limewash textures for calm, European-inspired walls. Customize color and scale—trade-friendly.',
-        images: [{ url: '/assets/zabzablab.png', width: 1200, height: 630, alt: 'ZabZabLab Faux Limewash Textures' }],
+            'Soft plaster and limewash texture wallpaper for European-inspired walls. Customizable color and scale, trade-friendly.',
+        images: [{ url: '/assets/zabzablab.png', width: 1200, height: 630, alt: 'ZabZabLab Faux Limewash Texture Wallpaper' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Faux Limewash Texture Wallpaper | ZabZabLab',
+        description:
+            'Soft plaster and limewash texture wallpaper for European-inspired walls. Customizable color and scale, trade-friendly.',
+        images: ['/assets/zabzablab.png'],
     },
 }
 

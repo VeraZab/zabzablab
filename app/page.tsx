@@ -107,25 +107,32 @@ export default function Work() {
 }
 
 export const metadata: Metadata = {
-    title: 'Surface Pattern Design Portfolio',
+    title: 'Hand-Drawn Wallpaper & Fabric Designs — Portfolio',
     description:
-        'Wallpaper and fabric designs for homes with history and personality. Artisan patterns—customizable for your project.',
+        'Browse hand-drawn wallpaper and fabric collections by ZabZabLab. Botanical, chinoiserie, ethnic, and texture-based patterns—customizable colors and scale for your project.',
     alternates: {
         canonical: '/',
     },
     openGraph: {
         type: 'website',
         url: '/',
-        title: 'Surface Pattern Design Portfolio | ZabZabLab',
+        title: 'Hand-Drawn Wallpaper & Fabric Designs — ZabZabLab Portfolio',
         description:
-            'Wallpaper and fabric designs for homes with history and personality. Artisan patterns—customizable for your project.',
+            'Botanical, chinoiserie, ethnic, and texture-based wallpaper and fabric patterns. Customizable colors and scale.',
         images: [
             {
                 url: '/assets/zabzablab.png',
                 width: 1200,
                 height: 630,
-                alt: 'ZabZabLab Wallpaper and Fabric Design Studio',
+                alt: 'ZabZabLab — Custom Wallpaper and Fabric Design Portfolio',
             },
         ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Hand-Drawn Wallpaper & Fabric Designs — ZabZabLab',
+        description:
+            'Botanical, chinoiserie, ethnic, and texture-based wallpaper and fabric patterns. Customizable colors and scale.',
+        images: ['/assets/zabzablab.png'],
     },
 }

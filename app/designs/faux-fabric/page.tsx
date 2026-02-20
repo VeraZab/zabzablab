@@ -18,17 +18,24 @@ const fauxFabricTextures: TextureItem[] = [
 ]
 
 export const metadata: Metadata = {
-    title: 'Faux Fabric Textures',
+    title: 'Faux Fabric Texture Wallpaper — Linen, Grasscloth & Basketweave',
     description:
-        'Faux fabric textures\u2014linen, grasscloth, basketweave, and more\u2014as a versatile base for any project. Customize color and scale, trade-friendly.',
+        'Realistic faux fabric texture wallpaper and fabric: linen weave, grasscloth, basketweave, and more. Photo-based textures with customizable color and scale. Trade-friendly, fraction of the cost of real textile wallcovering.',
     alternates: { canonical: '/designs/faux-fabric' },
     openGraph: {
         type: 'website',
         url: '/designs/faux-fabric',
-        title: 'Faux Fabric Textures | ZabZabLab',
+        title: 'Faux Fabric Texture Wallpaper — Linen, Grasscloth & Basketweave | ZabZabLab',
         description:
-            'Faux fabric textures as a versatile base for wallpaper and textiles. Customize color and scale\u2014trade-friendly.',
-        images: [{ url: '/assets/zabzablab.png', width: 1200, height: 630, alt: 'ZabZabLab Faux Fabric Textures' }],
+            'Realistic faux linen, grasscloth, and basketweave texture wallpaper. Customizable color and scale, trade-friendly.',
+        images: [{ url: '/portfolio/linen-weave-block.jpg', width: 1200, height: 630, alt: 'ZabZabLab Faux Fabric Texture Wallpaper' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Faux Fabric Texture Wallpaper — Linen, Grasscloth & Basketweave | ZabZabLab',
+        description:
+            'Realistic faux linen, grasscloth, and basketweave texture wallpaper. Customizable color and scale, trade-friendly.',
+        images: ['/portfolio/linen-weave-block.jpg'],
     },
 }
 

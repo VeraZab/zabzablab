@@ -2,27 +2,27 @@ import type { Metadata } from "next";
 import styles from "../../styles/resize-recolor-request.module.css";
 
 export const metadata: Metadata = {
-    title: "Resize / Recolor Request",
-    description: "Request a custom resize or recolor of any ZabZabLab design. Match your palette and scale for wallpaper, fabric, or home decor.",
+    title: "Custom Resize & Recolor Request — Wallpaper Color Matching",
+    description: "Request a custom color match, resize, or recolor of any ZabZabLab wallpaper or fabric design. Match Sherwin-Williams, Benjamin Moore, Pantone, or any palette. Free for interior designers.",
     alternates: { canonical: '/resize-recolor-request' },
     openGraph: {
         type: 'website',
         url: '/resize-recolor-request',
-        title: 'Resize / Recolor Request | ZabZabLab',
-        description: 'Request a custom resize or recolor of any ZabZabLab design. Match your palette and scale.',
+        title: 'Custom Resize & Recolor Request | ZabZabLab',
+        description: 'Request a custom color match, resize, or recolor of any ZabZabLab wallpaper or fabric design.',
         images: [
             {
                 url: '/assets/zabzablab.png',
                 width: 1200,
                 height: 630,
-                alt: 'ZabZabLab Wallpaper and Fabric Design Studio',
+                alt: 'ZabZabLab — Custom Resize and Recolor Request',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Resize / Recolor Request | ZabZabLab',
-        description: 'Request a custom resize or recolor of any ZabZabLab design. Match your palette and scale.',
+        title: 'Custom Resize & Recolor Request | ZabZabLab',
+        description: 'Request a custom color match, resize, or recolor of any ZabZabLab wallpaper or fabric design.',
         images: ['/assets/zabzablab.png'],
     },
 };

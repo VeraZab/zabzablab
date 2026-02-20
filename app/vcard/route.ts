@@ -7,7 +7,7 @@ function buildVCard(): string {
     'BEGIN:VCARD',
     'VERSION:3.0',
     'N:Zabeida;Vera;;;',
-    'FN:ZabZabLab (Vera Zabeida)',
+    'FN:ZabZabLab (Vera)',
     'ORG:ZabZabLab',
     'EMAIL;TYPE=INTERNET;TYPE=WORK:zabzablab@gmail.com',
     'URL;TYPE=WORK:https://www.zabzablab.com',

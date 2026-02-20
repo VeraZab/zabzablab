@@ -27,14 +27,28 @@ const posts: BlogPost[] = [
 ]
 
 export const metadata: Metadata = {
-    title: 'Thoughts on color, pattern, and design',
-    description: 'ZabZabLab Wallpaper and Fabric Design Studio: Thoughts on color, pattern, and design.',
+    title: 'Blog — Color, Pattern & Interior Design Ideas',
+    description: 'Design inspiration from ZabZabLab: color trends, pattern ideas, wallpaper tips, and interior styling guidance for homeowners and designers.',
     alternates: { canonical: '/blog' },
     openGraph: {
         type: 'website',
         url: '/blog',
-        title: 'ZabZabLab Blog',
-        description: 'Thoughts on color, pattern, and design from ZabZabLab.',
+        title: 'Blog — Color, Pattern & Interior Design Ideas | ZabZabLab',
+        description: 'Color trends, pattern ideas, wallpaper tips, and interior styling guidance from ZabZabLab.',
+        images: [
+            {
+                url: '/assets/zabzablab.png',
+                width: 1200,
+                height: 630,
+                alt: 'ZabZabLab Blog — Color, Pattern and Design',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Blog — Color, Pattern & Interior Design Ideas | ZabZabLab',
+        description: 'Color trends, pattern ideas, wallpaper tips, and interior styling guidance from ZabZabLab.',
+        images: ['/assets/zabzablab.png'],
     },
 }
 

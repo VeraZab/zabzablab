@@ -12,17 +12,24 @@ const fauxStoneTextures: TextureItem[] = [
 ]
 
 export const metadata: Metadata = {
-    title: 'Faux Stone Textures',
+    title: 'Faux Stone Texture Wallpaper — Natural Stone Look',
     description:
-        'Organic, tactile faux stone textures for feature walls, accents, or full rooms. Customize color and scale—trade-friendly.',
+        'Faux stone texture wallpaper that reads as natural material without the weight or cost. Organic, tactile stone finishes for feature walls, accents, or full rooms. Customizable color and scale, trade-friendly.',
     alternates: { canonical: '/designs/faux-stone' },
     openGraph: {
         type: 'website',
         url: '/designs/faux-stone',
-        title: 'Faux Stone Textures | ZabZabLab',
+        title: 'Faux Stone Texture Wallpaper | ZabZabLab',
         description:
-            'Faux stone textures for feature walls and accents. Customize color and scale—trade-friendly.',
-        images: [{ url: '/assets/zabzablab.png', width: 1200, height: 630, alt: 'ZabZabLab Faux Stone Textures' }],
+            'Organic, tactile faux stone wallpaper for feature walls and accents. Customizable color and scale, trade-friendly.',
+        images: [{ url: '/assets/zabzablab.png', width: 1200, height: 630, alt: 'ZabZabLab Faux Stone Texture Wallpaper' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Faux Stone Texture Wallpaper | ZabZabLab',
+        description:
+            'Organic, tactile faux stone wallpaper for feature walls and accents. Customizable color and scale, trade-friendly.',
+        images: ['/assets/zabzablab.png'],
     },
 }
 
