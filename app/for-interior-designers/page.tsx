@@ -198,7 +198,8 @@ export default function ForInteriorDesignersPage() {
                     <div className="two-col-grid swap">
                         <div className="col-body">
                             <p>
-                                My wallpaper, fabric, and home decor are available through Spoonflower. <br/>A Spoonflower Trade account gives you:
+                                <Link href="https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile" target="_blank" rel="noopener noreferrer">My wallpaper, fabric, and home decor </Link> 
+                                is available through Spoonflower. <br/>A Spoonflower Trade account gives you:
                             </p>
                             <ul>
                                 <li>Exclusive trade discounts on wallpaper and select fabrics</li>
