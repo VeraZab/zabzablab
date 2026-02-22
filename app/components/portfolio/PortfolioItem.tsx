@@ -16,8 +16,8 @@ export default function PortfolioItem({
     newWindow?: boolean
     text?: string
 }) {
-    const content = (
-        <>
+    return (
+        <div className={styles.container}>
             {mockupSrc ? (
                 <>
                     <Image
@@ -50,17 +50,15 @@ export default function PortfolioItem({
                 />
             )}
             {text && <div>{text}</div>}
-        </>
-    )
-
-    return (
-        <div className={styles.container}>
-            {href ? (
-                <a href={href} target={newWindow ? '_blank' : undefined} rel={newWindow ? 'noopener noreferrer' : undefined}>
-                    {content}
+            {href && (
+                <a
+                    href={href}
+                    target={newWindow ? '_blank' : undefined}
+                    rel={newWindow ? 'noopener noreferrer' : undefined}
+                    className={styles.shopLink}
+                >
+                    shop →
                 </a>
-            ) : (
-                content
             )}
         </div>
     )
