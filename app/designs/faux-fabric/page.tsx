@@ -8,8 +8,8 @@ type TextureItem = { designSrc: string; alt: string; href?: string }
 
 const fauxFabricTextures: TextureItem[] = [
     { designSrc: '/portfolio/linen-weave-block.jpg', alt: 'Tight Linen Weave Texture', href: 'https://www.spoonflower.com/collections/1459860-tight-linen-weave-zab26005-by-zabzablab' },
-    { designSrc: '/portfolio/grasscloth-block.jpg', alt: 'Slobby Vertical Grasscloth Texture', href: 'https://www.spoonflower.com/en/collections/1341765' },
-    { designSrc: '/portfolio/basketweave-block.jpg', alt: 'Soft Basketweave Texture', href: 'https://www.spoonflower.com/en/collections/1341765' },
+    { designSrc: '/portfolio/grasscloth-block.jpg', alt: 'Slobby Vertical Grasscloth Texture', href: 'https://www.spoonflower.com/collections/1466387' },
+    { designSrc: '/portfolio/diagonal-canvas-block.png', alt: 'Diagonal Weave Canvas Texture', href: 'https://www.spoonflower.com/collections/1466399' },
     { designSrc: '/portfolio/linen2-block.jpg', alt: 'Slubby Linen Texture', href: 'https://www.spoonflower.com/collections/1462110' },
     // { designSrc: '/portfolio/basketweave-block.jpg', alt: 'Canvas Texture', href: 'https://www.spoonflower.com/en/collections/1341765' },
     // { designSrc: '/portfolio/basketweave-block.jpg', alt: 'Burlap Jute Texture', href: 'https://www.spoonflower.com/en/collections/1341765' },
@@ -82,7 +82,7 @@ export default function FauxFabricPage() {
                 <div className={styles.introLead}>
                     <p>
                         A neutral, tactile base that plays well with bold art, vintage finds, or a quiet palette&mdash;without competing for attention.
-                        Every texture starts from a real, high-resolution photograph of actual fabric, so the weave, grain, and detail feel authentic.
+                        Every texture starts from a real, high-resolution photograph of actual fabric,<br /> so the weave, grain, and detail feel authentic.
                     </p>
                 </div>
             </div>
