@@ -225,6 +225,14 @@
         justify-content: center;
         gap: var(--space-2);
         color: white;
+        border-bottom: none !important;
+    }
+
+    .mobileLinks a.active {
+        text-decoration: underline;
+        text-underline-offset: 0.35rem;
+        text-decoration-thickness: 0.12rem;
+        text-decoration-color: currentColor;
     }
 
     .mobileLinks svg {
@@ -289,4 +297,15 @@
     gap: var(--space-4);
     margin-top: var(--space-4);
     font-size: 1.25rem;
+}
+
+.submenuMobile a {
+    border-bottom: none !important;
+}
+
+.submenuMobile a.active {
+    text-decoration: underline;
+    text-underline-offset: 0.35rem;
+    text-decoration-thickness: 0.12rem;
+    text-decoration-color: currentColor;
 }

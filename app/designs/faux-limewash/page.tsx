@@ -39,7 +39,7 @@ export default function FauxLimewashPage() {
     return (
         <main>
             <div className={`page-container ${styles.intro}`}>
-                <h1>Faux limewash textures</h1>
+                <h1>Faux Limewash Textures</h1>
                 <div className={styles.introLead}>
                     <p>
                         Soft, plaster-like depth with the look of limewash or mineral paint—without the mess.
@@ -73,10 +73,10 @@ export default function FauxLimewashPage() {
             <section className="page-section-strip page-section-strip-alt">
                 <div className="page-section-strip-inner">
                     <div className={styles.notFinding}>
-                        <h2>Don&apos;t see what you&apos;re looking for?</h2>
+                        <h2>Don&apos;t See What You&apos;re Looking For?</h2>
                         <p>
                             What&apos;s shown here is just a sample—I have a larger library of limewash and plaster textures that aren&apos;t listed yet. {' '}
-                            <a href="mailto:hello@zabzablab.com" className={styles.ctaLink}>Tell me what you need</a> and I&apos;ll send you some options!
+                            <a href="mailto:zabzablab@gmail.com" className={styles.ctaLink}>Tell me what you need</a> and I&apos;ll send you some options!
                         </p>
                         <p>
                             Every texture can be color customized to match your palette, adjusted to scale, or rotated.

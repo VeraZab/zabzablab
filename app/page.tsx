@@ -25,7 +25,7 @@ const portfolio: PortfolioListItem[] = [
     },
     {
         designSrc: '/portfolio/horse-block.png',
-        alt: 'Mori Indian EthnicHorse Block Print',
+        alt: 'Mori Indian Ethnic Horse Block Print',
         mockupSrc: '/portfolio/horse-mockup.jpg',
         href: 'https://www.spoonflower.com/en/collections/1432238',
         newWindow: true,

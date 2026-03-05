@@ -30,7 +30,7 @@ const navigationLinks = [
     {
         title: 'Stay Connected',
         children: [
-            { title: 'Email', href: 'mailto:hello@zabzablab.com' },
+            { title: 'Email', href: 'mailto:zabzablab@gmail.com' },
             { title: 'Instagram', href: 'https://www.instagram.com/zabzablab', target: '_blank' },
             { title: 'Newsletter', href: '/#newsletter' },
             { title: 'Blog', href: '/blog' },

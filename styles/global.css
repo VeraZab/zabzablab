@@ -139,6 +139,12 @@ h1, h2 {
 h1 { font-size: 1.75rem; padding: var(--space-2) 0; letter-spacing: 0.03em; }
 h2 { font-size: 1.35rem; padding: var(--space-2) 0; }
 
+.subheading {
+    font-size: 0.95rem;
+    font-style: italic;
+    margin: 0 0 var(--space-6);
+}
+
 /* Typography utilities */
 .moderustic-semibold {
     font: 600 1rem/1 var(--font-jost, var(--font-stack));

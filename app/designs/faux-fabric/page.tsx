@@ -4,13 +4,13 @@ import Link from 'next/link'
 
 import styles from './textureFoundations.module.css'
 
-type TextureItem = { designSrc: string; alt: string; href?: string }
+type TextureItem = { designSrc: string; alt: string; href?: string; bestFor?: string }
 
 const fauxFabricTextures: TextureItem[] = [
-    { designSrc: '/portfolio/linen-weave-block.jpg', alt: 'Tight Linen Weave Texture', href: 'https://www.spoonflower.com/collections/1459860-tight-linen-weave-zab26005-by-zabzablab' },
-    { designSrc: '/portfolio/grasscloth-block.jpg', alt: 'Slobby Vertical Grasscloth Texture', href: 'https://www.spoonflower.com/collections/1466387' },
-    { designSrc: '/portfolio/diagonal-canvas-block.png', alt: 'Diagonal Weave Canvas Texture', href: 'https://www.spoonflower.com/collections/1466399' },
-    { designSrc: '/portfolio/linen2-block.jpg', alt: 'Slubby Linen Texture', href: 'https://www.spoonflower.com/collections/1462110' },
+    { designSrc: '/portfolio/linen-weave-block.jpg', alt: 'Tight Linen Weave Texture', href: 'https://www.spoonflower.com/collections/1459860-tight-linen-weave-zab26005-by-zabzablab', bestFor: 'Calm living rooms and bedrooms where you want subtle texture instead of a flat painted wall.' },
+    { designSrc: '/portfolio/grasscloth-block.jpg', alt: 'Slubby Vertical Grasscloth Texture', href: 'https://www.spoonflower.com/collections/1466387', bestFor: '\u2018Grasscloth look\u2019 feature walls in dining rooms, home offices, and cozy corners\u2014without the cost and delicacy of real grasscloth.' },
+    { designSrc: '/portfolio/diagonal-canvas-block.png', alt: 'Diagonal Weave Canvas Texture', href: 'https://www.spoonflower.com/collections/1466399', bestFor: 'Accent walls and textiles (pillows, headboards, bench cushions) that need a bit more structure and visual weight.' },
+    { designSrc: '/portfolio/linen2-block.jpg', alt: 'Slubby Linen Texture', href: 'https://www.spoonflower.com/collections/1462110', bestFor: 'Bedrooms, nurseries, and reading nooks where you want softness and warmth without pattern.' },
     // { designSrc: '/portfolio/basketweave-block.jpg', alt: 'Canvas Texture', href: 'https://www.spoonflower.com/en/collections/1341765' },
     // { designSrc: '/portfolio/basketweave-block.jpg', alt: 'Burlap Jute Texture', href: 'https://www.spoonflower.com/en/collections/1341765' },
     // { designSrc: '/portfolio/basketweave-block.jpg', alt: 'Herringbone Texture', href: 'https://www.spoonflower.com/en/collections/1341765' },
@@ -20,21 +20,21 @@ const fauxFabricTextures: TextureItem[] = [
 export const metadata: Metadata = {
     title: 'Faux Fabric Texture Wallpaper — Linen, Grasscloth & Basketweave',
     description:
-        'Realistic faux fabric texture wallpaper and fabric: linen weave, grasscloth, basketweave, and more. Photo-based textures with customizable color and scale. Trade-friendly, fraction of the cost of real textile wallcovering.',
+        'A curated toolkit of faux linen, grasscloth, and canvas texture wallpaper and fabric. Photo-based, color customizable, and a fraction of the cost of real textile wallcovering. Available on Spoonflower — easy to order for designers and homeowners.',
     alternates: { canonical: '/designs/faux-fabric' },
     openGraph: {
         type: 'website',
         url: '/designs/faux-fabric',
         title: 'Faux Fabric Texture Wallpaper — Linen, Grasscloth & Basketweave | ZabZabLab',
         description:
-            'Realistic faux linen, grasscloth, and basketweave texture wallpaper. Customizable color and scale, trade-friendly.',
+            'Curated faux linen, grasscloth, and canvas texture wallpaper and fabric. Photo-based, color customizable, available on Spoonflower.',
         images: [{ url: '/portfolio/linen-weave-block.jpg', width: 1200, height: 630, alt: 'ZabZabLab Faux Fabric Texture Wallpaper' }],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Faux Fabric Texture Wallpaper — Linen, Grasscloth & Basketweave | ZabZabLab',
         description:
-            'Realistic faux linen, grasscloth, and basketweave texture wallpaper. Customizable color and scale, trade-friendly.',
+            'Curated faux linen, grasscloth, and canvas texture wallpaper and fabric. Photo-based, color customizable, available on Spoonflower.',
         images: ['/portfolio/linen-weave-block.jpg'],
     },
 }
@@ -73,16 +73,27 @@ export default function FauxFabricPage() {
                                     text: 'Yes. Every ZabZabLab faux fabric texture can be color customized to match your palette, adjusted to scale, or rotated. Submit a customization request at zabzablab.com/resize-recolor-request.',
                                 },
                             },
+                            {
+                                '@type': 'Question',
+                                name: 'Which rooms are faux fabric texture wallpapers best for?',
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: 'It depends on the texture. Tight linen weave is great for calm living rooms and bedrooms. Faux grasscloth works well as a feature wall in dining rooms, home offices, and cozy corners. Canvas weave suits accent walls and textiles like pillows and headboards. Slubby linen is ideal for bedrooms, nurseries, and reading nooks where you want softness without pattern.',
+                                },
+                            },
                         ],
                     }),
                 }}
             />
             <div className={`page-container ${styles.intro}`}>
-                <h1>Faux fabric textures</h1>
+                <h1>Faux Fabric Textures</h1>
                 <div className={styles.introLead}>
+                    <p className="subheading">
+                        A small toolkit of my most-used faux fabric textures for walls and textiles.
+                    </p>
                     <p>
-                        A neutral, tactile base that plays well with bold art, vintage finds, or a quiet palette&mdash;without competing for attention.
-                        Every texture starts from a real, high-resolution photograph of actual fabric,<br /> so the weave, grain, and detail feel authentic.
+                        They&apos;re designed to be a neutral, tactile base&mdash;something that plays well with bold art, vintage finds, or a quiet palette
+                        without competing for attention. Each one starts from a real, high-resolution photograph of actual fabric, so the weave, grain, and detail feel authentic.
                     </p>
                 </div>
             </div>
@@ -91,13 +102,13 @@ export default function FauxFabricPage() {
                 <div className="page-section-strip-inner">
                     <div className="two-col-grid">
                         <div className={`col-title ${styles.twoColTitle}`}>
-                            <h2>The look of real fabric,<br />without the drawbacks</h2>
+                            <h2>The Look of Real Fabric,<br />Without the Drawbacks</h2>
                         </div>
                         <div className={`col-body ${styles.twoColBody}`}>
                             <ul>
                                 <li>Available on wallpaper and fabric, and <Link href="/resize-recolor-request">color customizable</Link></li>
                                 <li>Easy to clean and maintain compared to real fabric on walls</li>
-                                <li>Fraction of the cost of real grasscloth or textile wallcovering</li>
+                                <li>A fraction of the cost of real grasscloth or textile wallcovering</li>
                                 <li>Quick turnaround so you can keep projects moving</li>
                             </ul>
                             
@@ -108,6 +119,9 @@ export default function FauxFabricPage() {
 
             <section className="page-section-strip">
                 <div className="page-section-strip-inner">
+                    <p className={styles.spoonflowerNote}>
+                        If you already use Spoonflower in your projects, these textures are available there as wallpaper and fabric&mdash;easy to order and ready to go.
+                    </p>
                     <div className={styles.textureGrid}>
                         {fauxFabricTextures.map((item, index) => (
                             <figure key={`fabric-${index}`} className={styles.textureFigure}>
@@ -128,6 +142,11 @@ export default function FauxFabricPage() {
                                         </a>
                                     )}
                                 </div>
+                                {item.bestFor && (
+                                    <p className={styles.bestFor}>
+                                        <strong>Best for:</strong> {item.bestFor}
+                                    </p>
+                                )}
                             </figure>
                         ))}
                     </div>
@@ -137,14 +156,19 @@ export default function FauxFabricPage() {
             <section className="page-section-strip page-section-strip-alt">
                 <div className="page-section-strip-inner">
                     <div className={styles.notFinding}>
-                        <h2>Don&apos;t see what you&apos;re looking for?</h2>
+                        <h2>Don&apos;t See What You&apos;re Looking For?</h2>
                         <p>
                             What&apos;s shown here is just a sample&mdash;I have a larger library of textures, weaves, and finishes that aren&apos;t listed yet.{' '}
-                            <a href="mailto:hello@zabzablab.com" className={styles.ctaLink}>Tell me what you need</a> and I&apos;ll send you some options!
+                            <a href="mailto:zabzablab@gmail.com" className={styles.ctaLink}>Tell me what you need</a> and I&apos;ll send you some options!
                         </p>
                         <p>
                             Every texture can be color customized to match your palette, adjusted to scale, or rotated.
                             Just <Link href="/resize-recolor-request" className={styles.ctaLink}>send a customization request here</Link>.
+                        </p>
+                        <p>
+                            Working on a specific room? Send me a photo or moodboard
+                            at <a href="mailto:zabzablab@gmail.com" className={styles.ctaLink}>zabzablab@gmail.com</a> and
+                            I&apos;ll pick out 2&ndash;3 textures that fit and send you direct Spoonflower links&mdash;no guesswork on your end.
                         </p>
                     </div>
                 </div>
