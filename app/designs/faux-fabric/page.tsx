@@ -156,17 +156,12 @@ export default function FauxFabricPage() {
                     <div className={styles.notFinding}>
                         <h2>Don&apos;t See What You&apos;re Looking For?</h2>
                         <p>
-                            What&apos;s shown here is just a sample&mdash;I have a larger library of textures, weaves, and finishes that aren&apos;t listed yet.{' '}
-                            <a href="mailto:zabzablab@gmail.com" className={styles.ctaLink}>Tell me what you need</a> and I&apos;ll send you some options!
-                        </p>
-                        <p>
-                            Every texture can be color customized to match your palette, adjusted to scale, or rotated.
-                            Just <Link href="/resize-recolor-request" className={styles.ctaLink}>send a customization request here</Link>.
-                        </p>
-                        <p>
-                            Working on a specific room? Send me a photo or moodboard
-                            at <a href="mailto:zabzablab@gmail.com" className={styles.ctaLink}>zabzablab@gmail.com</a> and
+                            Send me your moodboard or reference pictures at <a href="mailto:zabzablab@gmail.com" className={styles.ctaLink}>zabzablab@gmail.com</a>;
                             I&apos;ll pick out 2&ndash;3 textures that fit and send you direct Spoonflower links&mdash;no guesswork on your end.
+                        </p>
+                        <p>
+                            See a texture you like but need an adjustment? Every texture can be color customized to match your palette, adjusted to scale, or rotated.
+                            Just <Link href="/resize-recolor-request" className={styles.ctaLink}>send a customization request here</Link>.
                         </p>
                     </div>
                 </div>
