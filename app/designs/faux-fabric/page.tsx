@@ -11,30 +11,28 @@ const fauxFabricTextures: TextureItem[] = [
     { designSrc: '/portfolio/grasscloth-block.jpg', alt: 'Slubby Vertical Grasscloth Texture', href: 'https://www.spoonflower.com/collections/1466387', bestFor: '\u2018Grasscloth look\u2019 feature walls in dining rooms, home offices, and cozy corners\u2014without the cost and delicacy of real grasscloth.' },
     { designSrc: '/portfolio/diagonal-canvas-block.png', alt: 'Diagonal Weave Canvas Texture', href: 'https://www.spoonflower.com/collections/1466399', bestFor: 'Accent walls and textiles (pillows, headboards, bench cushions) that need a bit more structure and visual weight.' },
     { designSrc: '/portfolio/linen2-block.jpg', alt: 'Slubby Linen Texture', href: 'https://www.spoonflower.com/collections/1462110', bestFor: 'Bedrooms, nurseries, and reading nooks where you want softness and warmth without pattern.' },
-    // { designSrc: '/portfolio/basketweave-block.jpg', alt: 'Canvas Texture', href: 'https://www.spoonflower.com/en/collections/1341765' },
-    // { designSrc: '/portfolio/basketweave-block.jpg', alt: 'Burlap Jute Texture', href: 'https://www.spoonflower.com/en/collections/1341765' },
-    // { designSrc: '/portfolio/basketweave-block.jpg', alt: 'Herringbone Texture', href: 'https://www.spoonflower.com/en/collections/1341765' },
-    // { designSrc: '/portfolio/basketweave-block.jpg', alt: 'Gauze Texture', href: 'https://www.spoonflower.com/en/collections/1341765' },
+    { designSrc: '/portfolio/basketweave-block2.jpg', alt: 'Basketweave Texture', href: 'https://www.spoonflower.com/collections/1468931', bestFor: 'Upholstery projects, statement walls, and throw pillows where you want a tactile, woven feel with real visual depth.' },
+    { designSrc: '/portfolio/tweed-block.jpg', alt: 'Wool Tweed Texture', href: 'https://www.spoonflower.com/collections/1468939', bestFor: 'Moody corners, home offices and reading nooks where you want a warm, cocooning, suiting‑like wall that feels textured and cozy without an obvious pattern.' },
 ]
 
 export const metadata: Metadata = {
-    title: 'Faux Fabric Texture Wallpaper — Linen, Grasscloth & Basketweave',
+    title: 'Faux Fabric Texture Wallpaper — Linen, Grasscloth, Basketweave & Tweed',
     description:
-        'A curated toolkit of faux linen, grasscloth, and canvas texture wallpaper and fabric. Photo-based, color customizable, and a fraction of the cost of real textile wallcovering. Available on Spoonflower — easy to order for designers and homeowners.',
+        'A curated toolkit of faux fabric texture wallpaper and fabric — linen, grasscloth, canvas, basketweave, and tweed. Photo-based, color customizable, and a fraction of the cost of real textile wallcovering. Available on Spoonflower for designers and homeowners.',
     alternates: { canonical: '/designs/faux-fabric' },
     openGraph: {
         type: 'website',
         url: '/designs/faux-fabric',
-        title: 'Faux Fabric Texture Wallpaper — Linen, Grasscloth & Basketweave | ZabZabLab',
+        title: 'Faux Fabric Texture Wallpaper — Linen, Grasscloth, Basketweave & Tweed | ZabZabLab',
         description:
-            'Curated faux linen, grasscloth, and canvas texture wallpaper and fabric. Photo-based, color customizable, available on Spoonflower.',
+            'Faux linen, grasscloth, canvas, basketweave, and tweed texture wallpaper and fabric. Photo-based, color customizable, available on Spoonflower.',
         images: [{ url: '/portfolio/linen-weave-block.jpg', width: 1200, height: 630, alt: 'ZabZabLab Faux Fabric Texture Wallpaper' }],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Faux Fabric Texture Wallpaper — Linen, Grasscloth & Basketweave | ZabZabLab',
+        title: 'Faux Fabric Texture Wallpaper — Linen, Grasscloth, Basketweave & Tweed | ZabZabLab',
         description:
-            'Curated faux linen, grasscloth, and canvas texture wallpaper and fabric. Photo-based, color customizable, available on Spoonflower.',
+            'Faux linen, grasscloth, canvas, basketweave, and tweed texture wallpaper and fabric. Photo-based, color customizable, available on Spoonflower.',
         images: ['/portfolio/linen-weave-block.jpg'],
     },
 }
@@ -54,7 +52,7 @@ export default function FauxFabricPage() {
                                 name: 'What is faux fabric texture wallpaper?',
                                 acceptedAnswer: {
                                     '@type': 'Answer',
-                                    text: 'Faux fabric texture wallpaper is printed wallpaper that realistically mimics the look and feel of woven textiles like linen, grasscloth, or basketweave. It starts from a high-resolution photograph of actual fabric, so the weave and grain look authentic — but at a fraction of the cost of real textile wallcovering, and much easier to clean and maintain.',
+                                    text: 'Faux fabric texture wallpaper is printed wallpaper that realistically mimics the look and feel of woven textiles like linen, grasscloth, basketweave, or tweed. It starts from a high-resolution photograph of actual fabric, so the weave and grain look authentic — but at a fraction of the cost of real textile wallcovering, and much easier to clean and maintain.',
                                 },
                             },
                             {
@@ -70,7 +68,7 @@ export default function FauxFabricPage() {
                                 name: 'Can faux fabric wallpaper be color customized?',
                                 acceptedAnswer: {
                                     '@type': 'Answer',
-                                    text: 'Yes. Every ZabZabLab faux fabric texture can be color customized to match your palette, adjusted to scale, or rotated. Submit a customization request at zabzablab.com/resize-recolor-request.',
+                                    text: 'Yes. Every ZabZabLab faux fabric texture — linen, grasscloth, canvas, basketweave, and tweed — can be color customized to match your palette, adjusted to scale, or rotated. Submit a customization request at zabzablab.com/resize-recolor-request.',
                                 },
                             },
                             {
@@ -78,7 +76,7 @@ export default function FauxFabricPage() {
                                 name: 'Which rooms are faux fabric texture wallpapers best for?',
                                 acceptedAnswer: {
                                     '@type': 'Answer',
-                                    text: 'It depends on the texture. Tight linen weave is great for calm living rooms and bedrooms. Faux grasscloth works well as a feature wall in dining rooms, home offices, and cozy corners. Canvas weave suits accent walls and textiles like pillows and headboards. Slubby linen is ideal for bedrooms, nurseries, and reading nooks where you want softness without pattern.',
+                                    text: 'It depends on the texture. Tight linen weave is great for calm living rooms and bedrooms. Faux grasscloth works well as a feature wall in dining rooms, home offices, and cozy corners. Canvas weave suits accent walls and textiles like pillows and headboards. Slubby linen is ideal for bedrooms, nurseries, and reading nooks. Basketweave adds tactile, woven depth to upholstery projects and statement walls. Tweed brings a warm, cocooning feel to moody home offices and reading nooks.',
                                 },
                             },
                         ],
