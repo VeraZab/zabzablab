@@ -156,7 +156,7 @@ export default function ForInteriorDesignersPage() {
             />
             <div className="page-container">
                 <h1 style={{ textAlign: 'center', marginTop: 0 }}>
-                    Interior Designer friends, <span className="mobile-newline">I&apos;ve got you!</span>
+                    Hi Interior Designers!
                 </h1>
                 <p style={{ textAlign: 'center' }}>
                     I partner with interior designers to bring projects to life with flexible, trade-friendly
