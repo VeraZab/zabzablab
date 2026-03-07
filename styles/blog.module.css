@@ -52,7 +52,7 @@
 .post p { margin: 0 0 var(--space-4); }
 .post ul { margin: 0 0 var(--space-4) var(--space-4); padding: 0; }
 .post li { list-style: disc; }
-.post a { text-decoration: underline; text-underline-offset: 0.15rem; }
+.post a { text-decoration: none; }
 
 .postNav {
     display: flex;
