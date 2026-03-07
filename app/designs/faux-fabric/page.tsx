@@ -11,7 +11,7 @@ const fauxFabricTextures: TextureItem[] = [
     { designSrc: '/portfolio/grasscloth-block.jpg', alt: 'Slubby Vertical Grasscloth Texture', href: 'https://www.spoonflower.com/collections/1466387', bestFor: '\u2018Grasscloth look\u2019 feature walls in dining rooms, home offices, and cozy corners\u2014without the cost and delicacy of real grasscloth.' },
     { designSrc: '/portfolio/diagonal-canvas-block.png', alt: 'Diagonal Weave Canvas Texture', href: 'https://www.spoonflower.com/collections/1466399', bestFor: 'Accent walls and textiles (pillows, headboards, bench cushions) that need a bit more structure and visual weight.' },
     { designSrc: '/portfolio/linen2-block.jpg', alt: 'Slubby Linen Texture', href: 'https://www.spoonflower.com/collections/1462110', bestFor: 'Bedrooms, nurseries, and reading nooks where you want softness and warmth without pattern.' },
-    { designSrc: '/portfolio/basketweave-block2.jpg', alt: 'Basketweave Texture', href: 'https://www.spoonflower.com/collections/1468931', bestFor: 'Upholstery projects, statement walls, and throw pillows where you want a tactile, woven feel with real visual depth.' },
+    { designSrc: '/portfolio/basketweave-block3.jpg', alt: 'Basketweave Texture', href: 'https://www.spoonflower.com/collections/1468931', bestFor: 'Upholstery projects, statement walls, and throw pillows where you want a tactile, woven feel with real visual depth.' },
     { designSrc: '/portfolio/tweed-block.jpg', alt: 'Wool Tweed Texture', href: 'https://www.spoonflower.com/collections/1468939', bestFor: 'Moody corners, home offices and reading nooks where you want a warm, cocooning, suiting‑like wall that feels textured and cozy without an obvious pattern.' },
 ]
 
