@@ -21,8 +21,11 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                     <h1 style={{ marginTop: 0, marginBottom: 'var(--space-4)' }}>
                         Privacy Policy for Spoonflower Seller Lab
                     </h1>
-                    <p style={{ color: 'var(--muted-umber)', marginBottom: 'var(--space-8)' }}>
+                    <p style={{ color: 'var(--muted-umber)', marginBottom: 'var(--space-4)' }}>
                         <strong>Last updated:</strong> March 2026
+                    </p>
+                    <p style={{ marginBottom: 'var(--space-8)', fontStyle: 'italic' }}>
+                        This extension is not affiliated with, endorsed by, or officially connected to Spoonflower in any way.
                     </p>
 
                     <h2 style={{ marginTop: 'var(--space-8)', marginBottom: 'var(--space-3)' }}>Overview</h2>
