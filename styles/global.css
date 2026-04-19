@@ -10,6 +10,7 @@
     --stone-grey: #9A928A;
     --antiqued-gold: #A6936C;
     --gold-highlight: #C4B18A;
+    --gold-deep: #8A7A5A;
     --deep-prussian: #1D3A4D;
     --border-subtle: rgba(43, 41, 38, 0.08);
     --shadow-soft-color: rgba(43, 41, 38, 0.06);
@@ -141,8 +142,10 @@ body::before {
 
 .main-content {
     min-height: 100vh;
+    min-height: 100dvh;
     padding: var(--container-padding);
     padding-top: var(--header-height);
+    padding-bottom: 0;
     display: flex;
     flex-direction: column;
     background: var(--color-linen);
@@ -151,6 +154,33 @@ body::before {
 /* Home: full-viewport mood hero sits under the fixed header */
 .main-content:has(.home-hero-root) {
     padding-top: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+/*
+ * Homepage: body.is-home from middleware + root layout (SSR) and HomeRouteClass (client nav).
+ * Zero vertical padding on the shell so border-box doesn’t steal height from the hero; keep
+ * horizontal insets for the rest of the page. Beats 480/320px .main-content { padding-top }.
+ */
+body.is-home .main-content {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: max(var(--container-padding), env(safe-area-inset-left));
+    padding-right: max(var(--container-padding), env(safe-area-inset-right));
+}
+
+/* Don’t let the flex column shrink <main> below the hero’s intrinsic viewport height */
+body.is-home .main-content > main {
+    flex-shrink: 0;
+}
+
+/* Wrapper matches hero viewport height */
+.home-hero-root {
+    display: block;
+    flex-shrink: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 main { flex: 1; }
@@ -169,10 +199,46 @@ a {
     border-bottom: 1px solid var(--color-accent);
 }
 a:hover { border-bottom-color: var(--color-charcoal); color: var(--color-charcoal); }
-a:focus-visible { outline: 2px solid var(--antiqued-gold); outline-offset: 2px; border-bottom-color: transparent; }
+a:focus-visible { outline: none; text-decoration: underline; text-underline-offset: 0.35rem; }
 
 button { outline: none; }
 button:focus-visible { outline: 2px solid var(--antiqued-gold); outline-offset: 2px; }
+
+/* ─── GLOBAL CTA BUTTON — golden, pill style ─── */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.6rem;
+    background: var(--antiqued-gold);
+    border: 1px solid var(--antiqued-gold);
+    color: var(--charcoal-ink);
+    border-radius: 999px;
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background: var(--gold-highlight);
+    border-color: var(--gold-highlight);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:active {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* ─── TYPOGRAPHY RHYTHM ─── */
 p { 
     margin: 0 0 var(--gap-stack); 
@@ -244,6 +310,12 @@ h2:first-child {
 
 .page-section-strip-alt {
     background-color: var(--color-section-alt);
+}
+
+/* Section before footer — extra padding to accommodate wavy edge */
+.page-section-strip-before-footer {
+    padding-bottom: calc(var(--section-padding) + 3rem);
+    margin-bottom: -2rem;
 }
 
 .page-section-strip-inner {

@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { headers } from 'next/headers'
 import type { Metadata, Viewport } from 'next'
 import { Jost, Lora } from 'next/font/google'
 
@@ -7,6 +8,7 @@ import '/styles/global.css'
 
 import Header from './components/header/Header'
 import ConditionalFooter from './components/ConditionalFooter'
+import HomeRouteClass from './components/HomeRouteClass'
 
 const jost = Jost({
     subsets: ['latin'],
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
         default: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
         template: '%s | ZabZabLab',
     },
-    description: 'Artist-made wallpaper designs for interiors with personality. Custom colorways, faux textures, and trade-friendly options for interior designers. Shop on Spoonflower.',
+    description: 'Artist-made wallpaper designs for interiors with personality. Custom colorways, faux textures, and trade-friendly options for interior designers.',
     applicationName: 'ZabZabLab',
     keywords: [
         'custom wallpaper',
@@ -42,7 +44,6 @@ export const metadata: Metadata = {
         'faux stone wallpaper',
         'textile design',
         'artist-made wallpaper',
-        'Spoonflower designer',
         'wallpaper color matching',
         'custom wallpaper commission',
         'ZabZabLab',
@@ -97,7 +98,11 @@ export const viewport: Viewport = {
     themeColor: '#ffffff',
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+    const h = await headers()
+    const pathname = h.get('x-pathname') ?? ''
+    const isHome = pathname === '/' || pathname === ''
+
     return (
         <html lang="en">
             <head>
@@ -125,7 +130,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             alternateName: 'ZabZabLab Wallpaper and Fabric Design Studio',
                             url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
                             logo: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
-                            description: 'Artist-led wallpaper and fabric design studio specializing in custom colorways, faux texture wallpapers, and trade-friendly services for interior designers. Designs sold through Spoonflower.',
+                            description: 'Artist-led wallpaper and fabric design studio specializing in custom colorways, faux texture wallpapers, and trade-friendly services for interior designers.',
                             founder: {
                                 '@type': 'Person',
                                 name: 'Vera',
@@ -153,7 +158,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             ],
                             sameAs: [
                                 'https://www.instagram.com/zabzablab',
-                                'https://www.spoonflower.com/profiles/zabzablab',
                             ],
                         }),
                     }}
@@ -193,7 +197,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 />
             </head>
 
-            <body className={`${jost.variable} ${lora.variable}`}>
+            <body className={`${jost.variable} ${lora.variable}${isHome ? ' is-home' : ''}`}>
+                <HomeRouteClass />
                 <Header />
                 <div className="main-content">
                     <main>{children}</main>

@@ -1,7 +1,301 @@
-.container {
+/* Hidden SVG for clip path definition */
+.clipSvg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Outer wrapper: full-bleed footer with wavy top */
+.footerOuter {
+    margin: 0 calc(-1 * var(--container-padding)) calc(-1 * var(--container-padding));
+    clip-path: url(#footerWavyTop);
+    background: var(--soft-ecru);
+}
+
+/* Golden variant for homepage — deeper gold for contrast */
+.footerGolden {
+    background: var(--gold-deep);
+}
+
+.footerGolden .footer {
+    background: var(--gold-deep);
+}
+
+.footerGolden .footerBottom {
+    background: var(--gold-deep);
+}
+
+/* White/cream text on golden variant */
+.footerGolden .brandName {
+    color: var(--gallery-white);
+}
+
+.footerGolden .brandTagline,
+.footerGolden .legal,
+.footerGolden .newsletterLabel,
+.footerGolden .footerBottom p {
+    color: rgba(250, 248, 245, 0.85);
+}
+
+.footerGolden .colHeading {
+    color: var(--gallery-white);
+    opacity: 0.7;
+}
+
+.footerGolden .footerLink {
+    color: rgba(250, 248, 245, 0.92);
+    transition:
+        color 0.2s ease,
+        text-decoration-color 0.2s ease;
+}
+
+/* Stay in the light palette — accent with brand gold, not charcoal */
+.footerGolden .footerLink:hover {
+    color: var(--gallery-white);
+    text-decoration: underline;
+    text-decoration-color: var(--gold-highlight);
+    text-underline-offset: 0.3rem;
+    text-decoration-thickness: 1px;
+}
+
+.footerGolden .footerLink:focus-visible {
+    outline: none;
+    color: var(--gallery-white);
+    text-decoration: underline;
+    text-decoration-color: var(--gold-highlight);
+    text-underline-offset: 0.3rem;
+    text-decoration-thickness: 2px;
+}
+
+/* Newsletter on golden */
+.footerGolden .newsletterInputWrapper {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.footerGolden .newsletterInputWrapper:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.footerGolden .newsletterInputWrapper:focus-within {
+    border-color: var(--gallery-white);
+}
+
+.footerGolden .newsletterButton {
+    color: var(--antiqued-gold);
+}
+
+.footerGolden .newsletterButton:hover:not(:disabled) {
+    opacity: 1;
+    color: var(--gold-highlight);
+}
+
+/* Inner footer: multi-column content */
+.footer {
+    background: var(--soft-ecru);
+    padding: var(--gap-section) var(--container-padding) 0;
+}
+
+.footerInner {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.4fr;
+    gap: 3rem;
+    padding-bottom: var(--gap-section);
+}
+
+/* ─── BRAND COL ─── */
+.brandName {
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--charcoal-ink);
+    margin: 0 0 0.6rem;
+    letter-spacing: 0.02em;
+}
+
+.brandTagline {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--muted-umber);
+    margin: 0 0 1rem;
+    max-width: 22rem;
+}
+
+.legal {
+    font-size: 0.78rem;
+    color: var(--muted-umber);
+    opacity: 0.6;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ─── COLUMN SHARED ─── */
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.colHeading {
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--antiqued-gold);
+    margin: 0 0 0.85rem;
+}
+
+.linkList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.footerLink {
+    font-size: 0.88rem;
+    color: var(--muted-umber);
+    text-decoration: none;
+    border-bottom: none;
+    transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+    color: var(--charcoal-ink);
+    border-bottom: none;
+}
+
+/* ─── NEWSLETTER ─── */
+.newsletterLabel {
+    font-size: 0.82rem;
+    color: var(--muted-umber);
+    margin: 0 0 0.5rem;
+}
+
+.newsletterForm {
+    margin: 0;
     width: 100%;
+    max-width: 22rem;
+}
+
+.newsletterRow {
+    display: flex;
+}
+
+.newsletterInputWrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgba(166, 147, 108, 0.35);
+    background: var(--gallery-white);
+    border-radius: 9999px;
+    transition: border-color 0.2s ease;
+}
+
+.newsletterInputWrapper:hover {
+    border-color: rgba(166, 147, 108, 0.55);
+}
+
+.newsletterInputWrapper:focus-within {
+    border-color: var(--antiqued-gold);
+}
+
+.newsletterInput {
+    width: 100%;
+    min-width: 0;
+    padding: 0.55rem 3rem 0.55rem 1rem;
+    border: none;
+    background: transparent;
+    border-radius: 9999px;
+    font: 0.88rem/1.5 var(--font-jost, sans-serif);
+    color: var(--charcoal-ink);
+    outline: none;
+}
+
+.newsletterInput::placeholder {
+    color: var(--muted-umber);
+    opacity: 0.7;
+}
+
+.newsletterButton {
+    position: absolute;
+    right: 0.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border: none;
+    border-radius: 50%;
+    color: var(--antiqued-gold);
+    background: transparent;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.newsletterButton:hover:not(:disabled) {
+    opacity: 0.7;
+}
+
+.newsletterButton:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.newsletterError {
+    font-size: 0.78rem;
+    color: #b05050;
+    margin: 0.35rem 0 0;
+}
+
+.newsletterSuccess {
+    font-size: 0.78rem;
+    color: var(--muted-umber);
+    margin: 0.35rem 0 0;
+}
+
+/* ─── BOTTOM BAR ─── */
+/* Full width of .footer content box (already inset by --container-padding) — matches header nav right edge */
+.footerBottom {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: var(--gap-stack) 0 var(--gap-group);
+    box-sizing: border-box;
+    background: var(--soft-ecru);
+}
+
+.footerBottom p {
+    font-size: 0.78rem;
+    color: var(--muted-umber);
+    margin: 0;
     text-align: right;
-    font-size: 16px;
-    padding-top: var(--gap-stack);
-    background: var(--color-linen);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+    .footerInner {
+        grid-template-columns: 1fr 1fr;
+    }
+    .col:first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 560px) {
+    .footerInner {
+        grid-template-columns: 1fr;
+    }
+    .col:first-child {
+        grid-column: auto;
+    }
+    .footerBottom p {
+        text-align: center;
+    }
 }

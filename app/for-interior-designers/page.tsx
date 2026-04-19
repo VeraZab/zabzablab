@@ -264,7 +264,7 @@ export default function ForInteriorDesignersPage() {
                 </div>
             </section>
 
-            <section className="page-section-strip page-section-strip-alt">
+            <section className="page-section-strip page-section-strip-alt page-section-strip-before-footer">
                 <div className="page-section-strip-inner">
                     <div className={styles.ctaSection}>
                         <h2>Ready to start?</h2>

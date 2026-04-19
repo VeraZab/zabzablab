@@ -5,6 +5,11 @@ import Footer from './Footer'
 
 export default function ConditionalFooter() {
     const pathname = usePathname()
-    if (pathname === '/') return null
-    return <Footer />
+    
+    // Homepage and Trade Program use golden
+    // Other pages use soft-ecru
+    const goldenPages = ['/', '/for-interior-designers']
+    const variant = goldenPages.includes(pathname) ? 'golden' : 'default'
+    
+    return <Footer variant={variant} />
 }

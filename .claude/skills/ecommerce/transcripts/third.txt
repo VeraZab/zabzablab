@@ -1,0 +1,185 @@
+
+Ecom Accelerator Day 10 - Essential Pages.txt
+
+Page
+1
+/
+1
+100%
+Here's something that most store owners get completely wrong.
+They spend weeks on their product page and about 45 seconds on everything else.
+And then they wonder why people are landing on their site and not buying anything.
+But here's the truth, your product page gets people interested,
+but it's the pages around it that actually makes them trust you enough
+so they can buy something from you.
+A store without an about us page, an FAQ or clear refund policy
+doesn't build enough trust signals at all for someone to buy anything.
+It looks like something that just appeared overnight
+and might disappear just as fast with their money.
+So today we're going to walk you through every single essential page
+that your store needs, what needs to be on each one
+and the trust signals that turn a hesitant browser into a confident buyer.
+This stuff is not glamorous at all, but it's the difference
+between a high converting store and a store where no one buys anything.
+Let's do it.
+So first your home page or landing page structure.
+You want to think of your home page like a conversation.
+It needs to take someone from what is this to I need to buy this
+just from a single scroll.
+So here's the structure that every single high converting landing page uses.
+We'll use 8 Sleep as a live example
+because we think they have one of the best converting landing pages we've seen.
+Number one is your hero section.
+This is simply the first thing people see as soon as they land on your website.
+Your headline should immediately answer what your product is
+and why someone should actually care.
+That should all be in one sentence.
+8 Sleep does this really well, for example.
+They use something like Design for Deep Sleep personalized to you.
+On your hero section, always have one CTA button only.
+Just pick one action you want your potential customer to do,
+not three links that take them different places.
+Pick one action you want them to take and make it really obvious,
+not three links competing for different attention.
+Have a full width lifestyle image that actually shows the product getting used in a live setting.
+Don't use a wide background product chart.
+For example, 8 Sleep, they showed a pod in an actual bed getting used.
+Now, right below the hero section,
+you can have three trust icons that address the biggest objections that your customers might have.
+For example, 8 Sleep does this really well
+with showing their guarantees and their shipping policies
+to make the customers actually trust them.
+This takes the objections out of the way before someone even trolls.
+The second thing you want is what your product actually is.
+This is a super short section that explains what your product actually does in plain language.
+Just use one sentence or three bullet points maximum.
+This is not a feature list.
+It's a simple answer to someone asking themselves,
+okay, but how does this work?
+For example, 8 Sleep does that with a single line
+answering a question about their sleeping system working on any bed.
+So here's a tip.
+If someone has to read this section twice to understand your product, change it.
+Now, by this point, you've built a little bit of trust
+for the people browsing your website.
+So what you can also have is a small collection showing your best sellers.
+Right after that, you're going to want to have your features,
+broken down into benefits.
+Pick two or three most important product features
+and give each one its own visual and a two-line explanation.
+The key word here is benefits.
+Not what the feature is, but what it actually means for a customer's life.
+For example, 8 Sleep does that with temperature, elevation, and sound.
+Each one has a clear visual and explanation of what it does.
+One feature per visual.
+Don't cram them all into one block.
+The next section is who is this for?
+So most beginners in e-commerce skip this part entirely,
+but it's one of the biggest opportunities to actually stand out.
+So identify two or three types of people
+that would buy your product and speak directly to each one.
+This will make every single reader feel like it was made for them.
+So for example, 8 Sleep does this really well.
+They identify couples, women who are pregnant, or even athletes.
+Each of these types of buyers should have their own headline.
+And remember, if your product speaks to everyone, you're speaking to no one.
+Keep it specific.
+The next section is literally the most important one.
+You want to have social proof.
+Testimonials or reviews.
+Leave your strongest proof.
+If you have stats or results or even reviews from your friends, add them in there.
+Get them on the page with real names and real pictures.
+Don't do anonymous pictures.
+They don't convert.
+You can also go a bit beyond that.
+For example, 8 Sleep added clinical results about the product and how it helps people.
+All you need is a few testimonials and reviews.
+If you don't have any of these yet, simply ask your friends and families.
+Send them your product and ask for a review.
+If you're launching and have absolutely no reviews,
+you can put your guaranteed front and center here.
+Put something like, try risk-free for 30 days is way more powerful than having nothing in this section.
+Shopify has built-in review apps.
+Set one up now so they're ready whenever your first reviews come in.
+The next section you really need is authority or credibility.
+Something on the page should answer this question.
+Why should I trust this brand?
+This could be something like press mentions, certifications, or experts mentioning your product.
+But I'm guessing most of you might not have that.
+Most people like buying from a person, not a brand.
+Most of you will have a product that speaks directly to your heart and purpose.
+Leverage that and put a founder's story about why you're building this product.
+As an example, 8 Sleep uses industry leaders in the sleep and health space.
+And they have their testimonials right on their website.
+And look, you don't need a famous neuroscientist to promote your product.
+All you need is to show that you know what you're doing and you stand behind your product.
+Finally, at the end of your homepage or landing page, you just want to have a final CTA.
+Simply close the page with a full-width visual that reminds people about why they should buy it.
+Not just a buy button, a reminder of the transformation right before the button.
+Make it feel like a conclusion to a conversation, not an afterthought tacked out at the bottom.
+As a golden rule, every single action or page on your website
+should either be removed out or increased trust.
+If a section is not doing one of these two things, don't add it.
+So now that we're done with the main page,
+we're going to talk about the accessory pages that help people build even more trust.
+Like we talked in the beginning, the more trust you have, the more likely they are to buy.
+So the first one you might need is an about us page.
+Again, people like buying from people, not faceless businesses.
+So you always want to lead with why.
+Why did you build this?
+What sparked the idea?
+What makes it special?
+Make it human.
+For example, if you're the founder, add your face, tell your story and keep it conversational.
+Don't make it corporate.
+It's not a press release.
+It's you from your heart telling people why you're building something.
+Next, always connect the brand mission to the customer.
+Remember, this is not about you.
+It's about what you believe in together.
+Always try to add a photo if possible.
+Even a simple one will increase trust dramatically.
+The next one is very simple.
+It's your contact page.
+You want to make it genuinely easy to reach you.
+Add an email address, a contact form or even both.
+Add an expected response time as well.
+Adding something like we reply within 24 hours removes a lot of anxiety.
+And if you have a location or a business address, always include it.
+Even a registered business address will make a huge difference for your credibility.
+And as an optional thing, you can always link your FAQs that people can self-serve before they reach out.
+Then now as a transition, let's talk about your FAQ page.
+You want to answer the questions most customers actually ask.
+Go through reviews, forums or even your own inbox.
+Your FAQ is also the biggest opportunity to actually sell to people.
+You can use it to answer every single objection that your customer might have.
+So always address the most common objections head on.
+If people worry about X, answer with Y.
+Keep your answers short and plain.
+Make sure to always update it regularly as new questions come in.
+And lastly, we're going to talk about trust signals.
+These are all many things you can implement across your whole store that will improve trust.
+So make sure you have secure badges at checkout.
+Visa, MasterCard, Google Pay, Apple Pay.
+Any single successful store that you'll see online will clearly show all these icons
+both at their checkout and in their footer at the end.
+Then also have a money-back guarantee badge.
+You want to have it visible on your product page and at checkout.
+Never bury it in the footer.
+Also have real contact information.
+An actual email and real response time shows people that you're actually a real business.
+Like we already covered, always have your social proof like testimonials and reviews.
+And make sure your branding, colors, fonts, etc. are consistent across every page.
+And consistency will make you look like an amateur.
+And then last one, make sure you have fast loading speed.
+A slow site will kill your trust before customers are even seen it.
+If your website is slow, compress your images before uploading them.
+So your task for today is simple.
+Build out your homepage and about us and FAQ pages that your store is almost ready.
+And as you keep building your store, if you get stuck at any time,
+remember to use Shopify Sidekick.
+If you go to the top right of your store, there will be a chat bot here.
+You can literally ask him anything and it will help you build it.
+Thanks for watching. I can't wait to see all your stores.
+Displaying Ecom Accelerator Day 10 - Essential Pages.txt.

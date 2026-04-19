@@ -56,8 +56,19 @@ export default function AboutPage() {
                         I&apos;m based in New Jersey, USA.
                     </p>
                     <p>
-                        Have something in mind? <a href="mailto:zabzablab@gmail.com">Let&apos;s talk</a>.
+                        Have something in mind? <a href="mailto:zabzablab@gmail.com">Let&apos;s talk</a> &mdash;
+                        I reply within 24&ndash;48 hours.
                     </p>
+                    <div className={styles.socialLinks}>
+                        <a
+                            href="https://www.instagram.com/zabzablab"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.socialLink}
+                        >
+                            Instagram &rarr;
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,11 +6,11 @@ import Link from 'next/link'
 import styles from '/styles/moodcarousel.module.css'
 
 const moods = [
-    { id: 'playful',  label: 'Playful',  src: '/portfolio/moods/playful.jpeg' },
-    { id: 'romantic', label: 'Romantic', src: '/portfolio/moods/romantic.png' },
-    { id: 'cozy',     label: 'Cozy',     src: '/portfolio/moods/cozy.jpeg' },
+    { id: 'playful',  label: 'Playful',  src: '/portfolio/moods/playful.jpg' },
+    { id: 'romantic', label: 'Romantic', src: '/portfolio/moods/romantic.jpg' },
+    { id: 'cozy',     label: 'Cozy',     src: '/portfolio/moods/cozy.jpg' },
     { id: 'grounded', label: 'Grounded', src: '/portfolio/moods/grounded.jpg' },
-    { id: 'serene',     label: 'Serene',     src: '/portfolio/moods/serene.jpg' },
+    { id: 'serene',   label: 'Serene',   src: '/portfolio/moods/serene.jpg' },
 ] as const
 
 const INTERVAL = 5000
@@ -82,7 +82,7 @@ export default function MoodCarousel() {
 
                 <div className={styles.groupB}>
                     <p className={styles.description}>
-                        Explore our made-to-order, customizable, artist-led wallpaper selections
+                        Explore our customizable, artist-made wallpaper selections
                     </p>
                     <nav className={styles.moodNav} aria-label="Choose a mood">
                         {moods.map((mood, i) => (
@@ -101,7 +101,7 @@ export default function MoodCarousel() {
                         href={`/moods/${moods[current].id}`}
                         className={styles.cta}
                     >
-                        Start Exploring
+                        Find Your Style
                     </Link>
                 </div>
             </div>

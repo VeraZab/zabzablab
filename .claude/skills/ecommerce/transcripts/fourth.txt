@@ -1,0 +1,83 @@
+
+Day 14 - Product Pages that Sell.txt
+
+Page
+1
+/
+1
+100%
+Okay, welcome back. So your product page is your salesperson. It works 24x7 and never calls in
+sick. But it only has around three seconds to convince a stranger to give you their money.
+Most people build product pages like they're filling out a form, product name, a few photos,
+a lot of descriptions and they're off. And then they wonder why no one is converting.
+The difference between a product page that just sits there and one that actually converts comes
+down to structure and psychology. And today we're going to show you how to exactly build one
+section by section. We'll use a specific structure document that we'll also share in the links in
+the description and in the space. We've also added this document to the resource center so you can
+always go back to it and reference it while you're building. One important note before we start is
+that the majority of your traffic will come from mobile. So make sure to check every single section
+of your website on your phone before you actually build it. If it looks wrong on mobile, it does not
+matter how good it looks on desktop. Okay, so let's build it. So there's two parts to any page on
+your Shopify store. Above the fold, which is the first thing people see without even them scrolling,
+and then below the fold is what they see after scrolling down. So the first thing you're going
+to want to do is add product images. Your first image should be a lifestyle shot. Products being
+used in a real environment, not floating on a white background. Add three to five images minimum.
+These could be lifestyle or close-up shots actually showing your product. Compress every image before
+uploading. Go to tinypng.com or any other website, run them through it, then upload it.
+A slow page is going to kill your conversion before anybody reads anything on your website.
+In Shopify, images upload directly in the media section of the product page. Now your headline
+or product title. This goes in the product field here in Shopify. It needs to answer three things
+immediately. What is this? What does it do? And why should I care? You don't need to have any clever
+wordplay. Being clear will win every single time. The main thing I want you to remember in this
+section is your target audience. Write your headline directly to this person. The next bit
+is your price. So Shopify displays this automatically. Make sure it's set correctly,
+including any compared price if you're running a launch offer. Then is your bullet points. These
+go in the product description field. Use short lines with a check mark or dash in front. Make
+sure that you have benefits, not features. Don't tell people what the product has, but what it
+means to the customer. Always make sure you only have three to five bullets maximum above the fold.
+Now go back to these one or two star reviews from your product research. These complaints will tell
+you exactly what matters to a customer. Next is your add to cart button. So as you see Shopify
+will generate this automatically. But what you want to do is make sure it's visible without
+scrolling on mobile. So take out your phone and check it. Then is your micro trust signals. Add
+a short line of text or small icons just below the add to cart button. This could be free shipping,
+your guarantee name, or just secure checkout. These can be added as a line in the description
+or using a trust batch app from the Shopify app store directly. Now shipping estimates.
+Always tell people when it arrives before they have to ask. So add this as a short line below
+the button. Something like estimated delivery between X and X business days. Now below the
+fold you're going to have your product description. So make sure this really talks to your customers.
+What you can do is use an AI to help you. Feel free to use tools like Claude who can actually help you
+and sound like a human. You're going to want to use AI to draft this, but feed it your own words
+first. Brain dump into Claude and then edit it to sound like you. Write in the language that your
+customers use and if you need to go back to these Amazon reviews. The next section in your product
+page is how it works. You're going to want to talk about the three steps. Break down your product into
+a simple three-step process. Keep each step in one line. Customers scan, they don't read. This can be
+added as a simple number list or a graphic simply built on Canva and uploaded as an image. Then we've
+got your bonus stack. List every bonus with its name and stated value. So the quick start guide
+worth 15 pounds, free with every order. Make sure the total stated value feels significantly higher
+than your price. That gap is what drives the decision. Remember, each bonus should address
+one specific objection. Then you have your name guarantee. Make it prominent and not buried at the
+bottom. Like we discussed, make sure you use your guaranteed name and not 30-day refund policy. It
+sounds legal and boring. Then add it as a section and description or upload a guaranteed badge
+graphic from Canva. Next up, and this is optional depending on your product, you can add an ingredient
+or material transparency section. So here you can list what's in your products and why. This will
+build enormous credibility with modern customers. And don't forget, don't hide behind vague terms.
+The next one is the most important one by far. It's customer reviews. So in order to add these,
+Shopify has a bunch of different apps that you can simply add directly into your store and in
+your product page. You can install apps like judge.me or luke's from the Shopify app store.
+Both have three tiers. Then get the review widget on the page now, even if you have no reviews yet.
+And if you have no reviews, put your guarantee front and center here instead. Once you got your
+first orders, follow up and always ask for a review. Then we've got trust badges. So add payment
+logos and a secure checkout badge near the bottom of the page. Search trust badge in the Shopify
+app store for a free option that adds these automatically. And the last thing is a final
+call to action. Close with one emotional line that brings back to the transformation and then
+a second add to cart button. Someone who's called all the way to the bottom is close to buying.
+Don't let them leave without seeing the button again. So your task for today is to build out
+your product page. Feel free to use the document we've provided to help you with structure. And
+remember, if you're struggling with any of the technical aspects of this, Shopify has an AI that
+can help you. If you go to your Shopify dashboard and click on the top right on the sidekick button,
+it will open up the AI chat. You can literally ask it anything you want, any part that you're
+struggling with, and it will help you do it. And remember, if you haven't already done everything,
+make sure it looks good on mobile. Then simply go in the help bank space and post a screenshot
+or a link to your store. The community will go through all of them and give you feedback
+and the whole help bank team will try to do the same. Thanks for watching.
+Displaying Day 14 - Product Pages that Sell.txt.

@@ -1,11 +1,41 @@
 /* ─── TRUST STRIP ─── */
-.trustStrip {
+/* Full-bleed white band — NOT .page-section-strip (that added 64px top padding + showed linen “grey bar”) */
+.trustStripOuter {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    /* Overlap hero / main seam so linen never shows between bands */
+    margin-top: calc(-1 * var(--container-padding) - 6px);
+    padding-top: calc(var(--gap-stack) + 6px);
+    padding-bottom: var(--gap-stack);
+    background: var(--gallery-white);
+    z-index: 2;
+    box-sizing: border-box;
+    isolation: isolate;
+}
+
+/*
+ * Same horizontal band as the header: full width + --container-padding only (no 1200px cap).
+ * That lines the five columns up with logo | nav, not a narrower content well.
+ */
+.trustStripContainer {
+    width: 100%;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: max(var(--container-padding), env(safe-area-inset-left));
+    padding-right: max(var(--container-padding), env(safe-area-inset-right));
+    box-sizing: border-box;
+}
+
+.trustStripGrid {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: var(--gap-section);
-    padding: var(--gap-component) var(--container-padding);
-    background: var(--gallery-white);
+    align-items: stretch;
+    gap: var(--gap-component);
     flex-wrap: wrap;
 }
 
@@ -13,25 +43,104 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--gap-inline);
+    gap: 0.75rem;
     text-align: center;
     max-width: 12rem;
+    flex: 1 1 9rem;
+    min-width: 0;
+    justify-content: flex-start;
 }
 
+/* Lead column: studio / craft anchor — icon reads larger and more bespoke */
+.trustItemLead .trustLabel {
+    letter-spacing: 0.045em;
+}
+
+@media (min-width: 1100px) {
+    .trustStripGrid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        /* Wider than --grid-gutter: breathe like the main nav (nav uses --gap-group; we go one step up) */
+        column-gap: var(--gap-component);
+        row-gap: var(--gap-stack);
+        align-items: stretch;
+        flex-wrap: nowrap;
+    }
+
+    .trustItem {
+        max-width: none;
+        flex: unset;
+        height: 100%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .trustStripGrid {
+        column-gap: var(--gap-section);
+    }
+}
+
+/* One shared icon band so every column lines up (no ragged vertical rhythm) */
 .trustIcon {
-    font-size: 1.5rem;
-    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    flex-shrink: 0;
+    color: var(--antiqued-gold);
+}
+
+.trustIcon svg {
+    flex-shrink: 0;
+}
+
+/* Supporting row: Radix (thin fills on 15×15) + custom stroke marks (palette, sparkle) at 32px */
+.trustIcon:not(.trustIconLead) svg {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+}
+
+/* Custom palette mark — scales inside the same band as supporting icons */
+.trustIconLead {
+    height: 3rem;
+    color: var(--antiqued-gold);
+}
+
+.trustIconLead svg {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    transform: translateY(-1px);
 }
 
 .trustLabel {
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
-    letter-spacing: 0.02em;
-    line-height: 1.4;
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: var(--warm-graphite);
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+    font-feature-settings: 'kern' 1;
+    width: 100%;
+    max-width: 13.5rem;
+    margin-inline: auto;
+    text-align: center;
+    display: block;
+}
+
+@media (min-width: 1100px) {
+    /* Equal-height copy blocks so first lines align across columns */
+    .trustLabel {
+        min-height: 4.5em;
+    }
 }
 
 @media (max-width: 600px) {
-    .trustStrip {
+    .trustStripGrid {
         gap: var(--gap-component);
     }
     
@@ -64,11 +173,12 @@
 /* ─── MOOD GRID ─── */
 .moodGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: var(--gap-stack);
 }
 
 .moodCard {
+    grid-column: span 2;
     position: relative;
     aspect-ratio: 1;
     border-radius: 8px;
@@ -79,6 +189,10 @@
     text-decoration: none;
     border-bottom: none;
 }
+
+/* Center the last 2 cards in a 5-item grid */
+.moodCard:nth-child(4) { grid-column: 2 / span 2; }
+.moodCard:nth-child(5) { grid-column: 4 / span 2; }
 
 .moodCard img {
     position: absolute;
@@ -115,14 +229,24 @@
     .moodGrid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .moodCard,
+    .moodCard:nth-child(4),
+    .moodCard:nth-child(5) {
+        grid-column: span 1;
+    }
+    .moodCard:nth-child(5) {
+        grid-column: 1 / span 2;
+    }
 }
 
 @media (max-width: 480px) {
     .moodGrid {
         grid-template-columns: 1fr;
     }
-    
-    .moodCard {
+    .moodCard,
+    .moodCard:nth-child(4),
+    .moodCard:nth-child(5) {
+        grid-column: span 1;
         aspect-ratio: 16/9;
     }
 }
@@ -209,13 +333,13 @@
     grid-template-columns: auto 1fr;
     gap: var(--gap-section);
     align-items: center;
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
 }
 
 .founderImage {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     overflow: hidden;
     flex-shrink: 0;
@@ -251,8 +375,8 @@
     }
     
     .founderImage {
-        width: 160px;
-        height: 160px;
+        width: 220px;
+        height: 220px;
         margin: 0 auto;
     }
 }
@@ -276,24 +400,30 @@
 .ctaButton {
     display: inline-flex;
     align-items: center;
-    padding: 0.75rem 2rem;
-    background: var(--color-charcoal);
-    color: var(--gallery-white);
-    border: none;
+    justify-content: center;
+    padding: 0.6rem 1.6rem;
+    background: var(--antiqued-gold);
+    border: 1px solid var(--antiqued-gold);
+    color: var(--charcoal-ink);
     border-radius: 999px;
     font-family: var(--font-jost, sans-serif);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
 .ctaButton:hover {
-    background: var(--color-accent);
-    transform: translateY(-2px);
+    background: var(--gold-highlight);
+    border-color: var(--gold-highlight);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* ─── SECTION HEADERS ─── */
@@ -312,4 +442,253 @@
     max-width: 32rem;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* ─── HOW IT WORKS ─── */
+.processGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--gap-group);
+}
+
+.processStep {
+    text-align: center;
+    padding: var(--gap-group);
+}
+
+.processStepNumber {
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    opacity: 0.55;
+    margin-bottom: var(--gap-stack);
+    line-height: 1;
+}
+
+.processStepTitle {
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 var(--gap-inline);
+    color: var(--color-charcoal);
+}
+
+.processStepDesc {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .processGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .processGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ─── SAMPLES SECTION ─── */
+.samplesSection {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--gap-section);
+    align-items: center;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.samplesText h2 {
+    margin: 0 0 var(--gap-stack);
+}
+
+.samplesText p {
+    margin: 0 0 var(--gap-group);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+.ctaButtonOutline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.6rem;
+    background: transparent;
+    color: var(--antiqued-gold);
+    border: 1px solid var(--antiqued-gold);
+    border-radius: 999px;
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.ctaButtonOutline:hover {
+    background: var(--antiqued-gold);
+    color: var(--charcoal-ink);
+    border-color: var(--antiqued-gold);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.samplesBadge {
+    flex-shrink: 0;
+}
+
+.sampleBadgeInner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-inline);
+    padding: var(--gap-group) var(--gap-component);
+    border: 1px solid var(--glass-border-gold);
+    border-radius: 12px;
+    background: var(--glass-gold);
+    text-align: center;
+    min-width: 148px;
+}
+
+.sampleBadgeIcon {
+    font-size: 2rem;
+    color: var(--color-accent);
+    line-height: 1;
+}
+
+.sampleBadgeLabel {
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+    line-height: 1.2;
+}
+
+.sampleBadgeText {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .samplesSection {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .samplesBadge {
+        order: -1;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* ─── FOUNDER GUARANTEE ─── */
+.founderGuarantee {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--color-text-secondary);
+    border-left: 2px solid var(--color-accent);
+    padding-left: var(--gap-group);
+    margin-top: var(--gap-group) !important;
+}
+
+/* ─── FAQ SECTION ─── */
+.faqList {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.faqItem {
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.faqItem:first-child {
+    border-top: 1px solid var(--border-subtle);
+}
+
+.faqSummary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--gap-group) 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-charcoal);
+    cursor: pointer;
+    list-style: none;
+    gap: var(--gap-group);
+}
+
+.faqSummary::-webkit-details-marker {
+    display: none;
+}
+
+.faqSummary::after {
+    content: '+';
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    font-weight: 300;
+}
+
+.faqItem[open] .faqSummary::after {
+    transform: rotate(45deg);
+}
+
+.faqAnswer {
+    padding: 0 var(--gap-section) var(--gap-group) 0;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ─── FINAL CTA BUTTONS ─── */
+.finalCtaButtons {
+    display: flex;
+    gap: var(--gap-stack);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--gap-group);
+}
+
+.ctaButtonSecondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.6rem;
+    background: transparent;
+    color: var(--antiqued-gold);
+    border: 1px solid var(--antiqued-gold);
+    border-radius: 999px;
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.ctaButtonSecondary:hover {
+    background: var(--antiqued-gold);
+    color: var(--charcoal-ink);
+    border-color: var(--antiqued-gold);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
