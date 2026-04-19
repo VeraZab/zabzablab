@@ -10,14 +10,15 @@ export function middleware(request: NextRequest) {
 
     const reqUrl = new URL(request.url)
 
-    // Also skip redirects for localhost or private-network hosts (e.g., 127.*, 10.*, 172.16-31.*, 192.168.*)
+    // Skip redirects for localhost, private-network hosts, and Vercel preview URLs
     const hostname = reqUrl.hostname
     const isLocalOrPrivate =
         hostname === 'localhost' ||
         hostname === '127.0.0.1' ||
         /^10\./.test(hostname) ||
         /^192\.168\./.test(hostname) ||
-        /^172\.(1[6-9]|2\d|3[0-1])\./.test(hostname)
+        /^172\.(1[6-9]|2\d|3[0-1])\./.test(hostname) ||
+        hostname.endsWith('.vercel.app')
     if (isLocalOrPrivate) {
         return NextResponse.next()
     }
