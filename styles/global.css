@@ -13,6 +13,8 @@
     --deep-prussian: #1D3A4D;
     --border-subtle: rgba(43, 41, 38, 0.08);
     --shadow-soft-color: rgba(43, 41, 38, 0.06);
+    --glass-border-gold: rgba(166, 147, 108, 0.4);
+    --glass-gold: rgba(166, 147, 108, 0.25);
 
     /* Semantic mapping for existing components */
     --color-linen: var(--gallery-white);
@@ -35,45 +37,83 @@
     --focus-ring: 0 0 0 2px var(--gallery-white), 0 0 0 4px var(--antiqued-gold);
     --focus-ring-on-dark: 0 0 0 2px var(--charcoal-ink), 0 0 0 4px var(--gold-highlight);
     
-    /* Spacing scale (base 0.25rem / 4px) – use site-wide */
-    --space-1: 0.25rem;
-    --space-2: 0.5rem;
-    --space-3: 0.75rem;
-    --space-4: 1rem;
-    --space-5: 1.25rem;
-    --space-6: 1.5rem;
-    --space-7: 1.75rem;
-    --space-8: 2rem;
-    --space-9: 2.25rem;
-    --space-10: 2.5rem;
-    --space-12: 3rem;
-    --space-16: 4rem;
-    --space-20: 5rem;
-    --space-24: 6rem;
+    /* ─── SPACING SYSTEM ───
+     * Base unit: 4px (0.25rem)
+     * Scale: 4, 8, 12, 16, 24, 32, 48, 64, 80, 96
+     * Use semantic tokens below for consistency
+     */
+    --space-1: 0.25rem;   /* 4px  - hairline */
+    --space-2: 0.5rem;    /* 8px  - tight */
+    --space-3: 0.75rem;   /* 12px - compact */
+    --space-4: 1rem;      /* 16px - base */
+    --space-6: 1.5rem;    /* 24px - comfortable */
+    --space-8: 2rem;      /* 32px - spacious */
+    --space-12: 3rem;     /* 48px - section */
+    --space-16: 4rem;     /* 64px - major */
+    --space-20: 5rem;     /* 80px - hero */
+    --space-24: 6rem;     /* 96px - dramatic */
 
-    /* Layout – must match actual fixed header height so content starts right after */
-    --header-height: 5.75rem;
-    --header-height-mobile: 4.5rem;
-    /* Same gap: page top → logo top, and header bottom → first content (use for both) */
-    --header-content-gap: var(--space-3);
+    /* ─── SEMANTIC SPACING TOKENS ───
+     * Use these instead of raw --space-* values
+     */
+    
+    /* Element-level: within components */
+    --gap-inline: var(--space-2);        /* Between inline elements */
+    --gap-stack: var(--space-4);         /* Between stacked elements (paragraphs, list items) */
+    --gap-group: var(--space-6);         /* Between related groups */
+    
+    /* Component-level: between components */
+    --gap-component: var(--space-8);     /* Between separate components */
+    --gap-section: var(--space-12);      /* Between page sections */
+    --gap-section-lg: var(--space-16);   /* Major section breaks */
+
+    /* Container: page edges */
     --container-max-width: 1200px;
-    --container-padding: var(--space-4);
-    --container-padding-sm: var(--space-2);
-    --gap-sm: var(--space-2);
-    --gap-base: var(--space-4);
-    --gap-lg: var(--space-12);
+    --container-padding: var(--space-6); /* 24px on desktop */
+    --container-padding-tablet: var(--space-4); /* 16px on tablet */
+    --container-padding-mobile: var(--space-3); /* 12px on mobile */
+    
+    /* Section padding: vertical rhythm */
+    --section-padding: var(--space-16);          /* 64px desktop */
+    --section-padding-tablet: var(--space-12);   /* 48px tablet */
+    --section-padding-mobile: var(--space-8);    /* 32px mobile */
 
-    /* 12-column grid system */
+    /* ─── LAYOUT ─── */
+    --header-height: 5rem;
+    --header-height-mobile: 4.125rem;
+    --header-content-gap: var(--space-3);
+
+    /* 12-column grid */
     --grid-columns: 12;
     --grid-gutter: var(--space-6);
+    --grid-gutter-mobile: var(--space-4);
     
-    /* Breakpoints */
-    --bp-mobile: 1330px;
+    /* Breakpoints (reference only - can't use in media queries) */
+    --bp-desktop: 1330px;
     --bp-tablet: 900px;
-    --bp-small: 320px;
+    --bp-mobile: 600px;
+    --bp-small: 480px;
     
     /* Typography - fallback stack */
     --font-stack: var(--font-jost), 'Jost', 'Gill Sans', system-ui, sans-serif;
+
+    /* ─── Blur system ─── */
+    /* Blur scale */
+    --blur-none: 0;
+    --blur-sm: 4px;
+    --blur-md: 8px;
+    --blur-lg: 16px;
+    --blur-xl: 24px;
+
+    /* Glass surfaces — background + blur + optional border */
+    --glass-light: rgba(250, 248, 245, 0.6);
+    --glass-light-subtle: rgba(250, 248, 245, 0.25);
+    --glass-dark: rgba(43, 41, 38, 0.5);
+    --glass-dark-subtle: rgba(43, 41, 38, 0.25);
+    --glass-gold: rgba(166, 147, 108, 0.15);
+    --glass-border-light: rgba(250, 248, 245, 0.2);
+    --glass-border-dark: rgba(43, 41, 38, 0.1);
+    --glass-border-gold: rgba(196, 177, 138, 0.3);
 }
 
 html { font-size: 18px; scroll-behavior: smooth; }
@@ -108,6 +148,11 @@ body::before {
     background: var(--color-linen);
 }
 
+/* Home: full-viewport mood hero sits under the fixed header */
+.main-content:has(.home-hero-root) {
+    padding-top: 0;
+}
+
 main { flex: 1; }
 
 /* Tablet/mobile layout (matches header's mobile breakpoint where logo shrinks) */
@@ -128,7 +173,13 @@ a:focus-visible { outline: 2px solid var(--antiqued-gold); outline-offset: 2px; 
 
 button { outline: none; }
 button:focus-visible { outline: 2px solid var(--antiqued-gold); outline-offset: 2px; }
-p { margin: var(--space-4); }
+/* ─── TYPOGRAPHY RHYTHM ─── */
+p { 
+    margin: 0 0 var(--gap-stack); 
+}
+p:last-child {
+    margin-bottom: 0;
+}
 
 h1, h2 {
     font-family: var(--font-lora, Georgia, serif);
@@ -136,13 +187,23 @@ h1, h2 {
     letter-spacing: 0.02em;
     color: var(--color-charcoal);
 }
-h1 { font-size: 1.75rem; padding: var(--space-2) 0; letter-spacing: 0.03em; }
-h2 { font-size: 1.35rem; padding: var(--space-2) 0; }
+h1 { 
+    font-size: 1.75rem; 
+    margin: 0 0 var(--gap-group);
+    letter-spacing: 0.03em; 
+}
+h2 { 
+    font-size: 1.35rem; 
+    margin: var(--gap-component) 0 var(--gap-group); 
+}
+h2:first-child {
+    margin-top: 0;
+}
 
 .subheading {
     font-size: 0.95rem;
     font-style: italic;
-    margin: 0 0 var(--space-6);
+    margin: 0 0 var(--gap-group);
 }
 
 /* Typography utilities */
@@ -151,22 +212,25 @@ h2 { font-size: 1.35rem; padding: var(--space-2) 0; }
     font-optical-sizing: auto;
 }
 
-/* Layout utilities */
+/* ─── LAYOUT UTILITIES ─── */
+
 .container-max-width {
     max-width: var(--container-max-width);
     margin: 0 auto;
 }
 
-/* Site-wide content grid: same max-width + horizontal padding on every page */
+/* Site-wide content container: centered with responsive padding */
 .page-container {
     max-width: var(--container-max-width);
     margin-left: auto;
     margin-right: auto;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);
+    padding-top: var(--gap-component);
+    padding-bottom: var(--gap-group);
 }
 
-/* Full-bleed section strip (breaks out of .main-content padding) */
+/* Full-bleed section strip with responsive vertical padding */
 .page-section-strip {
     width: 100vw;
     position: relative;
@@ -174,7 +238,8 @@ h2 { font-size: 1.35rem; padding: var(--space-2) 0; }
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    padding: var(--space-12) 0;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
 }
 
 .page-section-strip-alt {
@@ -190,11 +255,12 @@ h2 { font-size: 1.35rem; padding: var(--space-2) 0; }
 }
 
 .full-width {
-    margin: calc(-1 * var(--container-padding));
+    margin-left: calc(-1 * var(--container-padding));
+    margin-right: calc(-1 * var(--container-padding));
     width: calc(100% + 2 * var(--container-padding));
 }
 
-/* 12-column grid – use with .grid-12 and .span-* */
+/* ─── 12-COLUMN GRID ─── */
 .grid-12 {
     display: grid;
     grid-template-columns: repeat(var(--grid-columns), 1fr);
@@ -213,6 +279,7 @@ h2 { font-size: 1.35rem; padding: var(--space-2) 0; }
 .span-3 { grid-column: span 3; }
 
 @media (max-width: 900px) {
+    .grid-12 { gap: var(--grid-gutter-mobile); }
     .span-8, .span-6 { grid-column: 1 / -1; }
     .span-4, .span-3 { grid-column: span 6; }
 }
@@ -221,11 +288,11 @@ h2 { font-size: 1.35rem; padding: var(--space-2) 0; }
     .span-4, .span-3 { grid-column: 1 / -1; }
 }
 
-/* Simple responsive two-column grid (for-interior-designers, etc.) */
+/* ─── TWO-COLUMN GRID ─── */
 .two-col-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: var(--grid-gutter);
+    gap: var(--gap-section);
     align-items: center;
 }
 
@@ -233,15 +300,31 @@ h2 { font-size: 1.35rem; padding: var(--space-2) 0; }
     grid-template-columns: 2fr 1fr;
 }
 
-.two-col-grid .col-title { text-align: center; }
+.two-col-grid .col-title { 
+    text-align: center; 
+}
 
-/* Consistent body text in two-col sections (lists, paragraphs) */
-.two-col-grid .col-body h2 { margin-top: 0; margin-bottom: var(--space-3); }
-.two-col-grid .col-body p { margin: 0 0 var(--space-3); }
-.two-col-grid .col-body p:last-child { margin-bottom: 0; }
-.two-col-grid .col-body ul { padding-left: var(--space-5); margin: 0 0 var(--space-4); }
-.two-col-grid .col-body li { margin-bottom: var(--space-1); }
-.two-col-grid .col-body li:last-child { margin-bottom: 0; }
+/* Body text rhythm in two-col sections */
+.two-col-grid .col-body h2 { 
+    margin-top: 0; 
+    margin-bottom: var(--gap-group); 
+}
+.two-col-grid .col-body p { 
+    margin: 0 0 var(--gap-stack); 
+}
+.two-col-grid .col-body p:last-child { 
+    margin-bottom: 0; 
+}
+.two-col-grid .col-body ul { 
+    padding-left: var(--space-6); 
+    margin: 0 0 var(--gap-stack); 
+}
+.two-col-grid .col-body li { 
+    margin-bottom: var(--gap-inline); 
+}
+.two-col-grid .col-body li:last-child { 
+    margin-bottom: 0; 
+}
 
 /* Mobile-only line break helper */
 .mobile-newline { display: inline; }
@@ -250,56 +333,67 @@ h2 { font-size: 1.35rem; padding: var(--space-2) 0; }
     .two-col-grid,
     .two-col-grid.swap {
         grid-template-columns: 1fr;
-        gap: var(--space-2);
+        gap: var(--gap-group);
     }
 
     .two-col-grid .col-title,
     .two-col-grid.swap .col-title {
         order: -1;
-        margin-bottom: var(--space-1);
+        margin-bottom: var(--gap-inline);
     }
 
     .mobile-newline { display: block; }
 }
 
-/* Mobile: same spacing grid; less top padding so content starts closer to header */
+/* ─── TABLET BREAKPOINT (900px) ─── */
+@media (max-width: 900px) {
+    :root {
+        --container-padding: var(--container-padding-tablet);
+        --section-padding: var(--section-padding-tablet);
+        --gap-section: var(--space-8);
+    }
+}
+
+/* ─── MOBILE BREAKPOINT (600px) ─── */
+@media (max-width: 600px) {
+    :root {
+        --container-padding: var(--container-padding-mobile);
+        --section-padding: var(--section-padding-mobile);
+        --gap-section: var(--space-6);
+        --gap-component: var(--space-6);
+    }
+
+    .page-container {
+        padding-top: var(--gap-group);
+    }
+}
+
+/* ─── SMALL MOBILE (480px) ─── */
 @media (max-width: 480px) {
     .main-content {
-        padding-left: var(--container-padding-sm);
-        padding-right: var(--container-padding-sm);
+        padding-left: var(--container-padding);
+        padding-right: var(--container-padding);
         padding-top: var(--header-height-mobile);
     }
 
     .page-container,
-    .page-section-strip-inner {
-        padding-left: var(--container-padding-sm);
-        padding-right: var(--container-padding-sm);
-    }
-
-    .page-section-strip {
-        padding: var(--space-8) 0;
+    .page-section-strip-inner,
+    .grid-12 {
+        padding-left: var(--container-padding);
+        padding-right: var(--container-padding);
     }
 
     .full-width {
-        margin: calc(-1 * var(--container-padding-sm));
-        width: calc(100% + 2 * var(--container-padding-sm));
-    }
-
-    .grid-12 {
-        padding-left: var(--container-padding-sm);
-        padding-right: var(--container-padding-sm);
+        margin-left: calc(-1 * var(--container-padding));
+        margin-right: calc(-1 * var(--container-padding));
+        width: calc(100% + 2 * var(--container-padding));
     }
 }
 
-/* Very small screens: keep same grid */
+/* ─── VERY SMALL SCREENS (320px) ─── */
 @media (max-width: 320px) {
     .main-content {
-        padding: var(--container-padding-sm);
+        padding: var(--container-padding);
         padding-top: var(--header-height-mobile);
-    }
-
-    .full-width {
-        margin: calc(-1 * var(--container-padding-sm));
-        width: calc(100% + 2 * var(--container-padding-sm));
     }
 }

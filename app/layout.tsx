@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         default: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
         template: '%s | ZabZabLab',
     },
-    description: 'Hand-drawn wallpaper and fabric designs for interiors with personality. Custom colorways, faux textures, and trade-friendly options for interior designers. Shop on Spoonflower.',
+    description: 'Artist-made wallpaper designs for interiors with personality. Custom colorways, faux textures, and trade-friendly options for interior designers. Shop on Spoonflower.',
     applicationName: 'ZabZabLab',
     keywords: [
         'custom wallpaper',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         'faux limewash wallpaper',
         'faux stone wallpaper',
         'textile design',
-        'hand-drawn wallpaper',
+        'artist-made wallpaper',
         'Spoonflower designer',
         'wallpaper color matching',
         'custom wallpaper commission',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
         url: '/',
         title: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
         description:
-            'Hand-drawn wallpaper and fabric for interiors with personality. Custom colorways, faux textures, and trade-friendly options.',
+            'Artist-made wallpaper for interiors with personality. Custom colorways, faux textures, and trade-friendly options.',
         siteName: 'ZabZabLab',
         images: [
             {
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
         description:
-            'Hand-drawn wallpaper and fabric for interiors with personality. Custom colorways and trade-friendly options.',
+            'Artist-made wallpaper for interiors with personality. Custom colorways and trade-friendly options.',
         images: ['/assets/zabzablab.png'],
     },
     robots: {
@@ -125,7 +125,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             alternateName: 'ZabZabLab Wallpaper and Fabric Design Studio',
                             url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
                             logo: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
-                            description: 'Hand-drawn wallpaper and fabric design studio specializing in custom colorways, faux texture wallpapers, and trade-friendly services for interior designers. Designs sold through Spoonflower.',
+                            description: 'Artist-led wallpaper and fabric design studio specializing in custom colorways, faux texture wallpapers, and trade-friendly services for interior designers. Designs sold through Spoonflower.',
                             founder: {
                                 '@type': 'Person',
                                 name: 'Vera',

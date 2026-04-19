@@ -10,19 +10,18 @@ export default function AboutPage() {
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'Person',
-                        name: 'ZabZabLab Wallpaper and Fabric Design Studio by Vera',
+                        name: 'ZabZabLab Wallpaper Design Studio by Vera',
                         url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com') + '/about',
                         image: new URL('/assets/about.jpg', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
                         sameAs: [
                             'https://www.instagram.com/zabzablab',
-                            'https://www.spoonflower.com/profiles/zabzablab',
                         ],
                         worksFor: {
                             '@type': 'Organization',
                             name: 'ZabZabLab',
                             url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com',
                         },
-                        jobTitle: 'Surface Pattern Designer, owner of ZabZabLab Studio',
+                        jobTitle: 'Wallpaper Designer, owner of ZabZabLab Studio',
                     }),
                 }}
             />
@@ -30,26 +29,34 @@ export default function AboutPage() {
                 <div className={styles.imageContainer}>
                     <img
                         src="/assets/about.jpg"
-                        alt="Vera"
+                        alt="Vera, wallpaper designer at ZabZabLab"
                     />
                 </div>
                 <div className={styles.caption}>
                     <p>
-                        Hi, I&apos;m Vera &mdash; the designer behind ZabZabLab.
-                        I design wallpaper and fabric for soulful, layered, storied interiors.
+                        Hi, I&apos;m Vera.
                     </p>
                     <p>
-                        All my designs are hand-drawn on the iPad. I love mixing
-                        traditional motifs with modern elements in thoughtful,
-                        unexpected ways &mdash; patterns that feel rooted yet fit
-                        the way we actually live today. I hope my work carries
-                        a sense of escapism and travel, like a small window into
-                        somewhere you&apos;d love to be.
+                        I started ZabZabLab because I was tired of the way we talk about interiors &mdash;
+                        all these named aesthetics and Pinterest boards telling you what&apos;s &ldquo;in.&rdquo;
+                        I wanted to help people design around how a room should <em>feel</em>, not what style it&apos;s supposed to be.
                     </p>
                     <p>
-                        My designs are available on wallpaper and fabric through <a href="https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile" target="_blank" rel="noopener noreferrer">Spoonflower</a>,
-                        and I offer licensing for commercial projects. I&apos;m based in New Jersey, USA.
-                        Have something in mind? <a href="mailto:zabzablab@gmail.com">Let&apos;s talk</a>!
+                        Every pattern I create is hand-drawn on my iPad.
+                        But more importantly, each one starts with a mood: serene, grounded, playful, romantic.
+                        Because when you know how you want to feel in a space, the right choices become obvious.
+                    </p>
+                    <p>
+                        If you&apos;ve ever struggled to describe what you want &mdash;
+                        or felt lost in a sea of trends that don&apos;t quite fit &mdash;
+                        this is for you.
+                    </p>
+                    <p>
+                        If you&apos;re an interior designer, check out my <a href="/for-interior-designers">trade program</a>.
+                        I&apos;m based in New Jersey, USA.
+                    </p>
+                    <p>
+                        Have something in mind? <a href="mailto:zabzablab@gmail.com">Let&apos;s talk</a>.
                     </p>
                 </div>
             </div>
@@ -58,30 +65,30 @@ export default function AboutPage() {
 }
 
 export const metadata: Metadata = {
-    title: 'About ZabZabLab — Surface Pattern Designer',
+    title: 'About ZabZabLab — Wallpaper Design by Mood',
     description:
-        'Meet Vera, the surface pattern designer behind ZabZabLab. Hand-drawn wallpaper and fabric designs mixing traditional motifs with modern style. Based in New Jersey, available for licensing and commissions.',
+        'Meet Vera, the designer behind ZabZabLab. Hand-drawn wallpaper designed around mood, not trends. Based in New Jersey, trade program available for interior designers.',
     alternates: { canonical: '/about' },
     openGraph: {
         type: 'profile',
         url: '/about',
-        title: 'About Vera — Surface Pattern Designer | ZabZabLab',
+        title: 'About Vera | ZabZabLab',
         description:
-            'Hand-drawn wallpaper and fabric designs mixing traditional motifs with modern style. Available for licensing and commissions.',
+            'Hand-drawn wallpaper designed around mood, not trends. Trade program available for interior designers.',
         images: [
             {
                 url: '/assets/about.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'Vera — Surface Pattern Designer at ZabZabLab',
+                alt: 'Vera — Wallpaper Designer at ZabZabLab',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'About Vera — Surface Pattern Designer | ZabZabLab',
+        title: 'About Vera | ZabZabLab',
         description:
-            'Hand-drawn wallpaper and fabric designs mixing traditional motifs with modern style. Available for licensing and commissions.',
+            'Hand-drawn wallpaper designed around mood, not trends. Trade program available for interior designers.',
         images: ['/assets/about.jpg'],
     },
 }

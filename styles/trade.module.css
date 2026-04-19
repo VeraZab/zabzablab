@@ -1,0 +1,109 @@
+.faqSection {
+    max-width: 42rem;
+    margin: 0 auto;
+}
+
+.faqItem {
+    border-bottom: 1px solid var(--border-subtle);
+    padding: var(--gap-stack) 0;
+}
+
+.faqItem:first-child {
+    border-top: 1px solid var(--border-subtle);
+}
+
+.faqItem summary {
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--color-charcoal);
+    padding: var(--gap-inline) 0;
+    padding-right: var(--gap-component);
+    position: relative;
+    list-style: none;
+    transition: color 0.2s ease;
+}
+
+.faqItem summary::-webkit-details-marker {
+    display: none;
+}
+
+.faqItem summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--color-accent);
+    transition: transform 0.2s ease;
+}
+
+.faqItem[open] summary::after {
+    content: '−';
+}
+
+.faqItem summary:hover {
+    color: var(--color-accent);
+}
+
+.faqItem summary:focus {
+    outline: none;
+}
+
+.faqItem summary:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.faqAnswer {
+    padding: var(--gap-inline) 0 var(--gap-inline) 0;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ctaSection {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-inline);
+}
+
+.ctaSection h2 {
+    margin: 0;
+}
+
+.ctaEmail {
+    font-size: 1.125rem;
+    color: var(--color-charcoal);
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+}
+
+.ctaEmail:hover {
+    color: var(--color-accent);
+    text-decoration-color: var(--color-charcoal);
+}
+
+.ctaNote {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}

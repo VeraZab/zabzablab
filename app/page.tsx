@@ -1,138 +1,216 @@
-import PortfolioGrid from './components/portfolio/PortfolioGrid'
+import MoodCarousel from './components/MoodCarousel'
+import Image from 'next/image'
+import Link from 'next/link'
 import type { Metadata } from 'next'
-import PortfolioItem from './components/portfolio/PortfolioItem'
-import PortfolioPageLayout from './components/portfolio/PortfolioPageLayout'
-import NewsletterSignup from './components/NewsletterSignup'
-import Footer from './components/Footer'
+import styles from '/styles/homepage.module.css'
 
-import styles from '/styles/portfoliopagelayout.module.css'
-
-interface PortfolioListItem {
-    designSrc: string
-    alt: string
-    mockupSrc?: string
-    href?: string
-    newWindow?: boolean
-}
-
-const portfolio: PortfolioListItem[] = [
-    { 
-        designSrc: '/portfolio/cyanotype-block.png', 
-        alt: 'Large Scale Cyanotype Botanical Herbarium', 
-        mockupSrc: '/portfolio/cyanotype-mockup4.jpg', 
-        href: 'https://www.spoonflower.com/en/collections/1454717', 
-        newWindow: true 
-    },
-    {
-        designSrc: '/portfolio/horse-block.png',
-        alt: 'Mori Indian Ethnic Horse Block Print',
-        mockupSrc: '/portfolio/horse-mockup.jpg',
-        href: 'https://www.spoonflower.com/en/collections/1432238',
-        newWindow: true,
-    },
-    { 
-        designSrc: '/portfolio/peony-block.png', 
-        alt: 'Moody Peony Garden',
-        mockupSrc: '/portfolio/peony-mockup.png', 
-        href: 'https://www.spoonflower.com/collections/1425136', 
-        newWindow: true 
-     },
-    {
-        designSrc: '/portfolio/painterly_vine_gold.jpg',
-        alt: 'William Morris Inspired Painterly Japandi Chinoiserie Vine',
-        mockupSrc: '/portfolio/painterly-vine-mockup.jpg',
-        href: 'https://www.spoonflower.com/collections/1350642',
-        newWindow: true,
-    },
-    // {
-    //     designSrc: '/portfolio/hudson-green.jpg',
-    //     alt: 'Hudson River Nautical Boat Toile',
-    //     mockupSrc: '/portfolio/boats-mockup.jpg',
-    //     href: 'https://www.spoonflower.com/collections/885850',
-    //     newWindow: true,
-    // },    
+const moods = [
+    { name: 'Playful', slug: 'playful', image: '/portfolio/moods/playful.jpeg' },
+    { name: 'Romantic', slug: 'romantic', image: '/portfolio/moods/romantic.png' },
+    { name: 'Cozy', slug: 'cozy', image: '/portfolio/moods/cozy.jpeg' },
+    { name: 'Grounded', slug: 'grounded', image: '/portfolio/moods/grounded.jpg' },
+    { name: 'Serene', slug: 'serene', image: '/portfolio/moods/serene.jpg' },
+    { name: 'Farmhouse', slug: 'farmhouse', image: '/portfolio/moods/farmhouse.jpg' },
 ]
 
-export default function Work() {
+export default function Home() {
     return (
-        <PortfolioPageLayout className={styles.mainPageRoot}>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        '@context': 'https://schema.org',
-                        '@type': 'ItemList',
-                        itemListElement: portfolio.map((item, index) => ({
-                            '@type': 'ListItem',
-                            position: index + 1,
-                            name: item.alt,
-                            url: item.href || new URL('/', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
-                            image: new URL(item.designSrc, process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
-                        })),
-                    }),
-                }}
-            />
-            <PortfolioGrid columns={2}>
-                {portfolio.map((item, index) => (
-                    <PortfolioItem
-                        key={index}
-                        designSrc={item.designSrc}
-                        alt={item.alt}
-                        mockupSrc={item.mockupSrc}
-                        href={item.href}
-                        newWindow={item.newWindow}
-                    />
-                ))}
-            </PortfolioGrid>
-            <div className={styles.ctaWrapper}>
-                <svg className={styles.ctaClipSvg} aria-hidden>
-                    <defs>
-                        <clipPath id="ctaWavyTop" clipPathUnits="objectBoundingBox">
-                            <path d="M0,0.07 Q0.0125,0.04 0.025,0.07 Q0.0375,0.10 0.05,0.07 Q0.0625,0.04 0.075,0.07 Q0.0875,0.10 0.1,0.07 Q0.1125,0.04 0.125,0.07 Q0.1375,0.10 0.15,0.07 Q0.1625,0.04 0.175,0.07 Q0.1875,0.10 0.2,0.07 Q0.2125,0.04 0.225,0.07 Q0.2375,0.10 0.25,0.07 Q0.2625,0.04 0.275,0.07 Q0.2875,0.10 0.3,0.07 Q0.3125,0.04 0.325,0.07 Q0.3375,0.10 0.35,0.07 Q0.3625,0.04 0.375,0.07 Q0.3875,0.10 0.4,0.07 Q0.4125,0.04 0.425,0.07 Q0.4375,0.10 0.45,0.07 Q0.4625,0.04 0.475,0.07 Q0.4875,0.10 0.5,0.07 Q0.5125,0.04 0.525,0.07 Q0.5375,0.10 0.55,0.07 Q0.5625,0.04 0.575,0.07 Q0.5875,0.10 0.6,0.07 Q0.6125,0.04 0.625,0.07 Q0.6375,0.10 0.65,0.07 Q0.6625,0.04 0.675,0.07 Q0.6875,0.10 0.7,0.07 Q0.7125,0.04 0.725,0.07 Q0.7375,0.10 0.75,0.07 Q0.7625,0.04 0.775,0.07 Q0.7875,0.10 0.8,0.07 Q0.8125,0.04 0.825,0.07 Q0.8375,0.10 0.85,0.07 Q0.8625,0.04 0.875,0.07 Q0.8875,0.10 0.9,0.07 Q0.9125,0.04 0.925,0.07 Q0.9375,0.10 0.95,0.07 Q0.9625,0.04 0.975,0.07 Q0.9875,0.10 1,0.07 L1,1 L0,1 Z" />
-                        </clipPath>
-                    </defs>
-                </svg>
-                <div id="newsletter" className={styles.cta}>
-                    <span className={styles.ctaTitle}>Newsletter</span>
-                    <span className={styles.ctaText}>
-                    Be the first to know when new designs drop!
-                    No spam, just pretty things.
-                </span>
-                <NewsletterSignup />
-                </div>
-                <Footer className={styles.ctaFooter} />
+        <>
+            {/* Hero: Full-viewport mood carousel */}
+            <div className="home-hero-root">
+                <MoodCarousel />
             </div>
-        </PortfolioPageLayout>
+
+            {/* Trust strip: Address objections immediately */}
+            <div className={styles.trustStrip}>
+                <div className={styles.trustItem}>
+                    <span className={styles.trustIcon}>✎</span>
+                    <span className={styles.trustLabel}>Hand-drawn designs by a real artist</span>
+                </div>
+                <div className={styles.trustItem}>
+                    <span className={styles.trustIcon}>◇</span>
+                    <span className={styles.trustLabel}>No minimums, order what you need</span>
+                </div>
+                <div className={styles.trustItem}>
+                    <span className={styles.trustIcon}>✦</span>
+                    <span className={styles.trustLabel}>Custom recolors available</span>
+                </div>
+            </div>
+
+            {/* Value prop: What this actually is */}
+            <section className="page-section-strip page-section-strip-alt">
+                <div className="page-section-strip-inner">
+                    <div className={styles.valueProp}>
+                        <h2>Wallpaper that starts with how you want to feel</h2>
+                        <p>
+                            Forget trend names and Pinterest aesthetics. 
+                            Pick a mood &mdash; playful, romantic, cozy, grounded, serene &mdash; 
+                            and find patterns that actually match the feeling you&apos;re going for.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Mood grid: Browse by feeling */}
+            <section className="page-section-strip">
+                <div className="page-section-strip-inner">
+                    <div className={styles.sectionHeader}>
+                        <h2>Explore by mood</h2>
+                        <p>Each mood has its own curated collection</p>
+                    </div>
+                    <div className={styles.moodGrid}>
+                        {moods.map((mood) => (
+                            <Link 
+                                key={mood.slug} 
+                                href={`/designs?mood=${mood.slug}`} 
+                                className={styles.moodCard}
+                            >
+                                <Image 
+                                    src={mood.image} 
+                                    alt={mood.name} 
+                                    fill 
+                                    sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw"
+                                />
+                                <div className={styles.moodCardOverlay} />
+                                <span className={styles.moodCardLabel}>{mood.name}</span>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Benefits: What you get */}
+            <section className="page-section-strip page-section-strip-alt">
+                <div className="page-section-strip-inner">
+                    <div className={styles.sectionHeader}>
+                        <h2>Why ZabZabLab</h2>
+                    </div>
+                    <div className={styles.benefitsGrid}>
+                        <div className={styles.benefitItem}>
+                            <div className={styles.benefitIcon}>◐</div>
+                            <h3 className={styles.benefitTitle}>Mood over trends</h3>
+                            <p className={styles.benefitDesc}>
+                                Design around how you want to feel, not what&apos;s &ldquo;in&rdquo; this season.
+                            </p>
+                        </div>
+                        <div className={styles.benefitItem}>
+                            <div className={styles.benefitIcon}>⬡</div>
+                            <h3 className={styles.benefitTitle}>Make it yours</h3>
+                            <p className={styles.benefitDesc}>
+                                Every pattern can be recolored to match your palette. Just ask.
+                            </p>
+                        </div>
+                        <div className={styles.benefitItem}>
+                            <div className={styles.benefitIcon}>✧</div>
+                            <h3 className={styles.benefitTitle}>Artist-made</h3>
+                            <p className={styles.benefitDesc}>
+                                Hand-drawn by one designer in a small studio. Not AI, not stock.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Who is this for */}
+            <section className="page-section-strip">
+                <div className="page-section-strip-inner">
+                    <div className={styles.sectionHeader}>
+                        <h2>Made for you if&hellip;</h2>
+                    </div>
+                    <div className={styles.audienceGrid}>
+                        <div className={styles.audienceItem}>
+                            <h3 className={styles.audienceTitle}>You&apos;re decorating your home</h3>
+                            <p className={styles.audienceDesc}>
+                                You want wallpaper that feels personal, not like everyone else&apos;s Pinterest board.
+                            </p>
+                        </div>
+                        <div className={styles.audienceItem}>
+                            <h3 className={styles.audienceTitle}>You&apos;re an interior designer</h3>
+                            <p className={styles.audienceDesc}>
+                                You need custom recolors, quick turnaround, and a designer who actually picks up the phone.
+                            </p>
+                        </div>
+                        <div className={styles.audienceItem}>
+                            <h3 className={styles.audienceTitle}>You know what you like</h3>
+                            <p className={styles.audienceDesc}>
+                                You can describe the feeling you want even if you can&apos;t name the style.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Founder story (in place of testimonials) */}
+            <section className="page-section-strip page-section-strip-alt">
+                <div className="page-section-strip-inner">
+                    <div className={styles.founderSection}>
+                        <div className={styles.founderImage}>
+                            <Image 
+                                src="/assets/about.jpg" 
+                                alt="Vera, designer at ZabZabLab" 
+                                width={200} 
+                                height={200}
+                            />
+                        </div>
+                        <div className={styles.founderText}>
+                            <h2>Hi, I&apos;m Vera</h2>
+                            <p>
+                                I started ZabZabLab because I was tired of wallpaper shopping feeling like a guessing game. 
+                                All these aesthetic labels &mdash; &ldquo;coastal grandmother,&rdquo; &ldquo;quiet luxury&rdquo; &mdash; 
+                                that change every six months.
+                            </p>
+                            <p>
+                                I wanted to help people design around how a room should <em>feel</em>, not what style it&apos;s supposed to be. 
+                                That&apos;s why every pattern here starts with a mood.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Final CTA */}
+            <section className="page-section-strip">
+                <div className="page-section-strip-inner">
+                    <div className={styles.finalCta}>
+                        <h2>Ready to find your mood?</h2>
+                        <p>
+                            Start with a feeling. The right pattern will follow.
+                        </p>
+                        <Link href="/designs" className={styles.ctaButton}>
+                            Explore all designs
+                        </Link>
+                    </div>
+                </div>
+            </section>
+        </>
     )
 }
 
 export const metadata: Metadata = {
-    title: 'Hand-Drawn Wallpaper & Fabric Designs — Portfolio',
+    title: 'ZabZabLab — Artist-made wallpaper by mood',
     description:
-        'Browse hand-drawn wallpaper and fabric collections by ZabZabLab. Botanical, chinoiserie, ethnic, and texture-based patterns—customizable colors and scale for your project.',
-    alternates: {
-        canonical: '/',
-    },
+        'Artist-made wallpaper and fabric from a small studio. Tap a mood—playful, romantic, cozy, grounded, serene—and find a pattern that feels like your room.',
+    alternates: { canonical: '/' },
     openGraph: {
         type: 'website',
         url: '/',
-        title: 'Hand-Drawn Wallpaper & Fabric Designs — ZabZabLab Portfolio',
+        title: 'ZabZabLab — Artist-made wallpaper by mood',
         description:
-            'Botanical, chinoiserie, ethnic, and texture-based wallpaper and fabric patterns. Customizable colors and scale.',
+            "Artist-made wallpaper from a tiny studio. Start with the mood you want — I'll help you find the right pattern.",
         images: [
             {
                 url: '/assets/zabzablab.png',
                 width: 1200,
                 height: 630,
-                alt: 'ZabZabLab — Custom Wallpaper and Fabric Design Portfolio',
+                alt: 'ZabZabLab — artist-made wallpaper by mood',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Hand-Drawn Wallpaper & Fabric Designs — ZabZabLab',
+        title: 'ZabZabLab — Artist-made wallpaper by mood',
         description:
-            'Botanical, chinoiserie, ethnic, and texture-based wallpaper and fabric patterns. Customizable colors and scale.',
+            "Artist-made wallpaper from a tiny studio. Start with the mood you want — I'll help you find the right pattern.",
         images: ['/assets/zabzablab.png'],
     },
 }

@@ -5,7 +5,73 @@
     top: 0;
     width: 100%;
     background: var(--color-linen);
-    z-index: 3;
+    z-index: 10;
+}
+
+/* Home: hero extends under the bar — transparent with white text for contrast */
+.header.headerOnHome {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+    transition: background 0.4s ease;
+}
+
+/* Once scrolled past hero, materialize into solid header */
+.header.headerOnHome.headerScrolled {
+    background: var(--color-linen);
+}
+
+.header.headerOnHome.headerScrolled .tagline,
+.header.headerOnHome.headerScrolled .tagline span,
+.header.headerOnHome.headerScrolled .right a,
+.header.headerOnHome.headerScrolled .dropdownTrigger {
+    color: var(--color-charcoal);
+    text-shadow: none;
+}
+
+.header.headerOnHome.headerScrolled .logo a,
+.header.headerOnHome.headerScrolled .logo .logoLink,
+.header.headerOnHome.headerScrolled .logo svg {
+    color: var(--color-charcoal);
+    filter: none;
+}
+
+.header.headerOnHome.headerScrolled .right a:hover,
+.header.headerOnHome.headerScrolled .dropdownTrigger:hover {
+    color: var(--color-charcoal);
+    text-shadow: none;
+    text-decoration-color: currentColor;
+}
+
+/* All text in header goes white on homepage */
+.header.headerOnHome .tagline,
+.header.headerOnHome .tagline span,
+.header.headerOnHome .right a,
+.header.headerOnHome .dropdownTrigger {
+    color: var(--gallery-white);
+    text-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.header.headerOnHome .logo a,
+.header.headerOnHome .logo .logoLink,
+.header.headerOnHome .logo svg {
+    color: var(--gallery-white);
+    filter: brightness(0) invert(1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.header.headerOnHome .right a:hover,
+.header.headerOnHome .dropdownTrigger:hover {
+    color: var(--gallery-white);
+    text-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.7),
+        0 0 20px rgba(0, 0, 0, 0.4);
+    text-decoration: underline;
+    text-decoration-color: var(--gallery-white);
+    text-underline-offset: 0.35rem;
+    text-decoration-thickness: 2px;
 }
 
 .headerInner {
@@ -13,14 +79,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-8);
+    gap: var(--gap-component);
 }
 
 /* Logo + tagline as one unit: intentional gap, vertically centered in row */
 .logo {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    gap: var(--gap-stack);
     min-width: 0;
 }
 
@@ -31,16 +97,23 @@
     flex-shrink: 0;
     border-bottom: none;
     color: var(--color-charcoal);
+    /* Block links default to 100% width — without this the SVG can scale to the full header */
+    width: fit-content;
+    max-width: 100%;
 }
 
+/* Logo mark: explicit caps — huge viewBox + max-width:100% on svg (reset) was blowing it up */
+.logoImg,
 .logo img,
 .logo svg {
-    width: 70px;
+    width: 56px;
+    max-width: 56px;
     height: auto;
     display: block;
     vertical-align: middle;
-    padding: var(--space-2);
+    padding: var(--space-1);
     padding-top: calc(var(--header-content-gap) / 2);
+    box-sizing: border-box;
 }
 
 .tagline {
@@ -62,7 +135,7 @@
 .right {
     display: flex;
     align-items: center;
-    gap: var(--space-6);
+    gap: var(--gap-group);
     flex-shrink: 0;
 }
 
@@ -102,7 +175,7 @@
     left: 0;
     right: 0;
     top: 100%;
-    height: var(--space-3);
+    height: var(--gap-stack);
 }
 
 .dropdownTrigger {
@@ -113,11 +186,11 @@
 .submenu {
     display: none;
     position: absolute;
-    top: calc(100% + var(--space-3));
+    top: calc(100% + var(--gap-stack));
     left: 0;
     background: var(--gallery-white);
-    color: inherit;
-    padding: var(--space-3) var(--space-4);
+    color: var(--color-charcoal);
+    padding: var(--gap-stack) var(--gap-stack);
     border-radius: 8px;
     border: 1px solid rgba(56, 49, 40, 0.08);
     box-shadow: var(--shadow-card);
@@ -128,22 +201,24 @@
 .dropdown:hover .submenu {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--gap-stack);
 }
 
 .submenu a {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--gap-inline);
     white-space: nowrap;
     border-bottom: none;
+    color: var(--color-charcoal) !important;
+    text-shadow: none !important;
 }
+
 .submenu a:hover {
     text-decoration: underline;
     text-underline-offset: 0.35rem;
     text-decoration-thickness: 0.12rem;
     text-decoration-color: currentColor;
-    color: var(--color-charcoal);
 }
 
 @media (max-width: 1330px) {
@@ -154,9 +229,11 @@
         padding: calc(var(--header-content-gap) / 2) var(--container-padding);
     }
 
+    .logoImg,
     .logo img,
     .logo svg {
-        width: 60px;
+        width: 48px;
+        max-width: 48px;
         height: auto;
     }
 
@@ -173,7 +250,7 @@
     }
 
     .mobileIconContainer {
-        padding: var(--space-2);
+        padding: var(--gap-inline);
     }
 
     .mobileIconContainer svg {
@@ -186,7 +263,7 @@
     .closeButton {
         color: white;
         position: fixed;
-        top: var(--space-4);
+        top: var(--gap-stack);
         right: var(--container-padding);
         z-index: 4;
         outline: none;
@@ -214,7 +291,7 @@
         justify-content: center;
         text-align: center;
         font-size: 2rem;
-        gap: var(--space-8);
+        gap: var(--gap-component);
         width: 100%;
     }
 
@@ -223,7 +300,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: var(--space-2);
+        gap: var(--gap-inline);
         color: white;
         border-bottom: none !important;
     }
@@ -243,21 +320,23 @@
 
 @media (max-width: 480px) {
     .header {
-        padding: calc(var(--header-content-gap) / 2) var(--container-padding-sm);
+        padding: calc(var(--header-content-gap) / 2) var(--container-padding);
     }
 
     .headerInner {
-        gap: var(--space-2);
+        gap: var(--gap-inline);
     }
 
+    .logoImg,
     .logo img,
     .logo svg {
-        width: 50px;
+        width: 40px;
+        max-width: 40px;
         height: auto;
     }
 
     .logo {
-        gap: var(--space-3);
+        gap: var(--gap-stack);
     }
 
     .tagline {
@@ -266,7 +345,7 @@
     }
 
     .closeButton {
-        right: var(--container-padding-sm);
+        right: var(--container-padding);
     }
 }
 
@@ -294,8 +373,8 @@
 .submenuMobile {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
-    margin-top: var(--space-4);
+    gap: var(--gap-stack);
+    margin-top: var(--gap-stack);
     font-size: 1.25rem;
 }
 

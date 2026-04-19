@@ -2,6 +2,8 @@
 
 import { Cross2Icon, RowsIcon } from '@radix-ui/react-icons'
 import * as Dialog from '@radix-ui/react-dialog'
+import { usePathname } from 'next/navigation'
+import { useState, useEffect } from 'react'
 
 import styles from '/styles/header.module.css'
 import { Logo } from './Logo'
@@ -12,21 +14,11 @@ import { NavigationLink } from './NavigationLink'
 
 const navigationLinks = [
     {
-        title: 'Designs',
-        children: [
-            { title: 'Featured', href: '/' },
-            { title: 'Faux Fabric Textures', href: '/designs/faux-fabric' },
-            // { title: 'Full Catalogue', href: 'https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile', target: '_blank' },
-        ],
+        title: 'Shop',
+        href: '/',
     },
     { title: 'About', href: '/about' },
-    {
-        title: 'Work Together',
-        children: [
-            { title: 'For Interior Designers', href: '/for-interior-designers' },
-            { title: 'Resize / Recolor Request', href: '/resize-recolor-request' },
-        ],
-    },
+    { title: 'Trade Program', href: '/for-interior-designers' },
     {
         title: 'Stay Connected',
         children: [
@@ -40,14 +32,31 @@ const navigationLinks = [
 ]
 
 export default function Header() {
+    const pathname = usePathname()
+    const isHome = pathname === '/'
+    const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+        if (!isHome) return
+        const onScroll = () => setScrolled(window.scrollY > 80)
+        window.addEventListener('scroll', onScroll, { passive: true })
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [isHome])
+
+    const headerClass = [
+        styles.header,
+        isHome ? styles.headerOnHome : '',
+        isHome && scrolled ? styles.headerScrolled : '',
+    ].filter(Boolean).join(' ')
+
     return (
-        <div className={styles.header}>
+        <div className={headerClass}>
             <div className={styles.headerInner}>
                 <div className={styles.logo}>
                     <Logo />
                     <div className={styles.tagline}>
-                        <span>handcrafted textiles & wallpaper</span>
-                        <span>for homes with history & personality</span>
+                        <span>artist-made wallpaper</span>
+                        <span>pick your vibe — dress your walls</span>
                     </div>
                 </div>
 

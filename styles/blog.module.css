@@ -6,7 +6,7 @@
 
 @media (max-width: 1330px) { .grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
-@media (max-width: 320px) { .grid { gap: var(--space-2); } }
+@media (max-width: 320px) { .grid { gap: var(--gap-inline); } }
 
 .card {
     display: block;
@@ -22,14 +22,14 @@
 .hero { aspect-ratio: 1 / 1; width: 100%; background: var(--color-beige-200); overflow: hidden; border-radius: 6px; position: relative; }
 .hero img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 
-.cardTitle { font-size: 1.25rem; margin: var(--space-3) 0; }
-.cardDesc { color: var(--color-navy-300); margin: 0 0 var(--space-3); }
+.cardTitle { font-size: 1.25rem; margin: var(--gap-stack) 0; }
+.cardDesc { color: var(--color-navy-300); margin: 0 0 var(--gap-stack); }
 
-.date { color: var(--color-navy-300); font-size: 0.9rem; margin: var(--space-1) 0 0; }
+.date { color: var(--color-navy-300); font-size: 0.9rem; margin: var(--gap-inline) 0 0; }
 
 /* Blog post: same grid as site, readable line length */
 .post {
-    padding: var(--space-8) 0;
+    padding: var(--gap-component) 0;
     max-width: var(--container-max-width);
     margin-left: auto;
     margin-right: auto;
@@ -39,18 +39,18 @@
 
 @media (max-width: 480px) {
     .post {
-        padding-left: var(--container-padding-sm);
-        padding-right: var(--container-padding-sm);
+        padding-left: var(--container-padding);
+        padding-right: var(--container-padding);
     }
 }
 
 
-.post h1 { margin-bottom: var(--space-4); }
-.post .hero { margin-bottom: var(--space-4); }
-.postDate { color: var(--color-navy-300); font-size: 0.95rem; margin-bottom: var(--space-3); }
+.post h1 { margin-bottom: var(--gap-stack); }
+.post .hero { margin-bottom: var(--gap-stack); }
+.postDate { color: var(--color-navy-300); font-size: 0.95rem; margin-bottom: var(--gap-stack); }
 
-.post p { margin: 0 0 var(--space-4); }
-.post ul { margin: 0 0 var(--space-4) var(--space-4); padding: 0; }
+.post p { margin: 0 0 var(--gap-stack); }
+.post ul { margin: 0 0 var(--gap-stack) var(--gap-stack); padding: 0; }
 .post li { list-style: disc; }
 .post a { text-decoration: none; }
 
@@ -58,14 +58,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-4);
-    margin: var(--space-8) 0 0;
+    gap: var(--gap-stack);
+    margin: var(--gap-component) 0 0;
 }
 
 .postNavLink {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--gap-inline);
 }
 
 

@@ -8,7 +8,7 @@
 /* Wrapper so the whole block can be clipped to a wavy top; negative margins break out of .main-content padding so full width + to bottom */
 .ctaWrapper {
     flex: 1;
-    margin: var(--space-8) calc(-1 * var(--container-padding)) calc(-1 * var(--container-padding));
+    margin: var(--gap-component) calc(-1 * var(--container-padding)) calc(-1 * var(--container-padding));
     clip-path: url(#ctaWavyTop);
     background: var(--soft-ecru);
     display: flex;
@@ -17,7 +17,7 @@
 
 @media (max-width: 480px) {
     .ctaWrapper {
-        margin: var(--space-8) calc(-1 * var(--container-padding-sm)) calc(-1 * var(--container-padding-sm));
+        margin: var(--gap-component) calc(-1 * var(--container-padding)) calc(-1 * var(--container-padding));
     }
 }
 
@@ -32,7 +32,7 @@
     position: relative;
     background: var(--soft-ecru);
     color: var(--charcoal-ink);
-    padding: var(--space-12) var(--space-6) var(--space-8);
+    padding: var(--gap-section) var(--gap-group) var(--gap-component);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,12 +42,12 @@
 }
 
 .ctaTitle {
-    margin: 0 0 var(--space-3);
+    margin: 0 0 var(--gap-stack);
     display: block;
 }
 
 .ctaText {
-    margin: 0 0 var(--space-6);
+    margin: 0 0 var(--gap-group);
     max-width: 28em;
     font-weight: 400;
     font-size: 1.05rem;
@@ -59,7 +59,7 @@
 .ctaWrapper .ctaFooter {
     background: var(--soft-ecru);
     color: var(--muted-umber);
-    padding: var(--space-4) var(--space-6);
+    padding: var(--gap-stack) var(--gap-group);
     margin-top: auto;
 }
 
@@ -78,7 +78,7 @@
     display: block;
     font-weight: normal;
     font-size: 1rem;
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--gap-inline);
 }
 
 .newsletterRow {
@@ -107,7 +107,7 @@
 .newsletterInput {
     width: 100%;
     min-width: 0;
-    padding: var(--space-3) 3rem var(--space-3) var(--space-4);
+    padding: var(--gap-stack) 3rem var(--gap-stack) var(--gap-stack);
     border: none;
     background: transparent;
     border-radius: 9999px;
@@ -123,13 +123,13 @@
 
 .newsletterButton {
     position: absolute;
-    right: var(--space-2);
+    right: var(--gap-inline);
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-2);
+    padding: var(--gap-inline);
     min-width: 2.25rem;
     min-height: 2.25rem;
     border: none;
@@ -162,7 +162,7 @@
 
 .newsletterSuccess,
 .newsletterError {
-    margin: var(--space-2) 0 0;
+    margin: var(--gap-inline) 0 0;
     font-weight: normal;
     font-size: 0.95rem;
 }

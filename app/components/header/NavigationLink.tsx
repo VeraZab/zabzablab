@@ -86,6 +86,7 @@ export const NavigationLink = ({
             className={isActive ? styles.active : ''}
             href={link.href || '#'}
             target={link.target}
+            rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
         >
             {link.title}
             {IconComponent && <IconComponent />}

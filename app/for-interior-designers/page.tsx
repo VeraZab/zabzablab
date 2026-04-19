@@ -1,31 +1,31 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import styles from '/styles/trade.module.css'
 
 export const metadata: Metadata = {
-    title: 'For Interior Designers — Trade-Friendly Wallpaper & Fabric',
+    title: 'For Interior Designers — Trade Program',
     description:
-        'Custom wallpaper and fabric services for interior designers: exact color matching, scale adjustments, bespoke commissions, and Spoonflower Trade discounts. No minimums, fast turnaround.',
+        'Trade program for interior designers: custom wallpaper, exact color matching, scale adjustments, and bespoke commissions. No minimums, fast turnaround.',
     alternates: { canonical: '/for-interior-designers' },
     openGraph: {
         type: 'website',
         url: '/for-interior-designers',
-        title: 'For Interior Designers — Trade-Friendly Wallpaper & Fabric | ZabZabLab',
+        title: 'For Interior Designers — Trade Program | ZabZabLab',
         description:
-            'Custom color matching, scale adjustments, bespoke commissions, and Spoonflower Trade discounts for interior designers.',
+            'Custom color matching, scale adjustments, and bespoke wallpaper commissions for interior designers.',
         images: [
             {
                 url: '/assets/zabzablab.png',
                 width: 1200,
                 height: 630,
-                alt: 'ZabZabLab — Wallpaper and Fabric Services for Interior Designers',
+                alt: 'ZabZabLab — Wallpaper Services for Interior Designers',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'For Interior Designers — Trade-Friendly Wallpaper & Fabric | ZabZabLab',
+        title: 'For Interior Designers — Trade Program | ZabZabLab',
         description:
-            'Custom color matching, scale adjustments, bespoke commissions, and Spoonflower Trade discounts for interior designers.',
+            'Custom color matching, scale adjustments, and bespoke wallpaper commissions for interior designers.',
         images: ['/assets/zabzablab.png'],
     },
 }
@@ -62,10 +62,10 @@ export default function ForInteriorDesignersPage() {
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'Service',
-                        name: 'Custom Wallpaper and Fabric Design Services for Interior Designers',
-                        serviceType: 'Custom wallpaper and fabric design, wallpaper customization, color matching',
+                        name: 'Custom Wallpaper Design Services for Interior Designers',
+                        serviceType: 'Custom wallpaper design, wallpaper customization, color matching',
                         description:
-                            'Trade-friendly wallpaper and fabric design services for interior designers, including exact color matching, scale adjustments, Spoonflower Trade benefits, and custom wallpaper commissions.',
+                            'Trade-friendly wallpaper design services for interior designers, including exact color matching, scale adjustments, and custom wallpaper commissions.',
                         provider: {
                             '@type': 'Organization',
                             name: 'ZabZabLab',
@@ -82,7 +82,7 @@ export default function ForInteriorDesignersPage() {
                         },
                         hasOfferCatalog: {
                             '@type': 'OfferCatalog',
-                            name: 'Wallpaper and Fabric Design Services for Interior Designers',
+                            name: 'Wallpaper Design Services for Interior Designers',
                             itemListElement: [
                                 {
                                     '@type': 'Offer',
@@ -120,18 +120,10 @@ export default function ForInteriorDesignersPage() {
                         mainEntity: [
                             {
                                 '@type': 'Question',
-                                name: 'Can ZabZabLab color match wallpaper to my paint color?',
+                                name: 'Can you color match wallpaper to my paint color?',
                                 acceptedAnswer: {
                                     '@type': 'Answer',
-                                    text: 'Yes. ZabZabLab can match any paint manufacturer\'s color — Sherwin-Williams, Benjamin Moore, Farrow & Ball, Pantone, HEX, or RGB — to any pattern in the shop. Submit a request at zabzablab.com/resize-recolor-request or email zabzablab@gmail.com.',
-                                },
-                            },
-                            {
-                                '@type': 'Question',
-                                name: 'Does ZabZabLab offer trade discounts for interior designers?',
-                                acceptedAnswer: {
-                                    '@type': 'Answer',
-                                    text: 'ZabZabLab designs are available through Spoonflower, which offers a Trade Program with exclusive discounts on wallpaper and select fabrics, free swatches, quick manufacturing, and no minimum orders. Apply at spoonflower.com/en/trade.',
+                                    text: 'Yes. I can match any paint manufacturer\'s color — Sherwin-Williams, Benjamin Moore, Farrow & Ball, Pantone, HEX, or RGB — to any pattern in the shop.',
                                 },
                             },
                             {
@@ -139,98 +131,82 @@ export default function ForInteriorDesignersPage() {
                                 name: 'Can I commission a custom wallpaper design?',
                                 acceptedAnswer: {
                                     '@type': 'Answer',
-                                    text: 'Yes. ZabZabLab accepts custom wallpaper commissions — from full repeat development to tailored recolors and coordinates. Email zabzablab@gmail.com to discuss scope, timeline, sampling, and production.',
+                                    text: 'Yes. I accept custom wallpaper commissions — from full repeat development to tailored recolors and coordinates.',
                                 },
                             },
                             {
                                 '@type': 'Question',
-                                name: 'Can ZabZabLab resize a wallpaper pattern for my project?',
+                                name: 'Can you resize a wallpaper pattern for my project?',
                                 acceptedAnswer: {
                                     '@type': 'Answer',
-                                    text: 'Yes. Any ZabZabLab design can be resized for wallpaper, upholstery, pillows, bedding, or other applications. Submit a resize request at zabzablab.com/resize-recolor-request.',
+                                    text: 'Yes. Any design can be resized for wallpaper, upholstery, pillows, bedding, or other applications.',
+                                },
+                            },
+                            {
+                                '@type': 'Question',
+                                name: 'What if I\'m not happy with a recolor?',
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: 'I\'ll revise until it\'s right. Your project needs to be perfect for your client.',
                                 },
                             },
                         ],
                     }),
                 }}
             />
-            <div className="page-container">
-                <h1 style={{ textAlign: 'center', marginTop: 0 }}>
-                    Hi Interior Designers!
+            <div className="page-container" style={{ textAlign: 'center' }}>
+                <h1 style={{ marginTop: 0, marginBottom: 'var(--gap-stack)' }}>
+                    For Interior Designers
                 </h1>
-                <p style={{ textAlign: 'center' }}>
-                    I partner with interior designers to bring projects to life with flexible, trade-friendly
-                    services.
-                    <br />
-                    Whether you need a color match, a quick resize for a client presentation,
-                    or a bespoke wallpaper, I can help!
+                <p style={{ margin: 0 }}>
+                    Whether you&apos;re designing a client&apos;s living room, staging a property,
+                    or specifying for a boutique hotel &mdash; I can help you get the wallpaper exactly right.
                 </p>
             </div>
-
-           
 
             <section className="page-section-strip page-section-strip-alt">
                 <div className="page-section-strip-inner">
                     <div className="two-col-grid">
                         <div className="col-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-                            <h2 style={{ margin: 0 }}>Color match and recolor for your exact needs</h2>
+                            <h2 style={{ margin: 0 }}>Color Match &amp; Recolor</h2>
                         </div>
                         <div className="col-body">
                             <p>
                                 I can match your project palette and adapt my designs to your specs:
                             </p>
                             <ul>
-                                <li>Palette matching (HEX/RGB and Pantone guidance if available)</li>
-                                <li>Recoloring and value adjustments for contrast, mood, or light conditions</li>
-                                <li>Scale tweaks for wallpaper, upholstery, pillows, bedding, and more</li>
+                                <li>Match any paint color (Sherwin-Williams, Benjamin Moore, Farrow &amp; Ball, Pantone, HEX, RGB)</li>
+                                <li>Adjust values for contrast, mood, or light conditions</li>
+                                <li>Resize for wallpaper, upholstery, pillows, bedding, and more</li>
                             </ul>
                             <p>
-                                <a href="/resize-recolor-request">Submit a quick request form</a>{' '}
-                                or <a href="mailto:zabzablab@gmail.com">email me!</a>
+                                <a href="/resize-recolor-request">Submit a request</a>{' '}
+                                or <a href="mailto:zabzablab@gmail.com">email me</a>. I typically respond within 24&ndash;48 hours.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section className="page-section-strip ">
+            <section className="page-section-strip">
                 <div className="page-section-strip-inner">
                     <div className="two-col-grid swap">
                         <div className="col-body">
                             <p>
-                                <Link href="https://www.spoonflower.com/profiles/zabzablab?filter_action=collection&info_action=&nav_action=all&shop_selection=all_collection&sub_action=new_profile" target="_blank" rel="noopener noreferrer">My wallpaper, fabric, and home decor </Link> 
-                                is available through Spoonflower. <br/>A Spoonflower Trade account gives you:
+                                Working with me gives you:
                             </p>
                             <ul>
-                                <li>Exclusive trade discounts on wallpaper and select fabrics</li>
-                                <li>Quick manufacturing times</li>
-                                <li>Free wallpaper and fabric swatches for your clients</li>
+                                <li>Direct access &mdash; no middlemen, no runaround</li>
+                                <li>Quick turnaround on recolors and resizes</li>
+                                <li>Flexible production options</li>
                                 <li>No minimum order requirements</li>
                             </ul>
-                            <p>
-                                <a
-                                    href="https://www.spoonflower.com/en/trade"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                     Learn more about Spoonflower’s Trade Program
-                                </a>
-                                .
-                            </p>
-                            <p>
-                                Ready to join? {' '}
-                                <a
-                                    href="https://spoonflower.pro.typeform.com/to/dGZ1RA?typeform-source=www.spoonflower.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Apply here
-                                </a>
-                                .
+                            <p style={{ marginTop: 'var(--space-4)' }}>
+                                <strong>My guarantee:</strong> Not happy with a recolor? I&apos;ll revise until it&apos;s right.
                             </p>
                         </div>
                         <div className="col-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', flexDirection: 'column' }}>
-                            <h2 style={{ margin: 0 }}>Trade Account Benefits</h2>
+                            <h2 style={{ margin: 0 }}>Why Work With Me</h2>
                         </div>
                     </div>
                 </div>
@@ -240,37 +216,65 @@ export default function ForInteriorDesignersPage() {
                 <div className="page-section-strip-inner">
                     <div className="two-col-grid">
                         <div className="col-title" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-                            <h2 style={{ margin: 0 }}>Custom <br/>Wallpaper Commissions</h2>
+                            <h2 style={{ margin: 0 }}>Custom Commissions</h2>
                         </div>
                         <div className="col-body">
                             <p>
-                                Have a specific brief, motif, or space in mind? I accept custom commissions—from full
-                                repeat development to tailored recolors and coordinates. Let&apos;s discuss scope, timeline,
-                                sampling, and production together.
+                                Have a specific brief, motif, or space in mind? I accept custom commissions &mdash; from full
+                                repeat development to tailored recolors and coordinates.
                             </p>
                             <p>
-                                <a href="mailto:zabzablab@gmail.com">
-                                    Get in touch to discuss your project!
-                                </a>
+                                <a href="mailto:zabzablab@gmail.com">Email me</a> to discuss scope, timeline, sampling, and production.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="page-section-strip ">
-                <div className="page-section-strip-inner" style={{ textAlign: 'center' }}>
-                    <p style={{ marginBottom: 'var(--space-3)' }}>
-                        <strong>NEW! Need a versatile base for any project?</strong> Faux fabric textures that work as wallpaper or fabric.
-                    </p>
-                    <p style={{ margin: 0 }}>
-                        <Link href="/designs/faux-fabric">
-                            See Faux Fabric Textures →
-                        </Link>
-                    </p>
+
+            <section className="page-section-strip">
+                <div className="page-section-strip-inner">
+                    <h2 style={{ textAlign: 'center', marginTop: 0 }}>Common Questions</h2>
+                    <div className={styles.faqSection}>
+                        <details className={styles.faqItem}>
+                            <summary>Can you color match to my paint color?</summary>
+                            <p className={styles.faqAnswer}>
+                                Yes. I can match any paint manufacturer&apos;s color &mdash; Sherwin-Williams, Benjamin Moore, 
+                                Farrow &amp; Ball, Pantone, HEX, or RGB &mdash; to any pattern in my shop.
+                            </p>
+                        </details>
+                        <details className={styles.faqItem}>
+                            <summary>Can you resize a pattern for my project?</summary>
+                            <p className={styles.faqAnswer}>
+                                Yes. Any design can be resized for wallpaper, upholstery, pillows, bedding, or other applications.
+                            </p>
+                        </details>
+                        <details className={styles.faqItem}>
+                            <summary>What if I&apos;m not happy with a recolor?</summary>
+                            <p className={styles.faqAnswer}>
+                                I&apos;ll revise until it&apos;s right. Your project needs to be perfect for your client.
+                            </p>
+                        </details>
+                        <details className={styles.faqItem}>
+                            <summary>How quickly do you respond?</summary>
+                            <p className={styles.faqAnswer}>
+                                I typically respond within 24&ndash;48 hours. For urgent projects, mention your timeline in the email.
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <section className="page-section-strip page-section-strip-alt">
+                <div className="page-section-strip-inner">
+                    <div className={styles.ctaSection}>
+                        <h2>Ready to start?</h2>
+                        <a href="mailto:zabzablab@gmail.com" className={styles.ctaEmail}>zabzablab@gmail.com</a>
+                        <p className={styles.ctaNote}>
+                            I typically respond within 24&ndash;48 hours.
+                        </p>
+                    </div>
                 </div>
             </section>
         </main>
     )
 }
-
-

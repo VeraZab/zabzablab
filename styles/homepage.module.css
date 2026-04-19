@@ -1,0 +1,315 @@
+/* ─── TRUST STRIP ─── */
+.trustStrip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-section);
+    padding: var(--gap-component) var(--container-padding);
+    background: var(--gallery-white);
+    flex-wrap: wrap;
+}
+
+.trustItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-inline);
+    text-align: center;
+    max-width: 12rem;
+}
+
+.trustIcon {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+}
+
+.trustLabel {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+    .trustStrip {
+        gap: var(--gap-component);
+    }
+    
+    .trustItem {
+        max-width: 8rem;
+    }
+    
+    .trustLabel {
+        font-size: 0.8rem;
+    }
+}
+
+/* ─── VALUE PROP SECTION ─── */
+.valueProp {
+    text-align: center;
+    max-width: 38rem;
+    margin: 0 auto;
+}
+
+.valueProp h2 {
+    margin: 0 0 var(--gap-stack);
+}
+
+.valueProp p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+/* ─── MOOD GRID ─── */
+.moodGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-stack);
+}
+
+.moodCard {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.moodCard img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.moodCard:hover img {
+    transform: scale(1.05);
+}
+
+.moodCardOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(20, 18, 16, 0.6) 0%, transparent 50%);
+}
+
+.moodCardLabel {
+    position: relative;
+    z-index: 1;
+    color: var(--gallery-white);
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    font-style: italic;
+    padding: var(--gap-group);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 900px) {
+    .moodGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .moodGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .moodCard {
+        aspect-ratio: 16/9;
+    }
+}
+
+/* ─── BENEFITS SECTION ─── */
+.benefitsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-group);
+}
+
+.benefitItem {
+    text-align: center;
+    padding: var(--gap-group);
+}
+
+.benefitIcon {
+    font-size: 2rem;
+    margin-bottom: var(--gap-stack);
+    color: var(--color-accent);
+}
+
+.benefitTitle {
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 var(--gap-inline);
+    color: var(--color-charcoal);
+}
+
+.benefitDesc {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .benefitsGrid {
+        grid-template-columns: 1fr;
+        gap: var(--gap-component);
+    }
+}
+
+/* ─── WHO IS THIS FOR ─── */
+.audienceGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-group);
+    text-align: center;
+}
+
+.audienceItem {
+    padding: var(--gap-group);
+    background: var(--gallery-white);
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+}
+
+.audienceTitle {
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 var(--gap-inline);
+    color: var(--color-charcoal);
+}
+
+.audienceDesc {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .audienceGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ─── FOUNDER STORY ─── */
+.founderSection {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--gap-section);
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.founderImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.founderImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+    filter: sepia(50%) brightness(0.9) contrast(0.9);
+}
+
+.founderText h2 {
+    margin: 0 0 var(--gap-stack);
+}
+
+.founderText p {
+    margin: 0 0 var(--gap-stack);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+.founderText p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .founderSection {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--gap-component);
+    }
+    
+    .founderImage {
+        width: 160px;
+        height: 160px;
+        margin: 0 auto;
+    }
+}
+
+/* ─── FINAL CTA ─── */
+.finalCta {
+    text-align: center;
+    max-width: 32rem;
+    margin: 0 auto;
+}
+
+.finalCta h2 {
+    margin: 0 0 var(--gap-stack);
+}
+
+.finalCta p {
+    margin: 0 0 var(--gap-group);
+    color: var(--color-text-secondary);
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background: var(--color-charcoal);
+    color: var(--gallery-white);
+    border: none;
+    border-radius: 999px;
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.ctaButton:hover {
+    background: var(--color-accent);
+    transform: translateY(-2px);
+}
+
+/* ─── SECTION HEADERS ─── */
+.sectionHeader {
+    text-align: center;
+    margin-bottom: var(--gap-component);
+}
+
+.sectionHeader h2 {
+    margin: 0 0 var(--gap-inline);
+}
+
+.sectionHeader p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    max-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-16) var(--container-padding);
+    padding: var(--section-padding) var(--container-padding);
     background: var(--color-linen);
     margin: calc(-1 * var(--container-padding));
     width: calc(100% + 2 * var(--container-padding));
@@ -12,7 +12,7 @@
 .content {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: var(--space-12);
+    gap: var(--gap-section);
     align-items: center;
     max-width: var(--container-max-width);
     width: 100%;
@@ -45,7 +45,7 @@
 }
 
 .caption p {
-    margin: 0 0 var(--space-4);
+    margin: 0 0 var(--gap-stack);
 }
 
 .caption p:last-child {
@@ -53,11 +53,13 @@
 }
 
 @media (max-width: 1330px) {
-    .container { padding: var(--space-12) var(--container-padding); }
+    .container { 
+        padding: var(--section-padding) var(--container-padding); 
+    }
 
     .content {
         grid-template-columns: 1fr;
-        gap: var(--space-10);
+        gap: var(--gap-component);
         margin-top: 0;
     }
 
@@ -70,27 +72,33 @@
     .imageContainer img { object-position: center 22%; }
 
     .caption {
-        padding: 0 var(--container-padding) var(--space-12);
+        padding: 0 var(--container-padding) var(--gap-section);
         padding-top: 0;
     }
 }
 
 @media (max-width: 480px) {
-    .container { padding: var(--space-10) var(--container-padding-sm); }
+    .container { 
+        padding: var(--section-padding) var(--container-padding); 
+    }
 
     .imageContainer {
         width: 260px;
         height: 260px;
     }
 
-    .caption { padding: 0 var(--container-padding-sm) var(--space-10); }
+    .caption { 
+        padding: 0 var(--container-padding) var(--gap-component); 
+    }
 }
 
 @media (max-width: 320px) {
     .container {
-        margin: calc(-1 * var(--container-padding-sm));
-        width: calc(100% + 2 * var(--container-padding-sm));
+        margin: calc(-1 * var(--container-padding));
+        width: calc(100% + 2 * var(--container-padding));
     }
 
-    .caption { padding: var(--container-padding) var(--container-padding-sm); }
+    .caption { 
+        padding: var(--gap-stack) var(--container-padding); 
+    }
 }
