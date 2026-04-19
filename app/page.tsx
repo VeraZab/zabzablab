@@ -1,7 +1,9 @@
+import HomeFaqTabs from './components/HomeFaqTabs'
+import { homepageFaqJsonLdString, homepageFaqPanels } from './content/homepageFaq'
 import MoodCarousel from './components/MoodCarousel'
 import ArtistPaletteIcon from './components/trust/ArtistPaletteIcon'
 import DiamondShineIcon from './components/trust/DiamondShineIcon'
-import { GlobeIcon, RocketIcon, RulerHorizontalIcon } from '@radix-ui/react-icons'
+import { RulerHorizontalIcon } from '@radix-ui/react-icons'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -15,101 +17,98 @@ const moods = [
     { name: 'Serene', slug: 'serene', image: '/portfolio/moods/serene.jpg' },
 ]
 
-const faqItems = [
-    {
-        q: 'Is this renter-friendly?',
-        a: 'Yes. Removable peel-and-stick options are available — they peel off without damaging walls, great for renters and commitment-phobes alike.',
-    },
-    {
-        q: 'Can I order a sample before committing?',
-        a: 'Yes — every design is available as an extra-large sample so you can see the color and texture in your actual space before placing a full order.',
-    },
-    {
-        q: 'Can you match my exact paint color?',
-        a: "Yes. I can recolor any pattern to match Sherwin-Williams, Benjamin Moore, Farrow & Ball, Pantone, HEX, or RGB. Submit a request and I'll respond within 24–48 hours.",
-    },
-    {
-        q: 'How much wallpaper will I need?',
-        a: "Each listing includes a built-in yardage calculator. Not sure? Email me your room dimensions and I'll help you estimate.",
-    },
-    {
-        q: "Is it safe for kids' rooms or bathrooms?",
-        a: 'All designs are printed with water-based, non-toxic inks. Peel-and-stick works best in dry areas; non-woven is suitable for low-humidity bathrooms.',
-    },
-    {
-        q: 'How long does a custom recolor take?',
-        a: 'I typically respond to recolor requests within 24–48 hours. Once approved, your order is printed and ships in 1–2 business days.',
-    },
-]
+const homeFaqJsonLd = homepageFaqJsonLdString()
 
 export default function Home() {
     return (
         <>
-            {/* Hero: Full-viewport mood carousel */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: homeFaqJsonLd }} />
+
+            {/* 1. Hero */}
             <div className="home-hero-root">
                 <MoodCarousel />
             </div>
 
-            {/* Trust strip: own shell (not .page-section-strip — avoids extra top padding + linen seam) */}
+            {/* 2. Trust strip — 3 biggest objections */}
             <div className={styles.trustStripOuter}>
                 <div className={styles.trustStripContainer}>
-                    <div className={styles.trustStripGrid}>
+                    <div className={`${styles.trustStripGrid} ${styles.trustStripGrid3}`}>
                         <div className={`${styles.trustItem} ${styles.trustItemLead}`}>
                             <span className={`${styles.trustIcon} ${styles.trustIconLead}`} aria-hidden>
                                 <ArtistPaletteIcon />
                             </span>
-                            <span className={styles.trustLabel}>Artist-made &mdash; hand-drawn originals, not stock</span>
-                        </div>
-                        <div className={styles.trustItem}>
-                            <span className={styles.trustIcon} aria-hidden>
-                                <RocketIcon width={32} height={32} />
-                            </span>
-                            <span className={styles.trustLabel}>Fast & Free worldwide delivery &mdash; ships in 1&ndash;2 business days</span>
-                        </div>
-                        <div className={styles.trustItem}>
-                            <span className={styles.trustIcon} aria-hidden>
-                                <DiamondShineIcon />
-                            </span>
-                            <span className={styles.trustLabel}>
-                                Customizable &mdash; free recolors and rescales to suit your space
-                            </span>
+                            <span className={styles.trustLabel}>Artist-made &mdash; hand-drawn originals, not AI, not stock</span>
                         </div>
                         <div className={styles.trustItem}>
                             <span className={styles.trustIcon} aria-hidden>
                                 <RulerHorizontalIcon width={32} height={32} />
                             </span>
-                            <span className={styles.trustLabel}>No minimums & Extra Large Samples &mdash; visualize before buying</span>
+                            <span className={styles.trustLabel}>Extra-large samples &mdash; see it in your actual space before you commit</span>
                         </div>
                         <div className={styles.trustItem}>
                             <span className={styles.trustIcon} aria-hidden>
-                                <GlobeIcon width={32} height={32} />
+                                <DiamondShineIcon />
                             </span>
-                            <span className={styles.trustLabel}>Eco-Friendly &mdash; produced on-demand, PVC-Free</span>
+                            <span className={styles.trustLabel}>Free recolors & resizing &mdash; on most designs, to get your space just right</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Value prop: What this actually is */}
+            {/* 3. What is this */}
             <section className="page-section-strip page-section-strip-alt">
                 <div className="page-section-strip-inner">
                     <div className={styles.valueProp}>
-                        <h2>Wallpaper that starts with how you want to feel</h2>
+                        <h2>Wallpaper designed around how you want to feel</h2>
                         <p>
-                            Forget trend names and Pinterest aesthetics.
+                            Not organized by trend names that change every six months.
                             Pick a mood &mdash; playful, romantic, cozy, grounded, serene &mdash;
-                            and find patterns that actually match the feeling you&apos;re going for.
+                            and find a pattern that actually matches the feeling you&apos;re going for.
+                            Every design can be recolored to match your exact palette.
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Mood grid: Browse by feeling */}
+            {/* 4. Mystery Box promo — the offer */}
             <section className="page-section-strip">
                 <div className="page-section-strip-inner">
+                    <div className={styles.mysteryBoxPromo}>
+                        <div className={styles.mysteryBoxVisual}>
+                            <Image
+                                src="/portfolio/peony-mockup.png"
+                                alt="ZabZabLab wallpaper samples"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 480px"
+                                className={styles.mysteryBoxImg}
+                            />
+                            <div className={styles.mysteryBoxBadge}>
+                                <span className={styles.mysteryBoxBadgeNum}>3</span>
+                                <span className={styles.mysteryBoxBadgeLabel}>samples,<br />matched<br />to you</span>
+                            </div>
+                        </div>
+                        <div className={styles.mysteryBoxText}>
+                            <span className={styles.mysteryBoxTag}>Mystery Box</span>
+                            <h2 className={styles.mysteryBoxHeadline}>Not sure where to start?</h2>
+                            <p>
+                                Answer 3 quick questions about your room and I&apos;ll handpick
+                                3 wallpaper samples matched to your mood, palette, and space.
+                                They arrive at your door so you can see the texture and color
+                                in person before you decide anything.
+                            </p>
+                            <Link href="/mystery-box" className={styles.ctaButton}>
+                                Take the quiz &rarr;
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 5. Mood grid — visual browse */}
+            <section className="page-section-strip page-section-strip-alt">
+                <div className="page-section-strip-inner">
                     <div className={styles.sectionHeader}>
-                        <h2>Explore by mood</h2>
-                        <p>Each mood has its own curated collection</p>
+                        <h2>Or browse by mood</h2>
                     </div>
                     <div className={styles.moodGrid}>
                         {moods.map((mood) => (
@@ -132,97 +131,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* How it works: Demystify the journey */}
-            <section className="page-section-strip page-section-strip-alt">
-                <div className="page-section-strip-inner">
-                    <div className={styles.sectionHeader}>
-                        <h2>How it works</h2>
-                        <p>From mood to finished wall in four simple steps</p>
-                    </div>
-                    <div className={styles.processGrid}>
-                        <div className={styles.processStep}>
-                            <div className={styles.processStepNumber}>01</div>
-                            <h3 className={styles.processStepTitle}>Browse by mood</h3>
-                            <p className={styles.processStepDesc}>Pick a feeling — playful, cozy, serene — and explore patterns curated for that mood.</p>
-                        </div>
-                        <div className={styles.processStep}>
-                            <div className={styles.processStepNumber}>02</div>
-                            <h3 className={styles.processStepTitle}>Try a sample first</h3>
-                            <p className={styles.processStepDesc}>Order an extra-large sample to see the color and texture in your actual space before committing.</p>
-                        </div>
-                        <div className={styles.processStep}>
-                            <div className={styles.processStepNumber}>03</div>
-                            <h3 className={styles.processStepTitle}>Customize (optional)</h3>
-                            <p className={styles.processStepDesc}>Want a different color? Request a recolor and I&apos;ll match your exact palette within 24–48 hours.</p>
-                        </div>
-                        <div className={styles.processStep}>
-                            <div className={styles.processStepNumber}>04</div>
-                            <h3 className={styles.processStepTitle}>Order &amp; transform</h3>
-                            <p className={styles.processStepDesc}>Printed on demand with water-based inks and shipped directly to your door.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Benefits: What you get */}
-            <section className="page-section-strip">
-                <div className="page-section-strip-inner">
-                    <div className={styles.sectionHeader}>
-                        <h2>Why ZabZabLab</h2>
-                    </div>
-                    <div className={styles.benefitsGrid}>
-                        <div className={styles.benefitItem}>
-                            <div className={styles.benefitIcon}>◐</div>
-                            <h3 className={styles.benefitTitle}>Mood over trends</h3>
-                            <p className={styles.benefitDesc}>
-                                Design around how you want to feel, not what&apos;s &ldquo;in&rdquo; this season.
-                            </p>
-                        </div>
-                        <div className={styles.benefitItem}>
-                            <div className={styles.benefitIcon}>⬡</div>
-                            <h3 className={styles.benefitTitle}>Make it yours</h3>
-                            <p className={styles.benefitDesc}>
-                                Every pattern can be recolored to match your palette. Just ask.
-                            </p>
-                        </div>
-                        <div className={styles.benefitItem}>
-                            <div className={styles.benefitIcon}>✧</div>
-                            <h3 className={styles.benefitTitle}>Artist-made</h3>
-                            <p className={styles.benefitDesc}>
-                                Hand-drawn by one designer in a small studio. Not AI, not stock.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Samples: Reduce purchase anxiety */}
-            <section className="page-section-strip page-section-strip-alt">
-                <div className="page-section-strip-inner">
-                    <div className={styles.samplesSection}>
-                        <div className={styles.samplesText}>
-                            <h2>Not sure yet? Try a sample first.</h2>
-                            <p>
-                                Order an extra-large wallpaper sample and see the pattern, color,
-                                and texture in your actual space before committing to a full order.
-                                Every design is available as a sample.
-                            </p>
-                            <Link href="/designs" className={styles.ctaButtonOutline}>
-                                Browse designs &amp; order samples
-                            </Link>
-                        </div>
-                        <div className={styles.samplesBadge}>
-                            <div className={styles.sampleBadgeInner}>
-                                <span className={styles.sampleBadgeIcon}>⬡</span>
-                                <span className={styles.sampleBadgeLabel}>Extra-large</span>
-                                <span className={styles.sampleBadgeText}>samples available</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Who is this for */}
+            {/* 6. Who is this for */}
             <section className="page-section-strip">
                 <div className="page-section-strip-inner">
                     <div className={styles.sectionHeader}>
@@ -232,7 +141,7 @@ export default function Home() {
                         <div className={styles.audienceItem}>
                             <h3 className={styles.audienceTitle}>You&apos;re decorating your home</h3>
                             <p className={styles.audienceDesc}>
-                                You want wallpaper that feels personal, not like everyone else&apos;s Pinterest board.
+                                You want a room that feels personal &mdash; not like everyone else&apos;s Pinterest board.
                             </p>
                         </div>
                         <div className={styles.audienceItem}>
@@ -242,17 +151,50 @@ export default function Home() {
                             </p>
                         </div>
                         <div className={styles.audienceItem}>
-                            <h3 className={styles.audienceTitle}>You know what you like</h3>
+                            <h3 className={styles.audienceTitle}>You hate committing blind</h3>
                             <p className={styles.audienceDesc}>
-                                You can describe the feeling you want even if you can&apos;t name the style.
+                                You want to hold it, see it in the room, live with it for a day before you order a full roll.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Founder story + guarantee */}
+            {/* 7. Guarantee — replaces reviews (none yet) */}
             <section className="page-section-strip page-section-strip-alt">
+                <div className="page-section-strip-inner">
+                    <div className={styles.sectionHeader}>
+                        <h2>Try it your way</h2>
+                        <p>No guessing. No pressure. No surprises.</p>
+                    </div>
+                    <div className={styles.guaranteeGrid}>
+                        <div className={styles.guaranteeItem}>
+                            <div className={styles.guaranteeIcon}>⬡</div>
+                            <h3 className={styles.guaranteeTitle}>See it before you commit</h3>
+                            <p className={styles.guaranteeDesc}>
+                                Every design ships as an extra-large sample. Order one, hold it up, live with it. Then decide.
+                            </p>
+                        </div>
+                        <div className={styles.guaranteeItem}>
+                            <div className={styles.guaranteeIcon}>◐</div>
+                            <h3 className={styles.guaranteeTitle}>Recolors revised until right</h3>
+                            <p className={styles.guaranteeDesc}>
+                                Request a custom colorway and I&apos;ll revise it until it matches your palette exactly. No limit.
+                            </p>
+                        </div>
+                        <div className={styles.guaranteeItem}>
+                            <div className={styles.guaranteeIcon}>✦</div>
+                            <h3 className={styles.guaranteeTitle}>You&apos;re talking to the designer</h3>
+                            <p className={styles.guaranteeDesc}>
+                                Every question comes directly to me. I reply within 24&ndash;48 hours &mdash; not a bot, not a ticket.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* 8. Founder — authority + credibility */}
+            <section className="page-section-strip">
                 <div className="page-section-strip-inner">
                     <div className={styles.founderSection}>
                         <div className={styles.founderImage}>
@@ -267,55 +209,54 @@ export default function Home() {
                         <div className={styles.founderText}>
                             <h2>Hi, I&apos;m Vera</h2>
                             <p>
-                                I started ZabZabLab because I was tired of wallpaper shopping feeling like a guessing game.
-                                All these aesthetic labels &mdash; &ldquo;coastal grandmother,&rdquo; &ldquo;quiet luxury&rdquo; &mdash;
-                                that change every six months.
+                                I started ZabZabLab because wallpaper shopping felt like a guessing game.
+                                Too many trend names &mdash; &ldquo;coastal grandmother,&rdquo; &ldquo;quiet luxury&rdquo; &mdash;
+                                that change every six months and mean nothing about how a room actually feels.
                             </p>
                             <p>
-                                I wanted to help people design around how a room should <em>feel</em>, not what style it&apos;s supposed to be.
-                                That&apos;s why every pattern here starts with a mood.
+                                Every pattern here starts with a mood, not a label. And every order comes with
+                                the option to get it recolored until it&apos;s exactly right.
                             </p>
                             <p className={styles.founderGuarantee}>
-                                My promise: every custom recolor gets revised until it&apos;s exactly right.
+                                My promise: I&apos;ll revise your custom recolor until it&apos;s exactly right.
                                 I reply within 24&ndash;48 hours.
                             </p>
+                            <Link href="/about" className={styles.founderCta}>
+                                Read my story &rarr;
+                            </Link>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* FAQ: Handle objections before they arise */}
-            <section className="page-section-strip">
+            {/* 9. FAQ */}
+            <section
+                className="page-section-strip page-section-strip-alt"
+                aria-labelledby="faq-hub-heading"
+            >
                 <div className="page-section-strip-inner">
-                    <div className={styles.sectionHeader}>
-                        <h2>Common questions</h2>
+                    <div className={styles.faqHubIntro}>
+                        <h2 id="faq-hub-heading">You asked, we answered</h2>
                     </div>
-                    <div className={styles.faqList}>
-                        {faqItems.map((item, i) => (
-                            <details key={i} className={styles.faqItem}>
-                                <summary className={styles.faqSummary}>{item.q}</summary>
-                                <p className={styles.faqAnswer}>{item.a}</p>
-                            </details>
-                        ))}
-                    </div>
+                    <HomeFaqTabs panels={homepageFaqPanels} />
                 </div>
             </section>
 
-            {/* Final CTA */}
-            <section className="page-section-strip page-section-strip-alt page-section-strip-before-footer">
+            {/* 10. Final CTA — transformation reminder */}
+            <section className="page-section-strip page-section-strip-before-footer">
                 <div className="page-section-strip-inner">
                     <div className={styles.finalCta}>
                         <h2>Your room should feel like you.</h2>
                         <p>
                             Not like a trend from six months ago. Start with a mood &mdash;
-                            the right pattern will follow.
+                            or let me pick three samples for you.
                         </p>
                         <div className={styles.finalCtaButtons}>
-                            <Link href="/designs" className={styles.ctaButton}>
-                                Explore all designs
+                            <Link href="/mystery-box" className={styles.ctaButton}>
+                                Get my mystery box
                             </Link>
-                            <Link href="/designs" className={styles.ctaButtonSecondary}>
-                                Try a sample first
+                            <Link href="/designs/faux-fabric" className={styles.ctaButtonSecondary}>
+                                Browse designs
                             </Link>
                         </div>
                     </div>

@@ -96,6 +96,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
     themeColor: '#ffffff',
+    viewportFit: 'cover',
 }
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
@@ -109,7 +110,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
                 <meta charSet="UTF-8" />
                 <meta
                     name="viewport"
-                    content="width=device-width, initial-scale=1.0"
+                    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
                 />
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
                 <meta name="p:domain_verify" content="713bb29cacff3398e376fff8d6561c4d" />

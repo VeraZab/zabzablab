@@ -97,11 +97,11 @@ export default function MoodCarousel() {
                             </button>
                         ))}
                     </nav>
-                    <Link 
-                        href={`/moods/${moods[current].id}`}
+                    <Link
+                        href="/mystery-box"
                         className={styles.cta}
                     >
-                        Find Your Style
+                        Get My Mystery Box
                     </Link>
                 </div>
             </div>

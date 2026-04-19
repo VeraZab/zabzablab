@@ -13,22 +13,11 @@ import { NavigationLink } from './NavigationLink'
 // import InstagramIcon from '../icons/InstagramIcon'
 
 const navigationLinks = [
-    {
-        title: 'Shop',
-        href: '/',
-    },
+    { title: 'Shop', href: '/' },
     { title: 'About', href: '/about' },
     { title: 'Trade Program', href: '/for-interior-designers' },
-    {
-        title: 'Stay Connected',
-        children: [
-            { title: 'Email', href: 'mailto:zabzablab@gmail.com' },
-            { title: 'Instagram', href: 'https://www.instagram.com/zabzablab', target: '_blank' },
-            { title: 'Newsletter', href: '/#newsletter' },
-            { title: 'Blog', href: '/blog' },
-            { title: 'Save Contact', href: '/qr' },
-        ],
-    },
+    { title: 'Blog', href: '/blog' },
+    { title: 'Mystery Box', href: '/mystery-box', variant: 'outlined-button' as const },
 ]
 
 export default function Header() {

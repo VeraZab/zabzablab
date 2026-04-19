@@ -3,11 +3,8 @@
     position: relative;
     margin-left: calc(-1 * var(--container-padding));
     margin-right: calc(-1 * var(--container-padding));
-    /*
-     * Don’t pull the trust strip up by a full gutter — that overlapped gallery-white into
-     * the first viewport and read as a “short” hero. Keep only a hair overlap for the seam.
-     */
-    margin-bottom: -3px;
+    /* Flush to next section — seam handled by trust strip top gradient, not negative margins */
+    margin-bottom: 0;
     width: calc(100% + 2 * var(--container-padding));
     /* Fill .home-hero-root (fixed viewport height in global.css); avoids double vh vs parent % bugs */
     height: 100%;
@@ -358,13 +355,34 @@
         font-size: 0.88rem;
         margin: var(--gap-stack) 0;
     }
+
+    .moodNav {
+        gap: 0.35rem 0.75rem;
+        row-gap: var(--gap-inline);
+    }
+
+    .moodLink {
+        min-height: 2.75rem;
+        padding: 0.35rem 0.4rem 0.45rem;
+        display: inline-flex;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .cta {
+        margin-top: var(--gap-stack);
+        min-height: 3rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.11em;
+    }
 }
 
 @media (max-width: 480px) {
     .hero {
         margin-left: calc(-1 * var(--container-padding));
         margin-right: calc(-1 * var(--container-padding));
-        margin-bottom: -3px;
+        margin-bottom: 0;
         width: calc(100% + 2 * var(--container-padding));
     }
 

@@ -25,6 +25,8 @@ export default function AboutPage() {
                     }),
                 }}
             />
+
+            {/* Bio */}
             <div className={styles.content}>
                 <div className={styles.imageContainer}>
                     <img
@@ -52,25 +54,34 @@ export default function AboutPage() {
                         this is for you.
                     </p>
                     <p>
-                        If you&apos;re an interior designer, check out my <a href="/for-interior-designers">trade program</a>.
+                        If you&apos;re an interior designer, I have a <a href="/for-interior-designers">trade program</a> built for how you work.
                         I&apos;m based in New Jersey, USA.
                     </p>
-                    <p>
-                        Have something in mind? <a href="mailto:zabzablab@gmail.com">Let&apos;s talk</a> &mdash;
-                        I reply within 24&ndash;48 hours.
-                    </p>
-                    <div className={styles.socialLinks}>
-                        <a
-                            href="https://www.instagram.com/zabzablab"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.socialLink}
-                        >
-                            Instagram &rarr;
-                        </a>
-                    </div>
                 </div>
             </div>
+
+            {/* Contact */}
+            <section className={styles.contactSection} aria-label="Contact">
+                <h2 className={styles.contactHeadline}>Let&apos;s talk.</h2>
+                <a href="mailto:zabzablab@gmail.com" className={styles.contactEmail}>
+                    zabzablab@gmail.com
+                </a>
+                <p className={styles.contactMeta}>I reply within 24&ndash;48 hours.</p>
+                <div className={styles.contactLinks}>
+                    <a
+                        href="https://www.instagram.com/zabzablab"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.contactLink}
+                    >
+                        Instagram ↗
+                    </a>
+                    <span className={styles.contactDot} aria-hidden="true">·</span>
+                    <a href="/for-interior-designers" className={styles.contactLink}>
+                        Trade program →
+                    </a>
+                </div>
+            </section>
         </div>
     )
 }

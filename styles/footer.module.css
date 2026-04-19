@@ -8,7 +8,22 @@
 
 /* Outer wrapper: full-bleed footer with wavy top */
 .footerOuter {
-    margin: 0 calc(-1 * var(--container-padding)) calc(-1 * var(--container-padding));
+    /*
+     * clip-path uses objectBoundingBox; the wave trough sits near y=0.10 — first paint/text
+     * must clear ~10% of *this element’s* height (tall footers need more than a fixed rem).
+     * dvh tracks the common case; cap avoids runaway on very tall viewports.
+     */
+    --footer-wave-clearance: max(3rem, min(6.5rem, 14dvh));
+    margin-left: calc(-1 * var(--container-padding));
+    margin-right: calc(-1 * var(--container-padding));
+    margin-bottom: calc(-1 * var(--container-padding));
+    /*
+     * objectBoundingBox clip: the top of the box is transparent until the scallop path — that
+     * band scales with footer height (shows as linen/white above the wave). A 1px tuck only
+     * fixes AA hairline; overlap the preceding strip by ~1–2.5rem on wide viewports so tan/ecru
+     * shows through instead of the page shell. (≤768px overrides below for tall stacked footer.)
+     */
+    margin-top: clamp(-2.25rem, -2.5vw, -2px);
     clip-path: url(#footerWavyTop);
     background: var(--soft-ecru);
 }
@@ -94,7 +109,7 @@
 /* Inner footer: multi-column content */
 .footer {
     background: var(--soft-ecru);
-    padding: var(--gap-section) var(--container-padding) 0;
+    padding: calc(var(--gap-section) + var(--footer-wave-clearance)) var(--container-padding) 0;
 }
 
 .footerInner {
@@ -279,6 +294,23 @@
 }
 
 /* ─── RESPONSIVE ─── */
+/* Mobile/tablet wave clip: same crest shape as desktop, ~8 cycles across width (not ~40, not 1 arc). */
+@media (max-width: 768px) {
+    .footerOuter {
+        clip-path: url(#footerWavyTopMobile);
+        /* Phones: generous band so tagline never clips into scallop transparency */
+        --footer-wave-clearance: max(3.25rem, min(7rem, 16dvh));
+        /*
+         * objectBoundingBox clip: the scallop path leaves the top ~7% of this box unpainted.
+         * On mobile the footer stack is much taller than desktop columns, so that “air”
+         * becomes a visible linen/white band above the wave. Tuck the footer up into the
+         * preceding strip (same idea as main flex:0 + .page-section-strip-before-footer).
+         */
+        /* Slightly less aggressive than max so .page-section-strip-before-footer can keep air above the wave */
+        margin-top: calc(-2px + clamp(-4.5rem, -10dvh, -2.25rem));
+    }
+}
+
 @media (max-width: 900px) {
     .footerInner {
         grid-template-columns: 1fr 1fr;
@@ -291,11 +323,41 @@
 @media (max-width: 560px) {
     .footerInner {
         grid-template-columns: 1fr;
+        gap: 2.25rem;
+        padding-bottom: calc(var(--gap-section) * 0.85);
     }
     .col:first-child {
         grid-column: auto;
     }
+    .footer {
+        padding-left: max(var(--container-padding), 1.125rem);
+        padding-right: max(var(--container-padding), 1.125rem);
+    }
     .footerBottom p {
         text-align: center;
+    }
+    .footerBottom {
+        padding-bottom: max(var(--gap-group), env(safe-area-inset-bottom, 0px));
+    }
+
+    .footerLink {
+        padding: 0.35rem 0;
+        min-height: 2.75rem;
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .newsletterInput {
+        min-height: 2.75rem;
+        padding-top: 0.65rem;
+        padding-bottom: 0.65rem;
+    }
+
+    .newsletterButton {
+        width: 2.75rem;
+        height: 2.75rem;
+        touch-action: manipulation;
     }
 }

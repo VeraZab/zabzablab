@@ -7,9 +7,7 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    /* Small overlap only — enough to hide the linen seam, not enough to drag white into the hero viewport */
-    margin-top: -4px;
-    padding-top: calc(var(--gap-stack) + 4px);
+    padding-top: var(--gap-stack);
     padding-bottom: var(--gap-stack);
     background: var(--gallery-white);
     z-index: 2;
@@ -60,11 +58,18 @@
     .trustStripGrid {
         display: grid;
         grid-template-columns: repeat(5, minmax(0, 1fr));
-        /* Wider than --grid-gutter: breathe like the main nav (nav uses --gap-group; we go one step up) */
         column-gap: var(--gap-component);
         row-gap: var(--gap-stack);
         align-items: stretch;
         flex-wrap: nowrap;
+    }
+
+    /* 3-column override when only 3 trust items are used */
+    .trustStripGrid3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: 860px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .trustItem {
@@ -143,11 +148,11 @@
     .trustStripGrid {
         gap: var(--gap-component);
     }
-    
+
     .trustItem {
         max-width: 8rem;
     }
-    
+
     .trustLabel {
         font-size: 0.8rem;
     }
@@ -381,6 +386,170 @@
     }
 }
 
+/* ─── MYSTERY BOX PROMO ─── */
+.mysteryBoxPromo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap-section);
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.mysteryBoxVisual {
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--soft-ecru);
+}
+
+.mysteryBoxImg {
+    object-fit: cover;
+}
+
+.mysteryBoxBadge {
+    position: absolute;
+    bottom: var(--gap-group);
+    right: var(--gap-group);
+    background: var(--charcoal-ink);
+    color: var(--gallery-white);
+    border-radius: 12px;
+    padding: var(--gap-stack) var(--gap-group);
+    display: flex;
+    align-items: center;
+    gap: var(--gap-stack);
+}
+
+.mysteryBoxBadgeNum {
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--antiqued-gold);
+}
+
+.mysteryBoxBadgeLabel {
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gallery-white);
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+.mysteryBoxText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-stack);
+}
+
+.mysteryBoxTag {
+    display: inline-flex;
+    padding: 0.25rem 0.75rem;
+    background: var(--antiqued-gold);
+    color: var(--charcoal-ink);
+    border-radius: 999px;
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.mysteryBoxHeadline {
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: clamp(1.35rem, 3vw, 1.75rem);
+    font-weight: 600;
+    color: var(--charcoal-ink);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.mysteryBoxText p {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .mysteryBoxPromo {
+        grid-template-columns: 1fr;
+        gap: var(--gap-component);
+    }
+    .mysteryBoxVisual {
+        aspect-ratio: 16/9;
+    }
+}
+
+/* ─── GUARANTEE SECTION ─── */
+.guaranteeGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-group);
+}
+
+.guaranteeItem {
+    text-align: center;
+    padding: var(--gap-group);
+    background: var(--gallery-white);
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+}
+
+.guaranteeIcon {
+    font-size: 1.75rem;
+    color: var(--color-accent);
+    margin-bottom: var(--gap-stack);
+    line-height: 1;
+}
+
+.guaranteeTitle {
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--charcoal-ink);
+    margin: 0 0 var(--gap-inline);
+}
+
+.guaranteeDesc {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .guaranteeGrid {
+        grid-template-columns: 1fr;
+        gap: var(--gap-stack);
+    }
+}
+
+/* ─── FOUNDER CTA LINK ─── */
+.founderCta {
+    display: inline-flex;
+    align-items: center;
+    margin-top: var(--gap-stack);
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--antiqued-gold);
+    border-bottom: 1px solid var(--antiqued-gold);
+    text-decoration: none;
+    transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+.founderCta:hover {
+    color: var(--gold-highlight);
+    border-bottom-color: var(--gold-highlight);
+}
+
 /* ─── FINAL CTA ─── */
 .finalCta {
     text-align: center;
@@ -590,6 +759,18 @@
         display: flex;
         justify-content: center;
     }
+
+    .samplesText .ctaButtonOutline {
+        width: 100%;
+        max-width: 22rem;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 3rem;
+        padding: 0.85rem 1.25rem;
+        font-size: 0.8125rem;
+        letter-spacing: 0.1em;
+        box-sizing: border-box;
+    }
 }
 
 /* ─── FOUNDER GUARANTEE ─── */
@@ -602,56 +783,364 @@
     margin-top: var(--gap-group) !important;
 }
 
-/* ─── FAQ SECTION ─── */
-.faqList {
-    max-width: 720px;
-    margin: 0 auto;
+/* ─── FAQ HUB (trust-strip pillars → grouped Q&A) ─── */
+.faqHubIntro {
+    text-align: center;
+    max-width: 38rem;
+    margin: 0 auto var(--gap-component);
 }
 
-.faqItem {
-    border-bottom: 1px solid var(--border-subtle);
+.faqHubIntro h2 {
+    margin: 0 0 var(--gap-stack);
+    font-family: var(--font-lora, Georgia, serif);
+    font-weight: 600;
+    font-style: italic;
+    font-size: clamp(1.55rem, 3.2vw, 2.05rem);
+    color: var(--charcoal-ink);
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+    line-height: 1.22;
 }
 
-.faqItem:first-child {
-    border-top: 1px solid var(--border-subtle);
-}
-
-.faqSummary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--gap-group) 0;
+.faqHubIntro p {
+    margin: 0;
     font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+}
+
+/* ─── FAQ TABS ─── */
+.faqTabsRoot {
+    width: 100%;
+    max-width: 52rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faqTabsShell {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ─── TAB BAR ─── */
+.faqTabsFolderBar {
+    margin-bottom: 2rem;
+}
+
+.faqTabList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 639px) {
+    .faqTabList {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    .faqTab {
+        flex: 1 1 42%;
+        max-width: calc(50% - 0.25rem);
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+.faqTab {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.44rem 1.1rem;
+    border: 1.5px solid rgba(166, 147, 108, 0.35);
+    border-radius: 999px;
+    background: transparent;
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.75rem;
     font-weight: 500;
-    color: var(--color-charcoal);
+    letter-spacing: 0.055em;
+    color: var(--muted-umber);
+    cursor: pointer;
+    white-space: nowrap;
+    scroll-snap-align: start;
+    transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.faqTab:hover {
+    color: var(--charcoal-ink);
+    border-color: var(--antiqued-gold);
+    background: rgba(166, 147, 108, 0.06);
+}
+
+.faqTab:focus-visible {
+    outline: 2px solid var(--antiqued-gold);
+    outline-offset: 2px;
+}
+
+.faqTabSelected {
+    background: var(--charcoal-ink);
+    border-color: var(--charcoal-ink);
+    color: var(--gallery-white);
+    font-weight: 600;
+}
+
+.faqTabSelected:hover {
+    background: var(--charcoal-ink);
+    border-color: var(--charcoal-ink);
+    color: var(--gallery-white);
+}
+
+.faqTabSelected:focus-visible {
+    outline: 2px solid var(--antiqued-gold);
+    outline-offset: 2px;
+}
+
+/* ─── PANEL ─── */
+.faqTabPanelCol {
+    flex: 1;
+    min-width: 0;
+}
+
+.faqTabPanel {
+    position: relative;
+}
+
+.faqTabPanelStandalone,
+.faqTabPanelEmbedded {
+    /* unified — no folder paper background */
+}
+
+.faqTabPanelStandalone::before,
+.faqTabPanelEmbedded::before {
+    content: none;
+}
+
+/* ─── PANEL SECTION ─── */
+.faqPanelSection {
+    margin-bottom: var(--gap-section);
+}
+
+.faqPanelSection:last-child {
+    margin-bottom: 0;
+}
+
+.faqSectionTitle {
+    margin: 0 0 1rem;
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--antiqued-gold);
+    line-height: 1.35;
+}
+
+.faqPanelSection:first-child .faqSectionTitle {
+    padding-top: 0;
+}
+
+/* ─── ACCORDION LIST ─── */
+.faqTabPanel .faqPillarList {
+    padding-top: 0;
+    border-top: none;
+    width: 100%;
+}
+
+.faqPillarList {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid rgba(166, 147, 108, 0.2);
+}
+
+.faqPillarDetails {
+    border-bottom: 1px solid rgba(166, 147, 108, 0.2);
+}
+
+.faqPillarDetails:last-child {
+    border-bottom: 1px solid rgba(166, 147, 108, 0.2);
+}
+
+/* ─── SUMMARY / QUESTION ─── */
+.faqPillarSummary {
+    display: grid;
+    grid-template-columns: 1fr 1.5rem;
+    align-items: center;
+    column-gap: 1rem;
+    padding: 1.2rem 0;
     cursor: pointer;
     list-style: none;
-    gap: var(--gap-group);
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: clamp(0.88rem, 1.5vw, 0.975rem);
+    font-weight: 500;
+    font-style: italic;
+    color: var(--charcoal-ink);
+    line-height: 1.42;
+    letter-spacing: 0.01em;
+    text-align: left;
+    transition: color 0.18s ease;
+    user-select: none;
 }
 
-.faqSummary::-webkit-details-marker {
+.faqPillarSummary::-webkit-details-marker {
     display: none;
 }
 
-.faqSummary::after {
+.faqPillarSummary::after {
     content: '+';
-    font-size: 1.25rem;
-    color: var(--color-accent);
-    flex-shrink: 0;
+    grid-column: 2;
+    justify-self: end;
+    align-self: start;
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: 1.1rem;
+    line-height: 1;
+    color: var(--antiqued-gold);
+    width: 1.75rem;
+    text-align: right;
+    margin-top: 0.06rem;
     transition: transform 0.2s ease;
     font-weight: 300;
+    font-style: normal;
 }
 
-.faqItem[open] .faqSummary::after {
+.faqPillarDetails[open] .faqPillarSummary::after {
     transform: rotate(45deg);
 }
 
-.faqAnswer {
-    padding: 0 var(--gap-section) var(--gap-group) 0;
-    font-size: 0.9rem;
+.faqPillarSummary:hover {
+    color: color-mix(in srgb, var(--antiqued-gold) 80%, var(--charcoal-ink));
+}
+
+.faqPillarSummaryQuestion {
+    min-width: 0;
+    text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faqPillarSummary::after {
+        transition: none;
+    }
+}
+
+/* ─── ANSWER ─── */
+.faqPillarAnswer {
+    padding: 0 0 1.25rem 1.25rem;
+    border-left: 2px solid rgba(166, 147, 108, 0.32);
+    max-width: 44rem;
+}
+
+.faqPillarAnswer p {
+    margin: 0 0 var(--gap-stack);
+}
+
+.faqPillarAnswer p:last-child {
+    margin-bottom: 0;
+}
+
+.faqAnswerBlocks p,
+.faqAnswerBlocks .faqAnswerBulletLine {
+    margin: 0 0 var(--gap-stack);
+    font-size: 0.875rem;
     color: var(--color-text-secondary);
-    line-height: 1.7;
+    line-height: 1.72;
+}
+
+.faqAnswerBlocks p:last-child,
+.faqAnswerBlocks .faqAnswerBulletLine:last-child {
+    margin-bottom: 0;
+}
+
+.faqAnswerBulletLine {
+    padding-left: 1rem;
+    position: relative;
+}
+
+.faqAnswerBulletLine::before {
+    content: '·';
+    position: absolute;
+    left: 0.15rem;
+    color: var(--antiqued-gold);
+    font-weight: 600;
+}
+
+/* ─── LEGACY PILLAR CARD GRID (unused in current FAQ) ─── */
+.faqPillarGrid {
+    display: grid;
+    gap: var(--gap-group);
+    grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
+    align-items: stretch;
+}
+
+.faqPillar {
+    display: flex;
+    flex-direction: column;
+    background: var(--gallery-white);
+    border: 1px solid var(--glass-border-gold);
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    padding: var(--gap-group);
+    position: relative;
+    overflow: hidden;
+}
+
+.faqPillar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--gold-deep) 0%,
+        var(--antiqued-gold) 38%,
+        var(--gold-highlight) 62%,
+        var(--antiqued-gold) 100%
+    );
+    opacity: 0.95;
+}
+
+.faqPillarHead {
+    display: flex;
+    gap: var(--gap-stack);
+    align-items: flex-start;
+    padding-top: var(--gap-stack);
+    margin-bottom: var(--gap-group);
+}
+
+.faqPillarIcon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    color: var(--antiqued-gold);
+}
+
+.faqPillarIcon svg {
+    width: 1.65rem;
+    height: 1.65rem;
+    flex-shrink: 0;
+}
+
+.faqPillarHead h3 {
+    margin: 0 0 0.2rem;
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--charcoal-ink);
+    line-height: 1.35;
+}
+
+.faqPillarTagline {
     margin: 0;
+    font-size: 0.78rem;
+    line-height: 1.45;
+    color: var(--muted-umber);
 }
 
 /* ─── FINAL CTA BUTTONS ─── */
@@ -691,4 +1180,43 @@
     color: var(--charcoal-ink);
     border-color: var(--antiqued-gold);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Final CTA — mobile: align with footer rhythm, stack CTAs, comfortable tap targets */
+@media (max-width: 640px) {
+    .finalCta {
+        max-width: none;
+        text-align: left;
+    }
+
+    .finalCta h2 {
+        font-size: clamp(1.25rem, 5.5vw, 1.45rem);
+    }
+
+    .finalCta p {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .finalCtaButtons {
+        flex-direction: column;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        gap: var(--gap-group);
+        width: 100%;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .finalCtaButtons .ctaButton,
+    .finalCtaButtons .ctaButtonSecondary {
+        width: 100%;
+        justify-content: center;
+        min-height: 3rem;
+        padding: 0.85rem 1.25rem;
+        font-size: 0.8125rem;
+        letter-spacing: 0.1em;
+        box-sizing: border-box;
+    }
 }

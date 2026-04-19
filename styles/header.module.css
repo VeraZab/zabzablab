@@ -163,6 +163,90 @@
     text-decoration-color: currentColor;
 }
 
+/* Mystery Box outlined button in nav */
+.navOutlinedBtn {
+    position: relative;
+    overflow: visible;
+    display: inline-flex !important;
+    align-items: center;
+    padding: 0.4rem 1rem !important;
+    border: 1.5px solid currentColor !important;
+    border-radius: 999px;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: background 0.25s, color 0.25s, border-color 0.25s !important;
+    text-decoration: none !important;
+    /* Tune sparkle cluster vs pill (hero star nudge is the last <g> in NavigationLink SVG) */
+    --nav-sparkles-top: -0.35rem;
+    --nav-sparkles-right: -0.6rem;
+}
+
+.navSparkles {
+    position: absolute;
+    top: var(--nav-sparkles-top);
+    right: var(--nav-sparkles-right);
+    display: flex;
+    pointer-events: none;
+}
+
+.navSparklesSvg {
+    display: block;
+}
+
+/* Over hero (transparent bar): white sparkles */
+.header.headerOnHome:not(.headerScrolled) .right .navSparkles {
+    color: var(--gallery-white);
+    filter:
+        drop-shadow(0 1px 3px rgba(0, 0, 0, 0.55))
+        drop-shadow(0 0 10px rgba(0, 0, 0, 0.22));
+}
+
+/* Solid light header (linen / off-white): golden sparkles */
+.header.headerOnHome.headerScrolled .right .navSparkles,
+.header:not(.headerOnHome) .right .navSparkles {
+    color: var(--gold-highlight);
+    filter: drop-shadow(0 1px 2px rgba(43, 41, 38, 0.22));
+}
+
+.navOutlinedBtn:hover {
+    text-decoration: none !important;
+    background: currentColor !important;
+}
+
+/* On transparent homepage header (white text mode) */
+.header.headerOnHome .right a.navOutlinedBtn:hover {
+    background: var(--gallery-white) !important;
+    color: var(--charcoal-ink) !important;
+    border-color: var(--gallery-white) !important;
+    text-shadow: none !important;
+}
+
+/* White Mystery Box pill (hero only): gold sparkles on white */
+.header.headerOnHome:not(.headerScrolled) .right a.navOutlinedBtn:hover .navSparkles {
+    color: var(--gold-highlight);
+    filter: drop-shadow(0 1px 2px rgba(43, 41, 38, 0.2));
+}
+
+/* After scroll (linen bg, charcoal text) */
+.header.headerOnHome.headerScrolled .right a.navOutlinedBtn:hover,
+.header:not(.headerOnHome) .right a.navOutlinedBtn:hover {
+    background: var(--charcoal-ink) !important;
+    color: var(--gallery-white) !important;
+    border-color: var(--charcoal-ink) !important;
+    text-shadow: none !important;
+}
+
+.header.headerOnHome.headerScrolled .right a.navOutlinedBtn:hover .navSparkles,
+.header:not(.headerOnHome) .right a.navOutlinedBtn:hover .navSparkles {
+    color: var(--gallery-white);
+    filter:
+        drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45))
+        drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+}
+
 /* Dropdowns (desktop) */
 .dropdown {
     position: relative;
@@ -238,8 +322,9 @@
     }
 
     .tagline {
-        font-size: 0.75rem;
-        max-width: min(14rem, 55vw);
+        font-size: clamp(0.78rem, 2.1vw, 0.85rem);
+        max-width: min(16rem, 58vw);
+        line-height: 1.35;
     }
 
     .mobileAction {
@@ -303,6 +388,16 @@
         gap: var(--gap-inline);
         color: white;
         border-bottom: none !important;
+    }
+
+    .mobileLinks .navOutlinedBtn {
+        --nav-sparkles-top: -0.35rem;
+        --nav-sparkles-right: -0.6rem;
+    }
+
+    .mobileLinks .navSparkles {
+        color: var(--gallery-white);
+        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45));
     }
 
     .mobileLinks a.active {

@@ -171,16 +171,6 @@ body.is-home .main-content {
 }
 
 /*
- * Homepage <main>: reset.css sets main { height: 100% }. With .main-content only using
- * min-height (not height), that % often mis-resolves and fights the flex column — the hero
- * can end up shorter than the viewport. Size main from content instead.
- */
-body.is-home .main-content > main {
-    flex-shrink: 0;
-    height: auto;
-}
-
-/*
  * Exact viewport height (not only min-height) so the hero’s % / fill math has a definite parent.
  * Fallback order: vh → dvh (dynamic browser chrome).
  */
@@ -198,6 +188,18 @@ body.is-home .main-content > main {
 }
 
 main { flex: 1; }
+
+/*
+ * Homepage + pages with a wavy-footer tuck: reset.css gives main { height: 100% } and
+ * `main { flex: 1 }` above lets <main> absorb leftover min-height in .main-content — that
+ * paints a linen “stripe” under the last section on tall mobile viewports. Match desktop
+ * by sizing main to content (no flex-grow) while keeping the hero math on home.
+ */
+body.is-home .main-content > main,
+.main-content > main:has(.page-section-strip-before-footer) {
+    flex: 0 1 auto;
+    height: auto;
+}
 
 /* Tablet/mobile layout (matches header's mobile breakpoint where logo shrinks) */
 @media (max-width: 1330px) {
@@ -326,10 +328,24 @@ h2:first-child {
     background-color: var(--color-section-alt);
 }
 
+/* Solid gallery white — use when the default strip (transparent over linen) reads too close to the previous section */
+.page-section-strip-white {
+    background-color: var(--gallery-white);
+}
+
 /* Section before footer — extra padding to accommodate wavy edge */
 .page-section-strip-before-footer {
     padding-bottom: calc(var(--section-padding) + 3rem);
     margin-bottom: -2rem;
+}
+
+/* Narrow viewports: footer tucks up with a large negative margin-top — keep real space
+   between last CTA and scallop (same strip on home + trade). */
+@media (max-width: 768px) {
+    .page-section-strip-before-footer {
+        padding-top: calc(var(--section-padding) + var(--gap-group));
+        padding-bottom: calc(var(--section-padding) + 6rem + var(--gap-section));
+    }
 }
 
 .page-section-strip-inner {
