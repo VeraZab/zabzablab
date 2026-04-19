@@ -7,9 +7,9 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    /* Overlap hero / main seam so linen never shows between bands */
-    margin-top: calc(-1 * var(--container-padding) - 6px);
-    padding-top: calc(var(--gap-stack) + 6px);
+    /* Small overlap only — enough to hide the linen seam, not enough to drag white into the hero viewport */
+    margin-top: -4px;
+    padding-top: calc(var(--gap-stack) + 4px);
     padding-bottom: var(--gap-stack);
     background: var(--gallery-white);
     z-index: 2;

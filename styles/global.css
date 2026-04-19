@@ -170,15 +170,29 @@ body.is-home .main-content {
     padding-right: max(var(--container-padding), env(safe-area-inset-right));
 }
 
-/* Don’t let the flex column shrink <main> below the hero’s intrinsic viewport height */
+/*
+ * Homepage <main>: reset.css sets main { height: 100% }. With .main-content only using
+ * min-height (not height), that % often mis-resolves and fights the flex column — the hero
+ * can end up shorter than the viewport. Size main from content instead.
+ */
 body.is-home .main-content > main {
     flex-shrink: 0;
+    height: auto;
 }
 
-/* Wrapper matches hero viewport height */
+/*
+ * Exact viewport height (not only min-height) so the hero’s % / fill math has a definite parent.
+ * Fallback order: vh → dvh (dynamic browser chrome).
+ */
 .home-hero-root {
     display: block;
     flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    /* Same ink as hero — kills subpixel linen leaks at the seam */
+    background: var(--charcoal-ink);
+    height: 100vh;
+    height: 100dvh;
     min-height: 100vh;
     min-height: 100dvh;
 }

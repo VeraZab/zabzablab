@@ -3,13 +3,15 @@
     position: relative;
     margin-left: calc(-1 * var(--container-padding));
     margin-right: calc(-1 * var(--container-padding));
-    margin-bottom: calc(-1 * var(--container-padding));
+    /*
+     * Don’t pull the trust strip up by a full gutter — that overlapped gallery-white into
+     * the first viewport and read as a “short” hero. Keep only a hair overlap for the seam.
+     */
+    margin-bottom: -3px;
     width: calc(100% + 2 * var(--container-padding));
-    /* Full viewport: vh everywhere, dvh where supported (dynamic browser UI). No lvh — avoids rare layout bugs. */
-    height: 100vh;
-    height: 100dvh;
-    min-height: 100vh;
-    min-height: 100dvh;
+    /* Fill .home-hero-root (fixed viewport height in global.css); avoids double vh vs parent % bugs */
+    height: 100%;
+    min-height: 100%;
     overflow: hidden;
     flex-shrink: 0;
     background: var(--charcoal-ink);
@@ -316,13 +318,6 @@
 
 /* ─── Responsive ─── */
 @media (max-width: 1330px) {
-    .hero {
-        height: 100vh;
-        height: 100dvh;
-        min-height: 100vh;
-        min-height: 100dvh;
-    }
-
     .content {
         top: calc(50% + var(--header-height-mobile) / 2);
     }
@@ -369,7 +364,7 @@
     .hero {
         margin-left: calc(-1 * var(--container-padding));
         margin-right: calc(-1 * var(--container-padding));
-        margin-bottom: calc(-1 * var(--container-padding));
+        margin-bottom: -3px;
         width: calc(100% + 2 * var(--container-padding));
     }
 
