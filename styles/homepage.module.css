@@ -408,10 +408,29 @@
     object-fit: cover;
 }
 
+.creditedBack {
+    text-decoration-color: var(--antiqued-gold);
+    text-underline-offset: 4px;
+}
+
+.mysteryBoxPriceChip {
+    position: absolute;
+    top: var(--gap-stack);
+    right: var(--gap-stack);
+    background: var(--gallery-white);
+    color: var(--charcoal-ink);
+    border-radius: 8px;
+    padding: 0.35rem 0.65rem;
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
 .mysteryBoxBadge {
     position: absolute;
-    bottom: var(--gap-group);
-    right: var(--gap-group);
+    bottom: var(--gap-stack);
+    right: var(--gap-stack);
     background: var(--charcoal-ink);
     color: var(--gallery-white);
     border-radius: 12px;

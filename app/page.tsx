@@ -55,20 +55,36 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* 3. Why the Match exists */}
+            {/* 3. The Match promo */}
             <section className="page-section-strip page-section-strip-alt">
                 <div className="page-section-strip-inner">
-                    <div className={styles.whyMatch}>
-                        <p className={styles.whyMatchEyebrow}>Printed to order. That&rsquo;s why sampling matters.</p>
-                        <p>
-                            Every roll is printed the moment you order it &mdash; we don&rsquo;t cut paper to a real wall. That means
-                            no overproduction, no dead stock, and no returns on printed rolls. It&rsquo;s why the Match exists:
-                            three large samples, shipped to your door, so you&rsquo;ve already seen it in your space before you commit.
-                        </p>
-                        <Link href="/the-match" className={styles.ctaButton}>
-                            Start with the Match &rarr;
-                        </Link>
-                        <p className={styles.pricingNote}>The Match: $120 &mdash; fully credited toward any full roll order.</p>
+                    <div className={styles.mysteryBoxPromo}>
+                        <div className={styles.mysteryBoxVisual}>
+                            <Image
+                                src="/portfolio/peony-mockup.png"
+                                alt="ZabZabLab wallpaper samples"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 480px"
+                                className={styles.mysteryBoxImg}
+                            />
+                            <span className={styles.mysteryBoxPriceChip}>$120</span>
+                            <div className={styles.mysteryBoxBadge}>
+                                <span className={styles.mysteryBoxBadgeNum}>3</span>
+                                <span className={styles.mysteryBoxBadgeLabel}>curated samples,<br />credited on <br />full purchase</span>
+                            </div>
+                        </div>
+                        <div className={styles.mysteryBoxText}>
+                            <span className={styles.mysteryBoxTag}>The Match</span>
+                            <h2 className={styles.mysteryBoxHeadline}>Not sure where to start? That&rsquo;s what the Match is for.</h2>
+                            <p>
+                                Tell me a little about your room and what you&rsquo;re going for. I&rsquo;ll pick three wallpapers
+                                I think belong there and send them to your door, big enough to actually judge.
+                            </p>
+                            <p>Live with them a day. Decide after. <u className={styles.creditedBack}>Credited back when you order full rolls.</u></p>
+                            <Link href="/the-match" className={styles.ctaButton}>
+                                Start with the Match &rarr;
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -141,47 +157,8 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* 7. Try it your way — guarantee */}
-            <section className="page-section-strip page-section-strip-alt">
-                <div className="page-section-strip-inner">
-                    <div className={styles.sectionHeader}>
-                        <h2>Try it your way</h2>
-                        <p>No guessing. No pressure. No surprises.</p>
-                    </div>
-                    <div className={styles.guaranteeGrid}>
-                        <div className={styles.guaranteeItem}>
-                            <div className={styles.guaranteeIconSvg} aria-hidden>
-                                <SampleCardIcon />
-                            </div>
-                            <h3 className={styles.guaranteeTitle}>See it before you commit</h3>
-                            <p className={styles.guaranteeDesc}>
-                                Every design ships as an extra-large sample. Order one, hold it up, live with it. Then decide.
-                            </p>
-                        </div>
-                        <div className={styles.guaranteeItem}>
-                            <div className={styles.guaranteeIconSvg} aria-hidden>
-                                <PaintSwatchIcon />
-                            </div>
-                            <h3 className={styles.guaranteeTitle}>The Exact-Palette Guarantee &mdash; unlimited recolors until it matches.</h3>
-                            <p className={styles.guaranteeDesc}>
-                                Request a custom colorway and I&rsquo;ll revise it until it matches your palette exactly. No limit.
-                            </p>
-                        </div>
-                        <div className={styles.guaranteeItem}>
-                            <div className={styles.guaranteeIconSvg} aria-hidden>
-                                <ChatBubbleIcon />
-                            </div>
-                            <h3 className={styles.guaranteeTitle}>You&rsquo;re talking to the designer</h3>
-                            <p className={styles.guaranteeDesc}>
-                                Every question comes directly to me. I reply within 24&ndash;48 hours &mdash; not a bot, not a ticket.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             {/* 8. Founder */}
-            <section className="page-section-strip">
+            <section className="page-section-strip page-section-strip-alt">
                 <div className="page-section-strip-inner">
                     <div className={styles.founderSection}>
                         <div className={styles.founderImage}>
@@ -218,7 +195,7 @@ export default function Home() {
 
             {/* 9. FAQ */}
             <section
-                className="page-section-strip page-section-strip-alt"
+                className="page-section-strip"
                 aria-labelledby="faq-hub-heading"
             >
                 <div className="page-section-strip-inner">
@@ -230,7 +207,7 @@ export default function Home() {
             </section>
 
             {/* 10. Final CTA */}
-            <section className="page-section-strip page-section-strip-before-footer">
+            <section className="page-section-strip page-section-strip-alt page-section-strip-before-footer">
                 <div className="page-section-strip-inner">
                     <div className={styles.finalCta}>
                         <h2>Your room should feel like you.</h2>
