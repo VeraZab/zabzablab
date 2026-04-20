@@ -197,19 +197,19 @@
     border-bottom-width: 2px;
 }
 
-/* CTA Button — white outline with frosted blur */
+/* CTA Button — gold fill */
 .cta {
     display: inline-flex;
     align-items: center;
     margin-top: var(--gap-group);
     padding: 0.6rem 1.6rem;
-    background: rgba(250, 248, 245, 0.1);
-    border: 1px solid var(--gallery-white);
-    color: var(--gallery-white);
+    background: var(--antiqued-gold);
+    border: 1px solid var(--antiqued-gold);
+    color: var(--charcoal-ink);
     border-radius: 999px;
     font-family: var(--font-jost, sans-serif);
     font-size: 0.7rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     text-decoration: none;
@@ -217,17 +217,13 @@
     transition:
         background 0.3s ease,
         border-color 0.3s ease,
-        transform 0.2s ease,
         box-shadow 0.3s ease;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 
 .cta:hover {
-    background: var(--gallery-white);
-    color: var(--charcoal-ink);
-    border-color: var(--gallery-white);
+    background: var(--gold-highlight);
+    border-color: var(--gold-highlight);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 

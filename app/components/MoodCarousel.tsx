@@ -82,26 +82,13 @@ export default function MoodCarousel() {
 
                 <div className={styles.groupB}>
                     <p className={styles.description}>
-                        Explore our customizable, artist-made wallpaper selections
+                        Hand-drawn wallpaper, organized by mood, not by trend.
                     </p>
-                    <nav className={styles.moodNav} aria-label="Choose a mood">
-                        {moods.map((mood, i) => (
-                            <button
-                                key={mood.id}
-                                onClick={() => selectMood(i)}
-                                className={`${styles.moodLink} ${i === current ? styles.moodLinkActive : ''}`}
-                                aria-label={`Show ${mood.label} mood`}
-                                aria-pressed={i === current}
-                            >
-                                {mood.label}
-                            </button>
-                        ))}
-                    </nav>
                     <Link
-                        href="/mystery-box"
+                        href="/the-match"
                         className={styles.cta}
                     >
-                        Get My Mystery Box
+                        Start with the Match &rarr;
                     </Link>
                 </div>
             </div>

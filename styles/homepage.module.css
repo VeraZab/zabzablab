@@ -1066,6 +1066,76 @@
     font-weight: 600;
 }
 
+/* ─── WHY THE MATCH EXISTS ─── */
+.whyMatch {
+    text-align: center;
+    max-width: 40rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap-stack);
+}
+
+.whyMatchEyebrow {
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--charcoal-ink);
+    margin: 0;
+}
+
+.whyMatch p {
+    margin: 0;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+}
+
+.pricingNote {
+    font-family: var(--font-jost, sans-serif);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--muted-umber);
+    margin: 0 !important;
+}
+
+/* ─── SOCIAL PROOF PLACEHOLDER ─── */
+.socialProofPlaceholder {
+    text-align: center;
+    max-width: 36rem;
+    margin: 0 auto;
+    padding: var(--gap-group) var(--gap-section);
+    background: var(--gallery-white);
+    border: 1px dashed var(--border-subtle);
+    border-radius: 12px;
+}
+
+.socialProofText {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    margin: 0;
+    font-style: italic;
+}
+
+/* ─── GUARANTEE SVG ICON (replaces text glyphs ⬡ ◐ ✦) ─── */
+.guaranteeIconSvg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    margin-bottom: var(--gap-stack);
+    color: var(--color-accent);
+}
+
+.guaranteeIconSvg svg {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
 /* ─── LEGACY PILLAR CARD GRID (unused in current FAQ) ─── */
 .faqPillarGrid {
     display: grid;

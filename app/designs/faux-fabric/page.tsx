@@ -135,9 +135,15 @@ export default function FauxFabricPage() {
                                 <div className={styles.textureMeta}>
                                     <figcaption className={styles.textureCaption}>{item.alt}</figcaption>
                                     {item.href && (
-                                        <a href={item.href} target="_blank" rel="noopener noreferrer" className={styles.textureCta}>
-                                            See more color options &rarr;
-                                        </a>
+                                        <>
+                                            <p className={styles.nonReturnableNote}>
+                                                Non-returnable &mdash; printed to order.{' '}
+                                                <Link href="/the-match">Start with the Match</Link> to see it in your space first.
+                                            </p>
+                                            <a href={item.href} target="_blank" rel="noopener noreferrer" className={styles.textureCta}>
+                                                See more color options &rarr;
+                                            </a>
+                                        </>
                                     )}
                                 </div>
                                 {item.bestFor && (

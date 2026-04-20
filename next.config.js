@@ -8,6 +8,11 @@ const nextConfig = {
                 destination: '/',
                 permanent: false,
             },
+            {
+                source: '/mystery-box',
+                destination: '/the-match',
+                permanent: true,
+            },
         ]
     },
 }

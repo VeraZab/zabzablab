@@ -147,10 +147,30 @@
 
 .textureMeta {
     display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: flex-start;
     width: 100%;
     margin-top: var(--space-2);
+    gap: var(--space-1);
+}
+
+.nonReturnableNote {
+    font-size: 0.78rem;
+    color: var(--muted-umber);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.nonReturnableNote a {
+    color: var(--antiqued-gold);
+    border-bottom: 1px solid var(--antiqued-gold);
+    font-weight: 500;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.nonReturnableNote a:hover {
+    color: var(--gold-highlight);
+    border-color: var(--gold-highlight);
 }
 
 .textureCaption {

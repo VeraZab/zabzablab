@@ -17,7 +17,7 @@ const navigationLinks = [
     { title: 'About', href: '/about' },
     { title: 'Trade Program', href: '/for-interior-designers' },
     { title: 'Blog', href: '/blog' },
-    { title: 'Mystery Box', href: '/mystery-box', variant: 'outlined-button' as const },
+    { title: 'The Match', href: '/the-match', variant: 'outlined-button' as const },
 ]
 
 export default function Header() {

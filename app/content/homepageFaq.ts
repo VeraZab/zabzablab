@@ -189,6 +189,14 @@ const homepageFaqTabs: { label: string; entries: FaqEntry[] }[] = [
         label: 'Shipping & returns',
         entries: [
             {
+                q: 'Can I return a full roll?',
+                a: [
+                    `Wallpaper rolls are non-returnable — ours, and every print-on-demand wallpaper brand's. Every roll is custom-printed when you order, so there's no resellable stock to return to. That's exactly why we built the Match: three extra-large samples, shipped to your door, so you can see the wallpaper in your own space and light before committing to a full roll. Samples are also final sale.`,
+                    '',
+                    `If a roll arrives damaged, email me within 48 hours of delivery at ${VERA_EMAIL} and I'll replace it.`,
+                ],
+            },
+            {
                 q: 'Do you ship internationally?',
                 a: 'Yes — free worldwide delivery is part of how ZabZabLab is priced. Transit time after production depends on your country and carrier. Production time and shipping estimates are shown on the product page and at checkout.',
             },

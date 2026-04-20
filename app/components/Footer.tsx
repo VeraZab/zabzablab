@@ -113,6 +113,7 @@ export default function Footer({ className, variant = 'default' }: { className?:
                             <Link href="/about" className={styles.footerLink}>About</Link>
                             <Link href="/for-interior-designers" className={styles.footerLink}>Trade Program</Link>
                             <Link href="/blog" className={styles.footerLink}>Blog</Link>
+                            <Link href="/the-match" className={styles.footerLink}>The Match</Link>
                             <Link href="/resize-recolor-request" className={styles.footerLink}>Custom Recolor Request</Link>
                         </nav>
                     </div>
