@@ -6,11 +6,11 @@ import Link from 'next/link'
 import styles from '/styles/moodcarousel.module.css'
 
 const moods = [
-    { id: 'playful',  label: 'Playful',  src: '/portfolio/moods/playful.jpg' },
+    { id: 'playful',  label: 'Playful',  src: '/portfolio/moods/playful.jpg'  },
     { id: 'romantic', label: 'Romantic', src: '/portfolio/moods/romantic.jpg' },
-    { id: 'cozy',     label: 'Cozy',     src: '/portfolio/moods/cozy.jpg' },
+    { id: 'cozy',     label: 'Cozy',     src: '/portfolio/moods/cozy.jpg'     },
     { id: 'grounded', label: 'Grounded', src: '/portfolio/moods/grounded.jpg' },
-    { id: 'serene',   label: 'Serene',   src: '/portfolio/moods/serene.jpg' },
+    { id: 'serene',   label: 'Serene',   src: '/portfolio/moods/serene.jpg'   },
 ] as const
 
 const INTERVAL = 5000
@@ -48,6 +48,8 @@ export default function MoodCarousel() {
         setPaused(true)
     }
 
+    const activeMood = moods[current]
+
     return (
         <section className={styles.hero} aria-label="Mood carousel">
             {moods.map((mood, i) => (
@@ -72,23 +74,29 @@ export default function MoodCarousel() {
 
             <div className={styles.content}>
                 <div className={styles.groupA}>
-                    <h1 key={`name-${animKey}`} className={styles.moodName}>
-                        {moods[current].label}
-                    </h1>
                     <p className={styles.tagline}>
                         How would you like your space to feel?
                     </p>
+                    <h1 key={`name-${animKey}`} className={styles.moodName}>
+                        {activeMood.label}
+                    </h1>
                 </div>
 
+                <p className={styles.sellCopy}>
+                    Artist made and curated wallpaper, centered on the mood you want to create in your home, not trends.
+                </p>
+
+
+
                 <div className={styles.groupB}>
-                    <p className={styles.description}>
-                        Hand-drawn wallpaper, organized by mood, not by trend.
-                    </p>
+                    <Link href="/the-match" className={styles.cta}>
+                        Start the Match Curation Box &rarr;
+                    </Link>
                     <Link
-                        href="/the-match"
-                        className={styles.cta}
+                        href="/designs"
+                        className={styles.secondaryCta}
                     >
-                        Start with the Match &rarr;
+                        Or browse by mood &rarr;
                     </Link>
                 </div>
             </div>

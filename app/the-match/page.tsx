@@ -224,7 +224,7 @@ export default function TheMatchPage() {
                         <div className={styles.matchHeroOverlay} aria-hidden="true" />
                         <div className={styles.matchHeroContent}>
                             <h1 className={styles.matchHeroHeadline}>
-                                Three samples. Picked for your room. Delivered to your door.
+                                Three samples. Curated for your room. Delivered to your door.
                             </h1>
                             <p className={styles.matchHeroPricing}>
                                 $120, fully credited toward any full roll order.

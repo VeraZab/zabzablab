@@ -55,7 +55,7 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* 3. The Match promo */}
+            {/* 3. The Match — primary funnel. Curation as the offer. */}
             <section className="page-section-strip page-section-strip-alt">
                 <div className="page-section-strip-inner">
                     <div className={styles.mysteryBoxPromo}>
@@ -75,14 +75,15 @@ export default function Home() {
                         </div>
                         <div className={styles.mysteryBoxText}>
                             <span className={styles.mysteryBoxTag}>The Match</span>
-                            <h2 className={styles.mysteryBoxHeadline}>Not sure where to start? That&rsquo;s what the Match is for.</h2>
+                            <h2 className={styles.mysteryBoxHeadline}>I&rsquo;ll match three wallpapers to your room.</h2>
                             <p>
-                                Tell me a little about your room and what you&rsquo;re going for. I&rsquo;ll pick three wallpapers
-                                I think belong there and send them to your door, big enough to actually judge.
+                                Tell me a little about the space and the feeling you&rsquo;re after. I read each
+                                one personally and pick three I think belong there&mdash;then send them to your
+                                door, big enough to actually judge.
                             </p>
                             <p>Live with them a day. Decide after. <u className={styles.creditedBack}>Credited back when you order full rolls.</u></p>
                             <Link href="/the-match" className={styles.ctaButton}>
-                                Start with the Match &rarr;
+                                Start the Match &rarr;
                             </Link>
                         </div>
                     </div>
@@ -101,7 +102,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* 5. Mood grid — visual browse */}
+            {/* 5. Mood grid — browse alternative for self-selectors */}
             <section className="page-section-strip page-section-strip-alt">
                 <div className="page-section-strip-inner">
                     <div className={styles.sectionHeader}>
@@ -206,17 +207,21 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* 10. Final CTA */}
+            {/* 10. Final CTA — lead with Match (the funnel), mood as quiet secondary */}
             <section className="page-section-strip page-section-strip-alt page-section-strip-before-footer">
                 <div className="page-section-strip-inner">
                     <div className={styles.finalCta}>
                         <h2>Your room should feel like you.</h2>
                         <p>
-                            Not like a trend from six months ago. Start with three samples matched to your space.
+                            Not like a trend from six months ago. Tell me about the space&mdash;
+                            I&rsquo;ll match three samples to it.
                         </p>
                         <div className={styles.finalCtaButtons}>
                             <Link href="/the-match" className={styles.ctaButton}>
-                                Start with the Match &rarr;
+                                Start the Match &rarr;
+                            </Link>
+                            <Link href="/designs" className={styles.ctaButtonSecondary}>
+                                Or browse by mood &rarr;
                             </Link>
                         </div>
                     </div>

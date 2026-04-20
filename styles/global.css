@@ -62,7 +62,7 @@
     /* Element-level: within components */
     --gap-inline: var(--space-2);        /* Between inline elements */
     --gap-stack: var(--space-3);         /* Between stacked elements (paragraphs, list items) */
-    --gap-group: var(--space-4);         /* Between related groups */
+    --gap-group: var(--space-5);         /* Between related groups */
 
     /* Component-level: between components */
     --gap-component: var(--space-8);     /* Between separate components */
