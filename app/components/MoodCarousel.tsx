@@ -17,7 +17,6 @@ const INTERVAL = 5000
 
 export default function MoodCarousel() {
     const [current, setCurrent]       = useState(0)
-    const [paused, setPaused]         = useState(false)
     const [animKey, setAnimKey]       = useState(0)
     const [revisions, setRevisions]   = useState(() => moods.map(() => 0))
     const currentRef                  = useRef(0)
@@ -33,20 +32,13 @@ export default function MoodCarousel() {
         setAnimKey(k => k + 1)
     }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
-        if (paused) return
         const id = setInterval(() => {
             const next = (currentRef.current + 1) % moods.length
             goTo(next)
         }, INTERVAL)
         return () => clearInterval(id)
-    }, [paused])
-
-    const selectMood = (index: number) => {
-        goTo(index)
-        setPaused(true)
-    }
+    }, [])
 
     const activeMood = moods[current]
 
@@ -82,15 +74,19 @@ export default function MoodCarousel() {
                     </h1>
                 </div>
 
+                {/* <p className={styles.sellCopy}>
+                    You deserve your space to <span className={styles.sellCopyEmphasis}>feel</span> just right. That&rsquo;s why we made the curation box: a custom, artist selected wallpaper sample box that helps you build your space around how it should feel, not whatever&rsquo;s trending.
+                </p> */}
+
                 <p className={styles.sellCopy}>
-                    Artist made and curated wallpaper, centered on the mood you want to create in your home, not trends.
+                    You deserve your space to <span className={styles.sellCopyEmphasis}>feel</span> just right. That&rsquo;s why we made the curation box: a custom, artist selected wallpaper sample box that helps you build your space around how it should feel, not whatever&rsquo;s trending.
                 </p>
 
 
 
                 <div className={styles.groupB}>
                     <Link href="/the-match" className={styles.cta}>
-                        Start the Match Curation Box &rarr;
+                        Start the Match &rarr;
                     </Link>
                     <Link
                         href="/designs"

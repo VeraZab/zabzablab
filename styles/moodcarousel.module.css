@@ -120,11 +120,19 @@
     color: var(--gallery-white);
     margin: 0;
     padding: 0;
-    max-width: 32rem;
+    max-width: 34rem;
     text-align: center;
     text-shadow:
         0 1px 2px rgba(0, 0, 0, 0.45),
         0 0 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Inline emphasis inside .sellCopy — italic Lora echoes the display type
+   above without introducing color. Same size, same color, font-family shift. */
+.sellCopyEmphasis {
+    font-family: var(--font-lora, Georgia, serif);
+    font-style: italic;
+    font-weight: 500;
 }
 
 @keyframes moodNameIn {
