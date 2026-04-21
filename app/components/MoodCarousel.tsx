@@ -67,7 +67,7 @@ export default function MoodCarousel() {
             <div className={styles.content}>
                 <div className={styles.groupA}>
                     <p className={styles.tagline}>
-                        How would you like your space to feel?
+                        How would you like your home to feel?
                     </p>
                     <h1 key={`name-${animKey}`} className={styles.moodName}>
                         {activeMood.label}
@@ -78,22 +78,21 @@ export default function MoodCarousel() {
                     You deserve your space to <span className={styles.sellCopyEmphasis}>feel</span> just right. That&rsquo;s why we made the curation box: a custom, artist selected wallpaper sample box that helps you build your space around how it should feel, not whatever&rsquo;s trending.
                 </p> */}
 
-                <p className={styles.sellCopy}>
+                {/* <p className={styles.sellCopy}>
                     You deserve your space to <span className={styles.sellCopyEmphasis}>feel</span> just right. That&rsquo;s why we made the curation box: a custom, artist selected wallpaper sample box that helps you build your space around how it should feel, not whatever&rsquo;s trending.
+                </p> */}
+                <p className={styles.sellCopy}>
+                    Find the perfect wallpaper for your home: create the mood, forget the trends. Get a curated, artist selected sample box that best fits your vibe.
                 </p>
-
 
 
                 <div className={styles.groupB}>
                     <Link href="/the-match" className={styles.cta}>
                         Start the Match &rarr;
                     </Link>
-                    <Link
-                        href="/designs"
-                        className={styles.secondaryCta}
-                    >
-                        Or browse by mood &rarr;
-                    </Link>
+                    <p className={styles.ctaProof}>
+                        $120 &middot; 3 samples &middot; credited toward any roll
+                    </p>
                 </div>
             </div>
         </section>

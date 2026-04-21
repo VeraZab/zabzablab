@@ -245,26 +245,17 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Secondary CTA — quiet text link to the active mood's browse page.
-   Reads as the alternative, not a competing primary. */
-.secondaryCta {
-    margin-top: var(--gap-stack);
+/* Quiet trust line under the CTA — proof points (price, count, guarantee).
+   Builds trust without becoming a second clickable. */
+.ctaProof {
+    margin: var(--gap-stack) 0 0;
+    padding: 0;
     font-family: var(--font-jost, sans-serif);
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     font-weight: 400;
-    letter-spacing: 0.02em;
-    color: rgba(250, 248, 245, 0.85);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(250, 248, 245, 0.4);
-    padding-bottom: 1px;
-    transition: border-bottom-color 0.2s ease, color 0.2s ease;
+    letter-spacing: 0.06em;
+    color: rgba(250, 248, 245, 0.78);
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
-    pointer-events: auto;
-}
-
-.secondaryCta:hover {
-    color: var(--gallery-white);
-    border-bottom-color: var(--gallery-white);
 }
 
 .pill {
