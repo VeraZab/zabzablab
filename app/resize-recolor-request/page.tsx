@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
-import styles from "../../styles/resize-recolor-request.module.css";
+import type { Metadata } from 'next'
+import styles from '../../styles/resize-recolor-request.module.css'
 
 export const metadata: Metadata = {
-    title: "Custom Resize & Recolor Request — Wallpaper Color Matching",
-    description: "Request a custom color match, resize, or recolor of any ZabZabLab wallpaper or fabric design. Match Sherwin-Williams, Benjamin Moore, Pantone, or any palette. Free for interior designers.",
+    title: 'Custom Resize & Recolor Request — Wallpaper Color Matching',
+    description:
+        'Request a custom color match, resize, or recolor of any ZabZabLab wallpaper or fabric design. Match Sherwin-Williams, Benjamin Moore, Pantone, or any palette. Free for interior designers.',
     alternates: { canonical: '/resize-recolor-request' },
     openGraph: {
         type: 'website',
         url: '/resize-recolor-request',
         title: 'Custom Resize & Recolor Request | ZabZabLab',
-        description: 'Request a custom color match, resize, or recolor of any ZabZabLab wallpaper or fabric design.',
+        description:
+            'Request a custom color match, resize, or recolor of any ZabZabLab wallpaper or fabric design.',
         images: [
             {
                 url: '/assets/zabzablab.png',
@@ -22,10 +24,11 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Custom Resize & Recolor Request | ZabZabLab',
-        description: 'Request a custom color match, resize, or recolor of any ZabZabLab wallpaper or fabric design.',
+        description:
+            'Request a custom color match, resize, or recolor of any ZabZabLab wallpaper or fabric design.',
         images: ['/assets/zabzablab.png'],
     },
-};
+}
 
 export default function ResizeRecolorRequestPage() {
     return (
@@ -37,12 +40,19 @@ export default function ResizeRecolorRequestPage() {
                         '@context': 'https://schema.org',
                         '@type': 'WebPage',
                         name: 'Resize/Recolor Request',
-                        url: new URL('/resize-recolor-request', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
-                        description: 'Submit a request to resize or recolor a design.',
+                        url: new URL(
+                            '/resize-recolor-request',
+                            process.env.NEXT_PUBLIC_SITE_URL ||
+                                'https://www.zabzablab.com'
+                        ).toString(),
+                        description:
+                            'Submit a request to resize or recolor a design.',
                         isPartOf: {
                             '@type': 'WebSite',
                             name: 'ZabZabLab Wallpaper and Fabric Design Studio',
-                            url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com',
+                            url:
+                                process.env.NEXT_PUBLIC_SITE_URL ||
+                                'https://www.zabzablab.com',
                         },
                     }),
                 }}
@@ -60,7 +70,5 @@ export default function ResizeRecolorRequestPage() {
                 Loading…
             </iframe>
         </main>
-    );
+    )
 }
-
-

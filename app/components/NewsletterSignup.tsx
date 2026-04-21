@@ -6,7 +6,9 @@ import styles from '/styles/portfoliopagelayout.module.css'
 
 export default function NewsletterSignup() {
     const [email, setEmail] = useState('')
-    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+    const [status, setStatus] = useState<
+        'idle' | 'loading' | 'success' | 'error'
+    >('idle')
     const [message, setMessage] = useState('')
 
     async function handleSubmit(e: React.FormEvent) {
@@ -31,7 +33,9 @@ export default function NewsletterSignup() {
                 setMessage("Thanks, you're in!")
             } else {
                 setStatus('error')
-                setMessage(data.error || 'Something went wrong. Please try again.')
+                setMessage(
+                    data.error || 'Something went wrong. Please try again.'
+                )
             }
         } catch {
             setStatus('error')
@@ -40,7 +44,11 @@ export default function NewsletterSignup() {
     }
 
     return (
-        <form onSubmit={handleSubmit} noValidate className={styles.newsletterForm}>
+        <form
+            onSubmit={handleSubmit}
+            noValidate
+            className={styles.newsletterForm}
+        >
             <div className={styles.newsletterRow}>
                 <span className={styles.newsletterInputWrapper}>
                     <input
@@ -57,20 +65,35 @@ export default function NewsletterSignup() {
                         type="submit"
                         disabled={status === 'loading' || status === 'success'}
                         className={styles.newsletterButton}
-                        aria-label={status === 'success' ? 'Submitted' : 'Sign up'}
+                        aria-label={
+                            status === 'success' ? 'Submitted' : 'Sign up'
+                        }
                     >
                         {status === 'loading' ? (
-                            <span className={styles.newsletterButtonText}>…</span>
+                            <span className={styles.newsletterButtonText}>
+                                …
+                            </span>
                         ) : status === 'success' ? (
-                            <span className={styles.newsletterButtonText}>🎉</span>
+                            <span className={styles.newsletterButtonText}>
+                                🎉
+                            </span>
                         ) : (
-                            <ArrowRightIcon className={styles.newsletterArrow} aria-hidden />
+                            <ArrowRightIcon
+                                className={styles.newsletterArrow}
+                                aria-hidden
+                            />
                         )}
                     </button>
                 </span>
             </div>
             {message && (
-                <p className={status === 'error' ? styles.newsletterError : styles.newsletterSuccess}>
+                <p
+                    className={
+                        status === 'error'
+                            ? styles.newsletterError
+                            : styles.newsletterSuccess
+                    }
+                >
                     {message}
                 </p>
             )}

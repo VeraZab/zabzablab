@@ -57,7 +57,9 @@
     min-width: 0;
 }
 
-.mobile { display: none; }
+.mobile {
+    display: none;
+}
 
 .right {
     display: flex;
@@ -66,7 +68,9 @@
     flex-shrink: 0;
 }
 
-.right img { width: 30px; }
+.right img {
+    width: 30px;
+}
 
 .right a,
 .dropdownTrigger {
@@ -109,7 +113,6 @@
     cursor: pointer;
 }
 
-
 .submenu {
     display: none;
     position: absolute;
@@ -147,8 +150,12 @@
 }
 
 @media (max-width: 1330px) {
-    .desktop { display: none; }
-    .mobile { display: flex; }
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: flex;
+    }
 
     .header {
         padding: calc(var(--header-content-gap) / 2) var(--container-padding);

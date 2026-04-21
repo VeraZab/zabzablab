@@ -6,7 +6,10 @@ export async function GET(request: NextRequest) {
     const productParam = searchParams.get('product')
 
     if (!id) {
-        return NextResponse.json({ error: 'Missing required parameter: id' }, { status: 400 })
+        return NextResponse.json(
+            { error: 'Missing required parameter: id' },
+            { status: 400 }
+        )
     }
 
     const product = (productParam || 'wallpaper').toLowerCase()
@@ -16,5 +19,3 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.redirect(targetUrl, 302)
 }
-
-

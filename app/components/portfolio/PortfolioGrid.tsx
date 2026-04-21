@@ -12,7 +12,9 @@ export default function PortfolioGrid({
     return (
         <div
             className={
-                columns === 2 ? `${styles.container} ${styles.twoColumns}` : styles.container
+                columns === 2
+                    ? `${styles.container} ${styles.twoColumns}`
+                    : styles.container
             }
         >
             {children}
