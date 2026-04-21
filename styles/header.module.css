@@ -345,6 +345,13 @@
         outline: none;
     }
 
+    /* Home page: hamburger sits over the wallpaper hero, needs white + shadow
+       for legibility on any wallpaper pattern. */
+    :global(body.is-home) .mobileIconContainer svg {
+        color: var(--gallery-white);
+        filter: drop-shadow(0 1px 3px rgba(20, 18, 16, 0.6));
+    }
+
     .closeButton {
         color: white;
         position: fixed;

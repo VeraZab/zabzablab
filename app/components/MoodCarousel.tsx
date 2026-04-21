@@ -65,9 +65,10 @@ export default function MoodCarousel() {
             <div className={styles.overlay} aria-hidden="true" />
 
             <div className={styles.content}>
-                <p className={styles.tagline}>
-                    Find the perfect wallpaper: <br/> shop by mood, not by label
-                </p>
+                <h1 className={styles.headline}>
+                    Find the perfect wallpaper: <br/>
+                    shop by <span className={styles.headlineEmphasis}>mood</span>, not by label
+                </h1>
                 <div className={styles.signatureCtas}>
                     <Link href="/designs" className={styles.ctaOutline}>
                         Browse by mood

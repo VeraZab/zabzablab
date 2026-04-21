@@ -70,6 +70,7 @@
     pointer-events: none;
 }
 
+
 /* ─── Content ─── */
 .content {
     position: absolute;
@@ -110,6 +111,50 @@
     margin: 0;
     padding: 0;
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* P2: Real headline. Lora italic does the typographic work the .tagline
+   couldn't carry. P4: gold hairline above as a magazine pull-quote anchor.
+   Heavy text-shadow stack provides legibility on busy wallpaper without
+   needing a scrim. */
+.headline {
+    font-family: var(--font-lora, Georgia, serif);
+    font-size: clamp(1.9rem, 3.8vw, 2.8rem);
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: -0.005em;
+    line-height: 1.18;
+    color: var(--gallery-white);
+    margin: 0;
+    padding: var(--gap-stack) 0 0;
+    max-width: 38rem;
+    text-align: center;
+    text-shadow:
+        0 1px 2px rgba(20, 18, 16, 0.85),
+        0 2px 6px rgba(20, 18, 16, 0.55),
+        0 0 24px rgba(20, 18, 16, 0.45),
+        0 0 60px rgba(20, 18, 16, 0.3);
+    position: relative;
+}
+
+/* Hairline above the headline — thin gold, ~3rem wide, magazine-style frame. */
+.headline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 1px;
+    background: var(--antiqued-gold);
+    opacity: 0.85;
+}
+
+/* Emphasis on the word "mood" — gold accent, slightly heavier weight,
+   keeps the italic so it flows with the rest of the headline. */
+.headlineEmphasis {
+    color: var(--gold-highlight);
+    font-weight: 600;
 }
 
 .sellCopy {
@@ -273,30 +318,44 @@
     pointer-events: none;
 }
 
-/* Override the giant centered .moodName when it's inside the signature.
-   Smaller italic Lora caption — readable but quiet, right-aligned. */
+/* P5: Override the giant centered .moodName when inside the signature.
+   Italic Lora caption — bumped to be readable from glance distance,
+   still right-aligned, still restrained. */
 .signature .moodName {
-    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    font-size: clamp(2rem, 3.2vw, 3rem);
     line-height: 1.05;
     text-align: right;
     color: var(--gallery-white);
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+    text-shadow:
+        0 1px 2px rgba(20, 18, 16, 0.85),
+        0 2px 12px rgba(20, 18, 16, 0.5);
     margin: 0;
 }
 
 /* CTA row — outline (alt: Browse by mood) sits left of solid (primary: Match).
-   Lives inside .content next to the centered tagline. */
+   Lives inside .content next to the centered tagline. CSS Grid with two
+   1fr columns FORCES both children to identical widths regardless of
+   label length or display:inline-flex shenanigans. */
 .signatureCtas {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
     gap: var(--gap-stack);
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 100%;
+    max-width: 28rem;
+    margin: 0 auto;
 }
 
-/* Outline CTA — cream fill, gold border, dark charcoal text.
-   The cream fill keeps it readable on any wallpaper (light or dark);
-   the gold border ties it to the primary Match button. */
+.signatureCtas .ctaOutline,
+.signatureCtas .cta {
+    width: 100%;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+/* Outline CTA — cream fill, gold border, dark text. SAME dimensions as
+   the solid .cta so the two pills are always identical in size; the
+   visual hierarchy (Match wins) comes from cream-vs-gold fill alone. */
 .ctaOutline {
     display: inline-flex;
     align-items: center;
@@ -334,19 +393,26 @@
 }
 
 @media (max-width: 900px) {
+    /* Mood name stays anchored bottom-right at every breakpoint per Vera. */
     .signature {
-        right: 0;
-        left: 0;
+        right: var(--gap-component);
         bottom: var(--gap-component);
-        align-items: center;
-        padding: 0 var(--container-padding);
+        left: auto;
+        align-items: flex-end;
+        padding: 0;
     }
     .signature .moodName {
-        text-align: center;
-        font-size: clamp(1.6rem, 5vw, 2.2rem);
+        text-align: right;
+        font-size: clamp(1.6rem, 5vw, 2.4rem);
     }
-    .signatureCtas {
-        justify-content: center;
+    /* Mobile: tighten padding + font so the longer "GET ARTIST'S PICK →"
+       fits in a half-width pill at 390px without wrapping.
+       Equal-width sizing comes from .signatureCtas flex: 1 in the base. */
+    .ctaOutline,
+    .cta {
+        padding: 0.7rem 0.6rem;
+        font-size: 0.62rem;
+        letter-spacing: 0.1em;
     }
 }
 
@@ -485,13 +551,8 @@
         box-sizing: border-box;
     }
 
-    .cta {
-        margin-top: var(--gap-stack);
-        min-height: 3rem;
-        padding: 0.75rem 1.5rem;
-        font-size: 0.75rem;
-        letter-spacing: 0.11em;
-    }
+    /* (Orphaned .cta override removed — was sized for old centered-stack
+       layout and broke the .ctaOutline / .cta size parity in the grid row.) */
 }
 
 @media (max-width: 480px) {
