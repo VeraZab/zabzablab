@@ -65,36 +65,25 @@ export default function MoodCarousel() {
             <div className={styles.overlay} aria-hidden="true" />
 
             <div className={styles.content}>
-                <div className={styles.groupA}>
-                    <p className={styles.tagline}>
-                        {/* How would you like your home to feel? */}
-                        Find the perfect wallpaper: <br/> shop by mood, not by label
-                    </p>
-                    <h1 key={`name-${animKey}`} className={styles.moodName}>
-                        {activeMood.label}
-                    </h1>
-                </div>
-
-                {/* <p className={styles.sellCopy}>
-                    You deserve your space to <span className={styles.sellCopyEmphasis}>feel</span> just right. That&rsquo;s why we made the curation box: a custom, artist selected wallpaper sample box that helps you build your space around how it should feel, not whatever&rsquo;s trending.
-                </p> */}
-
-                {/* <p className={styles.sellCopy}>
-                    You deserve your space to <span className={styles.sellCopyEmphasis}>feel</span> just right. That&rsquo;s why we made the curation box: a custom, artist selected wallpaper sample box that helps you build your space around how it should feel, not whatever&rsquo;s trending.
-                </p> */}
-                <p className={styles.sellCopy}>
-                    Try our curated, personalized, artist selected sample box.
+                <p className={styles.tagline}>
+                    Find the perfect wallpaper: <br/> shop by mood, not by label
                 </p>
-
-
-                <div className={styles.groupB}>
-                    <Link href="/the-match" className={styles.cta}>
-                        Start the Match &rarr;
+                <div className={styles.signatureCtas}>
+                    <Link href="/designs" className={styles.ctaOutline}>
+                        Browse by mood
                     </Link>
-                    <p className={styles.ctaProof}>
-                        $120 &middot; 3 samples &middot; credited toward any roll
-                    </p>
+                    <Link href="/the-match" className={styles.cta}>
+                        Get artist's pick &rarr;
+                    </Link>
                 </div>
+            </div>
+
+            {/* Bottom-right editorial signature: just the rotating mood name as a
+                small italic Lora caption. Wallpaper image is the hero. */}
+            <div className={styles.signature}>
+                <h1 key={`name-${animKey}`} className={styles.moodName}>
+                    {activeMood.label}
+                </h1>
             </div>
         </section>
     )
