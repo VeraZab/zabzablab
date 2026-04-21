@@ -23,7 +23,8 @@ export function middleware(request: NextRequest) {
         return NextResponse.next()
     }
 
-    const canonicalHost = (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com')
+    const canonicalHost =
+        process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'
     try {
         const canonical = new URL(canonicalHost)
 

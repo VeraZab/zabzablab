@@ -7,8 +7,16 @@ import styles from '../faux-fabric/textureFoundations.module.css'
 type TextureItem = { designSrc: string; alt: string; href?: string }
 
 const fauxStoneTextures: TextureItem[] = [
-    { designSrc: '/portfolio/cyanotype-block.png', alt: 'Faux stone texture', href: undefined },
-    { designSrc: '/portfolio/cyanotype-block.png', alt: 'Faux stone texture', href: undefined },
+    {
+        designSrc: '/portfolio/cyanotype-block.png',
+        alt: 'Faux stone texture',
+        href: undefined,
+    },
+    {
+        designSrc: '/portfolio/cyanotype-block.png',
+        alt: 'Faux stone texture',
+        href: undefined,
+    },
 ]
 
 export const metadata: Metadata = {
@@ -22,7 +30,14 @@ export const metadata: Metadata = {
         title: 'Faux Stone Texture Wallpaper | ZabZabLab',
         description:
             'Organic, tactile faux stone wallpaper for feature walls and accents. Customizable color and scale, trade-friendly.',
-        images: [{ url: '/assets/zabzablab.png', width: 1200, height: 630, alt: 'ZabZabLab Faux Stone Texture Wallpaper' }],
+        images: [
+            {
+                url: '/assets/zabzablab.png',
+                width: 1200,
+                height: 630,
+                alt: 'ZabZabLab Faux Stone Texture Wallpaper',
+            },
+        ],
     },
     twitter: {
         card: 'summary_large_image',
@@ -40,8 +55,11 @@ export default function FauxStonePage() {
                 <h1>Faux Stone Textures</h1>
                 <div className={styles.introLead}>
                     <p>
-                        Organic, tactile stone textures for feature walls, accents, or full rooms.
-                        They read as natural material without the cost or weight of real stone—and they&apos;re easy to customize to your palette and scale.
+                        Organic, tactile stone textures for feature walls,
+                        accents, or full rooms. They read as natural material
+                        without the cost or weight of real stone—and
+                        they&apos;re easy to customize to your palette and
+                        scale.
                     </p>
                 </div>
             </div>
@@ -50,14 +68,32 @@ export default function FauxStonePage() {
                 <div className="page-section-strip-inner">
                     <div className={styles.textureGrid}>
                         {fauxStoneTextures.map((item, index) => (
-                            <figure key={`stone-${index}`} className={styles.textureFigure}>
+                            <figure
+                                key={`stone-${index}`}
+                                className={styles.textureFigure}
+                            >
                                 <div className={styles.textureImageWrap}>
-                                    <Image src={item.designSrc} alt={item.alt} fill style={{ objectFit: 'cover' }} sizes="(max-width: 600px) 100vw, 50vw" />
+                                    <Image
+                                        src={item.designSrc}
+                                        alt={item.alt}
+                                        fill
+                                        style={{ objectFit: 'cover' }}
+                                        sizes="(max-width: 600px) 100vw, 50vw"
+                                    />
                                 </div>
                                 <div className={styles.textureMeta}>
-                                    <figcaption className={styles.textureCaption}>{item.alt}</figcaption>
+                                    <figcaption
+                                        className={styles.textureCaption}
+                                    >
+                                        {item.alt}
+                                    </figcaption>
                                     {item.href && (
-                                        <a href={item.href} target="_blank" rel="noopener noreferrer" className={styles.textureCta}>
+                                        <a
+                                            href={item.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className={styles.textureCta}
+                                        >
                                             See more color options →
                                         </a>
                                     )}
@@ -73,12 +109,27 @@ export default function FauxStonePage() {
                     <div className={styles.notFinding}>
                         <h2>Don&apos;t See What You&apos;re Looking For?</h2>
                         <p>
-                            What&apos;s shown here is just a sample—I have a larger library of stone textures and finishes that aren&apos;t listed yet. {' '}
-                            <a href="mailto:zabzablab@gmail.com" className={styles.ctaLink}>Tell me what you need</a> and I&apos;ll send you some options!
+                            What&apos;s shown here is just a sample—I have a
+                            larger library of stone textures and finishes that
+                            aren&apos;t listed yet.{' '}
+                            <a
+                                href="mailto:zabzablab@gmail.com"
+                                className={styles.ctaLink}
+                            >
+                                Tell me what you need
+                            </a>{' '}
+                            and I&apos;ll send you some options!
                         </p>
                         <p>
-                            Every texture can be color customized to match your palette, adjusted to scale, or rotated.
-                            Just <Link href="/resize-recolor-request" className={styles.ctaLink}>send a customization request here</Link>.
+                            Every texture can be color customized to match your
+                            palette, adjusted to scale, or rotated. Just{' '}
+                            <Link
+                                href="/resize-recolor-request"
+                                className={styles.ctaLink}
+                            >
+                                send a customization request here
+                            </Link>
+                            .
                         </p>
                     </div>
                 </div>
@@ -86,7 +137,10 @@ export default function FauxStonePage() {
 
             <div className={`page-container ${styles.backBlock}`}>
                 <p>
-                    <Link href="/designs/faux-fabric" className={styles.ctaLink}>
+                    <Link
+                        href="/designs/faux-fabric"
+                        className={styles.ctaLink}
+                    >
                         ← Back to Texture Foundations
                     </Link>
                 </p>

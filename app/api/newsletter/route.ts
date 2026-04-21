@@ -28,30 +28,37 @@ export async function POST(request: NextRequest) {
 
         const formspreeId = process.env.FORMSPREE_FORM_ID
         if (!formspreeId) {
-            console.error('FORMSPREE_FORM_ID is not set. Add it to Vercel env vars.')
+            console.error(
+                'FORMSPREE_FORM_ID is not set. Add it to Vercel env vars.'
+            )
             return NextResponse.json(
                 { error: 'Newsletter signup is not configured' },
                 { status: 503 }
             )
         }
 
-        const formspreeRes = await fetch(`https://formspree.io/f/${formspreeId}`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json',
-            },
-            body: JSON.stringify({
-                email,
-                _subject: 'Newsletter signup from zabzablab.com',
-            }),
-        })
+        const formspreeRes = await fetch(
+            `https://formspree.io/f/${formspreeId}`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json',
+                },
+                body: JSON.stringify({
+                    email,
+                    _subject: 'Newsletter signup from zabzablab.com',
+                }),
+            }
+        )
 
         if (!formspreeRes.ok) {
             const data = await formspreeRes.json().catch(() => ({}))
             console.error('Formspree error:', formspreeRes.status, data)
             return NextResponse.json(
-                { error: 'Could not save your email. Please try again or email us directly.' },
+                {
+                    error: 'Could not save your email. Please try again or email us directly.',
+                },
                 { status: 502 }
             )
         }

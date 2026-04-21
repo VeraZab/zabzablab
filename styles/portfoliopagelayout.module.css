@@ -8,7 +8,8 @@
 /* Wrapper so the whole block can be clipped to a wavy top; negative margins break out of .main-content padding so full width + to bottom */
 .ctaWrapper {
     flex: 1;
-    margin: var(--space-8) calc(-1 * var(--container-padding)) calc(-1 * var(--container-padding));
+    margin: var(--space-8) calc(-1 * var(--container-padding))
+        calc(-1 * var(--container-padding));
     clip-path: url(#ctaWavyTop);
     background: var(--soft-ecru);
     display: flex;
@@ -17,7 +18,8 @@
 
 @media (max-width: 480px) {
     .ctaWrapper {
-        margin: var(--space-8) calc(-1 * var(--container-padding-sm)) calc(-1 * var(--container-padding-sm));
+        margin: var(--space-8) calc(-1 * var(--container-padding-sm))
+            calc(-1 * var(--container-padding-sm));
     }
 }
 
@@ -137,7 +139,9 @@
     color: var(--color-accent);
     background: transparent;
     cursor: pointer;
-    transition: color 0.2s ease, opacity 0.2s ease;
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
 }
 
 .newsletterButton .newsletterArrow {
@@ -167,4 +171,6 @@
     font-size: 0.95rem;
 }
 
-.newsletterError { opacity: 0.9; }
+.newsletterError {
+    opacity: 0.9;
+}

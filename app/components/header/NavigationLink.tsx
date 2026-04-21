@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 import { ElementType, useState } from 'react'
 import { usePathname } from 'next/navigation'
@@ -74,7 +74,10 @@ export const NavigationLink = ({
                 </span>
                 <div className={styles.submenu}>
                     {link.children.map((child) => (
-                        <NavigationLink key={child.href || child.title} link={child} />
+                        <NavigationLink
+                            key={child.href || child.title}
+                            link={child}
+                        />
                     ))}
                 </div>
             </div>

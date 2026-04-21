@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import type { Metadata, Viewport } from 'next'
 import { Jost, Lora } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 
 import '/styles/reset.css'
 import '/styles/global.css'
@@ -23,12 +24,15 @@ const lora = Lora({
 })
 
 export const metadata: Metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
+    metadataBase: new URL(
+        process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'
+    ),
     title: {
         default: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
         template: '%s | ZabZabLab',
     },
-    description: 'Hand-drawn wallpaper and fabric designs for interiors with personality. Custom colorways, faux textures, and trade-friendly options for interior designers. Shop on Spoonflower.',
+    description:
+        'Hand-drawn wallpaper and fabric designs for interiors with personality. Custom colorways, faux textures, and trade-friendly options for interior designers. Shop on Spoonflower.',
     applicationName: 'ZabZabLab',
     keywords: [
         'custom wallpaper',
@@ -107,8 +111,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     content="width=device-width, initial-scale=1.0"
                 />
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-                <meta name="p:domain_verify" content="713bb29cacff3398e376fff8d6561c4d" />
-                <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM site summary" />
+                <meta
+                    name="p:domain_verify"
+                    content="713bb29cacff3398e376fff8d6561c4d"
+                />
+                <link
+                    rel="alternate"
+                    type="text/plain"
+                    href="/llms.txt"
+                    title="LLM site summary"
+                />
                 {/* Title comes from Next.js Metadata API per page */}
                 <link
                     rel="icon"
@@ -122,10 +134,18 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             '@context': 'https://schema.org',
                             '@type': 'Organization',
                             name: 'ZabZabLab',
-                            alternateName: 'ZabZabLab Wallpaper and Fabric Design Studio',
-                            url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
-                            logo: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
-                            description: 'Hand-drawn wallpaper and fabric design studio specializing in custom colorways, faux texture wallpapers, and trade-friendly services for interior designers. Designs sold through Spoonflower.',
+                            alternateName:
+                                'ZabZabLab Wallpaper and Fabric Design Studio',
+                            url:
+                                process.env.NEXT_PUBLIC_SITE_URL ||
+                                'https://www.zabzablab.com',
+                            logo: new URL(
+                                '/assets/zabzablab.png',
+                                process.env.NEXT_PUBLIC_SITE_URL ||
+                                    'https://www.zabzablab.com'
+                            ).toString(),
+                            description:
+                                'Hand-drawn wallpaper and fabric design studio specializing in custom colorways, faux texture wallpapers, and trade-friendly services for interior designers. Designs sold through Spoonflower.',
                             founder: {
                                 '@type': 'Person',
                                 name: 'Vera',
@@ -165,20 +185,26 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                             '@context': 'https://schema.org',
                             '@type': 'WebSite',
                             name: 'ZabZabLab — Custom Wallpaper & Fabric Design Studio',
-                            url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com'),
+                            url:
+                                process.env.NEXT_PUBLIC_SITE_URL ||
+                                'https://www.zabzablab.com',
                             inLanguage: 'en',
                             publisher: {
                                 '@type': 'Organization',
                                 name: 'ZabZabLab',
-                                logo: new URL('/assets/zabzablab.png', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
+                                logo: new URL(
+                                    '/assets/zabzablab.png',
+                                    process.env.NEXT_PUBLIC_SITE_URL ||
+                                        'https://www.zabzablab.com'
+                                ).toString(),
                             },
                         }),
                     }}
                 />
-                
+
                 {/* Google Analytics */}
-                <script 
-                    async 
+                <script
+                    async
                     src="https://www.googletagmanager.com/gtag/js?id=G-G58801206T"
                 />
                 <script
@@ -199,6 +225,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     <main>{children}</main>
                     <ConditionalFooter />
                 </div>
+                <Analytics />
             </body>
         </html>
     )

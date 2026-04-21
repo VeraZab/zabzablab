@@ -21,20 +21,23 @@ const posts: BlogPost[] = [
         description:
             'Insights inspired by Zillow and Sherwin-Williams: deep olive greens in kitchens can boost desirability and sale price.',
         imageSrc: '/blog/dark_green_kitchen.jpg',
-        imageAlt: 'Olive green kitchen cabinetry with patterned tile backsplash',
+        imageAlt:
+            'Olive green kitchen cabinetry with patterned tile backsplash',
         date: '2025-08-24',
     },
 ]
 
 export const metadata: Metadata = {
     title: 'Blog — Color, Pattern & Interior Design Ideas',
-    description: 'Design inspiration from ZabZabLab: color trends, pattern ideas, wallpaper tips, and interior styling guidance for homeowners and designers.',
+    description:
+        'Design inspiration from ZabZabLab: color trends, pattern ideas, wallpaper tips, and interior styling guidance for homeowners and designers.',
     alternates: { canonical: '/blog' },
     openGraph: {
         type: 'website',
         url: '/blog',
         title: 'Blog — Color, Pattern & Interior Design Ideas | ZabZabLab',
-        description: 'Color trends, pattern ideas, wallpaper tips, and interior styling guidance from ZabZabLab.',
+        description:
+            'Color trends, pattern ideas, wallpaper tips, and interior styling guidance from ZabZabLab.',
         images: [
             {
                 url: '/assets/zabzablab.png',
@@ -47,7 +50,8 @@ export const metadata: Metadata = {
     twitter: {
         card: 'summary_large_image',
         title: 'Blog — Color, Pattern & Interior Design Ideas | ZabZabLab',
-        description: 'Color trends, pattern ideas, wallpaper tips, and interior styling guidance from ZabZabLab.',
+        description:
+            'Color trends, pattern ideas, wallpaper tips, and interior styling guidance from ZabZabLab.',
         images: ['/assets/zabzablab.png'],
     },
 }
@@ -62,8 +66,13 @@ export default function BlogIndexPage() {
                         '@context': 'https://schema.org',
                         '@type': 'Blog',
                         name: 'ZabZabLab Blog',
-                        url: new URL('/blog', process.env.NEXT_PUBLIC_SITE_URL || 'https://www.zabzablab.com').toString(),
-                        description: 'Thoughts on color, pattern, and design from ZabZabLab.',
+                        url: new URL(
+                            '/blog',
+                            process.env.NEXT_PUBLIC_SITE_URL ||
+                                'https://www.zabzablab.com'
+                        ).toString(),
+                        description:
+                            'Thoughts on color, pattern, and design from ZabZabLab.',
                         publisher: {
                             '@type': 'Organization',
                             name: 'ZabZabLab',
@@ -74,14 +83,35 @@ export default function BlogIndexPage() {
             <PortfolioGrid>
                 {posts.map((post) => (
                     <article key={post.slug}>
-                        <Link href={`/blog/${post.slug}`} className={styles.card}>
+                        <Link
+                            href={`/blog/${post.slug}`}
+                            className={styles.card}
+                        >
                             <div className={itemStyles.container}>
-                                <Image src={post.imageSrc} alt={post.imageAlt} fill style={{ objectFit: 'cover' }} />
+                                <Image
+                                    src={post.imageSrc}
+                                    alt={post.imageAlt}
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                />
                             </div>
                             <div style={{ padding: '0 0.75rem 0.75rem' }}>
-                                <h2 className={styles.cardTitle}>{post.title}</h2>
-                                <p className={styles.cardDesc}>{post.description}</p>
-                                <p className={styles.date}>{new Date(post.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+                                <h2 className={styles.cardTitle}>
+                                    {post.title}
+                                </h2>
+                                <p className={styles.cardDesc}>
+                                    {post.description}
+                                </p>
+                                <p className={styles.date}>
+                                    {new Date(post.date).toLocaleDateString(
+                                        undefined,
+                                        {
+                                            year: 'numeric',
+                                            month: 'long',
+                                            day: 'numeric',
+                                        }
+                                    )}
+                                </p>
                             </div>
                         </Link>
                     </article>
@@ -90,5 +120,3 @@ export default function BlogIndexPage() {
         </main>
     )
 }
-
-
