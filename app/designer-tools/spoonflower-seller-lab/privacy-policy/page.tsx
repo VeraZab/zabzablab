@@ -37,7 +37,7 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                             marginBottom: 'var(--space-4)',
                         }}
                     >
-                        <strong>Last updated:</strong> March 2026
+                        <strong>Last updated:</strong> August 2026
                     </p>
                     <p
                         style={{
@@ -64,6 +64,11 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                         seller workspace. This privacy policy explains how the
                         extension handles data.
                     </p>
+                    <p>
+                        The extension does not collect user data, does not
+                        require an account, and does not transmit anything to
+                        external servers.
+                    </p>
 
                     <h2
                         style={{
@@ -71,7 +76,7 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                             marginBottom: 'var(--space-3)',
                         }}
                     >
-                        What Data the Extension Accesses
+                        What the extension does
                     </h2>
                     <p>
                         The extension only runs on Spoonflower pages (
@@ -80,17 +85,18 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                     </p>
                     <ul>
                         <li>
-                            <strong>Pull from shop-by-image page:</strong> The
-                            extension reads the title text from the image search
-                            results listings returned by Spoonflower. This data
-                            is used only to populate the side panel for you to
-                            edit.
+                            <strong>
+                                Pull from a shop, search, or image-search page:
+                            </strong>{' '}
+                            The extension reads the design titles listed on the
+                            page you&apos;re viewing so you can turn them into
+                            keyword ideas. This happens locally in your browser.
                         </li>
                         <li>
                             <strong>Pull from a listing page:</strong> The
-                            extension only reads the tags from the product
-                            listing page. This data is used only to populate the
-                            side panel for you to edit.
+                            extension reads the tags from the product listing
+                            page so you can edit and reorganize them. This
+                            happens locally in your browser.
                         </li>
                         <li>
                             <strong>Copy to clipboard:</strong> The extension
@@ -98,10 +104,6 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                             device&apos;s clipboard when you choose to copy.
                         </li>
                     </ul>
-                    <p>
-                        All of this happens locally in your browser. The
-                        extension does not send any data to external servers.
-                    </p>
 
                     <h2
                         style={{
@@ -109,31 +111,37 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                             marginBottom: 'var(--space-3)',
                         }}
                     >
-                        What the Extension Does NOT Do
+                        What the extension does NOT do
                     </h2>
                     <ul>
                         <li>
-                            <strong>No data collection:</strong> The extension
-                            does not collect, store, or transmit your data to
-                            any server.
+                            <strong>No data collection.</strong> The extension
+                            does not collect, store, or transmit any of your
+                            data. Nothing you type or read in the side panel
+                            leaves your browser.
                         </li>
                         <li>
-                            <strong>No analytics or tracking:</strong> The
-                            extension does not use analytics, tracking pixels,
-                            or any third-party tracking.
+                            <strong>No account required.</strong> There is no
+                            sign-in, no login, no user account.
                         </li>
                         <li>
-                            <strong>No remote code:</strong> The extension does
-                            not load or execute code from the internet.
+                            <strong>No analytics or tracking.</strong> No
+                            pixels, no third-party trackers, no telemetry.
                         </li>
                         <li>
-                            <strong>No data sale:</strong> Your data is never
-                            sold or shared with third parties.
+                            <strong>No remote code.</strong> The extension does
+                            not load or execute code fetched from the internet.
                         </li>
                         <li>
-                            <strong>No unrelated host access:</strong> The
-                            extension only accesses Spoonflower pages. It cannot
-                            read or modify other websites.
+                            <strong>No data sale.</strong> Your data cannot be
+                            sold or shared with third parties because none is
+                            collected in the first place.
+                        </li>
+                        <li>
+                            <strong>No access to unrelated sites.</strong> The
+                            extension only reads or interacts with Spoonflower
+                            pages. It cannot see other tabs or other websites
+                            you visit.
                         </li>
                     </ul>
 
@@ -143,17 +151,17 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                             marginBottom: 'var(--space-3)',
                         }}
                     >
-                        Data Storage
+                        Data storage
                     </h2>
                     <p>
-                        The extension does not persistently store your tag data.
-                        Data exists only:
+                        The extension does not persistently store any of your
+                        data. Data exists only:
                     </p>
                     <ul>
                         <li>In memory while the side panel is open</li>
                         <li>
-                            In your clipboard when you copy (standard clipboard
-                            behavior)
+                            On your clipboard when you choose to copy (standard
+                            clipboard behavior)
                         </li>
                     </ul>
 
@@ -165,9 +173,6 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                     >
                         Permissions
                     </h2>
-                    <p>
-                        The extension requests the following Chrome permissions:
-                    </p>
                     <table
                         style={{
                             width: '100%',
@@ -188,6 +193,17 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                                     }}
                                 >
                                     Permission
+                                </th>
+                                <th
+                                    style={{
+                                        textAlign: 'left',
+                                        padding:
+                                            'var(--space-2) var(--space-3)',
+                                        borderBottom:
+                                            '2px solid var(--charcoal-ink)',
+                                    }}
+                                >
+                                    Type
                                 </th>
                                 <th
                                     style={{
@@ -222,8 +238,18 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                                             '1px solid var(--border-subtle)',
                                     }}
                                 >
+                                    Required
+                                </td>
+                                <td
+                                    style={{
+                                        padding:
+                                            'var(--space-2) var(--space-3)',
+                                        borderBottom:
+                                            '1px solid var(--border-subtle)',
+                                    }}
+                                >
                                     Display the extension interface in
-                                    Chrome&apos;s side panel
+                                    Chrome&apos;s side panel.
                                 </td>
                             </tr>
                             <tr>
@@ -245,8 +271,18 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                                             '1px solid var(--border-subtle)',
                                     }}
                                 >
-                                    Access the currently active Spoonflower tab
-                                    when you click Pull
+                                    Required
+                                </td>
+                                <td
+                                    style={{
+                                        padding:
+                                            'var(--space-2) var(--space-3)',
+                                        borderBottom:
+                                            '1px solid var(--border-subtle)',
+                                    }}
+                                >
+                                    Read tag / listing content from the active
+                                    Spoonflower tab when you click Pull.
                                 </td>
                             </tr>
                             <tr>
@@ -268,8 +304,18 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                                             '1px solid var(--border-subtle)',
                                     }}
                                 >
-                                    Read tag fields on the Spoonflower page when
-                                    you pull tags
+                                    Required
+                                </td>
+                                <td
+                                    style={{
+                                        padding:
+                                            'var(--space-2) var(--space-3)',
+                                        borderBottom:
+                                            '1px solid var(--border-subtle)',
+                                    }}
+                                >
+                                    Inject the content script that reads the
+                                    tag data (only on Spoonflower pages).
                                 </td>
                             </tr>
                             <tr>
@@ -292,7 +338,86 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                                             '1px solid var(--border-subtle)',
                                     }}
                                 >
-                                    Limit all access to Spoonflower pages only
+                                    Required host
+                                </td>
+                                <td
+                                    style={{
+                                        padding:
+                                            'var(--space-2) var(--space-3)',
+                                        borderBottom:
+                                            '1px solid var(--border-subtle)',
+                                    }}
+                                >
+                                    Limits all access to Spoonflower pages.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    style={{
+                                        padding:
+                                            'var(--space-2) var(--space-3)',
+                                        borderBottom:
+                                            '1px solid var(--border-subtle)',
+                                    }}
+                                >
+                                    <code>storage</code>
+                                </td>
+                                <td
+                                    style={{
+                                        padding:
+                                            'var(--space-2) var(--space-3)',
+                                        borderBottom:
+                                            '1px solid var(--border-subtle)',
+                                    }}
+                                >
+                                    Optional (declared, currently unused)
+                                </td>
+                                <td
+                                    style={{
+                                        padding:
+                                            'var(--space-2) var(--space-3)',
+                                        borderBottom:
+                                            '1px solid var(--border-subtle)',
+                                    }}
+                                >
+                                    Reserved for a future opt-in feature. The
+                                    current version never requests this
+                                    permission from you, and nothing is stored.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td
+                                    style={{
+                                        padding:
+                                            'var(--space-2) var(--space-3)',
+                                        borderBottom:
+                                            '1px solid var(--border-subtle)',
+                                    }}
+                                >
+                                    <code>https://sellerlab.app/*</code>
+                                </td>
+                                <td
+                                    style={{
+                                        padding:
+                                            'var(--space-2) var(--space-3)',
+                                        borderBottom:
+                                            '1px solid var(--border-subtle)',
+                                    }}
+                                >
+                                    Optional host (declared, currently unused)
+                                </td>
+                                <td
+                                    style={{
+                                        padding:
+                                            'var(--space-2) var(--space-3)',
+                                        borderBottom:
+                                            '1px solid var(--border-subtle)',
+                                    }}
+                                >
+                                    Reserved for a future opt-in feature. The
+                                    current version never requests this
+                                    permission from you and never contacts this
+                                    host.
                                 </td>
                             </tr>
                         </tbody>
@@ -304,13 +429,35 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                             marginBottom: 'var(--space-3)',
                         }}
                     >
-                        Changes to This Policy
+                        External links
                     </h2>
                     <p>
-                        We may update this privacy policy from time to time. The
-                        &quot;Last updated&quot; date at the top will reflect
-                        any changes. Continued use of the extension after
-                        updates constitutes acceptance of the revised policy.
+                        The extension may display links to external forms (for
+                        example, a Google Forms interest survey for upcoming
+                        features). Clicking a link opens that page in a new
+                        browser tab. Any information you choose to submit there
+                        (such as your email address or feedback) is collected
+                        by the operator of that page (e.g. Google), not by the
+                        extension, and is governed by that operator&apos;s
+                        terms and privacy policy. The extension itself does not
+                        read, store, or transmit anything you type into those
+                        external forms.
+                    </p>
+
+                    <h2
+                        style={{
+                            marginTop: 'var(--space-8)',
+                            marginBottom: 'var(--space-3)',
+                        }}
+                    >
+                        Changes to this policy
+                    </h2>
+                    <p>
+                        We may update this privacy policy from time to time.
+                        The &quot;Last updated&quot; date at the top will
+                        reflect any changes. Continued use of the extension
+                        after updates constitutes acceptance of the revised
+                        policy.
                     </p>
 
                     <h2
@@ -322,10 +469,9 @@ export default function SpoonflowerSellerLabPrivacyPolicyPage() {
                         Contact
                     </h2>
                     <p>
-                        If you have questions about this privacy policy or the
-                        extension,{' '}
+                        Questions about this privacy policy or the extension:{' '}
                         <a href="mailto:zabzablab@gmail.com">
-                            please contact us
+                            zabzablab@gmail.com
                         </a>
                         .
                     </p>
